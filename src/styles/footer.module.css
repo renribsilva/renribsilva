@@ -1,0 +1,19 @@
+.footer {
+  /* background-color: burlywood; */
+  font-size:11px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 1016px) or (max-height: 500px) {
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+  }
+}

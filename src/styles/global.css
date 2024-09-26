@@ -1,0 +1,46 @@
+/* styles.module.css */
+:root, html {
+  margin-inline: 130px;
+  margin-top: 10px;
+  --color-fill-light: rgb(250, 242, 234);
+  --color-text-base-light: rgb(40, 39, 40);
+  --color-accent-light: rgb(39, 96, 129);
+  --color-hr-ligth: rgb(222, 228, 238);
+  --color-subtitle-litgh: rgb(180, 159, 159);
+  
+  --color-fill-dark: rgb(33, 39, 55); 
+  --color-text-base-dark: rgb(234, 237, 243);
+  --color-accent-dark: rgb(204, 71, 41);
+  --color-hr-dark: rgb(57, 56, 71);
+  --color-subtitle-dark: rgb(104, 92, 92);
+}
+
+[data-theme="dark"] {
+  --background: var(--color-fill-dark);
+  --foreground: var(--color-text-base-dark);
+  --accent: var(--color-accent-dark);
+  --hr: var(--color-hr-dark);
+  --subtitle: var(--color-subtitle-dark);
+}
+
+[data-theme="light"] {
+  --background: var(--color-fill-light);
+  --foreground: var(--color-text-base-light);
+  --accent: var(--color-accent-light);
+  --hr: var(--color-hr-ligth);
+  --subtitle: var(--color-subtitle-litgh)
+}
+
+body {
+  font-family: "IBM Plex mono";
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+* {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+

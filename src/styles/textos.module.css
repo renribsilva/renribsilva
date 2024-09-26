@@ -1,0 +1,25 @@
+.arquivo section {
+  /* background-color: aquamarine; */
+  display: flex;
+  align-items:baseline;
+}
+
+.arquivo ul{
+  /* background-color: aqua; */
+  list-style-type: none;
+  height: fit-content;
+}
+
+.arquivo li {
+  /* background-color:brown; */
+  display: flex;
+  gap: 15px;
+}
+
+.arquivo a {
+  text-decoration: none;
+}
+
+.arquivo li :first-child {
+  color: var(--subtitle);
+}

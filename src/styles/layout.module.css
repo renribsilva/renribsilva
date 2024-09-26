@@ -1,0 +1,68 @@
+.section {
+  /* background-color: antiquewhite; */
+  display: grid;
+  grid-template-columns: 1fr 70px 200px;
+  min-width: 412px;
+  margin-top: 60px;
+}
+
+/* Estilo base para os itens */
+.main {
+  /* background-color: brown; */
+  margin: 5px;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.space {
+  /* background-color: black; */
+  margin: 5px;
+  grid-row-start: 1;
+  grid-row-end: 4;
+}
+
+.sidebar {
+  /* background-color: rgb(48, 95, 136); */
+  width: 190px;
+  position:fixed;
+  right: 145px;
+  top: 75px;
+}
+
+.footer {
+  /* background-color: rgb(219, 108, 169); */
+  width: 190px;
+  position: fixed;
+  right: 145px;
+  top: 530px
+}
+
+
+/* Estilos para empilhar ao fazer wrap */
+@media (max-width: 1016px) or (max-height: 500px) { 
+  .section {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+  }
+
+  .sidebar {
+    order: 1;
+    position: unset;
+    width: auto;
+  }
+  
+  .main {
+    order: 2;
+  }
+
+  .footer {
+    order: 3;
+    position: unset;
+    width: auto;
+  }
+
+  .space {
+    margin: 0;
+  }
+}

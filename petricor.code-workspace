@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../notion-blog"
+		},
+		{
+			"path": "../notion-nextjs-blog"
+		},
+		{
+			"path": "../astro-paper"
+		},
+		{
+			"path": "../astro-theme-typography"
+		},
+		{
+			"path": "../nextjs-mdx-blog-theme"
+		}
+	],
+	"settings": {}
+}

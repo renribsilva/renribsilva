@@ -1,0 +1,56 @@
+.ul {
+  /* background-color: antiquewhite; */
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  margin: 5px 0;
+  height: 60px;
+  align-items: center;
+  gap: 7px;
+}
+
+.ul li {
+  /* background-color:aqua; */
+  width: 22.5px;
+  height: 22.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.ul li a {
+  /* background-color: brown; */
+  display: flex;
+  justify-content: center;
+}
+
+.ul li:nth-child(1) {
+  font-size: 20px;
+}
+
+.ul li:nth-child(2) {
+  font-size: 16px;
+}
+
+.ul li:nth-child(3) {
+  font-size: 18px;
+  margin-left: 2px;
+}
+
+
+.ul li:hover {
+  rotate: 10deg;
+}
+
+.ul li:hover a * {
+  color: var(--accent); /* Aplica a cor quando o li for hover */
+}
+
+@media (max-width: 1016px) or (max-height: 500px) {
+  .ul {
+    /* background-color: aquamarine; */
+    justify-content: center;
+    height: 50px
+  }
+}

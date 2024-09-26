@@ -1,0 +1,27 @@
+.mdxrodape {
+  /* background-color: black; */
+  height: 100px;
+}
+
+.mdxtitle {
+  /* background-color: beige; */
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: var(--accent);
+  margin-top: 15px;
+}
+
+.mdxdate {
+  /* background-color: aquamarine; */
+  display: flex;
+  gap: 15px;
+  font-style: italic;
+  height: 70px;
+  min-width: max-content;
+}
+
+.mdxdate span * {
+  color: var(--foreground);
+  color: var(--subtitle);
+}
