@@ -28,7 +28,7 @@ export default function About() {
       </Head>
       <Titles 
         h1Text='Sobre' 
-        h2Text='De onde veio, como foi feito e para onde vai este site-blog?'
+        h2Text='De onde veio, como foi feito e para onde vai este saite-blog?'
       />
       <Sobre components={overrideComponents} />
       <div className={styles.mdxrodape}></div>
