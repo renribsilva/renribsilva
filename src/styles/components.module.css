@@ -8,7 +8,7 @@
   align-items: center; 
   display:flex;
   gap: 15px;
-  min-width: 340px;
+  min-width: 320px;
   position:fixed;
   top: 0;
   /* margin-left: 5px; */
@@ -108,7 +108,7 @@
   list-style-type: none;
   padding: 0;
   /* height: 130px; */
-  min-width: 340px;
+  min-width: 320px;
   width: 190px;
   display: flex;
   flex-direction: column; /* Organiza os <li> em uma coluna */
