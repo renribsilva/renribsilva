@@ -70,7 +70,7 @@
 
 .ul hr {
   border: none;
-  border-top: 1px solid var(--hr);
+  border-top: 1px solid var(--subtitle);
   margin-top: 20px;
   margin-bottom: 20px;
   /* margin: 0; */
