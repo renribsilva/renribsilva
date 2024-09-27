@@ -25,7 +25,18 @@
   grid-row-end: 4;
 }
 
-/* .li_navbar {} */
+.li_navbar {
+  /* background-color: aqua; */
+  position: fixed;
+  width: 190px;
+  top: 260px
+}
+
+.li_header_menu {
+  /* background-color: cadetblue; */
+  width: 190px;
+  position: fixed;
+}
 
 .li_socials_footer {
   /* background-color: rgb(219, 108, 169); */
@@ -69,11 +80,14 @@
     justify-content: space-between;
     margin-right: 25px;
     align-items: center;
+    width: inherit;
+    position: inherit;
   }
   
   .li_navbar {
     /* background-color: rgb(48, 95, 136); */
     width: 100%;
+    position: inherit;
     /* right: 145px; */
     /* top: 75px; */
   }
