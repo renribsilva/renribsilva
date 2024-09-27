@@ -181,7 +181,7 @@
 
 @media (max-width: 1080px) {
   .socials {
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
     justify-content: center;
     height: auto;
     margin: 0;
@@ -264,7 +264,7 @@
 .menu {
   /* background-color: aqua; */
   display: none;
-  gap: 15px;
+  gap: 20px;
   margin-right: 15px;
   justify-content: right;
 }

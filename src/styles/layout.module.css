@@ -44,9 +44,6 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
-    /* grid-template-columns: 1fr 70px 200px; */
-    /* min-width: 360px; */
-    /* margin-top: 60px; */
   }
   
   /* Estilo base para os itens */
@@ -70,8 +67,7 @@
     display: flex;
     order: 0;
     justify-content: space-between;
-    margin-right: 15px;
-    align-items: center;
+    margin-right: 25px;
   }
   
   .li_navbar {
@@ -82,7 +78,7 @@
   }
   
   .li_socials_footer {
-    background-color: rgb(219, 108, 169);
+    /* background-color: rgb(219, 108, 169); */
     width: auto;
     display: flex;
     justify-content: space-between;
