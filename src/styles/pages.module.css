@@ -97,7 +97,7 @@
 /*botão-link para posts*/
 
 .linkbutton {
-  background-color: aquamarine;
+  /* background-color: aquamarine; */
   height: 80px;
   display: flex;
   align-items: center;

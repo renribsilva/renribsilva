@@ -113,10 +113,11 @@
   display: flex;
   flex-direction: column; /* Organiza os <li> em uma coluna */
   justify-content: center; /* Centraliza os <li> verticalmente */
+  margin-top: 25px;
 }
 
 .navbar li {
-  /* background-color: aqua; */
+  /* background-color: rgb(0, 255, 42); */
   margin-left: 5px;
 }
 
