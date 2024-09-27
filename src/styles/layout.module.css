@@ -2,7 +2,7 @@
   /* background-color: antiquewhite; */
   display: grid;
   grid-template-columns: 1fr 70px 200px;
-  min-width: 412px;
+  min-width: 360px;
   margin-top: 60px;
 }
 
