@@ -43,6 +43,7 @@
     /* background-color: antiquewhite; */
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
     /* grid-template-columns: 1fr 70px 200px; */
     /* min-width: 360px; */
     /* margin-top: 60px; */
@@ -100,7 +101,7 @@
 /*******************************************/
 
 .layout_mdx {
-  margin-right: 5px;
+  margin-right: 20px;
 }
 
 .layout_mdxrodape {
