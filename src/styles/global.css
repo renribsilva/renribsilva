@@ -68,7 +68,7 @@ a:hover {
 
 @media (max-width: 1080px) {
   :root, html {
-    margin-right: 15px;
+    margin-right: 20px;
     margin-left: 15px;
     margin-top: 15px;
   }
