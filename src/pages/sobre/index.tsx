@@ -1,7 +1,7 @@
 import Head from "next/head";
-import Sobre from "../../content/others/sobre.mdx";
+import Sobre from "../../components/mdx/sobre.mdx";
 import Titles from "../../components/titles";
-import styles from "../../styles/mdx.module.css"
+import styles from "../../styles/pages.module.css"
 
 // Componente personalizado para <p>
 function CustomP({ children }) {
@@ -31,7 +31,7 @@ export default function About() {
         h2Text='De onde veio, como foi feito e para onde vai este saite-blog?'
       />
       <Sobre components={overrideComponents} />
-      <div className={styles.mdxrodape}></div>
+      <div className={styles.sobre_mdxrodape}></div>
     </>
   );
 }

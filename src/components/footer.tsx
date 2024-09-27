@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "../styles/footer.module.css";
+import styles from "../styles/components.module.css";
 
 const currentYear = new Date().getFullYear();
 
@@ -17,25 +17,27 @@ const linkprops = {
 export default function Footer() {
   return (
     <footer className={styles.footer}>
-      <p>
-        renribsilva © {currentYear}
-      </p>
-      <p>
-        criado com:{" "}
-        <Link href={linkfooter[0].href} target={linkprops.blank} rel={linkprops.rel}>
-          {linkfooter[0].label}
-        </Link>
-        {" e "}
-        <Link href={linkfooter[1].href} target={linkprops.blank} rel={linkprops.rel}>
-          {linkfooter[1].label}
-        </Link>
-      </p>
-      <p>
-        layout modelo:{" "}
-        <Link href={linkfooter[2].href} target={linkprops.blank} rel={linkprops.rel}>
-          {linkfooter[2].label}
-        </Link>
-      </p>
+      <div>
+        <p>
+          renribsilva © {currentYear}
+        </p>
+        <p>
+          criado com:{" "}
+          <Link href={linkfooter[0].href} target={linkprops.blank} rel={linkprops.rel}>
+            {linkfooter[0].label}
+          </Link>
+          {" e "}
+          <Link href={linkfooter[1].href} target={linkprops.blank} rel={linkprops.rel}>
+            {linkfooter[1].label}
+          </Link>
+        </p>
+        <p>
+          layout modelo:{" "}
+          <Link href={linkfooter[2].href} target={linkprops.blank} rel={linkprops.rel}>
+            {linkfooter[2].label}
+          </Link>
+        </p>
+      </div>
     </footer>
   );
 }

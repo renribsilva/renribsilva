@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import styles from "../styles/titles.module.css"
+import styles from "../styles/components.module.css"
 
 interface Texts {
   h1Text?: string; // Torna h1Text opcional

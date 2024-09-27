@@ -1,5 +1,5 @@
 import Head from "next/head"
-import styles from "../styles/mdx.module.css"
+import styles from "../styles/layout.module.css"
 
 export default function MdxLayout({ children }: { children: React.ReactNode }) {
   // Create any shared layout or styles here
@@ -8,8 +8,8 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
       <Head>
         <title>Textos | Petricor</title>
       </Head>
-      <div className={styles.mdx}>{children}</div>
-      <div className={styles.mdxrodape}></div>
+      <div>{children}</div>
+      <div className={styles.layout_mdxrodape}></div>
     </>
   )
 }

@@ -49,10 +49,10 @@ a:hover {
   font-size: 0.8em;
 }
 
-@media (max-width: 1016px) or (max-height: 500px) {
+@media (max-width: 1080px) {
   :root, html {
-    margin-inline: 5px;
-    margin-top: 5px;
+    margin-inline: 15px;
+    margin-top: 15px;
   }
 }
 

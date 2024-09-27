@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHouse, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faHouse, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import styles from "../styles/components.module.css";
 
@@ -9,11 +9,13 @@ import styles from "../styles/components.module.css";
 const topbar = {
   fasun: faSun,
   famoon: faMoon,
+  fabars: faBars,
   altsun: "ícone do sol, para definir o tema claro",
   altmoon: "ícone da lua, para definir o tema escuro",
+  altbars: "ícone de barras, que expande uma seção de navegação"
 };
 
-export default function Topbar () {
+export default function Menu({ toggleNavbar }) {
   const [mounted, setMounted] = useState(false);
   const { resolvedTheme, setTheme } = useTheme();
 
@@ -32,14 +34,9 @@ export default function Topbar () {
 
   return (
     <section>
-      {/* Link para a home */}
-      <div className={styles.topbar}>
-        <div className={styles.topbar_home}>
-          <Link href="/" aria-label="Página inicial">
-            <FontAwesomeIcon icon={faHouse} />
-          </Link>
-        </div>
-        <div className={styles.topbar_theme}>
+      <div className={styles.menu}>
+        {/* Alterna entre tema claro e escuro */}
+        <div className={styles.menu_theme}>
           <Link
             href="#"
             onClick={toggleTheme}
@@ -53,6 +50,16 @@ export default function Topbar () {
               />
             </span>
           </Link>
+        </div>
+        {/* Alterna Navbar */}
+        <div className={styles.menu_bars}>
+          <span
+            onClick={toggleNavbar} // Ação de expandir/recolher Navbar
+            style={{ cursor: "pointer" }}
+            aria-label={topbar.altbars}
+          >
+            <FontAwesomeIcon icon={topbar.fabars} size="xl" />
+          </span>
         </div>
       </div>
     </section>

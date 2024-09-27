@@ -1,4 +1,8 @@
-.section {
+/*********************************************/
+/*************** LAYOUT_INDEX ****************/
+/*********************************************/
+
+.layout_i {
   /* background-color: antiquewhite; */
   display: grid;
   grid-template-columns: 1fr 70px 200px;
@@ -7,62 +11,95 @@
 }
 
 /* Estilo base para os itens */
-.main {
+.li_main {
   /* background-color: brown; */
   margin: 5px;
   grid-row-start: 1;
   grid-row-end: 4;
 }
 
-.space {
+.li_space {
   /* background-color: black; */
   margin: 5px;
   grid-row-start: 1;
   grid-row-end: 4;
 }
 
-.sidebar {
-  /* background-color: rgb(48, 95, 136); */
-  width: 190px;
-  position:fixed;
-  right: 145px;
-  top: 75px;
-}
+/* .li_navbar {} */
 
-.footer {
+.li_socials_footer {
   /* background-color: rgb(219, 108, 169); */
   width: 190px;
   position: fixed;
   right: 145px;
-  top: 530px
+  top: 445px
 }
 
 
 /* Estilos para empilhar ao fazer wrap */
-@media (max-width: 1016px) or (max-height: 500px) { 
-  .section {
+@media (max-width: 1080px) {
+
+  .layout_i {
+    /* background-color: antiquewhite; */
     display: flex;
     flex-direction: column;
-    margin-top: auto;
-  }
-
-  .sidebar {
-    order: 1;
-    position: unset;
-    width: auto;
+    /* grid-template-columns: 1fr 70px 200px; */
+    /* min-width: 360px; */
+    /* margin-top: 60px; */
   }
   
-  .main {
-    order: 2;
+  /* Estilo base para os itens */
+  .li_main {
+    /* background-color: brown; */
+    /* margin: 5px; */
+    /* grid-row-start: 1; */
+    /* grid-row-end: 4; */
+    order: 1;
   }
-
-  .footer {
-    order: 3;
-    position: unset;
-    width: auto;
-  }
-
-  .space {
+  
+  .li_space {
+    /* background-color: black; */
     margin: 0;
+    /* grid-row-start: 1; */
+    /* grid-row-end: 4; */
   }
+  
+  .li_header_menu {
+    /* background-color: azure; */
+    display: flex;
+    order: 0;
+    justify-content: space-between;
+    margin-right: 15px;
+    align-items: center;
+  }
+  
+  .li_navbar {
+    /* background-color: rgb(48, 95, 136); */
+    width: 100%;
+    /* right: 145px; */
+    /* top: 75px; */
+  }
+  
+  .li_socials_footer {
+    /* background-color: rgb(219, 108, 169); */
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    flex-direction: row-reverse;
+    position: relative;
+    right: inherit;
+    top: inherit;
+    order: 3;
+  }
+}
+
+/*******************************************/
+/*************** LAYOUT_MDX ****************/
+/*******************************************/
+
+.layout_mdxrodape {
+  /* background-color: black; */
+  height: 100px;
 }

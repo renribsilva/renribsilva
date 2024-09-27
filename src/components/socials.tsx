@@ -1,4 +1,4 @@
-import styles from "../styles/socials.module.css"
+import styles from "../styles/components.module.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faMastodon, faGithub, faBluesky } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
@@ -23,7 +23,7 @@ const SocialObjects = [
 
 export default function Socials () {
   return (
-    <ul className={styles.ul}>
+    <ul className={styles.socials}>
       {SocialObjects.map(({ ícone, link, alt }) => {
         return (
           <li key={link}>

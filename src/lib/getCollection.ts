@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { PostData, PostSlug, PostId } from '../mdxtypes'; // Importando os tipos
 
 // Diretório dos posts
-const postsDirectory = path.join(process.cwd(), '/src/content/posts');
+const postsDirectory = path.join(process.cwd(), '/src/content');
 
 // Função para pegar dados dos posts, ordenados
 export function getSortedPostsData(): PostData[] {

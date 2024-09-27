@@ -2,8 +2,6 @@ import Link from "next/link";
 
 interface LinkButtonProps {
   href?: string;
-  className?: string;
-  title?: string;
   ariaLabel?: string;
   disabled?: boolean;
   children: React.ReactNode;
@@ -11,32 +9,17 @@ interface LinkButtonProps {
 
 export default function Linkbutton({
   href,
-  className = "",
-  title = "",
-  ariaLabel = "",
+  ariaLabel = "seta à direita, que envia para todos os textos",
   disabled = false,
   children
 }: LinkButtonProps) {
   return (
-    <>
+    <div>
       {disabled ? (
-        <span
-          className={`group inline-block ${className}`}
-          title={title}
-          aria-disabled={disabled}
-        >
-          {children}
-        </span>
+        <span aria-disabled={disabled} >{children}</span>
       ) : (
-        <Link
-          href={href}
-          className={`group inline-block hover:text-skin-accent ${className}`}
-          aria-label={ariaLabel}
-          title={title}
-        >
-          {children}
-        </Link>
+        <Link href={href} aria-label={ariaLabel} >{children}</Link>
       )}
-    </>
+    </div>
   );
 }

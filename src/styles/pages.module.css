@@ -1,0 +1,259 @@
+/***************************************/
+/**************** INDEX ****************/
+/***************************************/
+
+/*texto do index*/
+
+.index_mdx {
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+/*lista de textos recentes*/
+
+.recents_ul {
+  /* background-color: aqua; */
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 15px;
+}
+
+/*título dos texto*/
+
+.recents_ul h1 {
+  /* background-color: beige; */
+  align-items: center;
+  text-decoration: none;
+  color: var(--accent);
+  min-height: 25px;
+  height: auto;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.recents_ul a {
+  text-decoration: none;
+}
+
+/*data de criação do texto*/
+
+.recents_ul div {
+  /* background-color: cornflowerblue; */
+  display: flex;
+  gap: 10px;
+  min-height: 25px;
+  height: auto;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+}
+
+.recents_ul div :nth-child(1),
+.recents_ul div :nth-child(2),
+.recents_ul div :nth-child(3) {
+  /* background-color: rgb(100, 237, 157); */
+  font-style: italic;
+  color: var(--subtitle);
+  width: max-content;
+}
+
+/*descrição do post*/
+
+.recents_ul p {
+  /* background-color: crimson; */
+  color: var(--foreground);
+  min-height: 25px;
+  height: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Remove as margens padrão entre os elementos */
+
+.recents_ul li h1,
+.recents_ul li p {
+  margin: 0;
+  padding: 0; 
+}
+
+/*linha de separação entre os posts*/
+
+.recents_ul hr {
+  border: none;
+  border-top: 1px solid var(--subtitle);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* margin: 0; */
+  /* background-color: black; */
+}
+
+.recents_ul h1:hover {
+  text-decoration: 2px underline dashed var(--accent); /* Adiciona uma linha tracejada na parte inferior */
+}
+
+/*botão-link para posts*/
+
+.linkbutton {
+  /* background-color: aquamarine; */
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.linkbutton a:hover .arrow *{
+  color: var(--accent); /* Aplica a cor ao ícone no hover */
+}
+
+.arrow {
+  max-width: 20px;
+  margin-left: 15px;
+}
+
+/******************************************************/
+/**************** TEXTOS e RECHETEGUES ****************/
+/******************************************************/
+
+/* INDEX */
+
+.txt_index section {
+  /* background-color: aquamarine; */
+  display: flex;
+  align-items:baseline;
+}
+
+.txt_index ul{
+  /* background-color: aqua; */
+  list-style-type: none;
+  height: fit-content;
+}
+
+.txt_index li {
+  /* background-color:brown; */
+  display: flex;
+  gap: 15px;
+}
+
+.txt_index a {
+  text-decoration: none;
+}
+
+.txt_index li :first-child {
+  color: var(--subtitle);
+}
+
+/* [SLUG] */
+
+.txt_slug_title {
+  /* background-color: beige; */
+  display: flex;
+  align-items: center;
+  margin: 0;
+  color: var(--accent);
+  margin-top: 15px;
+}
+
+.txt_slug_date {
+  /* background-color: aquamarine; */
+  display: flex;
+  gap: 15px;
+  font-style: italic;
+  height: 70px;
+  min-width: max-content;
+}
+
+/*********************************************/
+/**************** RECHETEGUES ****************/
+/*********************************************/
+
+.rec_index section {
+  /* background-color: aquamarine; */
+  display: flex;
+  align-items:baseline;
+}
+
+.rec_index ul{
+  /* background-color: aqua; */
+  list-style-type: none;
+  height: fit-content;
+}
+
+.rec_index li {
+  /* background-color:brown; */
+  display: flex;
+  gap: 15px;
+}
+
+.rec_index a {
+  text-decoration: none;
+}
+
+.rec_index li :first-child {
+  color: var(--subtitle);
+}
+
+/****************************************/
+/**************** LÉXICO ****************/
+/****************************************/
+
+/* INDEX */
+
+.lexico ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.lexico ul * {
+  text-decoration: none;
+}
+
+.lexico div {
+  background-color: var(--hr);
+  height: 160px;  
+  width: 230px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lexico a :hover {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* SLUG */
+
+.lexicoslug {
+  margin-top: 25px;
+}
+
+.lexicoslug h1, .lexicoslug p {
+  /* background-color: rgb(175, 40, 40); */
+  margin: 0;
+  padding: 0;
+}
+
+.lexicoslug h1 {
+  font-size:x-large
+}
+
+.lexicoslug :first-child :nth-child(2) * {
+  color: var(--subtitle);
+  font-style: italic;
+  height: 60px;
+}
+
+/**************************************/
+/*************** SOBRE ****************/
+/**************************************/
+
+.sobre_mdxrodape {
+  /* background-color: black; */
+  height: 100px;
+}

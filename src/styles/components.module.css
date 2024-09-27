@@ -1,0 +1,304 @@
+/****************************************/
+/**************** TOPBAR ****************/
+/****************************************/
+
+.topbar {
+  /* background-color: aqua; */
+  height: 70px;
+  align-items: center; 
+  display:flex;
+  gap: 15px;
+  min-width: 360px;
+  position:fixed;
+  top: 0;
+  /* margin-left: 5px; */
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+.topbar_home {
+  font-size: 22px;
+  margin-left: 10px;
+}
+
+.topbar a:hover * {
+  color: var(--accent);
+}
+
+@media (max-width: 1080px) {
+  .topbar {
+    display: none;
+  }
+}
+
+/***************************************/
+/*************** HEADER ****************/
+/***************************************/
+
+.header {
+  /* background-color: rgb(255, 252, 72); */
+  transform: rotate(90deg); /* Usa transform para rotacionar */
+  transform-origin: right left;
+  height: 190px;
+  width: 190px;
+  display:flex;
+  align-items: flex-end;
+  text-align: center;
+}
+
+.header div {
+  background-color: var(--accent);
+  color: var(--background);
+  width: 190px;
+  transition: padding 1s;
+  font-weight:bold;
+  padding-bottom: 6px;
+}
+
+.header a {
+  /* background-color: chartreuse; */
+  text-decoration: none;
+  font-size:35px;
+  line-height: 60px;
+}
+
+.header a :hover {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+@media (max-width: 1080px) {  
+  .header {
+    /* background-color: rgb(44, 82, 116); */
+    transform: none;
+    height: auto;
+    display: flex;
+    width: 100%;
+  }
+
+  .header div {
+    background-color: inherit;
+    color: inherit;
+  }
+
+  .header a :hover {
+    padding-bottom: 6px;
+    padding-top: 0;
+    background-color: transparent;
+    color: var(--accent);
+  }
+}
+
+/****************************************/
+/*************** NAVBAR ****************/
+/****************************************/
+
+.navbar {
+  /* background-color: rgb(110, 194, 121); */
+  display: flex;
+  line-height: 27.5px;
+  overflow: hidden;
+  height: 180px;
+}
+
+.navbar ul {
+  /* background-color: cornflowerblue; */
+  list-style-type: none;
+  padding: 0;
+  /* height: 130px; */
+  min-width: 360px;
+  width: 190px;
+  display: flex;
+  flex-direction: column; /* Organiza os <li> em uma coluna */
+  justify-content: center; /* Centraliza os <li> verticalmente */
+}
+
+.navbar li {
+  /* background-color: aqua; */
+  margin-left: 5px;
+}
+
+@media (max-width: 1080px) {
+  .navbar {
+    height: auto;
+  }
+}
+
+/****************************************/
+/*************** SOCIALS ****************/
+/****************************************/
+
+.socials {
+  /* background-color: antiquewhite; */
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  margin: 5px 0;
+  height: 50px;
+  align-items: center;
+  gap: 7px;
+}
+
+.socials li {
+  /* background-color:aqua; */
+  width: 22.5px;
+  height: 22.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.socials li a {
+  /* background-color: brown; */
+  display: flex;
+  justify-content: center;
+}
+
+.socials li:nth-child(1) {
+  font-size: 20px;
+}
+
+.socials li:nth-child(2) {
+  font-size: 16px;
+}
+
+.socials li:nth-child(3) {
+  font-size: 18px;
+  margin-left: 2px;
+}
+
+
+.socials li:hover {
+  rotate: 10deg;
+}
+
+.socials li:hover a * {
+  color: var(--accent); /* Aplica a cor quando o li for hover */
+}
+
+@media (max-width: 1080px) {
+  .socials {
+    /* background-color: aquamarine; */
+    justify-content: center;
+    height: auto;
+    margin: 0;
+  }
+}
+
+/****************************************/
+/*************** FOOTER *****************/
+/****************************************/
+
+.footer {
+  /* background-color: burlywood; */
+  font-size:11px;
+}
+
+.footer div {
+  height: 80px;
+  align-content: center;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a:hover {
+  color: var(--accent);
+}
+
+@media (max-width: 1080px) {
+  .footer {
+    text-align: left;
+    /* margin-top: 40px; */
+    margin-left: 5px;
+    width: auto;
+  }
+
+  .footer div {
+    height: auto;
+  }
+}
+
+/******************************************/
+/*************** DATETIME *****************/
+/******************************************/
+
+.datetime {
+  display: none;
+}
+
+/****************************************/
+/*************** TITLES *****************/
+/****************************************/
+
+.titles {
+  /* background-color: aqua; */
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.titles h1, .titles h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.titles h1 {
+  font-size: 30px;
+} 
+
+.titles h2 {
+  font-weight: 50;
+  font-style: italic;
+  font-size: 16px;
+}
+
+/**************************************/
+/*************** MENU *****************/
+/**************************************/
+
+.menu {
+  /* background-color: aqua; */
+  display: none;
+  gap: 15px;
+  margin-right: 15px;
+  justify-content: right;
+}
+
+@media (max-width: 1080px) {
+  .menu {
+    display: flex;
+    width: 100%;
+    font-size: inherit;
+  }
+}
+
+
+/**************************************/
+/*************** MYHR *****************/
+/**************************************/
+
+.myhr {
+  display: none;
+}
+
+@media (max-width: 1080px) {
+  .myhr {
+    border: none;
+    border-top: 1px solid var(--subtitle); /* Linha fina usando a variável --subtitle */
+    margin: 1rem 0; /* Espaçamento opcional */
+    width: 100%; /* Largura total */
+    display: block;
+  }
+}
+
+/********************************************/
+/*************** LINKBUTTON *****************/
+/********************************************/
+
+.linkbutton {
+  gap: 10px;
+}

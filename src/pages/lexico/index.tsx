@@ -3,7 +3,7 @@ import { getPosts } from "../../lib/getDBData";
 import Titles from "../../components/titles";
 import Link from "next/link";
 import { NotionPage } from "../../notiontypes";
-import styles from "../../styles/lexico.module.css";
+import styles from "../../styles/pages.module.css";
 
 // Tipando o retorno da função getStaticProps
 export const getStaticProps = async () => {

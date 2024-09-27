@@ -3,7 +3,7 @@ import { getSortedPostsData, getPostData } from '../../lib/getCollection';
 import { PostData } from '../../mdxtypes'; // Importe o tipo Post
 import Datetime from '../../components/datetime';
 import Titles from '../../components/titles';
-import styles from "../../styles/textos.module.css"
+import styles from "../../styles/pages.module.css"
 
 interface GroupedPosts {
   [year: string]: PostData[];
@@ -42,7 +42,7 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
         h1Text='Textos' 
         h2Text='Todos os textos agrupados por ano'
       ></Titles>
-      <section className={styles.arquivo}>
+      <section className={styles.txt_index}>
         {Object.entries(groupedPosts)
           .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA)) // Ordena os anos em ordem decrescente
           .map(([year, posts]) => (

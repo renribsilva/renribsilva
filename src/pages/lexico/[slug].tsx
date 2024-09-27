@@ -2,7 +2,7 @@ import Head from "next/head";
 import { getPosts } from "../../lib/getDBData"; // Importa a função para obter os posts
 import { NotionPage } from "../../notiontypes";
 import { GetStaticPaths, GetStaticProps } from "next";
-import styles from "../../styles/lexico.module.css";
+import styles from "../../styles/pages.module.css";
 import Datetime from "../../components/datetime";
 
 // Função para gerar as rotas dinâmicas

@@ -4,7 +4,7 @@ import { getUniqueTags } from '../../lib/getCollection'; // Importe a função p
 import { PostData } from '../../mdxtypes'; // Importe o tipo Post
 import Datetime from '../../components/datetime';
 import Titles from '../../components/titles';
-import styles from "../../styles/textos.module.css"
+import styles from "../../styles/pages.module.css"
 
 interface GroupedPosts {
   [tag: string]: {
@@ -48,13 +48,13 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
   return (
     <>
       <Head>
-        <title>Textos | Petricor</title>
+        <title>Rechetegues | Petricor</title>
       </Head>
       <Titles 
         h1Text='Rechetegues' 
         h2Text='Todos os textos agrupados por #'
       />
-      <section className={styles.arquivo}>
+      <section className={styles.rec_index}>
         {Object.entries(groupedPosts)
           .sort(([, a], [, b]) => b.frequency - a.frequency) // Ordena as tags pela frequência em ordem decrescente
           .map(([tag, { posts }]) => (

@@ -1,5 +1,5 @@
 import type { MDXComponents } from 'mdx/types';
-import styles from '../src/styles/mdx.module.css';
+import styles from '../src/styles/mdx-components.module.css';
 
 // Este arquivo permite fornecer componentes React customizados
 // para serem usados em arquivos MDX, como o <hr>.

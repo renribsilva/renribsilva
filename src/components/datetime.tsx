@@ -1,4 +1,4 @@
-import styles from "../styles/index.module.css"
+import styles from "../styles/components.module.css"
 
 const LOCALE = {
   lang: "pt", // html lang code. Set this empty and default will be "en"
