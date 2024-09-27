@@ -51,8 +51,8 @@ a:hover {
 
 @media (max-width: 1016px) or (max-height: 500px) {
   :root, html {
-    margin-inline: 10px;
-    margin-top: 10px;
+    margin-inline: 5px;
+    margin-top: 5px;
   }
 }
 
