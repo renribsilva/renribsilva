@@ -100,6 +100,10 @@
   color: var(--accent); /* Aplica a cor ao ícone no hover */
 }
 
+.icon {
+  max-width: 20px;
+}
+
 /*texto do index*/
 
 .txt {
