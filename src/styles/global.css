@@ -49,6 +49,23 @@ a:hover {
   font-size: 0.8em;
 }
 
+.footnotes > ol {
+  /* background-color: aqua; */
+  padding: 0;
+  margin: 5px;
+}
+
+.footnotes > ol > li {
+  /* background-color: aqua; */
+  padding: 0;
+  margin: 5px;
+  justify-content: left;
+}
+
+.footnotes p {
+  margin-left: 0
+}
+
 @media (max-width: 1080px) {
   :root, html {
     margin-right: 15px;
