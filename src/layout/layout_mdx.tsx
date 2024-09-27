@@ -8,7 +8,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
       <Head>
         <title>Textos | Petricor</title>
       </Head>
-      <div>{children}</div>
+      <div className={styles.layout_mdx}>{children}</div>
       <div className={styles.layout_mdxrodape}></div>
     </>
   )

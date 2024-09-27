@@ -30,7 +30,9 @@ export default function About() {
         h1Text='Sobre' 
         h2Text='De onde veio, como foi feito e para onde vai este saite-blog?'
       />
-      <Sobre components={overrideComponents} />
+      <div className={styles.sobre_mdx}>
+        <Sobre components={overrideComponents}/>
+      </div>
       <div className={styles.sobre_mdxrodape}></div>
     </>
   );

@@ -29,7 +29,6 @@ function Home({ posts }: HomeProps) {
       <Head>
         <title>Petricor</title>
       </Head>
-      <Myhr />
       <div className={styles.index_mdx}>
         <Index />
       </div>
@@ -62,7 +61,6 @@ function Home({ posts }: HomeProps) {
           <FontAwesomeIcon icon={faArrowRight} className={styles.arrow} />
         </Linkbutton>
       </section>
-      <Myhr />
     </>
   )
 }

@@ -39,10 +39,10 @@ a:hover {
   color: var(--accent);
 }
 
-* {
+/* * {
   background-color: var(--background);
   color: var(--foreground);
-}
+} */
 
 .footnotes {
   /* background-color: #f0f0f0; */
@@ -51,8 +51,9 @@ a:hover {
 
 @media (max-width: 1080px) {
   :root, html {
-    margin-inline: 15px;
-    margin-top: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
   }
 }
 

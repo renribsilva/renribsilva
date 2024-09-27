@@ -181,10 +181,11 @@
 
 @media (max-width: 1080px) {
   .socials {
-    /* background-color: aquamarine; */
+    background-color: aquamarine;
     justify-content: center;
     height: auto;
     margin: 0;
+    margin-right: 20px;
   }
 }
 

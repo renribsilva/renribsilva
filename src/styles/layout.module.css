@@ -81,7 +81,7 @@
   }
   
   .li_socials_footer {
-    /* background-color: rgb(219, 108, 169); */
+    background-color: rgb(219, 108, 169);
     width: auto;
     display: flex;
     justify-content: space-between;
@@ -98,6 +98,10 @@
 /*******************************************/
 /*************** LAYOUT_MDX ****************/
 /*******************************************/
+
+.layout_mdx {
+  margin-right: 5px;
+}
 
 .layout_mdxrodape {
   /* background-color: black; */

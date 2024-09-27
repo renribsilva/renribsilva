@@ -6,6 +6,7 @@ import Navbar from "../components/navbar";
 import Socials from "../components/socials";
 import Topbar from "../components/topbar";
 import styles from "../styles/layout.module.css";
+import Myhr from "../components/myhr";
 
 export default function LayoutIndex({ children }) {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false); // Estado para controlar o Navbar
@@ -34,7 +35,10 @@ export default function LayoutIndex({ children }) {
       <div>
         <Topbar />
         <section className={styles.layout_i}>
-          <main className={styles.li_main}>{children}</main>
+          <main className={styles.li_main}>
+            {children}
+            <Myhr />
+          </main>
           <div className={styles.li_space}></div>
           <div>
             <div className={styles.li_header_menu}>
@@ -53,6 +57,7 @@ export default function LayoutIndex({ children }) {
                 <span className={styles.lin_navbar}><Navbar /></span>
               </div>
             )}
+            <Myhr />
           </div>
           <div className={styles.li_socials_footer}>
             <span className={styles.lisf_socials}><Socials /></span>

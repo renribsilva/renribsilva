@@ -253,6 +253,10 @@
 /*************** SOBRE ****************/
 /**************************************/
 
+.sobre_mdx {
+  margin-right: 20px;
+}
+
 .sobre_mdxrodape {
   /* background-color: black; */
   height: 100px;
