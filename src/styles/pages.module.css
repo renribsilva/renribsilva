@@ -113,9 +113,9 @@
   margin-left: 15px;
 }
 
-/******************************************************/
-/**************** TEXTOS e RECHETEGUES ****************/
-/******************************************************/
+/***************************************/
+/**************** TEXTOS****************/
+/***************************************/
 
 /* INDEX */
 
@@ -137,9 +137,9 @@
   gap: 15px;
 }
 
-.txt_index a {
+/* .txt_index a {
   text-decoration: none;
-}
+} */
 
 .txt_index li :first-child {
   color: var(--subtitle);
@@ -194,9 +194,9 @@
   gap: 15px;
 }
 
-.rec_index a {
+/* .rec_index a {
   text-decoration: none;
-}
+} */
 
 .rec_index li :first-child {
   color: var(--subtitle);
