@@ -39,10 +39,10 @@ a:hover {
   color: var(--accent);
 }
 
-* {
+/* * {
   background-color: var(--background);
   color: var(--foreground);
-}
+} */
 
 .footnotes {
   /* background-color: #f0f0f0; */

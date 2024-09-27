@@ -145,6 +145,13 @@
   color: var(--subtitle);
 }
 
+@media (max-width: 1080px) {
+  .txt_index section{
+    /* background-color: aqua; */
+    display: block;
+  }
+}
+
 /* [SLUG] */
 
 .txt_slug_title {
@@ -195,6 +202,13 @@
   color: var(--subtitle);
 }
 
+@media (max-width: 1080px) {
+  .rec_index section{
+    /* background-color: aqua; */
+    display: block;
+  }
+}
+
 /****************************************/
 /**************** LÉXICO ****************/
 /****************************************/
@@ -225,6 +239,13 @@
 .lexico a :hover {
   color: var(--accent);
   font-weight: 600;
+}
+
+@media (max-width: 1080px) {
+  .lexico ul{
+    /* background-color: aqua; */
+    justify-content: center;
+  }
 }
 
 /* SLUG */
