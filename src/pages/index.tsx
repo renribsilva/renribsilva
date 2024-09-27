@@ -8,7 +8,6 @@ import Datetime from '../components/datetime';
 import Linkbutton from '../components/linkbutton';
 import Index from "../components/mdx/index.mdx"
 import { PostData } from '../mdxtypes';
-import Myhr from '../components/myhr';
 
 interface HomeProps {
   posts: PostData[]; // Define que posts é um array de PostData
@@ -42,7 +41,7 @@ function Home({ posts }: HomeProps) {
               <Link href={`/textos/${encodeURIComponent(post.slug)}`} legacyBehavior>
                 <h1>{post.title}{" "}</h1>
               </Link>
-              <div className={styles.date}>
+              <div>
                 <span>{<FontAwesomeIcon icon={faCalendar} />}</span>
                 <span>
                   <Datetime

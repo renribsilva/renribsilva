@@ -4,6 +4,8 @@ import { NotionPage } from "../../notiontypes";
 import { GetStaticPaths, GetStaticProps } from "next";
 import styles from "../../styles/pages.module.css";
 import Datetime from "../../components/datetime";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 
 // Função para gerar as rotas dinâmicas
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -75,7 +77,7 @@ const Post = ({ post }: PostProps) => {
         <div>
           <h1>{post.properties.Page.title[0].plain_text.replace(/-/g, '·')}</h1>
           <div>
-            <Datetime date={post.created_time}></Datetime>
+            <span><Datetime date={post.created_time}></Datetime></span>
           </div>
         </div>
         <div>
