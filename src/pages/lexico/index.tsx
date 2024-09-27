@@ -31,15 +31,7 @@ export default function Posts({ posts }: PostsProps) { // Adicionando a tipagem 
         h1Text='Léxico' 
         h2Text={
           <>
-            Inspirado na seção{" "} 
-            <Link 
-              href="https://www.nexojornal.com.br/lexico" 
-              target="_blank" 
-              rel="noopener noreferrer nofollow"
-            >
-              Léxico
-            </Link>
-            {" "}do jornal Nexo, este canto é onde eu brinco de pensar as palavras.
+            Pensando as palavras
           </>
         }
       />
