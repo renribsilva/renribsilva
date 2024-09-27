@@ -1,3 +1,5 @@
+import styles from "../styles/index.module.css"
+
 const LOCALE = {
   lang: "pt", // html lang code. Set this empty and default will be "en"
   langTag: ["pt-BR"], // BCP 47 Language Tags. Set this empty [] to use the environment default
@@ -60,7 +62,7 @@ export default function Datetime({ date, mod, showDayMonth }: DatetimeProps) {
   return (
     <div>
       {!showDayMonth && (
-        <span>{isModified ? "atualizado em: " : "criado em: "}</span>
+        <span className={styles.datetime}>{isModified ? "atualizado em: " : "criado em: "}</span>
       )}
       <span>
         <FormattedDatetime date={date} mod={mod} showDayMonth={showDayMonth} />
