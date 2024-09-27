@@ -97,11 +97,12 @@
 /*botão-link para posts*/
 
 .linkbutton {
-  /* background-color: aquamarine; */
+  background-color: aquamarine;
   height: 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 30px;
 }
 
 .linkbutton a:hover .arrow *{
