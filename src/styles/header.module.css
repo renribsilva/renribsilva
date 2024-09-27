@@ -86,7 +86,7 @@
     /* background-color: brown; */
     display: flex;
     flex-direction: row;
-    gap: 15px;
+    gap: 10px;
     justify-content: center;
     margin-top: 0;
     margin-bottom: 10px;
