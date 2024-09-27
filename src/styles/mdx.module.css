@@ -25,3 +25,40 @@
   color: var(--foreground);
   color: var(--subtitle);
 }
+
+.mdxcontent hr {
+  background-color: aqua;
+  height: 100px;
+}
+
+.customHr {
+  border: none;
+  border-top: 1px solid var(--subtitle);
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/* styles/mdx.module.css */
+html body div#__next section.layout_section__L3wa7 main.layout_main__y_SsR section.footnotes {
+  background-color: #f0f0f0; /* Exemplo de cor de fundo */
+  padding: 20px; /* Padding ao redor */
+  border-top: 2px solid var(--subtitle); /* Borda superior */
+}
+
+html body div#__next section.layout_section__L3wa7 main.layout_main__y_SsR section.footnotes ol {
+  margin: 0; /* Remover margens da lista */
+  padding-left: 20px; /* Espaçamento interno para a lista */
+}
+
+html body div#__next section.layout_section__L3wa7 main.layout_main__y_SsR section.footnotes li {
+  margin-bottom: 10px; /* Espaçamento entre itens de notas de rodapé */
+}
+
+html body div#__next section.layout_section__L3wa7 main.layout_main__y_SsR section.footnotes a {
+  color: aqua; /* Cor dos links nas notas de rodapé */
+  text-decoration: none; /* Remover sublinhado */
+}
+
+html body div#__next section.layout_section__L3wa7 main.layout_main__y_SsR section.footnotes a:hover {
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}

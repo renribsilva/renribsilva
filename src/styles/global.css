@@ -44,3 +44,8 @@ a:hover {
   color: var(--foreground);
 }
 
+.footnotes {
+  /* background-color: #f0f0f0; */
+  font-size: 0.8em;
+}
+

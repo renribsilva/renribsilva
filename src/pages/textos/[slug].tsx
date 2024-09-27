@@ -50,7 +50,7 @@ export default function Post({ postData }: PostProps) {
           <Datetime date={postData.date} mod={postData.mod} />
         </span>
       </div>
-      <div className={styles.mdxcontent}>
+      <div>
         <MDXRemote {...postData.content} />
       </div>
     </MdxLayout>

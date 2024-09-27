@@ -1,10 +1,9 @@
-import type { MDXComponents } from 'mdx/types'
- 
-// This file allows you to provide custom React components
-// to be used in MDX files. You can import and use any
-// React component you want, including inline styles,
-// components from other libraries, and more.
- 
+import type { MDXComponents } from 'mdx/types';
+import styles from '../src/styles/mdx.module.css';
+
+// Este arquivo permite fornecer componentes React customizados
+// para serem usados em arquivos MDX, como o <hr>.
+
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     // Personalizando <a> para abrir links em uma nova aba
@@ -13,6 +12,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         {children}
       </a>
     ),
+
+    // Personalizando <hr> usando styles
+    hr: (props) => <hr {...props} className={styles.customHr} />,
+
     ...components,
   };
 }
