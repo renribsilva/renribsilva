@@ -10,4 +10,4 @@ os textos podem ser adicionados criando um novo arquivo markdown em src/content/
 
 por meio de um executor, tal como o plugin [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) para o [VSCode](https://code.visualstudio.com/). isso deverá criar um arquivo 
 
-*post<number>.mdx
+* post<number>.mdx
