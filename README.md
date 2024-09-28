@@ -1,3 +1,3 @@
 # Olá
 
-Petricor é um sait-blog feito por um completo amador. 
+Petricor é um saite-blog feito por um completo amador. 
