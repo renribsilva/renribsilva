@@ -12,7 +12,7 @@ a qual pode ser excecutada por meio do plugin [CodeRunner](https://marketplace.v
 
 * src/content/post[number].mdx
 
-o qual apresentará um _frontmatter_, tal exemplificado abaixo
+o qual apresentará um _frontmatter_, tal como exemplificado abaixo
 
 ```
 ---
