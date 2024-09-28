@@ -35,20 +35,20 @@ Nele, deve-se alterar o título, o slug (endereço que aparece no navegor) e a d
 
 Para integrar com o Notion, é preciso
 
-  1. Criar uma [base de dados](https://www.notion.so/pt/help/create-a-database) no Notion com as seguintes variáveis
-    *Page
-    *Slug (texto)
-    *Published (caixa de checagem)
+  * Criar uma [base de dados](https://www.notion.so/pt/help/create-a-database) no Notion com as seguintes variáveis
+    1. Page
+    2. Slug (texto)
+    3. Published (caixa de checagem)
 
-  2. Gerar um [token](https://notion.com/my-integrations) no Notion e
-    * copiar e colar a chave em NOTION_TOKEN, no arquivo .env_ex
-    * renomear .env_ex para .env
-    * [permitir](https://www.notion.so/pt/help/add-and-manage-connections-with-the-api) que essa chave acesse sua base de dados no Notion (muito importante!)
+  * Gerar um [token](https://notion.com/my-integrations) no Notion e
+    1. copiar e colar a chave em NOTION_TOKEN, no arquivo .env_ex
+    2. renomear .env_ex para .env
+    3. [permitir](https://www.notion.so/pt/help/add-and-manage-connections-with-the-api) que essa chave acesse sua base de dados no Notion (muito importante!)
 
-  3. Obter o ID da base de dados do Notion, que pode ser feito de diferentes maneiras... uma delas é copiar o número que aparece no endereço do navegador, mas isso pode ser confuso e frustante. Um jeito mais fácil e certo que encontrei foi criar uma função que retorna esse valor sem muito custo. Para tanto, é necessário
-    * garantir que o IDE, como o VSCode, tenha meios de ler as variável de ambiente .env por meio de pacotes como o [dotenv](https://www.npmjs.com/package/dotenv) (ou usá-lo diretamente)
-    * ter um meio de visualizar o output das funções no console, como o [sucrase](https://www.npmjs.com/package/sucrase)
-    * executar a função src/lib/getNotionId.ts
-    * copiar e colar o valor à variável NOTION_DATABASE_ID em .env, já com esse nome.
+  * Obter o ID da base de dados do Notion, que pode ser feito de diferentes maneiras... uma delas é copiar o número que aparece no endereço do navegador, mas isso pode ser confuso e frustante. Um jeito mais fácil e certo que encontrei foi criar uma função que retorna esse valor sem muito custo. Para tanto, é necessário
+    1. garantir que o IDE, como o VSCode, tenha meios de ler as variável de ambiente .env por meio de pacotes como o [dotenv](https://www.npmjs.com/package/dotenv) (ou usá-lo diretamente)
+    2. ter um meio de visualizar o output das funções no console, como o [sucrase](https://www.npmjs.com/package/sucrase)
+    3. executar a função src/lib/getNotionId.ts
+    4. copiar e colar o valor à variável NOTION_DATABASE_ID em .env, já com esse nome.
 
     
