@@ -1,5 +1,6 @@
-import { Html, Head, Main, NextScript } from 'next/document'
-import IBMPlexMono from '../components/IBMPlexMono'
+import { Html, Head, Main, NextScript } from "next/document";
+import IBMPlexMono from "../components/IBMPlexMono";
+import React from "react";
 
 export default function Document() {
   return (
@@ -12,5 +13,5 @@ export default function Document() {
         <NextScript />
       </body>
     </Html>
-  )
+  );
 }

@@ -1,18 +1,18 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { PostData, PostSlug, PostId } from '../mdxtypes'; // Importando os tipos
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { PostData, PostSlug, PostId } from "../mdxtypes"; // Importando os tipos
 
 // Diretório dos posts
-const postsDirectory = path.join(process.cwd(), '/src/content');
+const postsDirectory = path.join(process.cwd(), "/src/content");
 
 // Função para pegar dados dos posts, ordenados
 export function getSortedPostsData(): PostData[] {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData: PostData[] = fileNames.map((fileName) => {
-    const id = fileName.replace(/\.mdx$/, ''); // Remove a extensão .mdx para obter o id
+    const id = fileName.replace(/\.mdx$/, ""); // Remove a extensão .mdx para obter o id
     const fullPath = path.join(postsDirectory, fileName);
-    const fileContents = fs.readFileSync(fullPath, 'utf8');
+    const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents); // Faz o parse do conteúdo com gray-matter
 
     return {

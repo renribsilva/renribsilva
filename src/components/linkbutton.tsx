@@ -1,4 +1,5 @@
 import Link from "next/link";
+import React from "react";
 
 interface LinkButtonProps {
   href?: string;
@@ -9,7 +10,7 @@ interface LinkButtonProps {
 
 export default function Linkbutton({
   href,
-  ariaLabel = "seta à direita, que envia para todos os textos",
+  ariaLabel = "",
   disabled = false,
   children
 }: LinkButtonProps) {

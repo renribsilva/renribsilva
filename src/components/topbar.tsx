@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import styles from "../styles/components.module.css";
+import React from "react";
 
 // Objeto com as configurações da topbar
 const topbar = {

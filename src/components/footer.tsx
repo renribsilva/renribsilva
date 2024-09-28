@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "../styles/components.module.css";
+import React from "react";
 
 const currentYear = new Date().getFullYear();
 
@@ -12,7 +13,7 @@ const linkfooter = [
 const linkprops = {
   blank: "_blank",
   rel:"noopener noreferrer nofollow"
-}
+};
 
 export default function Footer() {
   return (

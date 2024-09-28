@@ -4,8 +4,7 @@ import { NotionPage } from "../../notiontypes";
 import { GetStaticPaths, GetStaticProps } from "next";
 import styles from "../../styles/pages.module.css";
 import Datetime from "../../components/datetime";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
 
 // Função para gerar as rotas dinâmicas
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -19,8 +18,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = database.results.map((post: NotionPage) => ({
     params: { 
       slug: post.properties.Page.title[0].plain_text
-        .replace(/\s+/g, '') // Remove espaços
-        .replace(/-/g, '') // Remove hífens
+        .replace(/\s+/g, "") // Remove espaços
+        .replace(/-/g, "") // Remove hífens
         .toLowerCase() // Converte para minúsculas
     },
   }));
@@ -44,8 +43,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
   // Encontre o post correspondente ao slug
   const post = database.results.find((post: NotionPage) => {
     const postSlug = post.properties.Page.title[0].plain_text
-      .replace(/\s+/g, '') // Remove espaços
-      .replace(/-/g, '') // Remove hífens
+      .replace(/\s+/g, "") // Remove espaços
+      .replace(/-/g, "") // Remove hífens
       .toLowerCase(); // Converte para minúsculas
     return postSlug === slug; // Compare o slug formatado com o slug obtido da URL
   });
@@ -75,7 +74,7 @@ const Post = ({ post }: PostProps) => {
       </Head>
       <section className={styles.lexicoslug}>
         <div>
-          <h1>{post.properties.Page.title[0].plain_text.replace(/-/g, '·')}</h1>
+          <h1>{post.properties.Page.title[0].plain_text.replace(/-/g, "·")}</h1>
           <div>
             <span><Datetime date={post.created_time}></Datetime></span>
           </div>
@@ -84,7 +83,7 @@ const Post = ({ post }: PostProps) => {
           {post.properties.Slug.rich_text.map((item) => {
               return (
                 item.plain_text
-              )})
+              );})
           }
         </div>
       </section>

@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types"; 
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faHouse, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import styles from "../styles/components.module.css";
 
-// Objeto com as configurações da topbar
 const topbar = {
   fasun: faSun,
   famoon: faMoon,
@@ -27,7 +27,6 @@ export default function Menu({ toggleNavbar }) {
     return null;
   }
 
-  // Alterna entre tema claro e escuro
   const toggleTheme = () => {
     setTheme(resolvedTheme === "light" ? "dark" : "light");
   };
@@ -35,7 +34,6 @@ export default function Menu({ toggleNavbar }) {
   return (
     <section>
       <div className={styles.menu}>
-        {/* Alterna entre tema claro e escuro */}
         <div className={styles.menu_theme}>
           <Link
             href="#"
@@ -51,10 +49,9 @@ export default function Menu({ toggleNavbar }) {
             </span>
           </Link>
         </div>
-        {/* Alterna Navbar */}
         <div className={styles.menu_bars}>
           <span
-            onClick={toggleNavbar} // Ação de expandir/recolher Navbar
+            onClick={toggleNavbar}
             style={{ cursor: "pointer" }}
             aria-label={topbar.altbars}
           >
@@ -65,3 +62,8 @@ export default function Menu({ toggleNavbar }) {
     </section>
   );
 }
+
+// Validação de props
+Menu.propTypes = {
+  toggleNavbar: PropTypes.func.isRequired, // Adiciona validação para toggleNavbar
+};

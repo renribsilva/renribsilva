@@ -1,23 +1,24 @@
-import styles from "../styles/components.module.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import styles from "../styles/components.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMastodon, faGithub, faBluesky } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
+import React from "react";
 
 const SocialObjects = [
   {
     ícone: faMastodon, // Adicione a referência ao ícone aqui
-    alt: 'ícone do mastodon',
-    link: 'https://ursal.zone/@renribsilva',
+    alt: "ícone do mastodon",
+    link: "https://ursal.zone/@renribsilva",
   },
   {
     ícone: faBluesky, // Adicione a referência ao ícone aqui
-    alt: 'ícone do bluesky',
-    link: 'https://bsky.app/profile/renribsilva.ursal.zone.ap.brid.gy',
+    alt: "ícone do bluesky",
+    link: "https://bsky.app/profile/renribsilva.ursal.zone.ap.brid.gy",
   },
   {
     ícone: faGithub, // Adicione a referência ao ícone aqui
-    alt: 'ícone do github',
-    link: 'https://github.com/renribsilva',
+    alt: "ícone do github",
+    link: "https://github.com/renribsilva",
   },
 ];
 
@@ -31,8 +32,8 @@ export default function Socials () {
               <FontAwesomeIcon icon={ícone} size="lg" />
             </Link>
           </li>
-        )
+        );
       })}
     </ul>
-  )
+  );
 }

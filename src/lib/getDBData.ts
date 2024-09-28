@@ -6,7 +6,7 @@ import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints"
 const notion = new Client({ auth: NOTION_TOKEN });
 const databaseId = NOTION_DATABASE_ID;
 
-// Configurando o cache
+// Cache de 30s
 const cache = new NodeCache({ stdTTL: 30 }); 
 
 export async function getPosts(): Promise<QueryDatabaseResponse> {
@@ -14,7 +14,7 @@ export async function getPosts(): Promise<QueryDatabaseResponse> {
   const cachedPosts = cache.get<QueryDatabaseResponse>("posts");
 
   if (cachedPosts) {
-    console.log("Usando dados do cache");
+    // console.log("Usando dados do cache");
     return cachedPosts; // Retorna dados do cache se disponíveis
   }
 
@@ -22,7 +22,7 @@ export async function getPosts(): Promise<QueryDatabaseResponse> {
     const resPosts: QueryDatabaseResponse = await notion.databases.query({
       database_id: databaseId,
       filter: {
-        property: 'Published',
+        property: "Published",
         checkbox: {
           equals: true,
         },

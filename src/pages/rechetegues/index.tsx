@@ -1,10 +1,11 @@
-import Head from 'next/head';
-import { getSortedPostsData, getPostData } from '../../lib/getCollection'; 
-import { getUniqueTags } from '../../lib/getCollection'; // Importe a função para obter as tags
-import { PostData } from '../../mdxtypes'; // Importe o tipo Post
-import Datetime from '../../components/datetime';
-import Titles from '../../components/titles';
-import styles from "../../styles/pages.module.css"
+import Head from "next/head";
+import { getSortedPostsData, getPostData } from "../../lib/getCollection"; 
+import { getUniqueTags } from "../../lib/getCollection"; // Importe a função para obter as tags
+import { PostData } from "../../mdxtypes"; // Importe o tipo Post
+import Datetime from "../../components/datetime";
+import Titles from "../../components/titles";
+import styles from "../../styles/pages.module.css";
+import React from "react";
 
 interface GroupedPosts {
   [tag: string]: {

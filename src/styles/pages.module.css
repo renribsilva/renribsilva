@@ -72,30 +72,18 @@
 }
 
 /* Remove as margens padrão entre os elementos */
-
 .recents_ul li h1,
 .recents_ul li p {
   margin: 0;
   padding: 0; 
 }
 
-/*linha de separação entre os posts*/
-
-.recents_ul hr {
-  border: none;
-  border-top: 1px solid var(--subtitle);
-  margin-top: 20px;
-  margin-bottom: 20px;
-  /* margin: 0; */
-  /* background-color: black; */
-}
-
+/* Adiciona uma linha tracejada na parte inferior */
 .recents_ul h1:hover {
-  text-decoration: 2px underline dashed var(--accent); /* Adiciona uma linha tracejada na parte inferior */
+  text-decoration: 2px underline dashed var(--accent);
 }
 
 /*botão-link para posts*/
-
 .linkbutton {
   /* background-color: aquamarine; */
   height: 80px;
@@ -114,9 +102,9 @@
   margin-left: 15px;
 }
 
-/***************************************/
-/**************** TEXTOS****************/
-/***************************************/
+/****************************************/
+/**************** TEXTOS ****************/
+/****************************************/
 
 /* INDEX */
 
@@ -229,7 +217,7 @@
 }
 
 .lexico div {
-  background-color: var(--hr);
+  background-color: var(--subtitle);
   height: 160px;  
   width: 230px;
   display: flex;

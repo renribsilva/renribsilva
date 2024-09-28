@@ -7,6 +7,12 @@ import Socials from "../components/socials";
 import Topbar from "../components/topbar";
 import styles from "../styles/layout.module.css";
 import Myhr from "../components/myhr";
+import PropTypes from "prop-types";
+import React from "react";
+
+LayoutIndex.propTypes = {
+  children: PropTypes.node.isRequired, // Adiciona validação para 'children'
+};
 
 export default function LayoutIndex({ children }) {
   const [isNavbarOpen, setIsNavbarOpen] = useState(false); // Estado para controlar o Navbar

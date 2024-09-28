@@ -5,21 +5,18 @@
   --color-fill-light: rgb(250, 242, 234);
   --color-text-base-light: rgb(40, 39, 40);
   --color-accent-light: rgb(39, 96, 129);
-  --color-hr-ligth: rgb(222, 228, 238);
-  --color-subtitle-litgh: rgb(180, 159, 159);
+  --color-subtitle-litgh: rgb(187, 169, 136);
   
   --color-fill-dark: rgb(33, 39, 55); 
   --color-text-base-dark: rgb(234, 237, 243);
   --color-accent-dark: rgb(204, 71, 41);
-  --color-hr-dark: rgb(57, 56, 71);
-  --color-subtitle-dark: rgb(104, 92, 92);
+  --color-subtitle-dark: rgb(104, 99, 92);
 }
 
 [data-theme="dark"] {
   --background: var(--color-fill-dark);
   --foreground: var(--color-text-base-dark);
   --accent: var(--color-accent-dark);
-  --hr: var(--color-hr-dark);
   --subtitle: var(--color-subtitle-dark);
 }
 
@@ -27,7 +24,6 @@
   --background: var(--color-fill-light);
   --foreground: var(--color-text-base-light);
   --accent: var(--color-accent-light);
-  --hr: var(--color-hr-ligth);
   --subtitle: var(--color-subtitle-litgh)
 }
 

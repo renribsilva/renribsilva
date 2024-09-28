@@ -1,15 +1,16 @@
-import { getAllPostSlugs, getPostData } from '../../lib/getCollection';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
-import MdxLayout from '../../layout/layout_mdx';
-import Datetime from '../../components/datetime';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendar } from '@fortawesome/free-solid-svg-icons';
-import type { PostData, PostSlug } from '../../mdxtypes';
-import styles from "../../styles/pages.module.css"
+import { getAllPostSlugs, getPostData } from "../../lib/getCollection";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import MdxLayout from "../../layout/layout_mdx";
+import Datetime from "../../components/datetime";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
+import type { PostData, PostSlug } from "../../mdxtypes";
+import styles from "../../styles/pages.module.css";
+import React from "react";
 
 interface PostProps {
-  postData: Omit<PostData, 'content'> & {
+  postData: Omit<PostData, "content"> & {
     content: MDXRemoteSerializeResult; // Conteúdo serializado para MDXRemote
   };
 }

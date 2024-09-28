@@ -1,5 +1,6 @@
 import Link from "next/link";
-import styles from "../styles/components.module.css"
+import styles from "../styles/components.module.css";
+import React from "react";
 
 export default function Header () {
   return (
@@ -8,5 +9,5 @@ export default function Header () {
         <div>petricor</div>
       </Link>
     </header>
-  )
+  );
 }

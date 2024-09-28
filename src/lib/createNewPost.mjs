@@ -1,12 +1,12 @@
-import fs from 'fs';
-import matter from 'gray-matter';
-import path from 'path';
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
 
-// Função para obter os nomes dos arquivos
+// Função para obter os números dos arquivos
 export const getFileNames = async () => {
-  const postsDirectory = path.join(process.cwd(), 'src/content/posts');
+  const postsDirectory = path.join(process.cwd(), "src/content");
   const fileNames = fs.readdirSync(postsDirectory);
-  const postFiles = fileNames.filter(fileName => fileName.startsWith('post') && fileName.endsWith('.mdx'));
+  const postFiles = fileNames.filter(fileName => fileName.startsWith("post") && fileName.endsWith(".mdx"));
 
   const postNumbers = postFiles.map(fileName => {
     const match = fileName.match(/post(\d+)/);
@@ -14,7 +14,7 @@ export const getFileNames = async () => {
   }).filter(number => number !== null);
 
   return postNumbers;
-}
+};
 
 // Função para obter o próximo nome de arquivo de post
 const getNextPostFilename = async () => {
@@ -25,28 +25,28 @@ const getNextPostFilename = async () => {
   const filename = `post${nextPostNumber}.mdx`;
 
   return filename;
-}
+};
 
 // Função para gerar ID a partir do nome do arquivo
 const generateIdFromFileName = (fileName) => {
-  return fileName.replace(/\.mdx$/, ''); // Remove a extensão .mdx
-}
+  return fileName.replace(/\.mdx$/, ""); // Remove a extensão .mdx
+};
 
 // Função para gerar slug a partir do título
 const generateSlugFromTitle = (title) => {
   return title
-    .normalize('NFD')
+    .normalize("NFD")
     .toLowerCase() // Converte para minúsculas
-    .replace(/\s+/g, '-') // Substitui espaços por hífens
+    .replace(/\s+/g, "-") // Substitui espaços por hífens
     .replace(/[\u0300-\u036f]/g, "")
-    .replace(/--+/g, '-') // Substitui múltiplos hífens por um
+    .replace(/--+/g, "-") // Substitui múltiplos hífens por um
     .trim(); // Remove espaços no início e no final
-}
+};
 
 // Função para criar o arquivo MDX
 const createMDXFile = async (frontmatterData, content) => {
   const fileName = await getNextPostFilename();
-  const filePath = path.join(process.cwd(), 'src/content/posts', fileName);
+  const filePath = path.join(process.cwd(), "src/content", fileName);
 
   // Gera o ID a partir do nome do arquivo
   const id = generateIdFromFileName(fileName);
@@ -73,13 +73,13 @@ const createMDXFile = async (frontmatterData, content) => {
   }
 };
 
-// Exemplo de uso
+// Executa a função e cria um novo arquivo mdx
 createMDXFile({
-  title: 'Título do Novo Post',
+  title: "Título do Novo Post",
   date: new Date().toISOString(),
   mod: null,
   featured: false,
   draft: true,
   tags: [],
-  description: 'Descrição do novo post',
-}, 'Escreva aqui o conteúdo do post');
+  description: "Descrição do novo post",
+}, "Escreva o texto aqui");

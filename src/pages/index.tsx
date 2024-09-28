@@ -1,13 +1,14 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import { getSortedPostsData } from '../lib/getCollection';
-import styles from "../styles/pages.module.css"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowRight, faCalendar } from '@fortawesome/free-solid-svg-icons';
-import Datetime from '../components/datetime';
-import Linkbutton from '../components/linkbutton';
-import Index from "../components/mdx/index.mdx"
-import { PostData } from '../mdxtypes';
+import React from "react";
+import Head from "next/head";
+import Link from "next/link";
+import { getSortedPostsData } from "../lib/getCollection";
+import styles from "../styles/pages.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight, faCalendar } from "@fortawesome/free-solid-svg-icons";
+import Datetime from "../components/datetime";
+import Linkbutton from "../components/linkbutton";
+import Index from "../components/mdx/index.mdx";
+import { PostData } from "../mdxtypes";
 
 interface HomeProps {
   posts: PostData[]; // Define que posts é um array de PostData
@@ -22,7 +23,7 @@ export async function getStaticProps() {
   };
 }
  
-function Home({ posts }: HomeProps) {
+export default function Home({ posts }: HomeProps) {
   return (
     <>
       <Head>
@@ -55,13 +56,11 @@ function Home({ posts }: HomeProps) {
         </ul>
       </div>
       <section className={styles.linkbutton}>
-        <Linkbutton href="/textos/">
+        <Linkbutton href="/textos/" ariaLabel='seta à direita, que envia para todos os textos'>
           Todos os textos
           <FontAwesomeIcon icon={faArrowRight} className={styles.arrow} />
         </Linkbutton>
       </section>
     </>
-  )
+  );
 }
- 
-export default Home
