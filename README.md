@@ -14,6 +14,7 @@ a qual pode ser excecutada por meio do plugin [CodeRunner](https://marketplace.v
 
 o qual apresentará um _frontmatter_, tal exemplificado abaixo
 
+```
 ---
 id: post2
 slug: titulo-do-novo-post
@@ -25,6 +26,8 @@ draft: true
 tags: []
 description: Descrição do novo post
 ---
+Escreva o texto aqui
+```
 
 Nele, é recomendável alterar o título, o slug (endereço que aparece no navegor) e a descrição do post... acrescentar tags caso quiser e definir **false** para _draft_ quando o texto estiver pronto. E pluft! (_mod_ e _featured_ ainda estão processo de desenvolvimento, de modo que não servem para nada)
 
@@ -48,6 +51,6 @@ Para integrar com o Notion, é preciso
     * garantir que o IDE, como o VSCode, tenha meios de ler as variável de ambiente .env por meio de pacotes como o [dotenv](https://www.npmjs.com/package/dotenv) (ou usá-lo diretamente)
     * ter um meio de visualizar o output das funções no console, como o [sucrase](https://www.npmjs.com/package/sucrase)
     * executar a função src/lib/getNotionId.ts
-    * copiar e colar o valor à variável NOTION_DATABASE_ID em .env, já com esse nome
+    * copiar e colar o valor à variável NOTION_DATABASE_ID em .env, já com esse nome.
 
     
