@@ -43,7 +43,7 @@ Para integrar com o Notion, é preciso
   * Gerar um [token](https://notion.com/my-integrations) no Notion e
     1. copiar e colar a chave em NOTION_TOKEN, no arquivo .env_ex
     2. renomear .env_ex para .env
-    3. [permitir](https://www.notion.so/pt/help/add-and-manage-connections-with-the-api) que essa chave acesse sua base de dados no Notion (muito importante!)
+    3. [permitir](https://www.notion.so/pt/help/add-and-manage-connections-with-the-api) que essa chave acesse a base de dados criada no Notion (muito importante!)
 
   * Obter o ID da base de dados do Notion, que pode ser feito de diferentes maneiras... uma delas é copiar o número que aparece no endereço do navegador, mas isso pode ser confuso e frustante. Um jeito mais fácil e certo que encontrei foi criar uma função que retorna esse valor sem muito custo. Para tanto, é necessário
     1. ter um meio de visualizar o output das funções no console, como o [sucrase](https://www.npmjs.com/package/sucrase)
