@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getNotionPosts } from "../../lib/getDBData"; // Importa a função para obter os posts
+import { getNotionPosts } from "../../lib/getNotionPosts"; // Importa a função para obter os posts
 import { NotionPage } from "../../notiontypes";
 import { GetStaticPaths, GetStaticProps } from "next";
 import styles from "../../styles/pages.module.css";
