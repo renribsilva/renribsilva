@@ -29,7 +29,7 @@ description: Descrição do novo post
 Escreva o texto aqui
 ```
 
-Nele, é recomendável alterar o título, o slug (endereço que aparece no navegor) e a descrição do post... acrescentar tags caso quiser e definir **false** para _draft_ quando o texto estiver pronto. E pluft! (_mod_ e _featured_ ainda estão processo de desenvolvimento, de modo que não servem para nada)
+Nele, deve-se alterar o título, o slug (endereço que aparece no navegor) e a descrição do post... acrescentar tags caso quiser e definir **false** para _draft_ quando o texto estiver pronto. E pluft! (_mod_ e _featured_ ainda estão processo de desenvolvimento, de modo que não servem para nada)
 
 ## fazer a integração com o Notion
 
