@@ -14,7 +14,7 @@ por meio de um executor, tal como o plugin [CodeRunner](https://marketplace.visu
 
 o qual terá o seguinte _frontmatter_
 
-`---
+```---
 id: post2
 slug: titulo-do-novo-post
 title: Título do Novo Post
@@ -25,4 +25,4 @@ draft: true
 tags: []
 description: Descrição do novo post
 ---
-Escreva o texto aqui`
+Escreva o texto aqui```
