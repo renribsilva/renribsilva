@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getNotionPosts } from "../../lib/getDBData";
+import { getNotionPosts } from "../../lib/getNotionPosts";
 import Titles from "../../components/titles";
 import Link from "next/link";
 import { NotionPage } from "../../notiontypes";
