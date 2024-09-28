@@ -40,8 +40,6 @@ Para integrar com o Notion, é preciso
     *Slug (texto)
     *Published (caixa de checagem)
 
-    ![tabela](./public/table_ex.png)
-
   2. Gerar um [token](https://notion.com/my-integrations) no Notion e
     * copiar e colar a chave em NOTION_TOKEN, no arquivo .env_ex
     * renomear .env_ex para .env
