@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getPosts } from "../../lib/getDBData";
+import { getNotionPosts } from "../../lib/getDBData";
 import Titles from "../../components/titles";
 import Link from "next/link";
 import { NotionPage } from "../../notiontypes";
@@ -8,7 +8,7 @@ import React from "react";
 
 // Tipando o retorno da função getStaticProps
 export const getStaticProps = async () => {
-  const database = await getPosts(); // Obtendo os posts do Notion
+  const database = await getNotionPosts(); // Obtendo os posts do Notion
 
   return {
     props: {

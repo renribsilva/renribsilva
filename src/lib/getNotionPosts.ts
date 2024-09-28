@@ -9,7 +9,7 @@ const databaseId = NOTION_DATABASE_ID;
 // Cache de 30s
 const cache = new NodeCache({ stdTTL: 30 }); 
 
-export async function getPosts(): Promise<QueryDatabaseResponse> {
+export async function getNotionPosts(): Promise<QueryDatabaseResponse> {
   // Tenta obter os posts do cache
   const cachedPosts = cache.get<QueryDatabaseResponse>("posts");
 
@@ -19,7 +19,7 @@ export async function getPosts(): Promise<QueryDatabaseResponse> {
   }
 
   try {
-    const resPosts: QueryDatabaseResponse = await notion.databases.query({
+    const resNotionPosts: QueryDatabaseResponse = await notion.databases.query({
       database_id: databaseId,
       filter: {
         property: "Published",
@@ -36,11 +36,11 @@ export async function getPosts(): Promise<QueryDatabaseResponse> {
     });
 
     // Armazena os posts no cache
-    cache.set("posts", resPosts);
+    cache.set("posts", resNotionPosts);
 
     // console.dir(resPosts, { depth: null, colors: true });
 
-    return resPosts; // Retornando a resposta completa
+    return resNotionPosts; // Retornando a resposta completa
   } catch (error) {
     console.error("Erro ao buscar posts:", error);
   }

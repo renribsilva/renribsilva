@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getPosts } from "../../lib/getDBData"; // Importa a função para obter os posts
+import { getNotionPosts } from "../../lib/getDBData"; // Importa a função para obter os posts
 import { NotionPage } from "../../notiontypes";
 import { GetStaticPaths, GetStaticProps } from "next";
 import styles from "../../styles/pages.module.css";
@@ -8,7 +8,7 @@ import React from "react";
 
 // Função para gerar as rotas dinâmicas
 export const getStaticPaths: GetStaticPaths = async () => {
-  const database = await getPosts();
+  const database = await getNotionPosts();
   
   // Verifica se a consulta retornou resultados
   if (!database || !database.results) {
@@ -33,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 // Função para obter os dados do post baseado no slug
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params!; // Obtém o slug dos parâmetros
-  const database = await getPosts();
+  const database = await getNotionPosts();
   
   // Verifica se a consulta retornou resultados
   if (!database || !database.results) {
