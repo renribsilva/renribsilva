@@ -1,72 +1,105 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/components.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 
 const LOCALE = {
-  lang: "pt", // html lang code. Set this empty and default will be "en"
-  langTag: ["pt-BR"], // BCP 47 Language Tags. Set this empty [] to use the environment default
+  lang: "pt",
+  langTag: "pt-BR",
 } as const;
 
-// Define a interface para as props do componente FormattedDatetime
 interface FormattedDatetimeProps {
-  date: string; // ou Date
-  mod?: string; // Torna 'mod' opcional
-  showDayMonth?: boolean; // Nova propriedade opcional
+  date: string;
+  short?: boolean;
+  semishort?: boolean;
 }
 
-// Componente FormattedDatetime
-const FormattedDatetime: React.FC<FormattedDatetimeProps> = ({ date, mod, showDayMonth }) => {
-  const myDatetime = new Date(mod && new Date(mod) > new Date(date) ? mod : date);
-  
-  // Formatação para DD-MM
-  const dayMonth = myDatetime.toLocaleDateString(LOCALE.langTag, {
+interface DatetimeProps {
+  date: string;
+  short?: boolean;
+  semishort?: boolean;
+}
+
+// Objeto para opções de formatação de tempo
+const timeOptions: Intl.DateTimeFormatOptions = {
+  hour: "2-digit",
+  minute: "2-digit",
+};
+
+// Objeto para opções de formatação de data completa
+const fullDateOptions: Intl.DateTimeFormatOptions = {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+};
+
+// Objeto para opções de formatação semishort
+const semiShortDateOptions: Intl.DateTimeFormatOptions = {
+  year: "numeric",
+  month: "long",
+  day: "2-digit",
+};
+
+const FormattedDatetime = ({ date, short, semishort }: FormattedDatetimeProps) => {
+  const parsedDate = new Date(date);
+
+  const formattedDayMonth = parsedDate.toLocaleDateString(LOCALE.langTag, {
     day: "2-digit",
     month: "2-digit",
   });
 
-  // Formatação padrão para data e hora
-  const mydate = myDatetime.toLocaleDateString(LOCALE.langTag, {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-
-  const mytime = myDatetime.toLocaleTimeString(LOCALE.langTag, {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
+  const formattedDayMonthYear = parsedDate.toLocaleDateString(LOCALE.langTag, semiShortDateOptions);
+  const formattedFullDate = parsedDate.toLocaleDateString(LOCALE.langTag, fullDateOptions);
+  const formattedTime = parsedDate.toLocaleTimeString(LOCALE.langTag, timeOptions);
 
   return (
     <span>
-      {showDayMonth ? (
-        <time dateTime={myDatetime.toISOString()}>{dayMonth}</time>
+      {short ? (
+        <time dateTime={parsedDate.toISOString()}>{formattedDayMonth}</time>
+      ) : semishort ? (
+        <time dateTime={parsedDate.toISOString()}>{formattedDayMonthYear}</time>
       ) : (
         <>
-          <time dateTime={myDatetime.toISOString()}>{mydate}</time>
+          <time dateTime={parsedDate.toISOString()}>{formattedFullDate}</time>
           <span aria-hidden="true"> às </span>
-          <span>{mytime}</span>
+          <span>{formattedTime}</span>
         </>
       )}
     </span>
   );
 };
 
-// Define a interface para as props do componente Datetime
-interface DatetimeProps {
-  date: string; // ou Date
-  mod?: string; // Torna 'mod' opcional
-  showDayMonth?: boolean; // Nova propriedade opcional
-}
+export default function Datetime({ date, short }: DatetimeProps) {
+  const [semishort, setSemishort] = useState<boolean>(false);
 
-export default function Datetime({ date, mod, showDayMonth }: DatetimeProps) {
-  const isModified = mod && new Date(mod) > new Date(date); // Comparação direta para evitar problemas
-  
+  useEffect(() => {
+    // Verifica se o objeto window está disponível
+    const handleResize = () => {
+      if (typeof window !== "undefined") {
+        setSemishort(window.innerWidth < 1080);
+      }
+    };
+
+    // Chama a função uma vez na montagem do componente
+    handleResize();
+
+    // Adiciona o listener de resize
+    window.addEventListener("resize", handleResize);
+
+    // Remove o listener ao desmontar o componente
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const showCreatedText = !short && !semishort;
+
   return (
-    <div>
-      {!showDayMonth && (
-        <span className={styles.datetime}>{isModified ? "atualizado em: " : "criado em: "}</span>
-      )}
+    <div className={styles.datetime}>
+      <FontAwesomeIcon icon={faCalendar} className={styles.datetime_icon} />
+      {showCreatedText && <span>criado em: </span>}
       <span>
-        <FormattedDatetime date={date} mod={mod} showDayMonth={showDayMonth} />
+        <FormattedDatetime date={date} short={short} semishort={semishort} />
       </span>
     </div>
   );

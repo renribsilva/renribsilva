@@ -3,8 +3,6 @@ import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import MdxLayout from "../../layout/layout_mdx";
 import Datetime from "../../components/datetime";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 import type { PostData, PostSlug } from "../../mdxtypes";
 import styles from "../../styles/pages.module.css";
 import React from "react";
@@ -46,9 +44,8 @@ export default function Post({ postData }: PostProps) {
     <MdxLayout>
       <h1 className={styles.txt_slug_title}>{postData.title}</h1>
       <div className={styles.txt_slug_date}>
-        <span>{<FontAwesomeIcon icon={faCalendar} />}</span>
         <span>
-          <Datetime date={postData.date} mod={postData.mod} />
+          <Datetime date={postData.date} />
         </span>
       </div>
       <div>

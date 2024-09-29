@@ -54,7 +54,7 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
                   <li key={post.id}>
                     <Datetime
                       date={post.date}
-                      showDayMonth={true}
+                      short={true}
                     />
                     <a href={`/textos/${post.slug}`}>{post.title}</a>
                   </li>

@@ -10,31 +10,30 @@ const linkfooter = [
   { label: "typography", href: "https://astro-theme-typography.vercel.app/" },
 ];
 
-const linkprops = {
-  blank: "_blank",
-  rel:"noopener noreferrer nofollow"
+const linkProps = {
+  target: "_blank",
+  rel: "noopener noreferrer nofollow"
 };
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div>
-        <p>
-          renribsilva © {currentYear}
-        </p>
+        <p>renribsilva © {currentYear}</p>
         <p>
           criado com:{" "}
-          <Link href={linkfooter[0].href} target={linkprops.blank} rel={linkprops.rel}>
-            {linkfooter[0].label}
-          </Link>
-          {" e "}
-          <Link href={linkfooter[1].href} target={linkprops.blank} rel={linkprops.rel}>
-            {linkfooter[1].label}
-          </Link>
+          {linkfooter.slice(0, 2).map(({ label, href }, index) => (
+            <React.Fragment key={href}>
+              <Link href={href} {...linkProps}>
+                {label}
+              </Link>
+              {index < 1 && " e "} {/* Adiciona " e " entre os links */}
+            </React.Fragment>
+          ))}
         </p>
         <p>
           layout modelo:{" "}
-          <Link href={linkfooter[2].href} target={linkprops.blank} rel={linkprops.rel}>
+          <Link href={linkfooter[2].href} {...linkProps}>
             {linkfooter[2].label}
           </Link>
         </p>

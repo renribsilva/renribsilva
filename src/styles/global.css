@@ -1,7 +1,7 @@
 /* styles.module.css */
 :root, html {
   margin-inline: 130px;
-  margin-top: 10px;
+  margin-top: 70px;
   --color-fill-light: rgb(250, 242, 234);
   --color-text-base-light: rgb(40, 39, 40);
   --color-accent-light: rgb(39, 96, 129);
@@ -29,6 +29,7 @@
 
 body {
   font-family: "IBM Plex mono";
+  margin: 0;
 }
 
 a:hover {

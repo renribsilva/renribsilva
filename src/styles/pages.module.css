@@ -5,7 +5,7 @@
 /*texto do index*/
 
 .index_mdx {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   margin-bottom: 50px;
 }
 
@@ -36,28 +36,6 @@
 
 .recents_ul a {
   text-decoration: none;
-}
-
-/*data de criação do texto*/
-
-.recents_ul div {
-  /* background-color: cornflowerblue; */
-  display: flex;
-  gap: 10px;
-  min-height: 25px;
-  height: auto;
-  font-weight: 100;
-  display: flex;
-  align-items: center;
-}
-
-.recents_ul div :nth-child(1),
-.recents_ul div :nth-child(2),
-.recents_ul div :nth-child(3) {
-  /* background-color: rgb(100, 237, 157); */
-  font-style: italic;
-  color: var(--subtitle);
-  width: max-content;
 }
 
 /*descrição do post*/
@@ -239,10 +217,6 @@
 
 /* SLUG */
 
-.lexicoslug {
-  margin-top: 25px;
-}
-
 .lexicoslug h1, .lexicoslug p {
   /* background-color: rgb(175, 40, 40); */
   margin: 0;
@@ -250,14 +224,13 @@
 }
 
 .lexicoslug h1 {
+  /* background-color: aquamarine; */
   font-size:x-large
 }
 
-.lexicoslug :first-child :nth-child(2) * {
-  color: var(--subtitle);
-  font-style: italic;
-  height: 60px;
-  /* display: flex; */
+.lexicoslug p {
+  margin-top: 60px;
+  /* background-color: aquamarine; */
 }
 
 /**************************************/

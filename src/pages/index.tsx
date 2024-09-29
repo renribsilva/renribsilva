@@ -4,11 +4,12 @@ import Link from "next/link";
 import { getSortedPostsData } from "../lib/getCollection";
 import styles from "../styles/pages.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight, faCalendar } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Datetime from "../components/datetime";
 import Linkbutton from "../components/linkbutton";
 import Index from "../components/mdx/index.mdx";
 import { PostData } from "../mdxtypes";
+import PropTypes from "prop-types";
 
 interface HomeProps {
   posts: PostData[]; // Define que posts é um array de PostData
@@ -22,6 +23,19 @@ export async function getStaticProps() {
     },
   };
 }
+
+CustomH1.propTypes = {
+  children: PropTypes.node.isRequired, // Adiciona validação para 'children'
+};
+
+// Componente personalizado para <p>
+function CustomH1({ children }) {
+  return <p style={{ marginTop: "0px", fontSize: "30px", fontWeight:"bold" }}>{children}</p>;
+}
+
+const overrideComponents = {
+  h1: CustomH1, // Usando o componente personalizado para <h1
+};
  
 export default function Home({ posts }: HomeProps) {
   return (
@@ -30,7 +44,7 @@ export default function Home({ posts }: HomeProps) {
         <title>Petricor</title>
       </Head>
       <div className={styles.index_mdx}>
-        <Index />
+        <Index components={overrideComponents}/>
       </div>
       <div>
         <h1>Recentes</h1>
@@ -43,10 +57,10 @@ export default function Home({ posts }: HomeProps) {
                 <h1>{post.title}{" "}</h1>
               </Link>
               <div>
-                <span>{<FontAwesomeIcon icon={faCalendar} />}</span>
                 <span>
                   <Datetime
                     date={post.date}
+                    short={false}
                   />
                 </span>
               </div>

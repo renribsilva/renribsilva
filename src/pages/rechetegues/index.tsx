@@ -60,13 +60,13 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
           .sort(([, a], [, b]) => b.frequency - a.frequency) // Ordena as tags pela frequência em ordem decrescente
           .map(([tag, { posts }]) => (
             <section key={tag}>
-              <h3>#{tag}</h3> {/* Removido o exibição da frequência aqui */}
+              <h3>#{tag}</h3>
               <ul>
                 {posts.map(post => (
                   <li key={post.id}>
                     <Datetime
                       date={post.date}
-                      showDayMonth={true}
+                      short={true}
                     />
                     <a href={`/textos/${post.slug}`}>{post.title}</a>
                   </li>

@@ -76,16 +76,18 @@ const Post = ({ post }: PostProps) => {
         <div>
           <h1>{post.properties.Page.title[0].plain_text.replace(/-/g, "·")}</h1>
           <div>
-            <span><Datetime date={post.created_time}></Datetime></span>
+            <span>
+              <Datetime date={post.created_time} semishort={true}></Datetime>
+            </span>
           </div>
         </div>
-        <div>
+        <p>
           {post.properties.Slug.rich_text.map((item) => {
               return (
                 item.plain_text
               );})
           }
-        </div>
+        </p>
       </section>
     </>
   );

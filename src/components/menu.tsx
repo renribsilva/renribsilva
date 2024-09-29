@@ -2,22 +2,20 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types"; 
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faHouse, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import styles from "../styles/components.module.css";
 
-const topbar = {
-  fasun: faSun,
-  famoon: faMoon,
-  fabars: faBars,
-  altsun: "ícone do sol, para definir o tema claro",
-  altmoon: "ícone da lua, para definir o tema escuro",
-  altbars: "ícone de barras, que expande uma seção de navegação"
-};
+const topbar = [
+  { ícone: faSun, alt: "ícone do sol, um link para definir o tema claro" },
+  { ícone: faMoon, alt: "ícone da lua, um link para definir o tema escuro" },
+  { ícone: faBars, alt: "ícone de barras, um link que expande uma seção de navegação" },
+  { ícone: faHouse, alt: "ícone de casa, um link que envia para a página inicial" }
+];
 
-export default function Menu({ toggleNavbar }) {
-  const [mounted, setMounted] = useState(false);
+function Theme() {
   const { resolvedTheme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
@@ -32,38 +30,74 @@ export default function Menu({ toggleNavbar }) {
   };
 
   return (
-    <section>
-      <div className={styles.menu}>
-        <div className={styles.menu_theme}>
-          <Link
-            href="#"
-            onClick={toggleTheme}
-            style={{ cursor: "pointer" }}
-            aria-label={resolvedTheme === "light" ? topbar.altmoon : topbar.altsun}
-          >
-            <span>
-              <FontAwesomeIcon
-                icon={resolvedTheme === "light" ? topbar.famoon : topbar.fasun}
-                size="xl"
-              />
-            </span>
-          </Link>
-        </div>
-        <div className={styles.menu_bars}>
-          <span
-            onClick={toggleNavbar}
-            style={{ cursor: "pointer" }}
-            aria-label={topbar.altbars}
-          >
-            <FontAwesomeIcon icon={topbar.fabars} size="xl" />
-          </span>
-        </div>
-      </div>
+    <div className={styles.menu_theme}>
+      <Link
+        href="#"
+        onClick={toggleTheme}
+        style={{ cursor: "pointer" }}
+        aria-label={resolvedTheme === "light" ? topbar[1].alt : topbar[0].alt}
+      >
+        <span>
+          <FontAwesomeIcon
+            icon={resolvedTheme === "light" ? topbar[1].ícone : topbar[0].ícone}
+            size="xl"
+          />
+        </span>
+      </Link>
+    </div>
+  );
+}
+
+function Bars({ toggleNavbar }) {
+  return (
+    <div className={styles.menu_bars}>
+      <span
+        onClick={toggleNavbar}
+        style={{ cursor: "pointer" }}
+        aria-label={topbar[2].alt}
+      >
+        <FontAwesomeIcon icon={topbar[2].ícone} size="xl" />
+      </span>
+    </div>
+  );
+}
+
+export default function Menu({ toggleNavbar }) {
+  const [isShort, setIsShort] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsShort(window.innerWidth < 1080);
+    };
+
+    handleResize(); // Verifica o tamanho da tela ao montar
+    window.addEventListener("resize", handleResize); // Adiciona listener de resize
+
+    return () => window.removeEventListener("resize", handleResize); // Remove o listener ao desmontar
+  }, []);
+
+  return (
+    <section className={styles.menu}>
+      {isShort ? (
+        <>
+          <Theme />
+          <Bars toggleNavbar={toggleNavbar} />
+        </>
+      ) : (
+        <>
+          <Theme />
+        </>
+      )}
     </section>
   );
 }
 
-// Validação de props
+// Validação de props para Menu
 Menu.propTypes = {
+  toggleNavbar: PropTypes.func.isRequired, // Adiciona validação para toggleNavbar
+};
+
+// Validação de props para Bars
+Bars.propTypes = {
   toggleNavbar: PropTypes.func.isRequired, // Adiciona validação para toggleNavbar
 };
