@@ -8,7 +8,7 @@ Para adicionar novos arquivos markdown em src/content/, foi criada a função
 
 * script/createNewPost.mjs
 
-a qual pode ser excecutada por meio do plugin [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner), para o [VSCode](https://code.visualstudio.com/). Como consequência, será criado o arquivo
+a qual pode ser executada por meio do plugin [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner), para o [VSCode](https://code.visualstudio.com/). Como consequência, será criado o arquivo
 
 * src/content/post[number].mdx
 
