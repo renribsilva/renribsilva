@@ -257,7 +257,12 @@
   /* background-color: aquamarine; */
   display: flex;
   gap: 15px;
-  margin-top: 0px;
+  margin-top: 5px;
+}
+
+.menu_bars_icon *,
+.menu_theme_icon * {
+  color: var(--subtitle);
 }
 
 .menu_bars_icon :hover *, 
