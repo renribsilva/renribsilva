@@ -54,6 +54,7 @@
   .header div {
     background-color: inherit;
     color: inherit;
+    text-align: left
   }
 
   .header a :hover {
@@ -267,7 +268,7 @@
 @media (max-width: 1080px) {
   .menu {
     align-items: center;
-    margin-right: 25px;
+    margin-right: 5px;
   }
 }
 
