@@ -259,6 +259,11 @@
   margin-top: 0px;
 }
 
+.menu_bars_icon :hover *, 
+.menu_theme_icon :hover * {
+  color: var(--accent);
+}
+
 @media (max-width: 1080px) {
   .menu {
     align-items: center;

@@ -30,14 +30,14 @@ function Theme() {
   };
 
   return (
-    <div className={styles.menu_theme}>
+    <div>
       <Link
         href="#"
         onClick={toggleTheme}
         style={{ cursor: "pointer" }}
         aria-label={resolvedTheme === "light" ? topbar[1].alt : topbar[0].alt}
       >
-        <span>
+        <span className={styles.menu_theme_icon}>
           <FontAwesomeIcon
             icon={resolvedTheme === "light" ? topbar[1].ícone : topbar[0].ícone}
             size="xl"
@@ -50,11 +50,12 @@ function Theme() {
 
 function Bars({ toggleNavbar }) {
   return (
-    <div className={styles.menu_bars}>
+    <div>
       <span
         onClick={toggleNavbar}
         style={{ cursor: "pointer" }}
         aria-label={topbar[2].alt}
+        className={styles.menu_bars_icon}
       >
         <FontAwesomeIcon icon={topbar[2].ícone} size="xl" />
       </span>
