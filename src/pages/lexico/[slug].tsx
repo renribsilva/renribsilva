@@ -63,7 +63,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
 // Tipando as props do componente Post
 interface PostProps {
-  post: NotionPage; // O post correspondente
+  post: NotionPage; 
 }
 
 const Post = ({ post }: PostProps) => {

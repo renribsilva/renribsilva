@@ -24,11 +24,11 @@ function CustomList({ children, as: Component }) {
   return <Component style={{ marginLeft: "60px" }}>{children}</Component>;
 }
 
-// Componentes sobrepostos
+// Guardo os componentes em um objeto
 const overrideComponents = {
-  p: CustomP, // Usando o componente personalizado para <p>
-  ul: (props) => <CustomList {...props} as="ul" />, // Usando o componente personalizado para <ul>
-  ol: (props) => <CustomList {...props} as="ol" />, // Usando o componente personalizado para <ol>
+  p: CustomP,
+  ul: (props) => <CustomList {...props} as="ul" />, 
+  ol: (props) => <CustomList {...props} as="ol" />, 
 };
 
 export default function About() {

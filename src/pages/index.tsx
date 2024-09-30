@@ -24,8 +24,9 @@ export async function getStaticProps() {
   };
 }
 
+// Adiciona validação para 'children'
 CustomH1.propTypes = {
-  children: PropTypes.node.isRequired, // Adiciona validação para 'children'
+  children: PropTypes.node.isRequired,
 };
 
 // Componente personalizado para <p>
@@ -33,8 +34,9 @@ function CustomH1({ children }) {
   return <p style={{ marginTop: "0px", fontSize: "30px", fontWeight:"bold" }}>{children}</p>;
 }
 
+// Guarda o componente <h1> em um objeto
 const overrideComponents = {
-  h1: CustomH1, // Usando o componente personalizado para <h1
+  h1: CustomH1, 
 };
  
 export default function Home({ posts }: HomeProps) {

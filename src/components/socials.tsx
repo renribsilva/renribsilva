@@ -6,17 +6,17 @@ import React from "react";
 
 const SocialObjects = [
   {
-    ícone: faMastodon, // Adicione a referência ao ícone aqui
+    ícone: faMastodon, 
     alt: "ícone do mastodon",
     link: "https://ursal.zone/@renribsilva",
   },
   {
-    ícone: faBluesky, // Adicione a referência ao ícone aqui
+    ícone: faBluesky, 
     alt: "ícone do bluesky",
     link: "https://bsky.app/profile/renribsilva.ursal.zone.ap.brid.gy",
   },
   {
-    ícone: faGithub, // Adicione a referência ao ícone aqui
+    ícone: faGithub, 
     alt: "ícone do github",
     link: "https://github.com/renribsilva/petricor",
   },

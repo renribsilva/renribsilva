@@ -5,8 +5,8 @@ const notion = new Client({ auth: NOTION_TOKEN });
 
 async function getNotionId() {
   try {
-    // Busca todos os database, de modo que a função não é adequada para users que 
-    // tenham mais do que um database
+    // Busca todos as base de dados, de modo que esta função não é adequada para
+    // usuário que tenham mais do que um database
     const res = await notion.search({
       filter: {
         property: "object",
@@ -21,5 +21,4 @@ async function getNotionId() {
   }
 }
 
-// Chamada da função
 getNotionId();

@@ -95,10 +95,10 @@ export default function Menu({ toggleNavbar }) {
 
 // Validação de props para Menu
 Menu.propTypes = {
-  toggleNavbar: PropTypes.func.isRequired, // Adiciona validação para toggleNavbar
+  toggleNavbar: PropTypes.func.isRequired, 
 };
 
 // Validação de props para Bars
 Bars.propTypes = {
-  toggleNavbar: PropTypes.func.isRequired, // Adiciona validação para toggleNavbar
+  toggleNavbar: PropTypes.func.isRequired, 
 };
