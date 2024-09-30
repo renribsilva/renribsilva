@@ -48,7 +48,7 @@ Para integrar com o Notion, é preciso
   * Obter o ID da base de dados criada no Notion, que pode ser feito de diferentes maneiras. Uma delas é copiar o número que aparece no endereço do navegador, mas isso pode ser confuso e frustante. Um jeito mais fácil e certo que encontrei foi criar uma função que retorna esse valor sem muito custo. Para tanto, é necessário
     1. garantir que o VSCode tenha meios de ler as variável de ambiente .env na execução local de funções (eu optei pelo pacote [dotenv](https://www.npmjs.com/package/dotenv), importado em /src/lib/ServerConstants.ts)
     2. ter um meio de visualizar o output das funções (eu optei pelo [sucrase](https://www.npmjs.com/package/sucrase))
-    3. executar a função script/getNotionId.mjs (eu configurei o [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner), já mencionado anteriomente, para executar o sucrase automaticamente, mas ele pode transpilar o script no terminal, chamando npx sucrase-node scripts/getNotionId.ts)
+    3. executar a função script/getNotionId.mjs (eu configurei o [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner), já mencionado anteriomente, para executar o sucrase automaticamente as extensões .ts, mas ele pode transpilar o script no terminal, chamando "npx sucrase-node scripts/getNotionId.ts")
     4. copiar e colar o valor retornado à variável NOTION_DATABASE_ID em .env, já com esse nome.
 
     
