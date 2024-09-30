@@ -8,7 +8,7 @@ Para adicionar novos arquivos markdown em src/content/, foi criada a função
 
 * `script/createNewPost.mjs`
 
-a qual pode ser executada por meio do plugin [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner), para o [VSCode](https://code.visualstudio.com/). Como consequência, será criado o arquivo
+a qual deve ser executada (eu configurei o [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) para transpilar arquivos .mjs e .js automaticamente com o node `"code-runner.executorMap": {"javascript": "clear && node"}`. Para fazer manualmente, deve-se chamar `node scripts/getNotionId.ts` no terminal). Como consequência disso, será criado o arquivo
 
 * `src/content/post[number].mdx`
 
@@ -29,11 +29,11 @@ description: Descrição do novo post
 Escreva o texto aqui
 ```
 
-Nele, deve-se alterar o título, o slug (endereço que aparece no navegor) e a descrição do post... acrescentar tags caso quiser e definir **false** para _draft_ quando o texto estiver pronto. E pluft! (_mod_ e _featured_ ainda estão em processo de desenvolvimento, de modo que não servem para nada)
+Nele, pode-se alterar o título, o slug (endereço que aparece no navegor) e a descrição do post... acrescentar tags caso quiser e definir **false** para _draft_ quando o texto estiver pronto. E pluft! (_mod_ e _featured_ ainda estão em processo de desenvolvimento, de modo que não servem para nada)
 
 ## fazer a integração com o Notion
 
-Para integrar com o Notion, é preciso
+Para integrar este código com o Notion, é preciso
 
   * Criar uma [base de dados](https://www.notion.so/pt/help/create-a-database) no Notion com as seguintes variáveis
     1. Page
@@ -48,7 +48,7 @@ Para integrar com o Notion, é preciso
   * Obter o ID da base de dados criada no Notion, que pode ser feito de diferentes maneiras. Uma delas é copiar o número que aparece no endereço do navegador, mas isso pode ser confuso e frustante. Um jeito mais fácil e certo que encontrei foi criar uma função que retorna esse valor sem muito custo. Para tanto, é necessário
     1. garantir que o VSCode tenha meios de ler as variável de ambiente .env na execução local de funções (eu optei pelo pacote [dotenv](https://www.npmjs.com/package/dotenv), importado em /src/lib/ServerConstants.ts)
     2. ter um meio de visualizar o output das funções (eu optei pelo [sucrase](https://www.npmjs.com/package/sucrase))
-    3. executar a função script/getNotionId.mjs (eu configurei o [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner), já mencionado anteriomente, para transpilar arquivos .ts automaticamente a partir do sucrase `"code-runner.executorMap": {"typescript": "clear && npx sucrase-node"}`. Para fazer manualmente, deve-se chamar `npx sucrase-node scripts/getNotionId.ts` no terminal)
+    3. executar a função script/getNotionId.mjs (eu configurei o [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner), já mencionado anteriomente, para transpilar arquivos .ts automaticamente com o sucrase `"code-runner.executorMap": {"typescript": "clear && npx sucrase-node"}`. Para fazer manualmente, deve-se chamar `npx sucrase-node scripts/getNotionId.ts` no terminal)
     4. copiar e colar o valor retornado à variável `NOTION_DATABASE_ID` em `.env`, já com esse nome.
 
     

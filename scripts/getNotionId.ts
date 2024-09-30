@@ -6,7 +6,7 @@ const notion = new Client({ auth: NOTION_TOKEN });
 async function getNotionId() {
   try {
     // Busca todos as base de dados, de modo que esta função não é adequada para
-    // usuário que tenham mais do que um database
+    // usuário que tenham mais do que uma base de dados
     const res = await notion.search({
       filter: {
         property: "object",

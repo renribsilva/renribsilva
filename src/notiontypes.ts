@@ -1,21 +1,21 @@
 export type NotionPage = {
-  object: 'page';
+  object: "page";
   id: string;
   created_time: string;
   last_edited_time: string;
-  created_by: { object: 'user'; id: string };
-  last_edited_by: { object: 'user'; id: string };
+  created_by: { object: "user"; id: string };
+  last_edited_by: { object: "user"; id: string };
   cover: null | string;
   icon: null | string;
-  parent: { type: 'database_id'; database_id: string };
+  parent: { type: "database_id"; database_id: string };
   archived: boolean;
   in_trash: boolean;
   properties: {
     Slug: {
       id: string;
-      type: 'rich_text';
+      type: "rich_text";
       rich_text: Array<{
-        type: 'text';
+        type: "text";
         text: { content: string; link: null };
         annotations: {
           bold: boolean;
@@ -29,12 +29,12 @@ export type NotionPage = {
         href: null;
       }>;
     };
-    Published: { id: string; type: 'checkbox'; checkbox: boolean };
+    Published: { id: string; type: "checkbox"; checkbox: boolean };
     Page: {
-      id: 'title';
-      type: 'title';
+      id: "title";
+      type: "title";
       title: Array<{
-        type: 'text';
+        type: "text";
         text: { content: string; link: null };
         annotations: {
           bold: boolean;
@@ -54,11 +54,11 @@ export type NotionPage = {
 };
 
 export type NotionResponse = {
-  object: 'list';
+  object: "list";
   results: NotionPage[];
   next_cursor: null | string;
   has_more: boolean;
-  type: 'page_or_database';
-  page_or_database: {};
+  type: "page_or_database";
+  page_or_database: object;
   request_id: string;
 };

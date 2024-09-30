@@ -5,7 +5,7 @@ const normalizeId = (id) => {
   if (id.length === 36) {return id;}
   if (id.length !== 32) {
     throw new Error(
-      `O id da base de dados é inválido: ${id} deve ter comprimento de 32 caracteres`
+      "O id da base de dados é inválido: ${id} deve ter comprimento de 32 caracteres"
     );
   }
   return `${id.substr(0, 8)}-${id.substr(8, 4)}-${id.substr(12, 4)}-${id.substr(

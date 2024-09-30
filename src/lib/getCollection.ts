@@ -97,7 +97,7 @@ export async function getPostData(slug: string): Promise<PostData> {
   const post = posts.find((post) => post.slug === slug);
 
   if (!post) {
-    throw new Error(`Post com slug ${slug} não encontrado`);
+    throw new Error("Post com slug ${slug} não encontrado");
   }
 
   // Retorna os dados do post e o conteúdo MDX
