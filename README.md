@@ -8,7 +8,7 @@ Para adicionar novos arquivos markdown em src/content/, foi criada a função
 
 * `script/createNewPost.mjs`
 
-a qual deve ser executada (eu configurei o [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) para transpilar arquivos .mjs e .js automaticamente com o node `"code-runner.executorMap": {"javascript": "clear && node"}`. Para fazer manualmente, deve-se chamar `node scripts/getNotionId.ts` no terminal). Como consequência disso, será criado o arquivo
+a qual deve ser executada (eu configurei o [CodeRunner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) para transpilar arquivos .mjs e .js automaticamente com o node `"code-runner.executorMap": {"javascript": "clear && node"}`. Para fazer manualmente, deve-se chamar `node scripts/createNewPost.mjs` no terminal). Como consequência disso, será criado o arquivo
 
 * `src/content/post[number].mdx`
 
