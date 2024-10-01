@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { PostData, PostSlug, PostId } from "../mdxtypes"; // Importando os tipos
+import type { PostData, PostSlug, PostId } from "../mdxtypes"; // Importando os tipos
 
 // Diretório dos posts
 const postsDirectory = path.join(process.cwd(), "/src/content");

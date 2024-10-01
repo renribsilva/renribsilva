@@ -1,7 +1,7 @@
 import { Client } from "@notionhq/client";
 import NodeCache from "node-cache";
 import { NOTION_DATABASE_ID, NOTION_TOKEN } from "./ServerConstants";
-import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints"; // Importe o tipo correto
+import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
 
 const notion = new Client({ auth: NOTION_TOKEN });
 const databaseId = NOTION_DATABASE_ID;
@@ -38,7 +38,7 @@ export async function getNotionPosts(): Promise<QueryDatabaseResponse> {
     // Armazena os posts no cache
     cache.set("posts", resNotionPosts);
 
-    // console.dir(resPosts, { depth: null, colors: true });
+    console.dir(resNotionPosts, { depth: null, colors: true });
 
     return resNotionPosts; // Retornando a resposta completa
   } catch (error) {
@@ -46,4 +46,4 @@ export async function getNotionPosts(): Promise<QueryDatabaseResponse> {
   }
 }
 
-// getPosts();
+getNotionPosts();

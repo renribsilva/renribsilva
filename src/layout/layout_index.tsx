@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Footer from "../components/footer";
-import Header from "../components/header";
 import Menu from "../components/menu";
 import Navbar from "../components/navbar";
 import Socials from "../components/socials";
@@ -8,6 +7,7 @@ import styles from "../styles/layout.module.css";
 import Myhr from "../components/myhr";
 import PropTypes from "prop-types";
 import React from "react";
+import Petricor from "../components/petricor";
 
 LayoutIndex.propTypes = {
   children: PropTypes.node.isRequired, // Adiciona validação para 'children'
@@ -55,7 +55,7 @@ export default function LayoutIndex({ children }) {
       <div className={styles.li_space}></div>
       <div>
         <div className={styles.li_header_menu}>
-          <Header />
+          <Petricor />
           <Menu toggleNavbar={toggleNavbar} />
         </div>
         <div className={styles.li_navbar}>

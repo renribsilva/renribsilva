@@ -1,5 +1,5 @@
 // Define a estrutura dos dados dos posts
-export interface PostData {
+export type PostData = {
   id: string;
   title: string;
   date: string;
@@ -12,13 +12,13 @@ export interface PostData {
   content: string; // Conteúdo bruto (MDX)
 }
 
-export interface PostSlug {
+export type PostSlug = {
   params: {
     slug: string;
   };
 }
 
-export interface PostId {
+export type PostId = {
   params: {
     id: string;
   };
