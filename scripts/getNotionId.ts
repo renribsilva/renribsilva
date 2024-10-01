@@ -15,7 +15,7 @@ async function getNotionId() {
     });
 
     // Exibe apenas o id do database
-    console.dir(res.results[0].id, { depth: null, colors: true });
+    console.dir(res.results[0].id);
   } catch (error) {
     console.error("Erro ao buscar bancos de dados:", error);
   }
