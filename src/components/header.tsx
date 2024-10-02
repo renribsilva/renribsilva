@@ -10,6 +10,8 @@ const Header = ({ titlePre = "" }: HeaderProps) => {
 
   const { pathname } = useRouter(); // Chama o useRouter dentro do componente
 
+  const defaultTitle = titlePre ? `${titlePre} | Petricor` : "Petricor";
+
   const metas = {
     url: `https://petricor.xyz${pathname}`,
     title: "Petricor",
@@ -20,8 +22,6 @@ const Header = ({ titlePre = "" }: HeaderProps) => {
     provider_url: "https://petricor.xyz",
     image: null, 
   };
-
-  const defaultTitle = titlePre ? `${titlePre} | Petricor` : "Petricor";
 
   return (
     <Head>
