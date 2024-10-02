@@ -61,7 +61,7 @@ export default function LayoutIndex({ children }) {
         <div className={styles.li_navbar}>
           {isMobileView ? (isNavbarOpen ? <Navbar /> : null) : <Navbar />}
         </div>
-        <Myhr />
+        <Myhr marginTop="15px"/>
       </div>
       <div className={styles.li_socials_footer}>
         <Socials />

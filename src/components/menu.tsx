@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types"; 
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faHouse, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import styles from "../styles/components.module.css";
 
 const topbar = [
   { ícone: faSun, alt: "ícone do sol, um link para definir o tema claro" },
   { ícone: faMoon, alt: "ícone da lua, um link para definir o tema escuro" },
-  { ícone: faBars, alt: "ícone de barras, um link que expande uma seção de navegação" },
-  { ícone: faHouse, alt: "ícone de casa, um link que envia para a página inicial" }
+  { ícone: faBars, alt: "ícone de barras, um link que expande a seção de navegação" }
 ];
 
 function Theme() {

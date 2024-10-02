@@ -1,8 +1,8 @@
 /***************************************/
-/*************** HEADER ****************/
+/*************** PETRICOR ****************/
 /***************************************/
 
-.header {
+.petricor {
   /* background-color: rgb(255, 252, 72); */
   transform: rotate(90deg); /* Usa transform para rotacionar */
   transform-origin: right left;
@@ -14,7 +14,7 @@
   right: 170px;
 }
 
-.header div {
+.petricor div {
   background-color: var(--accent);
   color: var(--background);
   width: 200px;
@@ -24,14 +24,14 @@
   text-align: center;
 }
 
-.header a {
+.petricor a {
   /* background-color: chartreuse; */
   text-decoration: none;
   font-size:35px;
   line-height: 60px;
 }
 
-.header a :hover {
+.petricor a :hover {
   padding-bottom: 30px;
   padding-top: 30px;
   background-color: var(--accent);
@@ -39,7 +39,7 @@
 }
 
 @media (max-width: 1080px) {  
-  .header {
+  .petricor {
     /* background-color: rgb(255, 252, 72); */
     transform: none;
     display: flex;
@@ -51,13 +51,17 @@
     right: auto;
   }
 
-  .header div {
+  .petricor div {
     background-color: inherit;
     color: inherit;
     text-align: left
   }
 
-  .header a :hover {
+  .petricor a {
+    color: var(--accent);
+  }
+
+  .petricor a :hover {
     padding-bottom: 6px;
     padding-top: 0;
     background-color: transparent;
@@ -257,8 +261,6 @@
   /* background-color: aquamarine; */
   display: flex;
   gap: 15px;
-  width: 40px;
-  height: 40px;
 }
 
 .menu_bars_icon *,

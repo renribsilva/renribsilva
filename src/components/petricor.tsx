@@ -4,7 +4,7 @@ import React from "react";
 
 export default function Petricor () {
   return (
-    <header className={styles.header}>
+    <header className={styles.petricor}>
       <Link href="/">
         <div>petricor</div>
       </Link>
