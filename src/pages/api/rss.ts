@@ -6,7 +6,7 @@ export async function GET() {
         title: "Petricor Blog",
         description: "Os textos mais recentes do blog Petricor",
         generator: "RSS for Node and Next.js",
-        feed_url: "https://petricor.xyz/rss.xml", // URL do feed
+        feed_url: "https://petricor.xyz/rss.xml", // URL do feed yeah
         site_url: "https://petricor.xyz",
         managingEditor: "seuemail@exemplo.com (Seu Nome)", // Substitua pelo seu e-mail
         webMaster: "seuemail@exemplo.com (Seu Nome)", // Substitua pelo seu e-mail
