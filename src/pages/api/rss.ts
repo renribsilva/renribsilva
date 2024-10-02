@@ -1,5 +1,5 @@
 import RSS from "rss";
-import { getSortedPostsData } from "../lib/getCollection"; // Ajuste o caminho conforme necessário
+import { getSortedPostsData } from "../../lib/getCollection"; // Ajuste o caminho conforme necessário
 
 export async function GET() {
     const feed = new RSS({
