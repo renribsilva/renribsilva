@@ -263,6 +263,13 @@
   gap: 15px;
 }
 
+.menu :nth-child(1),
+.menu :nth-child(2){
+  /* background-color: azure; */
+  width: 25px;
+  height: 25px;
+}
+
 .menu_bars_icon *,
 .menu_theme_icon * {
   color: var(--subtitle);

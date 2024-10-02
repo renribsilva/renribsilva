@@ -2,14 +2,15 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types"; 
 import { useTheme } from "next-themes";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMoon, faSun, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import styles from "../styles/components.module.css";
 
 const topbar = [
   { ícone: faSun, alt: "ícone do sol, um link para definir o tema claro" },
   { ícone: faMoon, alt: "ícone da lua, um link para definir o tema escuro" },
-  { ícone: faBars, alt: "ícone de barras, um link que expande a seção de navegação" }
+  { ícone: faBars, alt: "ícone de barras, um link que expande a seção de navegação" },
+  { ícone: faXmark, alt: "ícone de X, um link que recolhe a seção de navegação" }
 ];
 
 function Theme() {
@@ -47,16 +48,16 @@ function Theme() {
   );
 }
 
-function Bars({ toggleNavbar }) {
+function Bars({ isNavbarOpen, toggleNavbar }) {
   return (
     <div>
       <span
         onClick={toggleNavbar}
         style={{ cursor: "pointer" }}
-        aria-label={topbar[2].alt}
+        aria-label={isNavbarOpen ? topbar[3].alt : topbar[2].alt}
         className={styles.menu_bars_icon}
       >
-        <FontAwesomeIcon icon={topbar[2].ícone} size="xl" />
+        <FontAwesomeIcon icon={isNavbarOpen ? topbar[3].ícone : topbar[2].ícone} size="xl" />
       </span>
     </div>
   );
@@ -64,6 +65,12 @@ function Bars({ toggleNavbar }) {
 
 export default function Menu({ toggleNavbar }) {
   const [isShort, setIsShort] = useState(false);
+  const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+
+  const handleToggleNavbar = () => {
+    setIsNavbarOpen(!isNavbarOpen);
+    toggleNavbar(); // Chama a função passada via props para qualquer lógica adicional
+  };
 
   useEffect(() => {
     const handleResize = () => {
@@ -81,7 +88,7 @@ export default function Menu({ toggleNavbar }) {
       {isShort ? (
         <>
           <Theme />
-          <Bars toggleNavbar={toggleNavbar} />
+          <Bars isNavbarOpen={isNavbarOpen} toggleNavbar={handleToggleNavbar} />
         </>
       ) : (
         <>
@@ -99,5 +106,6 @@ Menu.propTypes = {
 
 // Validação de props para Bars
 Bars.propTypes = {
+  isNavbarOpen: PropTypes.bool.isRequired,
   toggleNavbar: PropTypes.func.isRequired, 
 };
