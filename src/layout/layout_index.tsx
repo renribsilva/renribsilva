@@ -50,7 +50,7 @@ export default function LayoutIndex({ children }) {
     <section className={styles.layout_i}>
       <main className={styles.li_main}>
         {children}
-        <Myhr marginTop="30px"/>
+        <Myhr />
       </main>
       <div className={styles.li_space}></div>
       <div>
