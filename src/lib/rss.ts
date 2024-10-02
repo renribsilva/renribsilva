@@ -1,37 +1,26 @@
 import fs from "fs";
 import path from "path";
-import { getSortedPostsData } from "./getCollection";
-import { Datetime } from "../components/datetime"
-
-const posts = getSortedPostsData();
+import { getSortedPostsData } from "./getCollection"; // Função que já existe e retorna os posts
 
 export async function generateRSSFeed() {
-  const posts = getSortedPostsData(); // Carrega os posts com frontmatter
+  const posts = getSortedPostsData(); // Pegue os posts do seu blog ou conteúdo
 
-  const date = () => {
-    return (
-      <Datetime
-    )
-  };
-
-  const rssItemsXml = posts
-    .filter((post) => !post.draft) // Filtra posts que não são rascunhos
-    .map((post) => `
-      <item>
-        <title>${post.title}</title>
-        <link>${`https://petricor.xyz/textos/${post.slug}`}</link>
-        <guid>${`https://petricor.xyz/textos/${post.slug}`}</guid>
-        <description>${post.description}</description>
-        <pubDate>${new Date(post.date).toUTCString()}</pubDate>
-      </item>
-    `).join("");
+  const rssItemsXml = posts.map((post) => `
+    <item>
+      <title>${post.title}</title>
+      <link>${`https://petricor.xyz/textos/${post.slug}`}</link>
+      <guid>${`https://petricor.xyz/textos/${post.slug}`}</guid>
+      <description>${post.description}</description>
+      <pubDate>${new Date(post.date).toUTCString()}</pubDate>
+    </item>
+  `).join("");
 
   const rssXml = `
     <rss version="2.0">
       <channel>
-        <title>Meu Blog</title>
-        <link>https://seusite.com</link>
-        <description>Os posts mais recentes do meu blog</description>
+        <title>Petricor</title>
+        <link>https://petricor.xyz</link>
+        <description>Os textos mais recentes do blog</description>
         <language>pt-br</language>
         <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
         ${rssItemsXml}
