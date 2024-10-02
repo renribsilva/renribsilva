@@ -38,7 +38,7 @@ export async function getNotionPosts(): Promise<QueryDatabaseResponse> {
     // Armazena os posts no cache
     cache.set("posts", resNotionPosts);
 
-    console.dir(resNotionPosts, { depth: null, colors: true });
+    // console.dir(resNotionPosts, { depth: null, colors: true });
 
     return resNotionPosts; // Retornando a resposta completa
   } catch (error) {
@@ -46,4 +46,4 @@ export async function getNotionPosts(): Promise<QueryDatabaseResponse> {
   }
 }
 
-getNotionPosts();
+// getNotionPosts();
