@@ -1,12 +1,14 @@
 import RSS from "rss";
 import { getSortedPostsData } from "../../lib/getCollection"; // Ajuste o caminho conforme necessário
 
-export async function GET() {
+export const runtime = "edge"; // Adicione esta linha
+
+export default async function GET() {
     const feed = new RSS({
         title: "Petricor Blog",
         description: "Os textos mais recentes do blog",
         generator: "RSS for Node and Next.js",
-        feed_url: "https://petricor.xyz/rss.xml", // URL do feed
+        feed_url: "https://petricor.xyz/api/rss", // URL do feed
         site_url: "https://petricor.xyz",
         copyright: `Copyright ${new Date().getFullYear().toString()}, Petricor`,
         language: "pt-BR",
