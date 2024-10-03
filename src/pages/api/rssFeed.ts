@@ -5,13 +5,13 @@ import { getSortedPostsData } from "../../lib/getCollection"; // Certifique-se d
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     // Cria um novo feed RSS
     const feed = new RSS({
-        title: "Blog Posts | RSS Feed",
-        description: "Blog posts feed",
-        feed_url: "https://petricor.xyz/rssfeed.xml", // URL final para o feed RSS
+        title: "Petricor | RSS Feed",
+        description: "Os textos mais recentes do blog",
+        feed_url: "https://petricor.xyz/api/rssFeed", // URL final para o feed RSS
         site_url: "https://petricor.xyz/",
         pubDate: new Date().toUTCString(),
         copyright: `Copyright ${new Date().getFullYear()}`,
-        language: "en-US",
+        language: "pt-BR",
     });
 
     // Obtém os posts e adiciona ao feed
