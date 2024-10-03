@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMastodon, faGithub, faBluesky } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import React from "react";
+import { faRss } from "@fortawesome/free-solid-svg-icons";
 
 const SocialObjects = [
   {
@@ -19,6 +20,11 @@ const SocialObjects = [
     ícone: faGithub, 
     alt: "ícone do github",
     link: "https://github.com/renribsilva/petricor",
+  },
+  {
+    ícone: faRss, 
+    alt: "ícone de rss",
+    link: "https://petricor.xyz/api/rssFeed",
   },
 ];
 
