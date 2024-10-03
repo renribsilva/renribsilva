@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div>
-        <p>renribsilva © {currentYear}</p>
+        <p>MIT © {currentYear}</p>
         <p>
           criado com:{" "}
           {linkfooter.slice(0, 2).map(({ label, href }, index) => (
