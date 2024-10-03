@@ -1,11 +1,11 @@
-import { NextApiRequest, NextApiResponse } from "next";
+import { NextApiResponse } from "next";
 import RSS from "rss";
 import { getSortedPostsData } from "../../lib/getCollection"; // Certifique-se de que o caminho está correto
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(_: unknown, res: NextApiResponse) {
     // Cria um novo feed RSS
     const feed = new RSS({
-        title: "Petricor | RSS Feed",
+        title: "Petricor",
         description: "Os textos mais recentes do blog",
         feed_url: "https://petricor.xyz/api/rssFeed", // URL final para o feed RSS
         site_url: "https://petricor.xyz/",
