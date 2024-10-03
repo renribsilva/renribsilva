@@ -4,7 +4,7 @@
 
 .petricor {
   /* background-color: rgb(255, 252, 72); */
-  transform: rotate(90deg); /* Usa transform para rotacionar */
+  transform: rotate(90deg); 
   transform-origin: right left;
   height: 120px;
   width: 200px;

@@ -9,8 +9,6 @@ export default async function handler(_: unknown, res: NextApiResponse) {
         description: "Os textos mais recentes do blog",
         feed_url: "https://petricor.xyz/api/rssFeed", // URL final para o feed RSS
         site_url: "https://petricor.xyz/",
-        pubDate: new Date().toUTCString(),
-        copyright: `Copyright ${new Date().getFullYear()}`,
         language: "pt-BR",
     });
 
