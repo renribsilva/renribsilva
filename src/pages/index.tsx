@@ -77,18 +77,6 @@ export default function Home({ posts }: HomeProps) {
           <FontAwesomeIcon icon={faArrowRight} className={styles.arrow} />
         </Linkbutton>
       </section>
-      <a href="/feed.xml" aria-label="Feed RSS" target="_blank" rel="noopener noreferrer">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6" // Classes para estilização, se você estiver usando Tailwind CSS
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          width="24px"
-          height="24px"
-        >
-          <path d="M4.93 4.93A10.027 10.027 0 0 1 12 2c5.52 0 10 4.48 10 10a9.96 9.96 0 0 1-1.88 5.83l-1.45-1.45A7.974 7.974 0 0 0 20 12c0-4.41-3.59-8-8-8a7.96 7.96 0 0 0-5.83 2.42l1.45 1.45zM3.25 6.88A9.978 9.978 0 0 0 2 12c0 1.66.39 3.24 1.08 4.63l1.41-1.41A7.982 7.982 0 0 1 4 12c0-4.42 3.58-8 8-8a7.977 7.977 0 0 1 5.63 2.38l1.41-1.41A9.973 9.973 0 0 0 12 4c-5.24 0-9.5 4.26-9.75 9.75z" />
-        </svg>
-      </a>
     </>
   );
 }
