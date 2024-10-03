@@ -24,7 +24,7 @@ const SocialObjects = [
   {
     ícone: faRss, 
     alt: "ícone de rss",
-    link: "https://petricor.xyz/api/rssFeed",
+    link: "https://petricor.xyz/api/rss.xml",
   },
 ];
 

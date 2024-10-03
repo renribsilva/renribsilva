@@ -7,7 +7,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
     const feed = new RSS({
         title: "Petricor",
         description: "Os textos mais recentes do blog",
-        feed_url: "https://petricor.xyz/api/rssFeed", // URL final para o feed RSS
+        feed_url: "https://petricor.xyz/api/rss.xml", // URL final para o feed RSS
         site_url: "https://petricor.xyz/",
         language: "pt-BR",
     });
