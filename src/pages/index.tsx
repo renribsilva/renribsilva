@@ -54,7 +54,7 @@ export default function Home({ posts }: HomeProps) {
                 <Datetime date={post.date} short={false} />
               </div>
               <div>
-                <Link href={`/textos/${encodeURIComponent(post.slug)}`} legacyBehavior>
+                <Link href={`/blog/${encodeURIComponent(post.slug)}`} legacyBehavior>
                   <h1>{post.title}{" "}</h1>
                 </Link>
               </div>

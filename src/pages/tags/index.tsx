@@ -63,7 +63,7 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
                       date={post.date}
                       semishort={true}
                     />
-                    <a href={`/textos/${post.slug}`}>{post.title}</a>
+                    <a href={`/blog/${post.slug}`}>{post.title}</a>
                   </li>
                 ))}
               </ul>
