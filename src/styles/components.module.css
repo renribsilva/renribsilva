@@ -46,7 +46,7 @@
 /****************************************/
 
 .socials {
-  /* background-color: antiquewhite; */
+  /* background-col or: antiquewhite; */
   list-style-type: none;
   padding: 0;
   display: flex;
@@ -77,10 +77,6 @@
 }
 
 .socials li:nth-child(2) {
-  font-size: 16px;
-}
-
-.socials li:nth-child(3) {
   font-size: 18px;
   margin-left: 2px;
 }
