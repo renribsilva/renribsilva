@@ -1,6 +1,6 @@
 import styles from "../styles/components.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMastodon, faGithub, faBluesky } from "@fortawesome/free-brands-svg-icons";
+import { faMastodon, faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import React from "react";
 import { faRss } from "@fortawesome/free-solid-svg-icons";
