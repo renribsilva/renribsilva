@@ -77,7 +77,7 @@ const Post = ({ post }: PostProps) => {
           <h1>{post.properties.Page.title[0].plain_text.replace(/-/g, "·")}</h1>
           <div>
             <span>
-              <Datetime date={post.created_time} semishort={true}></Datetime>
+              <Datetime date={post.created_time}></Datetime>
             </span>
           </div>
         </div>

@@ -1,44 +1,41 @@
 /* styles.module.css */
-:root, html {
-  margin-inline: 130px;
-  margin-top: 70px;
-  --color-fill-light: rgb(250, 242, 234);
-  --color-text-base-light: rgb(40, 39, 40);
-  --color-accent-light: rgb(39, 96, 129);
-  --color-subtitle-litgh: rgb(187, 169, 136);
+:root, html, body {
+  --color-fill-light: rgb(255, 255, 255);
+  --color-text-base-light: rgb(39, 39, 40);
+  --color-subtitle-litgh: rgb(155, 143, 119);
   
   --color-fill-dark: rgb(33, 39, 55); 
   --color-text-base-dark: rgb(234, 237, 243);
-  --color-accent-dark: rgb(204, 71, 41);
-  --color-subtitle-dark: rgb(104, 99, 92);
+  --color-subtitle-dark: rgb(122, 109, 91);
 }
 
 [data-theme="dark"] {
   --background: var(--color-fill-dark);
   --foreground: var(--color-text-base-dark);
-  --accent: var(--color-accent-dark);
   --subtitle: var(--color-subtitle-dark);
 }
 
 [data-theme="light"] {
   --background: var(--color-fill-light);
   --foreground: var(--color-text-base-light);
-  --accent: var(--color-accent-light);
   --subtitle: var(--color-subtitle-litgh)
-}
-
-body {
-  font-family: "IBM Plex mono";
-  margin: 0;
-}
-
-a:hover {
-  color: var(--accent);
 }
 
 * {
   background-color: var(--background);
   color: var(--foreground);
+}
+
+html {
+  display: flex;
+  justify-content: center;
+}
+
+body {
+  margin: 0;
+  max-width: 700px;
+  min-width: 700px;
+  font-family: "Raleway";
 }
 
 .footnotes {
@@ -67,7 +64,11 @@ a:hover {
   :root, html {
     margin-right: 10px;
     margin-left: 10px;
-    margin-top: 0px;
+  }
+
+  body {
+    max-width: 700px;
+    min-width: 340px;
   }
 }
 

@@ -2,55 +2,25 @@
 /**************** INDEX ****************/
 /***************************************/
 
-.fundo *{
-  background-color: var(--accent);
-}
-
-/*texto do index*/
-
-.index_mdx {
-  /* margin-top: 30px; */
-  margin-bottom: 50px;
-}
-
-/*lista de textos recentes*/
+/*títulos de textos recentes*/
 
 .recents_ul {
-  /* background-color: aqua; */
   list-style-type: none;
-  margin: 0;
   padding: 0;
-  margin-top: 15px;
+}
+
+.recents_li {
+  /* background-color: aqua; */
+  display: flex;
+  gap: 20px;
 }
 
 /*título dos texto*/
 
 .recents_ul h1 {
-  /* background-color: beige; */
-  align-items: center;
-  text-decoration: none;
-  color: var(--accent);
-  min-height: 25px;
-  height: auto;
-  font-size: 18px;
-  font-weight: 600;
-  display: inline-block;
+  font-size: 17px;
+  font-weight: 400;
   cursor: pointer;
-}
-
-.recents_ul a {
-  text-decoration: none;
-}
-
-/*descrição do post*/
-
-.recents_ul p {
-  /* background-color: crimson; */
-  color: var(--foreground);
-  min-height: 25px;
-  height: auto;
-  display: flex;
-  align-items: center;
 }
 
 /* Remove as margens padrão entre os elementos */
@@ -60,47 +30,20 @@
   padding: 0; 
 }
 
-/* Adiciona uma linha tracejada na parte inferior */
-.recents_ul h1:hover {
-  text-decoration: 2px underline dashed var(--accent);
+.recents_h1 {
+  font-weight: 200;
 }
 
-/*botão-link para posts*/
-.linkbutton {
-  /* background-color: aquamarine; */
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
+@media (max-width: 1080px) {
+  .recents_li {
+    display: block;
+  }
 }
-
-.linkbutton a:hover .arrow *{
-  color: var(--accent); /* Aplica a cor ao ícone no hover */
-}
-
-.arrow {
-  max-width: 20px;
-  margin-left: 15px;
-}
-
-/****************************************/
-/**************** TEXTOS ****************/
-/****************************************/
+/**************************************/
+/**************** BLOG ****************/
+/**************************************/
 
 /* INDEX */
-
-.txt_index section {
-  /* background-color: aquamarine; */
-  display: flex;
-  align-items:baseline;
-}
-
-.txt_index ul{
-  /* background-color: aqua; */
-  list-style-type: none;
-  height: fit-content;
-}
 
 .txt_index li {
   /* background-color:brown; */
@@ -108,12 +51,8 @@
   gap: 15px;
 }
 
-/* .txt_index a {
+.txt_index a {
   text-decoration: none;
-} */
-
-.txt_index li :first-child {
-  color: var(--subtitle);
 }
 
 @media (max-width: 1080px) {
@@ -126,38 +65,16 @@
 /* [SLUG] */
 
 .txt_slug_title {
-  /* background-color: beige; */
-  display: flex;
-  align-items: center;
   margin: 0;
-  color: var(--accent);
-  margin-top: 15px;
 }
 
 .txt_slug_date {
-  /* background-color: aquamarine; */
-  display: flex;
-  gap: 15px;
-  font-style: italic;
-  height: 70px;
-  min-width: max-content;
+  height: 50px;
 }
 
-/*********************************************/
-/**************** RECHETEGUES ****************/
-/*********************************************/
-
-.rec_index section {
-  /* background-color: aquamarine; */
-  display: flex;
-  align-items:baseline;
-}
-
-.rec_index ul{
-  /* background-color: aqua; */
-  list-style-type: none;
-  height: fit-content;
-}
+/**************************************/
+/**************** TAGS ****************/
+/**************************************/
 
 .rec_index li {
   /* background-color:brown; */
@@ -165,12 +82,8 @@
   gap: 15px;
 }
 
-/* .rec_index a {
+.rec_index a {
   text-decoration: none;
-} */
-
-.rec_index li :first-child {
-  color: var(--subtitle);
 }
 
 @media (max-width: 1080px) {

@@ -3,15 +3,16 @@ import styles from "../styles/components.module.css";
 import React from "react";
 
 const navItems: { label: string; page?: string }[] = [
-  { label: "/textos", page: "/textos" }, 
-  { label: "/rechetegues ", page: "/rechetegues" },
-  { label: "/léxico", page: "/lexico" },
-  { label: "/sobre", page: "/sobre" },
+  { label: "início", page: "/" }, 
+  { label: "blog", page: "/blog" }, 
+  { label: "tags ", page: "/tags" },
+  { label: "léxico", page: "/lexico" },
+  { label: "sobre", page: "/sobre" },
 ];
 
 export default function Navbar () {
   return (
-    <nav className={styles.navbar}>
+    <div className={styles.navbar}>
       <ul>
         {navItems.map(({ label, page }) => (
           <li key={label}>
@@ -21,6 +22,6 @@ export default function Navbar () {
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 }

@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Sobre from "../../components/mdx/sobre.mdx";
-import Titles from "../../components/titles";
 import styles from "../../styles/pages.module.css";
 import React from "react";
 import PropTypes from "prop-types";
@@ -37,10 +36,6 @@ export default function About() {
       <Head>
         <title>Sobre | Petricor</title>
       </Head>
-      <Titles 
-        h1Text='Sobre' 
-        h2Text='De onde veio, como foi feito e para onde vai este saite-blog?'
-      />
       <div className={styles.sobre_mdx}>
         <Sobre components={overrideComponents}/>
       </div>

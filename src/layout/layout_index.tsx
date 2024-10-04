@@ -7,7 +7,6 @@ import styles from "../styles/layout.module.css";
 import Myhr from "../components/myhr";
 import PropTypes from "prop-types";
 import React from "react";
-import Petricor from "../components/petricor";
 
 LayoutIndex.propTypes = {
   children: PropTypes.node.isRequired, // Adiciona validação para 'children'
@@ -47,26 +46,20 @@ export default function LayoutIndex({ children }) {
   }
 
   return (
-    <section className={styles.layout_i}>
-      <main className={styles.li_main}>
-        {children}
-        <Myhr />
-      </main>
-      <div className={styles.li_space}></div>
-      <div>
-        <div className={styles.li_header_menu}>
-          <Petricor />
+    <section>
+      <div className={styles.navmenu}>
+        <div>
           <Menu toggleNavbar={toggleNavbar} />
         </div>
-        <div className={styles.li_navbar}>
+        <div>
           {isMobileView ? (isNavbarOpen ? <Navbar /> : null) : <Navbar />}
         </div>
-        <Myhr marginTop="15px"/>
       </div>
-      <div className={styles.li_socials_footer}>
-        <Socials />
-        <Footer />
-      </div>
+      <Myhr marginTop="0px"/>
+        <main>{children}</main>
+      <Myhr />
+      <Socials />
+      <Footer />
     </section>
   );
 }

@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types"; 
 import { useTheme } from "next-themes";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faMoon, faSun, faXmark } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import styles from "../styles/components.module.css";
 
-const topbar = [
-  { ícone: faSun, alt: "ícone do sol, um link para definir o tema claro" },
-  { ícone: faMoon, alt: "ícone da lua, um link para definir o tema escuro" },
-  { ícone: faBars, alt: "ícone de barras, um link que expande a seção de navegação" },
-  { ícone: faXmark, alt: "ícone de X, um link que recolhe a seção de navegação" }
+const menu = [
+  { icon: "sunny", alt: "Tema claro" },
+  { icon: "dark_mode", alt: "Tema escuro" },
+  { icon: "menu", alt: "Expandir navegação" },
+  { icon: "close", alt: "Recolher navegação" }
 ];
 
 function Theme() {
@@ -30,36 +28,32 @@ function Theme() {
   };
 
   return (
-    <div>
-      <Link
-        href="#"
-        onClick={toggleTheme}
-        style={{ cursor: "pointer" }}
-        aria-label={resolvedTheme === "light" ? topbar[1].alt : topbar[0].alt}
-      >
-        <span className={styles.menu_theme_icon}>
-          <FontAwesomeIcon
-            icon={resolvedTheme === "light" ? topbar[1].ícone : topbar[0].ícone}
-            size="xl"
-          />
+    <Link
+      href="#"
+      onClick={toggleTheme}
+      style={{ cursor: "pointer" }}
+      aria-label={resolvedTheme === "light" ? menu[1].alt : menu[0].alt}
+    >
+      <span>
+        <span className="material-symbols-outlined">
+          {resolvedTheme === "light" ? menu[1].icon : menu[0].icon}
         </span>
-      </Link>
-    </div>
+      </span>
+    </Link>
   );
 }
 
 function Bars({ isNavbarOpen, toggleNavbar }) {
   return (
-    <div>
-      <span
-        onClick={toggleNavbar}
-        style={{ cursor: "pointer" }}
-        aria-label={isNavbarOpen ? topbar[3].alt : topbar[2].alt}
-        className={styles.menu_bars_icon}
-      >
-        <FontAwesomeIcon icon={isNavbarOpen ? topbar[3].ícone : topbar[2].ícone} size="xl" />
+    <span
+      onClick={toggleNavbar}
+      style={{ cursor: "pointer" }}
+      aria-label={isNavbarOpen ? menu[3].alt : menu[2].alt}
+    >
+      <span className="material-symbols-outlined">
+        {isNavbarOpen ? menu[3].icon : menu[2].icon}
       </span>
-    </div>
+    </span>
   );
 }
 
@@ -69,7 +63,7 @@ export default function Menu({ toggleNavbar }) {
 
   const handleToggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
-    toggleNavbar(); // Chama a função passada via props para qualquer lógica adicional
+    toggleNavbar();
   };
 
   useEffect(() => {
@@ -77,24 +71,23 @@ export default function Menu({ toggleNavbar }) {
       setIsShort(window.innerWidth < 1080);
     };
 
-    handleResize(); // Verifica o tamanho da tela ao montar
-    window.addEventListener("resize", handleResize); // Adiciona listener de resize
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize); // Remove o listener ao desmontar
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
     <section className={styles.menu}>
       {isShort ? (
         <>
-          <Theme />
           <Bars isNavbarOpen={isNavbarOpen} toggleNavbar={handleToggleNavbar} />
+          <Theme />
         </>
       ) : (
-        <>
-          <Theme />
-        </>
+        <Theme />
       )}
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </section>
   );
 }

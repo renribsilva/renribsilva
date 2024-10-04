@@ -7,7 +7,7 @@ export default function MdxLayout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Head>
-        <title>Textos | Petricor</title>
+        <title>Blog | Petricor</title>
       </Head>
       <div className={styles.layout_mdx}>{children}</div>
       <div className={styles.layout_mdxrodape}></div>

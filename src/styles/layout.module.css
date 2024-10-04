@@ -1,115 +1,19 @@
-/*********************************************/
-/*************** LAYOUT_INDEX ****************/
-/*********************************************/
+/****************************************/
+/*************** NAVMENU ****************/
+/****************************************/
 
-.layout_i {
-  /* background-color: antiquewhite; */
-  display: grid;
-  grid-template-columns: 1fr 70px 200px;
-  min-width: 320px;
-}
-
-/* Estilo base para os itens */
-.li_main {
-  /* background-color: brown; */
-  margin: 5px;
-  grid-row-start: 1;
-  grid-row-end: 4;
-}
-
-.li_space {
-  /* background-color: black; */
-  margin: 5px;
-  grid-row-start: 1;
-  grid-row-end: 4;
-}
-
-.li_navbar {
-  /* background-color: aqua ; */
-  position: fixed;
-  width: 200px;
-  height: 170px;
-  top: 280px
-}
-
-.li_header_menu {
-  /* background-color: cadetblue; */
-  width: 80px;
-  height: 200px;
-  position: fixed;
+.navmenu {
+  /* background-color: aquamarine; */
+  min-height: 100px;
   display: flex;
-  top:75px;
-  right: 130px;
-  justify-content: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.li_socials_footer {
-  /* background-color: rgb(219, 108, 169); */
-  width: 200px;
-  position: fixed;
-  right: 130px;
-  top: 455px
-}
-
-
-/* Estilos para empilhar ao fazer wrap */
 @media (max-width: 1080px) {
-
-  .layout_i {
-    /* background-color: antiquewhite; */
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
+  .navmenu {
+    display: block;
+    min-height: auto;
   }
-  
-  /* Estilo base para os itens */
-  .li_main {
-    order: 1;
-  }
-  
-  .li_space {
-    margin: 0;
-  }
-  
-  .li_header_menu {
-    /* background-color: cadetblue; */
-    width: auto;
-    height: auto;
-    position: inherit;
-    justify-content: space-between;
-    accent-color: var(--accent);
-  }
-  
-  .li_navbar {
-    /* background-color: aqua ; */
-    position: inherit;
-    width: auto;
-    height: auto;
-  }
-  
-  .li_socials_footer {
-    /* background-color: rgb(219, 108, 169); */
-    width: auto;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-    flex-direction: row-reverse;
-    position: relative;
-    right: inherit;
-    top: inherit;
-    order: 3;
-  }
-}
-
-/*******************************************/
-/*************** LAYOUT_MDX ****************/
-/*******************************************/
-
-.layout_mdx {
-  margin-right: 20px;
-}
-
-.layout_mdxrodape {
-  /* background-color: black; */
-  height: 100px;
 }

@@ -1,106 +1,55 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "../styles/components.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendar } from "@fortawesome/free-solid-svg-icons";
 
 const LOCALE = {
-  lang: "pt",
   langTag: "pt-BR",
 } as const;
-
-interface FormattedDatetimeProps {
-  date: string;
-  short?: boolean;
-  semishort?: boolean;
-}
 
 interface DatetimeProps {
   date: string;
   short?: boolean;
-  semishort?: boolean;
+  semishort?: boolean; // Adicionando a opção semishort
 }
 
-// Objeto para opções de formatação de tempo
-const timeOptions: Intl.DateTimeFormatOptions = {
-  hour: "2-digit",
-  minute: "2-digit",
+// "DD Mês AAAA"
+const formatFullDate = (date: Date) => {
+  const day = date.getDate();
+  const year = date.getFullYear();
+  const month = date.toLocaleString(LOCALE.langTag, { month: "short" });
+  
+  return `${day} ${month} ${year}`; // Formato "DD Mês AAAA"
 };
 
-// Objeto para opções de formatação de data completa
-const fullDateOptions: Intl.DateTimeFormatOptions = {
-  year: "numeric",
-  month: "short",
-  day: "numeric",
+// "DD de Mês"
+const formatShortDate = (date: Date) => {
+  const day = date.getDate();
+  const month = date.toLocaleString(LOCALE.langTag, { month: "short" });
+
+  return `${day} de ${month}`; // Formato "DD de Mês"
 };
 
-// Objeto para opções de formatação semishort
-const semiShortDateOptions: Intl.DateTimeFormatOptions = {
-  year: "numeric",
-  month: "long",
-  day: "2-digit",
+// "DD/MM/AA"
+const formatSemiShortDate = (date: Date) => {
+  const day = String(date.getDate()).padStart(2, "0"); // Garante que o dia tenha 2 dígitos
+  const month = String(date.getMonth() + 1).padStart(2, "0"); // Mês é zero-indexado
+  const year = String(date.getFullYear()).slice(-2); // Obtém os últimos 2 dígitos do ano
+
+  return `${day}/${month}/${year}`; // Formato "DD/MM/AA"
 };
 
-const FormattedDatetime = ({ date, short, semishort }: FormattedDatetimeProps) => {
+const FormattedDatetime = ({ date, short, semishort }: DatetimeProps) => {
   const parsedDate = new Date(date);
-
-  const formattedDayMonth = parsedDate.toLocaleDateString(LOCALE.langTag, {
-    day: "2-digit",
-    month: "2-digit",
-  });
-
-  const formattedDayMonthYear = parsedDate.toLocaleDateString(LOCALE.langTag, semiShortDateOptions);
-  const formattedFullDate = parsedDate.toLocaleDateString(LOCALE.langTag, fullDateOptions);
-  const formattedTime = parsedDate.toLocaleTimeString(LOCALE.langTag, timeOptions);
+  const formattedShortDate = formatShortDate(parsedDate);
+  const formattedFullDate = formatFullDate(parsedDate);
+  const formattedSemiShortDate = formatSemiShortDate(parsedDate); // Formata a data semi-curta
 
   return (
-    <span>
-      {short ? (
-        <time dateTime={parsedDate.toISOString()}>{formattedDayMonth}</time>
-      ) : semishort ? (
-        <time dateTime={parsedDate.toISOString()}>{formattedDayMonthYear}</time>
-      ) : (
-        <>
-          <time dateTime={parsedDate.toISOString()}>{formattedFullDate}</time>
-          <span aria-hidden="true"> às </span>
-          <span>{formattedTime}</span>
-        </>
-      )}
-    </span>
+    <time dateTime={parsedDate.toISOString()} className={styles.datetime}>
+      {semishort ? formattedSemiShortDate : short ? formattedShortDate : formattedFullDate}
+    </time>
   );
 };
 
-export default function Datetime({ date, short }: DatetimeProps) {
-  const [semishort, setSemishort] = useState<boolean>(false);
-
-  useEffect(() => {
-    // Verifica se o objeto window está disponível
-    const handleResize = () => {
-      if (typeof window !== "undefined") {
-        setSemishort(window.innerWidth < 1080);
-      }
-    };
-
-    // Chama a função uma vez na montagem do componente
-    handleResize();
-
-    // Adiciona o listener de resize
-    window.addEventListener("resize", handleResize);
-
-    // Remove o listener ao desmontar o componente
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const showCreatedText = !short && !semishort;
-
-  return (
-    <div className={styles.datetime}>
-      <FontAwesomeIcon icon={faCalendar} className={styles.datetime_icon} />
-      {showCreatedText && <span>criado em: </span>}
-      <span>
-        <FormattedDatetime date={date} short={short} semishort={semishort} />
-      </span>
-    </div>
-  );
+export default function Datetime({ date, short, semishort }: DatetimeProps) {
+  return <FormattedDatetime date={date} short={short} semishort={semishort} />;
 }

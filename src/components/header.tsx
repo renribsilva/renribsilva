@@ -6,9 +6,9 @@ interface HeaderProps {
   titlePre?: string;
 }
 
-const Header = ({ titlePre = "" }: HeaderProps) => {
+export default function Header ({ titlePre = "" }: HeaderProps) {
 
-  const { pathname } = useRouter(); // Chama o useRouter dentro do componente
+  const { pathname } = useRouter(); 
 
   const defaultTitle = titlePre ? `${titlePre} | Petricor` : "Petricor";
 
@@ -39,5 +39,3 @@ const Header = ({ titlePre = "" }: HeaderProps) => {
     </Head>
   );
 };
-
-export default Header;

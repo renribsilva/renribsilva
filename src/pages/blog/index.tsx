@@ -1,8 +1,7 @@
 import Head from "next/head";
 import { getSortedPostsData, getPostData } from "../../lib/getCollection"; 
-import { PostData } from "../../mdxtypes"; // Importe o tipo Post
+import { PostData } from "../../mdxtypes"; 
 import Datetime from "../../components/datetime";
-import Titles from "../../components/titles";
 import styles from "../../styles/pages.module.css";
 import React from "react";
 
@@ -39,10 +38,6 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
       <Head>
         <title>Textos | Petricor</title>
       </Head>
-      <Titles 
-        h1Text='Textos' 
-        h2Text='Todos os textos agrupados por ano'
-      ></Titles>
       <section className={styles.txt_index}>
         {Object.entries(groupedPosts)
           .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA)) // Ordena os anos em ordem decrescente
@@ -56,7 +51,7 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
                       date={post.date}
                       short={true}
                     />
-                    <a href={`/textos/${post.slug}`}>{post.title}</a>
+                    <a href={`/blog/${post.slug}`}>{post.title}</a>
                   </li>
                 ))}
               </ul>

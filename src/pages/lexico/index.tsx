@@ -1,6 +1,5 @@
 import Head from "next/head";
 import { getNotionPosts } from "../../lib/getNotionPosts";
-import Titles from "../../components/titles";
 import Link from "next/link";
 import { NotionPage } from "../../notiontypes";
 import styles from "../../styles/pages.module.css";
@@ -28,15 +27,6 @@ export default function Posts({ posts }: PostsProps) { // Adicionando a tipagem 
       <Head>
         <title>Léxico | Petricor</title>
       </Head>
-      <Titles 
-        h1Text='Léxico' 
-        h2Text={
-          <>
-            Pensando as palavras
-          </>
-        }
-      />
-      {/* Renderizando os posts */}
       <section className={styles.lexico}>
         <ul>
           {posts.map(post => (

@@ -3,7 +3,6 @@ import { getSortedPostsData, getPostData } from "../../lib/getCollection";
 import { getUniqueTags } from "../../lib/getCollection"; // Importe a função para obter as tags
 import { PostData } from "../../mdxtypes"; // Importe o tipo Post
 import Datetime from "../../components/datetime";
-import Titles from "../../components/titles";
 import styles from "../../styles/pages.module.css";
 import React from "react";
 
@@ -51,10 +50,6 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
       <Head>
         <title>Rechetegues | Petricor</title>
       </Head>
-      <Titles 
-        h1Text='Rechetegues' 
-        h2Text='Todos os textos agrupados por #'
-      />
       <section className={styles.rec_index}>
         {Object.entries(groupedPosts)
           .sort(([, a], [, b]) => b.frequency - a.frequency) // Ordena as tags pela frequência em ordem decrescente
@@ -66,7 +61,7 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
                   <li key={post.id}>
                     <Datetime
                       date={post.date}
-                      short={true}
+                      semishort={true}
                     />
                     <a href={`/textos/${post.slug}`}>{post.title}</a>
                   </li>
