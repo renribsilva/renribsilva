@@ -60,6 +60,7 @@ export default function LayoutIndex({ children }) {
       <Myhr />
       <Socials />
       <Footer />
+      <div className={styles.layout_rodape}></div>
     </section>
   );
 }
