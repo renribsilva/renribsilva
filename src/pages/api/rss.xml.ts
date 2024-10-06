@@ -17,7 +17,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
     allPosts.forEach((post) => {
         feed.item({
             title: post.title,
-            description: post.description,
+            description: post.subtitle,
             url: `https://petricor.xyz/textos/${post.id}`, // Caminho para os posts
             categories: post.tags || [],
             author: "renribsilva",
