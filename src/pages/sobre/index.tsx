@@ -11,7 +11,7 @@ CustomList.propTypes = {
 
 // Componente genérico para <ul> e <ol>
 function CustomList({ children, as: Component }) {
-  return <Component style={{ marginLeft: "30px" }}>{children}</Component>;
+  return <Component style={{ marginLeft: "20px" }}>{children}</Component>;
 }
 
 // Guardo os componentes em um objeto
