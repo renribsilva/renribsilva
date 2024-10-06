@@ -111,11 +111,11 @@ export async function getPostData(slug: string): Promise<PostData> {
   const content: PostData = {
     id: post.id,
     title: post.title,
+    subtitle: post.subtitle,
     date: post.date,
     slug: post.slug,
     draft: post.draft,
     tags: post.tags,
-    description: post.description,
     content: post.content, // Passa o conteúdo bruto (MDX) para ser serializado posteriormente
   };
 

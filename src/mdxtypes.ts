@@ -2,11 +2,11 @@
 export type PostData = {
   id: string;
   title: string;
+  subtitle: string;
   date: string;
   slug: string;
   draft: boolean;
   tags: string[];
-  description: string;
   content: string; // Conteúdo bruto (MDX)
 }
 

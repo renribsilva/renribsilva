@@ -52,10 +52,8 @@ const createMDXFile = async (frontmatterData, content) => {
 // Executar função
 createMDXFile({
   title: "Título do Novo Post",
+  subtitle: "Subtítulo do Novo Post",
   date: getLocalDateInUTC(),
-  mod: null,
-  featured: false,
   draft: true,
   tags: [],
-  description: "Descrição do novo post",
 }, "Escreva o texto aqui");

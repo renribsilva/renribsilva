@@ -4,6 +4,7 @@ import { PostData } from "../../mdxtypes";
 import Datetime from "../../components/datetime";
 import styles from "../../styles/pages.module.css";
 import React from "react";
+import Link from "next/link";
 
 interface GroupedPosts {
   [year: string]: PostData[];
@@ -51,7 +52,10 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
                       date={post.date}
                       short={true}
                     />
-                    <a href={`/blog/${post.slug}`}>{post.title}</a>
+                    <Link href={`/blog/${post.slug}`}>
+                      {post.title}
+                      {post.subtitle && post.subtitle.length > 0 ? `: ${post.subtitle}` : ""}
+                    </Link>
                   </li>
                 ))}
               </ul>

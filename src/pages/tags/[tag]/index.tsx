@@ -36,8 +36,9 @@ export default function TagPage({ tag, posts }: { tag: string; posts: PostData[]
           {posts.map(post => (
             <li key={post.id}>
               <Datetime date={post.date} semishort={true} />
-              <Link href={`/blog/${post.slug}`} legacyBehavior>
-                <a>{post.title}</a>
+              <Link href={`/blog/${post.slug}`}>
+                {post.title}
+                {post.subtitle && post.subtitle.length > 0 ? `: ${post.subtitle}` : ""}
               </Link>
             </li>
           ))}

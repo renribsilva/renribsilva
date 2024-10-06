@@ -17,19 +17,8 @@
   margin-bottom: 15px;
 }
 
-/*título dos texto*/
-
-.recents_ul h1 {
-  font-size: 17px;
-  font-weight: 400;
-  cursor: pointer;
-}
-
-/* Remove as margens padrão entre os elementos */
-.recents_ul li h1,
-.recents_ul li p {
-  margin: 0;
-  padding: 0; 
+.recents_li a {
+  text-decoration: none;
 }
 
 .recents_h1 {
