@@ -4,7 +4,7 @@ Petricor é um saite-blog feito por um completo amador.
 
 ## adicionar postagem
 
-Para adicionar novos arquivos markdown em `src/content/`, foi criada o script
+Para adicionar novos arquivos markdown em `src/content/`, foi criado o script
 
 * `script/createNewPost.mjs`
 
@@ -20,8 +20,6 @@ id: post2
 slug: titulo-do-novo-post
 title: Título do Novo Post
 date: '2024-09-28T20:31:32.787Z'
-mod: null
-featured: false
 draft: true
 tags: []
 description: Descrição do novo post
@@ -29,7 +27,7 @@ description: Descrição do novo post
 Escreva o texto aqui
 ```
 
-Nele, pode-se alterar o `title`, o `slug` (endereço que aparece no navegor) e `description` do post... acrescentar `tags` caso quiser e definir `false` para `draft` quando o texto estiver pronto. E pluft! (`mod` e `featured` ainda estão em processo de desenvolvimento, de modo que não servem para nada)
+Nele, pode-se alterar as propriedade `title`, `slug` (endereço que aparece no navegor), `description` e `tags`. Quando o texto estiver pronto, basta definir `false` para a propriedade `draft` e pluft. Texto publicado!
 
 ## fazer a integração com o Notion
 
@@ -45,7 +43,7 @@ Para integrar este código com o Notion, é preciso
     2. renomear `.env_ex` para `.env`
     3. [permitir](https://www.notion.so/pt/help/add-and-manage-connections-with-the-api) que essa chave acesse a base de dados criada no Notion (muito importante!)
 
-  * Obter o ID da base de dados criada no Notion, que pode ser feito de diferentes maneiras. Uma delas é copiar o número que aparece no endereço do navegador, mas isso pode ser confuso e frustante. Um jeito mais fácil e certo que encontrei foi criar uma função que retorna esse valor sem muito custo. Para tanto, é necessário
+  * Obter o número indentificador (id) da base de dados criada no Notion. Essa etapa pode ser feito de diferentes maneiras. Uma delas é copiar o número que aparece no endereço do navegador, mas isso pode ser confuso e frustante. Um jeito mais fácil e certo que encontrei foi criar um script que retorna esse valor sem muito custo. Para tanto, é necessário
     1. garantir que o VSCode tenha meios de ler as variável de ambiente `.env` na execução local de funções (eu optei pelo pacote [dotenv](https://www.npmjs.com/package/dotenv), importado em `/src/lib/ServerConstants.ts`)
     2. ter um meio de visualizar o output das funções (eu optei pelo [sucrase](https://www.npmjs.com/package/sucrase))
     3. executar o script `script/getNotionId.ts` (por exemplo, chamando `npx sucrase-node scripts/getNotionId.ts` no terminal)
