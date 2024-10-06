@@ -18,7 +18,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
         feed.item({
             title: post.title,
             description: post.subtitle,
-            url: `https://petricor.xyz/textos/${post.id}`, // Caminho para os posts
+            url: `https://petricor.xyz/blog/${post.slug}`, // Caminho para os posts
             categories: post.tags || [],
             author: "renribsilva",
             date: post.date,
