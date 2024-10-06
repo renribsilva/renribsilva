@@ -6,7 +6,7 @@
   
   --color-fill-dark: rgb(33, 39, 55); 
   --color-text-base-dark: rgb(234, 237, 243);
-  --color-subtitle-dark: rgb(122, 109, 91);
+  --color-subtitle-dark: rgb(73, 71, 70);
 }
 
 [data-theme="dark"] {
@@ -18,7 +18,7 @@
 [data-theme="light"] {
   --background: var(--color-fill-light);
   --foreground: var(--color-text-base-light);
-  --subtitle: var(--color-subtitle-litgh)
+  --subtitle: var(--color-subtitle-litgh);
 }
 
 * {

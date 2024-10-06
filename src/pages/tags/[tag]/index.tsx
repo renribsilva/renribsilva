@@ -31,7 +31,7 @@ export default function TagPage({ tag, posts }: { tag: string; posts: PostData[]
         <title>Posts tagged with {tag}</title>
       </Head>
       <section className={styles.tags_tag_index}>
-        <h1>#{tag}</h1>
+        <h1># {tag}</h1>
         <ul>
           {posts.map(post => (
             <li key={post.id}>

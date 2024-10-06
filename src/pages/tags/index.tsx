@@ -1,10 +1,11 @@
+// No seu componente Page
 import Head from "next/head";
 import { getSortedPostsData, getPostData, getUniqueTags } from "../../lib/getCollection";
 import { PostData } from "../../mdxtypes";
 import styles from "../../styles/pages.module.css";
 import React from "react";
-import Tags from "../../components/tags";
 import Link from "next/link";
+import Tagbutton from "../../components/tagbutton";
 
 interface GroupedPosts {
   [tag: string]: {
@@ -49,10 +50,12 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }): 
               <ul>
                 {posts.map(post => (
                   <li key={post.id}>
-                    <Link href={`/tags/${tag}/`} legacyBehavior>
-                      <a>
-                        <Tags tag={tag} />
-                      </a>
+                    <Link href={`/tags/${tag}/`} aria-label={`Link para textos marcados com #${tag}`} data-transition-name={tag}>
+                      {post.tags.map((postTag: string) => (
+                        <Tagbutton key={postTag} tag={postTag}> {/* Aqui você passa 'tag' como prop */}
+                          # {postTag} {/* Aqui, o valor de 'postTag' é passado como children */}
+                        </Tagbutton>
+                      ))}
                     </Link>
                   </li>
                 ))}

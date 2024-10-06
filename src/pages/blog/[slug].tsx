@@ -1,3 +1,4 @@
+// No seu componente Post
 import { getAllPostSlugs, getPostData } from "../../lib/getCollection";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -6,6 +7,7 @@ import Datetime from "../../components/datetime";
 import type { PostData, PostSlug } from "../../mdxtypes";
 import styles from "../../styles/pages.module.css";
 import React from "react";
+import Tagbutton from "../../components/tagbutton"; 
 
 interface PostProps {
   postData: Omit<PostData, "content"> & {
@@ -42,7 +44,10 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 export default function Post({ postData }: PostProps) {
   return (
     <MdxLayout>
-      <h1 className={styles.blog_slug_title}>{postData.title}</h1>
+      <h1 className={styles.blog_slug_title}>
+        {postData.title}
+        {postData.subtitle && postData.subtitle.length > 0 ? `: ${postData.subtitle}` : ""}
+      </h1>
       <div className={styles.blog_slug_date}>
         <span>
           <Datetime date={postData.date} />
@@ -50,6 +55,14 @@ export default function Post({ postData }: PostProps) {
       </div>
       <div>
         <MDXRemote {...postData.content} />
+      </div>
+      <div className={styles.blog_slug_tags}>
+        {postData.tags.length > 0 && <span>Tags: </span>} {/* Condiciona a exibição de 'Tags:' */}
+        {postData.tags.map((tag: string) => (
+          <Tagbutton key={tag} tag={tag}>
+            #{tag} {/* o valor de 'tag' é passado como children */}
+          </Tagbutton>
+        ))}
       </div>
     </MdxLayout>
   );

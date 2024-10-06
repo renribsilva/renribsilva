@@ -119,3 +119,15 @@
   margin: 30px 0px 30px 0px;
   display: block;
 }
+
+/*******************************************/
+/*************** TAGBUTTON *****************/
+/*******************************************/
+
+.default_button {
+  background-color: var(--subtitle);
+  border: none;
+  border-radius: 1rem;
+  padding: 8px;
+  cursor: pointer;
+}
