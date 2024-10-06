@@ -35,7 +35,7 @@ export async function getStaticProps() {
   return { props: { groupedPosts } };
 }
 
-export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
+export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }): JSX.Element {
   return (
     <>
       <Head>

@@ -12,7 +12,8 @@ export default function Tags({ tag }: Props) {
       <li>
         <Link href={`/tags/${tag}/`} aria-label={`Posts tagged with ${tag}`} data-transition-name={tag}>
           <span>#</span>
-          &nbsp;<span>{tag}</span>
+          &nbsp;
+          <span>{tag}</span>
         </Link>
       </li>
     </section>

@@ -11,7 +11,7 @@
   align-items: center;
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 750px) {
   .navmenu {
     display: block;
     min-height: auto;

@@ -20,7 +20,7 @@ export default function LayoutIndex({ children }) {
   // Verifica o tamanho da janela e define se é mobile ou não
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 1080); // Define 1080px como o ponto de corte para mobile
+      setIsMobileView(window.innerWidth <= 750); // Define 750px como o ponto de corte para mobile
     };
 
     handleResize(); // Executa ao carregar
