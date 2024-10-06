@@ -27,7 +27,7 @@ interface HomeProps {
 }
 
 export async function getStaticProps() {
-  const posts = getSortedPostsData().slice(0, 2);
+  const posts = getSortedPostsData().slice(0, 3 );
   return {
     props: {
       posts,
@@ -50,9 +50,7 @@ export default function Home({ posts }: HomeProps) {
         <ul className={styles.recents_ul}>
           {posts.map((post) => (
             <li key={post.id} className={styles.recents_li}>
-              <div>
-                <Datetime date={post.date} short={false} />
-              </div>
+              <Datetime date={post.date} short={false} />
               <div>
                 <Link href={`/blog/${encodeURIComponent(post.slug)}`} legacyBehavior>
                   <h1>{post.title}{" "}</h1>

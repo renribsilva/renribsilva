@@ -42,8 +42,8 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 export default function Post({ postData }: PostProps) {
   return (
     <MdxLayout>
-      <h1 className={styles.txt_slug_title}>{postData.title}</h1>
-      <div className={styles.txt_slug_date}>
+      <h1 className={styles.blog_slug_title}>{postData.title}</h1>
+      <div className={styles.blog_slug_date}>
         <span>
           <Datetime date={postData.date} />
         </span>

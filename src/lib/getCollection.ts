@@ -34,6 +34,13 @@ export function getSortedPostsData(): PostData[] {
 
 // getSortedPostsData();
 
+export function getPostsByTag(tag: string) {
+  const allPosts = getSortedPostsData();
+  
+  // Filtra os posts que contêm a tag
+  return allPosts.filter(post => post.tags.includes(tag));
+}
+
 // Função para pegar todos os slugs
 export function getAllPostSlugs(): PostSlug[] {
   const posts = getSortedPostsData();

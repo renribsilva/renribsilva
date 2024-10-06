@@ -36,9 +36,9 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
   return (
     <>
       <Head>
-        <title>Textos | Petricor</title>
+        <title>Blog | Petricor</title>
       </Head>
-      <section className={styles.txt_index}>
+      <section className={styles.blog_index}>
         {Object.entries(groupedPosts)
           .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA)) // Ordena os anos em ordem decrescente
           .map(([year, posts]) => (

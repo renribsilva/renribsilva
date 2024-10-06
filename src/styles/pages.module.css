@@ -2,9 +2,10 @@
 /**************** INDEX ****************/
 /***************************************/
 
-/*títulos de textos recentes*/
+/*lista de textos recentes*/
 
 .recents_ul {
+  /* background-color: blueviolet; */
   list-style-type: none;
   padding: 0;
 }
@@ -13,6 +14,7 @@
   /* background-color: aqua; */
   display: flex;
   gap: 20px;
+  margin-bottom: 15px;
 }
 
 /*título dos texto*/
@@ -45,18 +47,25 @@
 
 /* INDEX */
 
-.txt_index li {
-  /* background-color:brown; */
-  display: flex;
-  gap: 15px;
+.blog_index ul {
+  /* background-color: blueviolet; */
+  padding: 0;
+  margin-left: 10px;
 }
 
-.txt_index a {
+.blog_index li {
+  /* background-color:brown; */
+  display: flex;
+  margin: 0;
+  margin-bottom: 15px;
+}
+
+.blog_index a {
   text-decoration: none;
 }
 
 @media (max-width: 1080px) {
-  .txt_index section{
+  .blog_index section{
     /* background-color: aqua; */
     display: block;
   }
@@ -64,11 +73,11 @@
 
 /* [SLUG] */
 
-.txt_slug_title {
+.blog_slug_title {
   margin: 0;
 }
 
-.txt_slug_date {
+.blog_slug_date {
   height: 50px;
 }
 
@@ -76,21 +85,45 @@
 /**************** TAGS ****************/
 /**************************************/
 
-.rec_index li {
-  /* background-color:brown; */
+.tags_index {
+  /* background-color: aqua; */
   display: flex;
-  gap: 15px;
+  gap: 30px;
 }
 
-.rec_index a {
+.tags_index ul {
+  /* background-color: rgb(40, 172, 28); */
+  margin: 0;
+  padding: 0;
+}
+
+.tags_index li {
+  /* background-color:brown; */
+  display: flex;
+}
+
+.tags_index a {
   text-decoration: none;
 }
 
-@media (max-width: 1080px) {
-  .rec_index section{
-    /* background-color: aqua; */
-    display: block;
+/********************************************/
+/**************** TAGS/[TAG] ****************/
+/********************************************/
+
+  .tags_tag_index ul {
+    /* background-color: rgb(40, 172, 28); */
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
   }
+
+.tags_tag_index li {
+  /* background-color:brown; */
+  display: flex;
+}
+
+.tags_tag_index a {
+  text-decoration: none;
 }
 
 /****************************************/
