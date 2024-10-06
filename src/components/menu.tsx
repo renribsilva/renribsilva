@@ -68,7 +68,7 @@ export default function Menu({ toggleNavbar }) {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsShort(window.innerWidth < 750);
+      setIsShort(window.innerWidth < 600);
     };
 
     handleResize();

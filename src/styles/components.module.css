@@ -33,7 +33,7 @@
   text-decoration: none;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 600px) {
   .navbar ul {
     display: block;
     margin-bottom: 20px;
