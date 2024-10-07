@@ -8,7 +8,7 @@ Para adicionar novos arquivos markdown em `src/content/`, foi criado o script
 
 * `script/createNewPost.mjs`
 
-a qual deve ser executada (por exemplo, chamando `node scripts/createNewPost.mjs` no terminal). Como consequência disso, será criado o arquivo
+o qual deve ser executado (por exemplo, chamando `node scripts/createNewPost.mjs` no terminal). Como consequência disso, será criado o arquivo
 
 * `src/content/post[number].mdx`
 
@@ -19,17 +19,17 @@ o qual apresentará um _frontmatter_, tal como exemplificado abaixo
 id: post2
 slug: titulo-do-novo-post
 title: Título do Novo Post
+subtitle: Subtítulo do Novo Post
 date: '2024-09-28T20:31:32.787Z'
 draft: true
 tags: []
-description: Descrição do novo post
 ---
 Escreva o texto aqui
 ```
 
-Nele, pode-se alterar as propriedade `title`, `slug` (endereço que aparece no navegor), `description` e `tags`. Quando o texto estiver pronto, basta definir `false` para a propriedade `draft` e pluft. Texto publicado!
+Nele, pode-se alterar as propriedade `title`, `subtitle`, `slug` (endereço que aparece no navegor) e `tags`. Quando o texto estiver pronto, basta definir `false` para a propriedade `draft` e pluft. Texto publicado!
 
-## fazer a integração com o Notion
+## integrar com o Notion
 
 Para integrar este código com o Notion, é preciso
 
