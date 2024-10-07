@@ -6,20 +6,23 @@ import type { PostData, PostSlug, PostId } from "../mdxtypes"; // Importando os 
 // Diretório dos posts
 const postsDirectory = path.join(process.cwd(), "/src/content");
 
-// Função para pegar dados dos posts, ordenados
+/////////////////////////////////////////////////
+// Função para pegar dados dos posts, ordenados//
+/////////////////////////////////////////////////
+
 export function getSortedPostsData(): PostData[] {
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData: PostData[] = fileNames.map((fileName) => {
-    const id = fileName.replace(/\.mdx$/, ""); // Remove a extensão .mdx para obter o id
+    const id = fileName.replace(/\.mdx$/, ""); 
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
-    const matterResult = matter(fileContents); // Faz o parse do conteúdo com gray-matter
+    const matterResult = matter(fileContents); 
 
     return {
       id,
       ...matterResult.data,
       content: matterResult.content, // O conteúdo será processado em outra função
-    } as PostData; // Assegura que o retorno está conforme a interface PostData
+    } as PostData; 
   });
 
   // Filtra posts com draft: false
@@ -32,21 +35,25 @@ export function getSortedPostsData(): PostData[] {
   return sortedPosts;
 }
 
-// getSortedPostsData();
+//////////////////////////////////////////////////////////////////
+// Função para pegar todos os posts relacionados a uma única tag//
+//////////////////////////////////////////////////////////////////
 
 export function getPostsByTag(tag: string) {
   const allPosts = getSortedPostsData();
-  
-  // Filtra os posts que contêm a tag
+
   return allPosts.filter(post => post.tags.includes(tag));
 }
 
-// Função para pegar todos os slugs
+/////////////////////////////////////
+// Função para pegar todos os slugs//
+/////////////////////////////////////
+
 export function getAllPostSlugs(): PostSlug[] {
   const posts = getSortedPostsData();
   const postslugs: PostSlug[] = posts.map((post) => ({
     params: {
-      slug: post.slug, // slug para o roteamento dinâmico
+      slug: post.slug,
     },
   }));
 
@@ -56,7 +63,10 @@ export function getAllPostSlugs(): PostSlug[] {
 
 // getAllPostSlugs();
 
-// Função para pegar todos os ids
+///////////////////////////////////
+// Função para pegar todos os ids//
+///////////////////////////////////
+
 export function getAllPostIds(): PostId[] {
   const posts = getSortedPostsData();
   const postsids: PostId[] = posts.map((post) => ({
@@ -71,7 +81,10 @@ export function getAllPostIds(): PostId[] {
 
 // getAllPostIds();
 
-// Função para pegar todas as tags únicas com suas frequências
+////////////////////////////////////////////////////////////////
+// Função para pegar todas as tags únicas com suas frequências//
+////////////////////////////////////////////////////////////////
+
 export function getUniqueTags() {
   const posts = getSortedPostsData();
 
@@ -97,8 +110,10 @@ export function getUniqueTags() {
 
 // getUniqueTags();
 
+////////////////////////////////////////////////////
+//Função para pegar os dados de um post específico//
+////////////////////////////////////////////////////
 
-// Função para pegar os dados de um post específico
 export async function getPostData(slug: string): Promise<PostData> {
   const posts = getSortedPostsData();
   const post = posts.find((post) => post.slug === slug);
