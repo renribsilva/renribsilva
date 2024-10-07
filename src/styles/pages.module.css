@@ -82,7 +82,7 @@
 .tags_index {
   /* background-color: aqua; */
   display: flex;
-  gap: 30px;
+  gap: 10px;
 }
 
 .tags_index ul {
