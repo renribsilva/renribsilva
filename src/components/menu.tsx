@@ -5,10 +5,10 @@ import Link from "next/link";
 import styles from "../styles/components.module.css";
 
 const menu = [
-  { icon: "sunny", alt: "Tema claro" },
-  { icon: "dark_mode", alt: "Tema escuro" },
-  { icon: "menu", alt: "Expandir navegação" },
-  { icon: "close", alt: "Recolher navegação" }
+  { icon: "sunny", alt: "ícone de um sol que define o tema como claro" },
+  { icon: "dark_mode", alt: "ícone de uma lua que define o tema como escuro" },
+  { icon: "menu", alt: "ícone de barras que expande as opções de navegação" },
+  { icon: "close", alt: "ícone de um 'x' que recolhe as opções de navegação" }
 ];
 
 function Theme() {
