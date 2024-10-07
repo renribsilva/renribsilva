@@ -1,6 +1,6 @@
 import { NextApiResponse } from "next";
 import RSS from "rss";
-import { getSortedPostsData } from "../../lib/getCollection"; // Certifique-se de que o caminho está correto
+import { getSortedPostsData } from "../../lib/getMDXPosts"; // Certifique-se de que o caminho está correto
 
 export default async function handler(_: unknown, res: NextApiResponse) {
     // Cria um novo feed RSS

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { getSortedPostsData, getPostData } from "../../lib/getCollection"; 
+import { getSortedPostsData, getPostData } from "../../lib/getMDXPosts"; 
 import { PostData } from "../../mdxtypes"; 
 import Datetime from "../../components/datetime";
 import styles from "../../styles/pages.module.css";

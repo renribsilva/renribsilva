@@ -1,7 +1,7 @@
 import React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { getSortedPostsData } from "../lib/getCollection";
+import { getSortedPostsData } from "../lib/getMDXPosts";
 import styles from "../styles/pages.module.css";
 import Datetime from "../components/datetime";
 import Index from "../components/mdx/index.mdx";

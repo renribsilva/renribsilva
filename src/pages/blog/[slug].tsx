@@ -1,5 +1,5 @@
 // No seu componente Post
-import { getAllPostSlugs, getPostData } from "../../lib/getCollection";
+import { getAllPostSlugs, getPostData } from "../../lib/getMDXPosts";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import MdxLayout from "../../layout/layout_mdx";

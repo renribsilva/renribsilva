@@ -1,6 +1,6 @@
 // No seu componente Page
 import Head from "next/head";
-import { getSortedPostsData, getPostData, getUniqueTags } from "../../lib/getCollection";
+import { getSortedPostsData, getPostData, getUniqueTags } from "../../lib/getMDXPosts";
 import { PostData } from "../../mdxtypes";
 import styles from "../../styles/pages.module.css";
 import React from "react";
