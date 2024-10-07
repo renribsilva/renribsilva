@@ -6,9 +6,9 @@ import type { PostData, PostSlug, PostId } from "../mdxtypes"; // Importando os 
 // Diretório dos posts
 const postsDirectory = path.join(process.cwd(), "/src/content");
 
-/////////////////////////////////////////////////
-// Função para pegar dados dos posts, ordenados//
-/////////////////////////////////////////////////
+//////////////////////////////////////////////////////////
+// Função para pegar dados dos posts, ordenados por data//
+/////////////////////////////////////////////////////////
 
 export function getSortedPostsData(): PostData[] {
   const fileNames = fs.readdirSync(postsDirectory);
@@ -45,13 +45,13 @@ export function getPostsByTag(tag: string) {
   return allPosts.filter(post => post.tags.includes(tag));
 }
 
-/////////////////////////////////////
-// Função para pegar todos os slugs//
-/////////////////////////////////////
+////////////////////////////////////
+//Função para pegar todos os slugs//
+////////////////////////////////////
 
 export function getAllPostSlugs(): PostSlug[] {
-  const posts = getSortedPostsData();
-  const postslugs: PostSlug[] = posts.map((post) => ({
+  const allPosts = getSortedPostsData();
+  const postslugs: PostSlug[] = allPosts.map((post) => ({
     params: {
       slug: post.slug,
     },
