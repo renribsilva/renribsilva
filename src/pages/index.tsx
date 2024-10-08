@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 
 // Componente personalizado para <h1>
 function CustomH1({ children }) {
-  return <h1 style={{ fontWeight: 300, fontSize: "2rem" }}>{children}</h1>;
+  return <h1 style={{ fontWeight: 200, fontSize: "2rem" }}>{children}</h1>;
 }
 
 CustomH1.propTypes = {
