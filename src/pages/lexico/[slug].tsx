@@ -1,10 +1,10 @@
-import Head from "next/head";
 import { getNotionPosts } from "../../lib/getNotionPosts"; // Importa a função para obter os posts
 import { NotionPage } from "../../notiontypes";
 import { GetStaticPaths, GetStaticProps } from "next";
 import styles from "../../styles/pages.module.css";
 import Datetime from "../../components/datetime";
 import React from "react";
+import Header from "../../components/header";
 
 // Função para gerar as rotas dinâmicas
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -69,9 +69,10 @@ interface PostProps {
 const Post = ({ post }: PostProps) => {
   return (
     <>
-      <Head>
-        <title>Léxico | Petricor</title>
-      </Head>
+      <Header 
+        titlePre="Léxico"
+        description="Verbete não ortodoxos de palavras do vocabulário português brasileiro"
+      />
       <section className={styles.lexicoslug}>
         <div>
           <h1>{post.properties.Page.title[0].plain_text.replace(/-/g, "·")}</h1>

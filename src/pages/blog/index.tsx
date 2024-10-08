@@ -37,7 +37,8 @@ export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
   return (
     <>
       <Header 
-        titlePre="Blog"
+        titlePre="Blog" 
+        description="Lista de textos dedicados ao aprendizado da escrita entre outros"
       />
       <section className={styles.blog_index}>
         {Object.entries(groupedPosts)

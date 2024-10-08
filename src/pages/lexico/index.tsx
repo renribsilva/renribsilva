@@ -1,9 +1,9 @@
-import Head from "next/head";
 import { getNotionPosts } from "../../lib/getNotionPosts";
 import Link from "next/link";
 import { NotionPage } from "../../notiontypes";
 import styles from "../../styles/pages.module.css";
 import React from "react";
+import Header from "../../components/header";
 
 // Tipando o retorno da função getStaticProps
 export const getStaticProps = async () => {
@@ -24,9 +24,10 @@ interface PostsProps {
 export default function Posts({ posts }: PostsProps) { // Adicionando a tipagem ao componente
   return (
     <>
-      <Head>
-        <title>Léxico | Petricor</title>
-      </Head>
+      <Header 
+        titlePre="Léxico"
+        description="Lista de verbetes não ortodoxos de palavras do vocabulário português brasileiro"
+      />
       <section className={styles.lexico}>
         <ul>
           {posts.map(post => (

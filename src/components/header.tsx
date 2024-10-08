@@ -51,12 +51,12 @@ export default function Header({
     <Head>
       <title>{metas.title}</title>
       <meta name="description" content={metas.description} />
-      <meta name="keywords" content={metas.keywords} />
+      <meta name="keywords" content={metas.keywords || og.posttags} />
 
       {/* Meta tags do Open Graph (Facebook e Instagram) */}
       <meta property="og:url" content={og.url} />
       <meta property="og:title" content={og.posttitle} />
-      <meta property="og:description" content={og.postsubtitle || og.posttags} />
+      <meta property="og:description" content={og.postsubtitle} />
       <meta property="og:type" content={og.type} />
       <meta property="og:image" content={og.image} />
       <meta property="og:site_name" content={og.provider_name} />
@@ -65,7 +65,7 @@ export default function Header({
       <meta name="twitter:card" content="summary_large_image" /> {/* Opções: "summary", "summary_large_image" */}
       <meta name="twitter:site" content="@renribsilva" /> {/* Conta Twitter associada */}
       <meta name="twitter:title" content={og.posttitle} />
-      <meta name="twitter:description" content={og.postsubtitle || og.posttags} />
+      <meta name="twitter:description" content={og.postsubtitle} />
       <meta name="twitter:image" content={og.image} />
       
       {/* Facebook-specific meta tags */}

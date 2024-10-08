@@ -6,6 +6,7 @@ import React from "react";
 import Tagbutton from "../../components/tagbutton";
 import { formatString } from "../../lib/formatString"; 
 import styles from "../../styles/pages.module.css";
+import Header from "../../components/header";
 
 interface TagPageProps {
   tags: {
@@ -26,23 +27,29 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
 
 export default function TagsPage({ tags }: TagPageProps) {
   return (
-    <section className={styles.tags_index}>
-      <ul>
-        {tags
-          .sort((a, b) => b.frequency - a.frequency) // Ordena por frequência
-          .map(({ tag, frequency }) => {
-            const formattedTag = formatString(tag); // Formata o tag
-            return (
-              <li key={formattedTag}> {/* Usa a tag formatada como chave */}
-                <Link href={`/tags/${formattedTag}`}>
-                  <Tagbutton>
-                    # {tag} ({frequency})
-                  </Tagbutton>
-                </Link>
-              </li>
-            );
-          })}
-      </ul>
-    </section>
+    <>
+      <Header 
+        titlePre="Tags"
+        description="Lista com todas as hastags usadas nos textos do blog"
+      />
+      <section className={styles.tags_index}>
+        <ul>
+          {tags
+            .sort((a, b) => b.frequency - a.frequency) // Ordena por frequência
+            .map(({ tag, frequency }) => {
+              const formattedTag = formatString(tag); // Formata o tag
+              return (
+                <li key={formattedTag}> {/* Usa a tag formatada como chave */}
+                  <Link href={`/tags/${formattedTag}`}>
+                    <Tagbutton>
+                      # {tag} ({frequency})
+                    </Tagbutton>
+                  </Link>
+                </li>
+              );
+            })}
+        </ul>
+      </section>
+    </>
   );
 }

@@ -1,8 +1,8 @@
-import Head from "next/head";
 import Sobre from "../../components/mdx/sobre.mdx";
 import styles from "../../styles/pages.module.css";
 import React from "react";
 import PropTypes from "prop-types";
+import Header from "../../components/header";
 
 CustomList.propTypes = {
   children: PropTypes.node.isRequired, // Adiciona validação para 'children'
@@ -23,9 +23,10 @@ const overrideComponents = {
 export default function About() {
   return (
     <>
-      <Head>
-        <title>Sobre | Petricor</title>
-      </Head>
+      <Header 
+        titlePre="Sobre"
+        description="Informações sobre a criação deste saite-blog, sua ideia, estrutura, estética e objetivos"
+      />
       <div className={styles.sobre_mdx}>
         <Sobre components={overrideComponents}/>
       </div>
