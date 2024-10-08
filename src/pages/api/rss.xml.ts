@@ -10,7 +10,6 @@ export default async function handler(_: unknown, res: NextApiResponse) {
         feed_url: "https://petricor.xyz/api/rss.xml", // URL final para o feed RSS
         site_url: "https://petricor.xyz/",
         language: "pt-BR",
-        image: "https://petricor.xyz/file.png", // Imagem do feed
     });
 
     // Obtém os posts e adiciona ao feed
