@@ -9,6 +9,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
         description: "Os textos mais recentes do blog",
         feed_url: "https://petricor.xyz/api/rss.xml", // URL final para o feed RSS
         site_url: "https://petricor.xyz/",
+        image_url: "https://petricor.xyz/file.png",
         language: "pt-BR",
     });
 
