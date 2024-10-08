@@ -28,13 +28,14 @@ export default async function handler(_: unknown, res: NextApiResponse) {
             categories: post.tags || [],
             author: "renribsilva",
             date: post.date,
-            enclosure: {
-                url: "https://petricor.xyz/file.png", // URL da imagem
-                type: "image/png" // Tipo da imagem
-            },
-            // Se você quiser adicionar um campo image_url, você pode fazer assim, mas nem todos os leitores de feed reconhecerão isso:
             custom_elements: [
-                { image_url: "https://petricor.xyz/file.png" }, // Campo personalizado
+                {
+                    "media:thumbnail": {
+                        _attr: {
+                            url: "https://petricor.xyz/file.png", // URL da imagem
+                        },
+                    },
+                },
             ],
         });
     });
