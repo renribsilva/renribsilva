@@ -1,5 +1,4 @@
 import React from "react";
-import Head from "next/head";
 import Link from "next/link";
 import { getSortedPostsData } from "../lib/getMDXPosts";
 import styles from "../styles/pages.module.css";
@@ -39,7 +38,10 @@ export async function getStaticProps() {
 export default function Home({ posts }: HomeProps) {
   return (
     <>
-      <Header description="Blog criado com nextjs e notion para publicação de textos variados"/>
+      <Header 
+        description="Blog criado com nextjs e notion para publicação de textos variados"
+        keywords = "blog, nextjs, notion, literatura, ruína e paixão" 
+      />
       <div>
         {/* Passando os componentes personalizados para o Index */}
         <Index components={overrideComponents} />
