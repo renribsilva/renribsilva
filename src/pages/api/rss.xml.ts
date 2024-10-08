@@ -18,14 +18,16 @@ export default async function handler(_: unknown, res: NextApiResponse) {
         // Limita a descrição a 100 caracteres
         const description = post.content.slice(0, 100) + (post.content.length > 100 ? "..." : "");
 
+        // Condicional para incluir subtitle apenas se existir
+        const title = post.subtitle ? `${post.title}: ${post.subtitle}` : post.title;
+
         feed.item({
-            title: `${post.title}: ${post.subtitle}`,
+            title: title,
             description: description,
             url: `https://petricor.xyz/blog/${post.slug}`, // Caminho para os posts
             categories: post.tags || [],
             author: "renribsilva",
             date: post.date,
-            // Usando enclosure para adicionar a imagem
             enclosure: {
                 url: "https://petricor.xyz/file.png", // URL da imagem
                 type: "image/png" // Tipo da imagem
