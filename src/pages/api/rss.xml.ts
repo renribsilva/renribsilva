@@ -36,6 +36,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
                 {
                     "media:thumbnail": {
                         _attr: {
+                            width: "240",
                             url: "https://petricor.xyz/file.png", // URL da imagem
                         },
                     },
