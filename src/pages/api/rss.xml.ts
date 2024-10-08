@@ -18,8 +18,8 @@ export default async function handler(_: unknown, res: NextApiResponse) {
         // Limita a descrição a 100 caracteres
         const description = post.content.slice(0, 100) + (post.content.length > 100 ? "..." : "");
 
-        feed.item({
-            title: post.title,
+            feed.item({
+            title: `${post.title}: ${post.subtitle}`,
             description: description,
             url: `https://petricor.xyz/blog/${post.slug}`, // Caminho para os posts
             categories: post.tags || [],
