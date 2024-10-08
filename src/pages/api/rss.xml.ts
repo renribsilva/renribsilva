@@ -10,6 +10,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
         feed_url: "https://petricor.xyz/api/rss.xml", // URL final para o feed RSS
         site_url: "https://petricor.xyz/",
         language: "pt-BR",
+        image: "https://petricor.xyz/file.png", // Imagem do feed
     });
 
     // Obtém os posts e adiciona ao feed
@@ -25,11 +26,9 @@ export default async function handler(_: unknown, res: NextApiResponse) {
             categories: post.tags || [],
             author: "renribsilva",
             date: post.date,
-            // Adicione a URL completa da imagem
-            enclosure: {
-                url: "https://petricor.xyz/file.png", // URL completa da imagem
-                type: "image/png" // Tipo da imagem
-            },
+            custom_elements: [
+                { "image": "https://petricor.xyz/file.png" }, // Adiciona a imagem para o post
+            ],
         });
     });
 
