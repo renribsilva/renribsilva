@@ -44,9 +44,7 @@ export default function Header({
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
     provider_url: "https://petricor.xyz",
-    image: process.env.VERCEL_URL 
-      ? `https://${process.env.VERCEL_URL}/file.png`  // Caminho para a imagem
-      : "http://localhost:3000/file.png", // Caminho local da imagem
+    image: "https://petricor-phi.vercel.app/file.png",
   };
 
   return (
@@ -68,7 +66,7 @@ export default function Header({
       <meta name="twitter:site" content="" />
       <meta name="twitter:title" content={og.posttitle} />
       <meta name="twitter:description" content={og.postsubtitle} />
-      <meta property="twitter:image" content="Twitter link preview image URL" />
+      <meta property="twitter:image" content={og.image} />
       
     </Head>
   );
