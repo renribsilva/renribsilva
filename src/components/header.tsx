@@ -68,7 +68,7 @@ export default function Header({
       <meta name="twitter:site" content="" />
       <meta name="twitter:title" content={og.posttitle} />
       <meta name="twitter:description" content={og.postsubtitle} />
-      <meta name="twitter:image" content={og.image} />
+      <meta property="twitter:image" content="Twitter link preview image URL">
       
     </Head>
   );
