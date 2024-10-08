@@ -18,16 +18,17 @@ export default async function handler(_: unknown, res: NextApiResponse) {
         // Limita a descrição a 100 caracteres
         const description = post.content.slice(0, 100) + (post.content.length > 100 ? "..." : "");
 
-            feed.item({
+        feed.item({
             title: `${post.title}: ${post.subtitle}`,
             description: description,
             url: `https://petricor.xyz/blog/${post.slug}`, // Caminho para os posts
             categories: post.tags || [],
             author: "renribsilva",
             date: post.date,
-            custom_elements: [
-                { "image": "https://petricor.xyz/file.png" }, // Adiciona a imagem para o post
-            ],
+            enclosure: {
+                url: "https://petricor.xyz/file.png", // URL da imagem
+                type: "image/png" // Tipo da imagem
+            },
         });
     });
 
