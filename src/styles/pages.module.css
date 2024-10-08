@@ -21,8 +21,8 @@
   text-decoration: none;
 }
 
-.recents_h1 {
-  font-weight: 200;
+.recents_h2 {
+  font-weight: 300;
 }
 
 @media (max-width: 600px) {

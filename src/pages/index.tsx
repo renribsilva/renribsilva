@@ -10,7 +10,7 @@ import PropTypes from "prop-types";
 
 // Componente personalizado para <h1>
 function CustomH1({ children }) {
-  return <h1 style={{ fontWeight: 200, fontSize: "2rem" }}>{children}</h1>;
+  return <h1 style={{ fontWeight: 300, fontSize: "2rem" }}>{children}</h1>;
 }
 
 CustomH1.propTypes = {
@@ -45,7 +45,7 @@ export default function Home({ posts }: HomeProps) {
         {/* Passando os componentes personalizados para o Index */}
         <Index components={overrideComponents} />
       </div>
-      <h1 className={styles.recents_h1}>Recentes</h1>
+      <h2 className={styles.recents_h2}>Recentes</h2>
       <div>
         <ul className={styles.recents_ul}>
           {posts.map((post) => (
