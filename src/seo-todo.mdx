@@ -1,0 +1,62 @@
+1. Otimização de Meta Tags
+
+[ ] Adicionar meta tags importantes como título (<title>), descrição (<meta name="description">), e palavras-chave (<meta name="keywords">) dinamicamente para cada página.
+[ ] Usar a tag <meta name="robots"> para controlar o comportamento dos motores de busca, como index, follow ou noindex, nofollow, quando necessário.
+[ ] Adicionar Open Graph (OG) e Twitter Cards para melhorar a aparência das suas páginas quando compartilhadas em redes sociais.
+
+2. Estrutura Semântica e Heading Tags
+
+[ ] Usar headings de forma hierárquica (H1, H2, H3) para organizar melhor o conteúdo.
+[ ] Verificar que cada página tenha um único <h1> que descreva o conteúdo principal da página.
+
+3. URLs e Roteamento Amigáveis
+
+[ ] Usar URLs amigáveis (ex: /posts/meu-primeiro-post em vez de /posts?id=123) para melhorar a legibilidade e ranking.
+[ ] Configurar redirecionamentos 301 para páginas movidas ou removidas, evitando que visitantes e motores de busca encontrem páginas de erro 404.
+[ ] Adicionar tags <link rel="canonical"> para evitar conteúdo duplicado em múltiplas URLs.
+
+4. Velocidade de Carregamento e Performance
+
+[ ] Implementar lazy loading de imagens com o componente next/image para carregar imagens de maneira otimizada.
+[ ] Minificar o CSS e JavaScript e reduzir o número de scripts externos.
+[ ] Usar cache eficiente e getStaticProps/getStaticPaths sempre que possível para melhorar a performance de páginas dinâmicas.
+[ ] Configurar pré-carregamento de fontes para evitar bloqueios de renderização.
+
+5. Responsividade e Mobile-First
+
+[ ] Garantir que seu design seja responsivo e que a experiência mobile seja fluida.
+[ ] Usar a meta tag viewport para garantir que seu site se adapte a diferentes tamanhos de tela
+
+6. Mapeamento de Sitemaps e Robots.txt
+
+[ ] Gerar um arquivo sitemap.xml usando a ferramenta next-sitemap para listar todas as páginas do site.
+[ ] Criar um arquivo robots.txt para instruir motores de busca sobre o que pode ou não ser indexado.
+
+7. Dados Estruturados (Schema Markup)
+
+[ ] Adicionar dados estruturados (JSON-LD) para ajudar os motores de busca a entender melhor o conteúdo e criar rich snippets.
+
+8. Acessibilidade e Usabilidade
+
+[ ] Garantir que as imagens tenham atributos alt para melhorar a acessibilidade e o SEO.
+[ ] Usar links acessíveis e botões (não use href="#", prefira links reais ou botões com funções definidas).
+[ ] Testar o site com ferramentas de acessibilidade para garantir uma boa experiência para todos os usuários.
+
+9. Linkagem Interna e Externa
+
+[ ] Adicionar links internos estratégicos para melhorar a navegação do site e manter os usuários por mais tempo nas páginas.
+[ ] Garantir que links externos tenham rel="noopener noreferrer" para evitar problemas de segurança.
+[ ] Monitorar links quebrados regularmente e corrigi-los.
+
+10. Análise e Monitoramento
+
+[ ] Adicionar o Google Analytics ou outra ferramenta de monitoramento para acompanhar o tráfego do site.
+[ ] Verificar o desempenho no Google Search Console para identificar problemas de indexação ou penalizações.
+
+Ferramentas úteis
+
+    Lighthouse: Para medir a performance, acessibilidade e SEO.
+    Next.js next/head: Para adicionar tags meta dinâmicas.
+    next-sitemap: Para gerar o sitemap.xml automaticamente.
+    Google Search Console: Para monitorar a indexação do site.
+    Schema Markup Validator: Para validar os dados estruturados.

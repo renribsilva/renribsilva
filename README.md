@@ -1,6 +1,8 @@
 # Olá
 
-Petricor é um saite-blog feito por um completo amador. 
+Petricor é um saite-blog feito por um completo amador.
+
+![Logo do Petricor](public/file.png)
 
 ## adicionar postagem
 

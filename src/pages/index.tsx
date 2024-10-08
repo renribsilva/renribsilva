@@ -7,6 +7,7 @@ import Datetime from "../components/datetime";
 import Index from "../components/mdx/index.mdx";
 import { PostData } from "../mdxtypes";
 import PropTypes from "prop-types";
+import Header from "../components/header";
 
 // Componente personalizado para <h1>
 function CustomH1({ children }) {
@@ -38,9 +39,7 @@ export async function getStaticProps() {
 export default function Home({ posts }: HomeProps) {
   return (
     <>
-      <Head>
-        <title>Petricor</title>
-      </Head>
+      <Header description="Blog criado com nextjs e notion para publicação de textos variados"/>
       <div>
         {/* Passando os componentes personalizados para o Index */}
         <Index components={overrideComponents} />
