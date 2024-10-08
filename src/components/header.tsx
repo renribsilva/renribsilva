@@ -35,11 +35,11 @@ export default function Header({
   };
 
   const og = {
-    url: fullUrl,  // URL completa com base no ambiente
+    url: fullUrl,  
     posttitle: posttitle,
     postsubtitle: postsubtitle,
-    posttags: posttags.join(", "), // Converter array para string separada por vírgulas
-    type: "article",  // Para postagens de artigos
+    posttags: posttags.join(", "), 
+    type: "link",  
     author_name: "renribsilva",
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
