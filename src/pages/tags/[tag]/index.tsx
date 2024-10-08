@@ -33,22 +33,20 @@ export async function getStaticProps({ params }: { params: { tag: string } }) {
 
 export default function TagPage({ tag, posts }: { tag: string; posts: PostData[] }) {
   return (
-    <>
-      <section className={styles.tags_tag_index}>
-        <h1># {tag}</h1> {/* A tag agora deve ser a original */}
-        <ul>
-          {posts.map(post => (
-            <li key={post.id}>
-              <Datetime date={post.date} semishort={true} />
-              <Link href={`/blog/${post.slug}`}>
-                {post.title}
-                {post.subtitle && post.subtitle.length > 0 ? `: ${post.subtitle}` : ""}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </>
+    <section className={styles.tags_tag_index}>
+      <h1># {tag}</h1> {/* A tag agora deve ser a original */}
+      <ul>
+        {posts.map(post => (
+          <li key={post.id}>
+            <Datetime date={post.date} semishort={true} />
+            <Link href={`/blog/${post.slug}`}>
+              {post.title}
+              {post.subtitle && post.subtitle.length > 0 ? `: ${post.subtitle}` : ""}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 

@@ -26,7 +26,7 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
 
 export default function TagsPage({ tags }: TagPageProps) {
   return (
-    <div className={styles.tags_index}>
+    <section className={styles.tags_index}>
       <ul>
         {tags
           .sort((a, b) => b.frequency - a.frequency) // Ordena por frequência
@@ -43,6 +43,6 @@ export default function TagsPage({ tags }: TagPageProps) {
             );
           })}
       </ul>
-    </div>
+    </section>
   );
 }
