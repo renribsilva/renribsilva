@@ -8,7 +8,7 @@ interface HeaderProps {
   keywords?: string;
   posttitle?: string; // Para o título do post
   postsubtitle?: string; // Para a descrição do post
-  posttags?: string[];   // posttags é um array de strings
+  posttags?: string[]; // posttags é um array de strings
 }
 
 export default function Header({ 
@@ -23,7 +23,7 @@ export default function Header({
   const { asPath } = useRouter();  // Use asPath em vez de pathname
 
   const isDev = process.env.NODE_ENV === "development";
-  const baseUrl = isDev ? "http://localhost:3000" : "https://petricor.xyz";
+  const baseUrl = isDev ? "http://localhost:3000" : `https://${process.env.VERCEL_URL}`;
   const fullUrl = `${baseUrl}${asPath}`;  // Construir a URL completa
   
   const defaultTitle = titlePre === "Petricor" ? "Petricor" : `${titlePre} | Petricor`;
@@ -31,7 +31,7 @@ export default function Header({
   const metas = {
     title: defaultTitle,
     description: description,
-    keywords: keywords
+    keywords: keywords,
   };
 
   const og = {
@@ -44,7 +44,9 @@ export default function Header({
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
     provider_url: "https://petricor.xyz",
-    image: "https://petricor.xyz/file.png",  // Caminho para sua imagem
+    image: process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}/api/vercel` 
+      : "http://localhost:3000/api/vercel", // Caminho para a imagem
   };
 
   return (
@@ -53,7 +55,7 @@ export default function Header({
       <meta name="description" content={metas.description} />
       <meta name="keywords" content={metas.keywords || og.posttags} />
 
-      {/* Meta tags do Open Graph (Facebook e Instagram) */}
+      {/* Meta tags do Open Graph */}
       <meta property="og:url" content={og.url} />
       <meta property="og:title" content={og.posttitle} />
       <meta property="og:description" content={og.postsubtitle} />
@@ -62,8 +64,8 @@ export default function Header({
       <meta property="og:site_name" content={og.provider_name} />
       
       {/* Twitter Card Meta Tags */}
-      <meta name="twitter:card" content="summary_large_image" /> {/* Opções: "summary", "summary_large_image" */}
-      <meta name="twitter:site" content="" /> {/* Conta Twitter associada */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content="" />
       <meta name="twitter:title" content={og.posttitle} />
       <meta name="twitter:description" content={og.postsubtitle} />
       <meta name="twitter:image" content={og.image} />
