@@ -72,48 +72,52 @@
 
 .blog_slug_tags {
   /* background-color: aqua; */
-  margin-top: 40px;
+  display: flex;
+  margin-top: 40px;  
+}
+
+.blog_slug_tags1 {
+  /* background-color: black; */
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.blog_slug_tags2 {
+  /* background-color: blue; */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px
 }
 
 /**************************************/
 /**************** TAGS ****************/
 /**************************************/
 
-.tags_index {
-  /* background-color: aqua; */
-  display: flex;
-  gap: 10px;
-}
-
 .tags_index ul {
   /* background-color: rgb(40, 172, 28); */
-  margin: 0;
-  padding: 0;
-}
-
-.tags_index li {
-  /* background-color:brown; */
+  list-style: none;
   display: flex;
-}
-
-.tags_index a {
-  text-decoration: none;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 5px;
+  justify-content: center;
 }
 
 /********************************************/
 /**************** TAGS/[TAG] ****************/
 /********************************************/
 
-  .tags_tag_index ul {
-    background-color: rgb(40, 172, 28);
-    margin: 0;
-    padding: 0;
-    margin-left: 10px;
-  }
+.tags_tag_index ul {
+  /* background-color: rgb(40, 172, 28); */
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+}
 
 .tags_tag_index li {
   /* background-color:brown; */
   display: flex;
+  margin-bottom: 15px;
 }
 
 .tags_tag_index a {

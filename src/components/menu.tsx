@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types"; 
 import { useTheme } from "next-themes";
-import Link from "next/link";
 import styles from "../styles/components.module.css";
 
 const menu = [
@@ -28,18 +27,16 @@ function Theme() {
   };
 
   return (
-    <Link
-      href="#"
+    <button
       onClick={toggleTheme}
-      style={{ cursor: "pointer" }}
       aria-label={resolvedTheme === "light" ? menu[1].alt : menu[0].alt}
+      style={{ cursor: "pointer" }}
+      className={styles.menuthemebutton}
     >
-      <span>
-        <span className="material-symbols-outlined">
-          {resolvedTheme === "light" ? menu[1].icon : menu[0].icon}
-        </span>
+      <span className="material-symbols-outlined">
+        {resolvedTheme === "light" ? menu[1].icon : menu[0].icon}
       </span>
-    </Link>
+    </button>
   );
 }
 

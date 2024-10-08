@@ -9,6 +9,12 @@
   align-items: center;
 }
 
+.menuthemebutton {
+  background: none;
+  border: none;
+  padding: 0;   
+}
+
 @media (max-width: 800px) {
   .menu {
     width: 100%;

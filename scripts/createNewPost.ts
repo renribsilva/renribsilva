@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
+import { formatString } from "../src/lib/formatString"; // Importa a função formatString
 
 // Obter números dos arquivos
 const getFileNames = async () => {
@@ -13,13 +14,13 @@ const getFileNames = async () => {
 // Obter próximo nome de arquivo
 const getNextPostFilename = async () => {
   const postNumbers = await getFileNames();
-  const maxPostNumber = postNumbers.length ? Math.max(...postNumbers) : 0;
+  const maxPostNumber = postNumbers.length ? Math.max(...postNumbers.map(Number)) : 0; // Convertendo para números
   return `post${maxPostNumber + 1}.mdx`;
 };
 
 // Gerar ID e slug
 const generateIdFromFileName = (fileName) => fileName.replace(/\.mdx$/, "");
-const generateSlugFromTitle = (title) => title.normalize("NFD").toLowerCase().replace(/\s+/g, "-").replace(/[\u0300-\u036f]/g, "").replace(/--+/g, "-").trim();
+const generateSlugFromTitle = (title) => formatString(title); // Usa a função formatString para gerar o slug
 
 // Obter data local em UTC (São Paulo)
 const getLocalDateInUTC = () => {
