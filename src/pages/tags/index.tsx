@@ -36,7 +36,7 @@ export default function TagsPage({ tags }: TagPageProps) {
               <li key={formattedTag}> {/* Usa a tag formatada como chave */}
                 <Link href={`/tags/${formattedTag}`}>
                   <Tagbutton>
-                    #{tag} ({frequency})
+                    # {tag} ({frequency})
                   </Tagbutton>
                 </Link>
               </li>
