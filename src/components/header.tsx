@@ -8,19 +8,25 @@ interface HeaderProps {
   keywords?: string;
   posttitle?: string; // Para o título do post
   postsubtitle?: string; // Para a descrição do post
+  posttags?: string[];   // posttags é um array de strings
 }
 
 export default function Header({ 
-  titlePre = "", 
-  description = "", 
-  keywords = "", 
+  titlePre = "Petricor", 
+  description = "Blog criado com nextjs e notion dedicado à escrita", 
+  keywords = "blog, nextjs, notion, escrita, ruína, paixão",
   posttitle = "", 
-  postsubtitle = "" 
+  postsubtitle = "",
+  posttags = [], 
 }: HeaderProps) {
   
-  const { pathname } = useRouter(); 
+  const { asPath } = useRouter();  // Use asPath em vez de pathname
 
-  const defaultTitle = titlePre ? `${titlePre} | Petricor` : "Petricor";
+  const isDev = process.env.NODE_ENV === "development";
+  const baseUrl = isDev ? "http://localhost:3000" : "https://petricor.xyz";
+  const fullUrl = `${baseUrl}${asPath}`;  // Construir a URL completa
+  
+  const defaultTitle = titlePre === "Petricor" ? "Petricor" : `${titlePre} | Petricor`;
 
   const metas = {
     title: defaultTitle,
@@ -29,9 +35,10 @@ export default function Header({
   };
 
   const og = {
-    url: `https://petricor.xyz${pathname}`,
+    url: fullUrl,  // URL completa com base no ambiente
     posttitle: posttitle,
-    postsubtitle: postsubtitle, 
+    postsubtitle: postsubtitle,
+    posttags: posttags.join(", "), // Converter array para string separada por vírgulas
     type: "link",
     author_name: "renribsilva",
     author_url: "https://ursal.zone/@renribsilva",
@@ -49,7 +56,7 @@ export default function Header({
       {/* Meta tags do Open Graph */}
       <meta property="og:url" content={og.url} />
       <meta property="og:title" content={og.posttitle} />
-      <meta property="og:description" content={og.postsubtitle} />
+      <meta property="og:description" content={og.posttags} />
       <meta property="og:type" content={og.type} />
       <meta property="og:author_name" content={og.author_name} />
       <meta property="og:author_url" content={og.author_url} />

@@ -10,6 +10,7 @@
   import Tagbutton from "../../components/tagbutton"; 
   import Link from "next/link";
   import { formatString } from "../../lib/formatString"; // Certifique-se de que o caminho esteja correto
+import Header from "../../components/header";
 
   interface PostProps {
     postData: Omit<PostData, "content"> & {
@@ -46,6 +47,12 @@
   export default function Post({ postData }: PostProps) {
     return (
       <MdxLayout>
+        <Header 
+          titlePre="Blog"
+          posttitle={postData.title}
+          postsubtitle={postData.subtitle}
+          posttags={postData.tags}
+        />
         <h1 className={styles.blog_slug_title}>
           {postData.title}
           {postData.subtitle && postData.subtitle.length > 0 ? `: ${postData.subtitle}` : ""}

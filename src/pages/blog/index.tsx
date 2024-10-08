@@ -1,10 +1,10 @@
-import Head from "next/head";
 import { getSortedPostsData, getPostData } from "../../lib/getMDXPosts"; 
 import { PostData } from "../../mdxtypes"; 
 import Datetime from "../../components/datetime";
 import styles from "../../styles/pages.module.css";
 import React from "react";
 import Link from "next/link";
+import Header from "../../components/header";
 
 interface GroupedPosts {
   [year: string]: PostData[];
@@ -36,9 +36,9 @@ export async function getStaticProps() {
 export default function Page({ groupedPosts }: { groupedPosts: GroupedPosts }) {
   return (
     <>
-      <Head>
-        <title>Blog | Petricor</title>
-      </Head>
+      <Header 
+        titlePre="Blog"
+      />
       <section className={styles.blog_index}>
         {Object.entries(groupedPosts)
           .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA)) // Ordena os anos em ordem decrescente
