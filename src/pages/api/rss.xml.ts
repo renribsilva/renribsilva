@@ -36,9 +36,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
                 {
                     "media:thumbnail": {
                         _attr: {
-                            width: "240", // Ajuste o tamanho máximo da largura aqui
-                            height: "auto", // Pode ser ajustado conforme necessário
-                            url: "https://petricor.xyz/file.png", // URL da imagem
+                            url: "https://petricor.xyz/card.png", // URL da imagem
                         },
                     },
                 },
