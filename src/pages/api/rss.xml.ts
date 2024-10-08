@@ -9,11 +9,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
         description: "Os textos mais recentes do blog",
         feed_url: "https://petricor.xyz/api/rss.xml", // URL final para o feed RSS
         site_url: "https://petricor.xyz/",
-        language: "pt-BR",
-        // Adicionando o namespace para media
-        custom_namespaces: {
-            media: "http://search.yahoo.com/mrss/",
-        },
+        language: "pt-BR"
     });
 
     // Obtém os posts e adiciona ao feed
@@ -32,17 +28,6 @@ export default async function handler(_: unknown, res: NextApiResponse) {
             categories: post.tags || [],
             author: "renribsilva",
             date: post.date,
-            custom_elements: [
-                {
-                    "media:thumbnail": {
-                        _attr: {
-                            width: "240", 
-                            height: "auto", 
-                            url: "https://petricor.xyz/file.png",
-                        },
-                    },
-                },
-            ],
         });
     });
 
