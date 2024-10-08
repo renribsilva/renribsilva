@@ -63,9 +63,8 @@ export default function Header({
       
       {/* Twitter Card Meta Tags */}
       <meta property="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="" />
-      <meta name="twitter:title" content={og.posttitle} />
-      <meta name="twitter:description" content={og.postsubtitle} />
+      <meta property="twitter:title" content={og.posttitle} />
+      <meta property="twitter:description" content={og.postsubtitle} />
       <meta property="twitter:image" content={og.image} />
       
     </Head>
