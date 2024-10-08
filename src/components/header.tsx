@@ -39,12 +39,12 @@ export default function Header({
     posttitle: posttitle,
     postsubtitle: postsubtitle,
     posttags: posttags.join(", "), // Converter array para string separada por vírgulas
-    type: "link",
+    type: "article",  // Para postagens de artigos
     author_name: "renribsilva",
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
     provider_url: "https://petricor.xyz",
-    image: "/file.png", 
+    image: "/file.png",  // Caminho para sua imagem
   };
 
   return (
@@ -53,16 +53,23 @@ export default function Header({
       <meta name="description" content={metas.description} />
       <meta name="keywords" content={metas.keywords} />
 
-      {/* Meta tags do Open Graph */}
+      {/* Meta tags do Open Graph (Facebook e Instagram) */}
       <meta property="og:url" content={og.url} />
       <meta property="og:title" content={og.posttitle} />
-      <meta property="og:description" content={og.posttags} />
+      <meta property="og:description" content={og.postsubtitle || og.posttags} />
       <meta property="og:type" content={og.type} />
-      <meta property="og:author_name" content={og.author_name} />
-      <meta property="og:author_url" content={og.author_url} />
-      <meta property="og:provider_name" content={og.provider_name} />
-      <meta property="og:provider_url" content={og.provider_url} />
       <meta property="og:image" content={og.image} />
+      <meta property="og:site_name" content={og.provider_name} />
+      
+      {/* Twitter Card Meta Tags */}
+      <meta name="twitter:card" content="summary_large_image" /> {/* Opções: "summary", "summary_large_image" */}
+      <meta name="twitter:site" content="@renribsilva" /> {/* Conta Twitter associada */}
+      <meta name="twitter:title" content={og.posttitle} />
+      <meta name="twitter:description" content={og.postsubtitle || og.posttags} />
+      <meta name="twitter:image" content={og.image} />
+      
+      {/* Facebook-specific meta tags */}
+      <meta property="fb:app_id" content="your_facebook_app_id" /> {/* Opcional: se tiver uma app do Facebook */}
     </Head>
   );
 }
