@@ -9,7 +9,6 @@ export default async function handler(_: unknown, res: NextApiResponse) {
         description: "Os textos mais recentes do blog",
         feed_url: "https://petricor.xyz/api/rss.xml", // URL final para o feed RSS
         site_url: "https://petricor.xyz/",
-        image_url: "https://petricor.xyz/file.png",
         language: "pt-BR",
     });
 
@@ -26,10 +25,15 @@ export default async function handler(_: unknown, res: NextApiResponse) {
             categories: post.tags || [],
             author: "renribsilva",
             date: post.date,
+            // Usando enclosure para adicionar a imagem
             enclosure: {
                 url: "https://petricor.xyz/file.png", // URL da imagem
                 type: "image/png" // Tipo da imagem
             },
+            // Se você quiser adicionar um campo image_url, você pode fazer assim, mas nem todos os leitores de feed reconhecerão isso:
+            custom_elements: [
+                { image_url: "https://petricor.xyz/file.png" }, // Campo personalizado
+            ],
         });
     });
 
