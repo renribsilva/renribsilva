@@ -15,13 +15,21 @@ export default async function handler(_: unknown, res: NextApiResponse) {
     // Obtém os posts e adiciona ao feed
     const allPosts = await getSortedPostsData();
     allPosts.forEach((post) => {
+        // Limita a descrição a 100 caracteres
+        const description = post.content.slice(0, 100) + (post.content.length > 100 ? "..." : "");
+
         feed.item({
             title: post.title,
-            description: post.subtitle,
+            description: description,
             url: `https://petricor.xyz/blog/${post.slug}`, // Caminho para os posts
             categories: post.tags || [],
             author: "renribsilva",
             date: post.date,
+            // Adicione a URL completa da imagem
+            enclosure: {
+                url: "https://petricor.xyz/file.png", // URL completa da imagem
+                type: "image/png" // Tipo da imagem
+            },
         });
     });
 
