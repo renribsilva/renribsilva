@@ -65,7 +65,7 @@
           <div className={styles.blog_slug_tags2}>
             {postData.tags.map((tag: string, index: number) => (
               <Link href={`/tags/${formatString(tag)}`} key={index}>
-                <Tagbutton>#{tag}</Tagbutton>
+                <Tagbutton># {tag}</Tagbutton>
               </Link>
             ))}
           </div>
