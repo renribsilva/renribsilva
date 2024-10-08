@@ -44,7 +44,7 @@ export default function Header({
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
     provider_url: "https://petricor.xyz",
-    image: "/file.png",  // Caminho para sua imagem
+    image: "https://petricor.xyz/file.png",  // Caminho para sua imagem
   };
 
   return (
@@ -63,13 +63,11 @@ export default function Header({
       
       {/* Twitter Card Meta Tags */}
       <meta name="twitter:card" content="summary_large_image" /> {/* Opções: "summary", "summary_large_image" */}
-      <meta name="twitter:site" content="@renribsilva" /> {/* Conta Twitter associada */}
+      <meta name="twitter:site" content="" /> {/* Conta Twitter associada */}
       <meta name="twitter:title" content={og.posttitle} />
       <meta name="twitter:description" content={og.postsubtitle} />
       <meta name="twitter:image" content={og.image} />
       
-      {/* Facebook-specific meta tags */}
-      <meta property="fb:app_id" content="your_facebook_app_id" /> {/* Opcional: se tiver uma app do Facebook */}
     </Head>
   );
 }
