@@ -45,8 +45,8 @@ export default function Header({
     provider_name: "Petricor",
     provider_url: "https://petricor.xyz",
     image: process.env.VERCEL_URL 
-      ? `https://${process.env.VERCEL_URL}/api/vercel` 
-      : "http://localhost:3000/api/vercel", // Caminho para a imagem
+      ? `https://${process.env.VERCEL_URL}/file.png`  // Caminho para a imagem
+      : "http://localhost:3000/file.png", // Caminho local da imagem
   };
 
   return (
