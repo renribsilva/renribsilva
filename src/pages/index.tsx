@@ -38,7 +38,7 @@ export async function getStaticProps() {
 export default function Home({ posts }: HomeProps) {
   return (
     <>
-      <Header description="Teste de descrição"/>
+      <Header/>
       <div>
         {/* Passando os componentes personalizados para o Index */}
         <Index components={overrideComponents} />

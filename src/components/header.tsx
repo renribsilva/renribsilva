@@ -30,16 +30,16 @@ const Header: React.FC<HeaderProps> = ({
 
   const metas = {
     title: defaultTitle,
-    description,
-    keywords,
+    description: description,
+    keywords: keywords
   };
 
   const og = {
     url: fullUrl,  
-    posttitle,
-    postsubtitle,
+    posttitle: posttitle,
+    postsubtitle: postsubtitle,
     posttags: posttags.join(", "), 
-    type: "link",  
+    type: "website",
     author_name: "renribsilva",
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
@@ -56,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({
       {/* Meta tags do Open Graph */}
       <meta property="og:url" content={og.url} />
       <meta property="og:title" content={og.posttitle || metas.title} />
-      <meta property="og:description" content={og.postsubtitle} />
+      <meta property="og:description" content={og.postsubtitle || metas.description} />
       <meta property="og:type" content={og.type} />
       <meta property="og:image" content={og.image} />
       <meta property="og:site_name" content={og.provider_name} />
