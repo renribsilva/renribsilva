@@ -50,9 +50,6 @@ import Header from "../../components/header";
         <Header 
           titlePre="Blog"
           description="Texto dedicado à escrita ou a outros temas do cotidiano"
-          posttitle={postData.title}
-          postsubtitle={postData.subtitle}
-          posttags={postData.tags}
         />
         <h1 className={styles.blog_slug_title}>
           {postData.title}
