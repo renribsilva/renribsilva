@@ -1,71 +1,39 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import { getAllPostSlugs, getUniqueTags } from "../../lib/getMDXPosts"; 
-import { getNotionPosts, extractSlugsFromPosts } from "../../lib/getNotionPosts"; 
-import { NotionPage } from "../../notiontypes"; 
-import { formatString } from "../../lib/formatString"; // Importa a função formatString
+import { NextApiRequest, NextApiResponse } from "next"; // Importa NextApiRequest
+import RSS from "rss";
+import { getSortedPostsData } from "../../lib/getMDXPosts"; // Certifique-se de que o caminho está correto
 
-const isDev = process.env.NODE_ENV === "development";
-const BASE_URL = isDev
-  ? "http://localhost:3000"
-  : "https://petricor.xyz";
-
-const Sitemap = async (req: NextApiRequest, res: NextApiResponse) => {
-  const pages = [
-    { path: "/", lastModified: new Date().toISOString() },
-    { path: "/blog", lastModified: new Date().toISOString() },
-    { path: "/lexico", lastModified: new Date().toISOString() },
-    { path: "/sobre", lastModified: new Date().toISOString() },
-    { path: "/tags", lastModified: new Date().toISOString() },
-  ];
-
-  const postSlugs = await getAllPostSlugs();
-
-  postSlugs.forEach(({ params }) => {
-    pages.push({
-      path: `/blog/${params.slug}`,
-      lastModified: new Date().toISOString(),
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+    // Cria um novo feed RSS
+    const feed = new RSS({
+        title: "Petricor",
+        description: "Os textos mais recentes do blog",
+        feed_url: "https://petricor.xyz/api/rss.xml", // URL final para o feed RSS
+        site_url: "https://petricor.xyz/",
+        language: "pt-BR"
     });
-  });
 
-  const notionResponse = await getNotionPosts();
-  const notionPosts = notionResponse.results as NotionPage[];
-  const slugs = extractSlugsFromPosts(notionPosts); 
+    // Obtém os posts e adiciona ao feed
+    const allPosts = await getSortedPostsData();
+    allPosts.forEach((post) => {
+        // Limita a descrição a 100 caracteres
+        const description = post.content.slice(0, 100) + (post.content.length > 100 ? "..." : "");
 
-  slugs.forEach(slug => {
-    pages.push({
-      path: `/lexico/${slug}`,
-      lastModified: new Date().toISOString(),
+        // Condicional para incluir subtitle apenas se existir
+        const title = post.subtitle ? `${post.title}: ${post.subtitle}` : post.title;
+
+        feed.item({
+            title: title,
+            description: description,
+            url: `https://petricor.xyz/blog/${post.slug}`, // Caminho para os posts
+            categories: post.tags || [],
+            author: "renribsilva",
+            date: post.date,
+            // Adiciona a imagem diretamente ao item
+            enclosure: { url: "https://petricor.xyz/file.png", type: "image/png" }, // URL da imagem no seu diretório público
+        });
     });
-  });
 
-  // Obtenha as tags únicas com suas frequências
-  const uniqueTagsWithFrequency = await getUniqueTags();
-
-  // Acesse a propriedade correta ao adicionar as tags ao sitemap
-  uniqueTagsWithFrequency.forEach(({ tag }) => {
-    const formattedTag = formatString(tag); // Formata a tag
-    pages.push({
-      path: `/tags/${formattedTag}`, // Adiciona a tag formatada ao caminho
-      lastModified: new Date().toISOString(),
-    });
-  });
-
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${pages
-      .map(({ path, lastModified }) => {
-        return `
-        <url>
-          <loc>${BASE_URL}${path}</loc>
-          <lastmod>${lastModified}</lastmod>
-        </url>`;
-      })
-      .join("")}
-  </urlset>`;
-
-  res.setHeader("Content-Type", "text/xml");
-  res.write(sitemap);
-  res.end();
-};
-
-export default Sitemap;
+    // Define os headers da resposta para XML
+    res.setHeader("Content-Type", "application/xml; charset=utf-8");
+    res.status(200).send(feed.xml({ indent: true }));
+}
