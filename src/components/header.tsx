@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({
     posttitle: posttitle || metas.title, // Título do post, ou o título padrão
     postsubtitle: postsubtitle || metas.description, // Descrição do post, ou padrão
     posttags: posttags.join(", "), // Concatena tags do post em uma string
-    type: "website",
+    type: "link",
     author_name: "renribsilva",
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
