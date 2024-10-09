@@ -6,9 +6,11 @@ interface HeaderProps {
   titlePre?: string;
   description?: string;
   keywords?: string;
-  posttitle?: string; // Título específico do post
-  postsubtitle?: string; // Descrição do post
-  posttags?: string[]; // Tags relacionadas ao post
+  posttitle?: string;
+  postsubtitle?: string;
+  posttags?: string[];
+  postImageUrl?: string; // Imagem específica do post
+  videoUrl?: string; // URL do vídeo para Twitter Player
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -18,34 +20,29 @@ const Header: React.FC<HeaderProps> = ({
   posttitle = "",
   postsubtitle = "",
   posttags = [],
+  postImageUrl = "",
+  videoUrl = "", // URL do vídeo a ser renderizado no Twitter Player
 }) => {
-  const { asPath } = useRouter(); // Pega a URL atual
+  const { asPath } = useRouter();
   const isDev = process.env.NODE_ENV === "development";
-  
-  // Define a URL base: localhost em dev, produção em prod
-  const baseUrl = isDev
-    ? "http://localhost:3000"
-    : "https://petricor.xyz";
-    
-  const fullUrl = `${baseUrl}${asPath}`; // Cria a URL completa da página
-  const imgUrl = `${baseUrl}/file.png`; // URL da imagem padrão para OG e Twitter
+  const baseUrl = isDev ? "http://localhost:3000" : "https://petricor.xyz";
+  const fullUrl = `${baseUrl}${asPath}`;
+  const imgUrl = postImageUrl || `${baseUrl}/default-image.png`;
 
   const defaultTitle = titlePre === "Petricor" ? "Petricor" : `${titlePre} | Petricor`;
 
-  // Meta informações
   const metas = {
     title: defaultTitle,
     description,
     keywords: keywords || posttags.join(", "),
   };
 
-  // Informações Open Graph e Twitter Cards
   const og = {
     url: fullUrl,
-    posttitle: posttitle || metas.title, // Título do post, ou o título padrão
-    postsubtitle: postsubtitle || metas.description, // Descrição do post, ou padrão
-    posttags: posttags.join(", "), // Concatena tags do post em uma string
-    type: "",
+    posttitle: posttitle || metas.title,
+    postsubtitle: postsubtitle || metas.description,
+    posttags: posttags.join(", "),
+    type: "link", // Definido como artigo
     author_name: "renribsilva",
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
@@ -59,7 +56,7 @@ const Header: React.FC<HeaderProps> = ({
       <meta name="description" content={metas.description} />
       <meta name="keywords" content={metas.keywords || og.posttags} />
 
-      {/* Meta tags do Open Graph */}
+      {/* Meta tags do OpenGraph */}
       <meta property="og:url" content={og.url} />
       <meta property="og:title" content={og.posttitle} />
       <meta property="og:description" content={og.postsubtitle} />
@@ -67,11 +64,23 @@ const Header: React.FC<HeaderProps> = ({
       <meta property="og:image" content={og.image} />
       <meta property="og:site_name" content={og.provider_name} />
 
-      {/* Twitter Card Meta Tags */}
-      <meta name="twitter:card" content="summary_large_image" />
+      {/* oEmbed fallback */}
+      <link rel="alternate" type="application/json+oembed" href={`${fullUrl}/oembed.json`} />
+      
+      {/* Twitter Cards */}
+      <meta name="twitter:card" content={videoUrl ? "player" : "summary_large_image"} />
       <meta name="twitter:title" content={og.posttitle} />
       <meta name="twitter:description" content={og.postsubtitle} />
       <meta name="twitter:image" content={og.image} />
+
+      {/* Twitter Player Meta Tags - se houver vídeo */}
+      {videoUrl && (
+        <>
+          <meta name="twitter:player" content={videoUrl} />
+          <meta name="twitter:player:width" content="1280" />
+          <meta name="twitter:player:height" content="720" />
+        </>
+      )}
     </Head>
   );
 };
