@@ -49,7 +49,7 @@ import Header from "../../components/header";
       <MdxLayout>
         <Header 
           titlePre="Blog"
-          description="Texto dedicado à escrita ou a outros temas do cotidiano"
+          description="Texto dedicado ao aprendizado da escrita"
           posttitle={postData.title}
           postsubtitle={postData.subtitle}
           posttags={postData.tags}
