@@ -25,6 +25,7 @@ const Header: React.FC<HeaderProps> = ({
   const isDev = process.env.NODE_ENV === "development";
   const baseUrl = isDev ? "http://localhost:3000" : "https://petricor.xyz";
   const fullUrl = `${baseUrl}${asPath}`; // Construir a URL completa
+  const imgUrl = `${baseUrl}/file.png`; 
   
   const defaultTitle = titlePre === "Petricor" ? "Petricor" : `${titlePre} | Petricor`;
 
@@ -44,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
     provider_url: "https://petricor.xyz",
-    image: `${process.env.VERCEL_URL ? "https://petricor.xyz" : "http://localhost:3000"}/file.png`,
+    image: imgUrl
   };
 
   return (
