@@ -42,15 +42,16 @@ function Theme() {
 
 function Bars({ isNavbarOpen, toggleNavbar }) {
   return (
-    <span
+    <button
       onClick={toggleNavbar}
       style={{ cursor: "pointer" }}
       aria-label={isNavbarOpen ? menu[3].alt : menu[2].alt}
+      className={styles.menubarsbutton}
     >
       <span className="material-symbols-outlined">
         {isNavbarOpen ? menu[3].icon : menu[2].icon}
       </span>
-    </span>
+    </button>
   );
 }
 

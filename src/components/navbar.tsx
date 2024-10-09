@@ -16,7 +16,7 @@ export default function Navbar () {
       <ul>
         {navItems.map(({ label, page }) => (
           <li key={label}>
-            <Link href={page}>
+            <Link href={page} >
               {label}
             </Link>
           </li>

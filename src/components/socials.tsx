@@ -29,7 +29,7 @@ export default function Socials () {
       {SocialObjects.map(({ ícone, link, alt }) => {
         return (
           <li key={link}>
-            <Link target="_blank" href={link} aria-label={alt}>
+            <Link target="_blank" href={link} aria-label={alt} rel="noopener noreferrer">
               <FontAwesomeIcon icon={ícone} size="lg" />
             </Link>
           </li>

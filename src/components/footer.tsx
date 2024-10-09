@@ -22,7 +22,7 @@ export default function Footer() {
         criado com:{" "}
         {linkfooter.slice(0, 2).map(({ label, href }, index) => (
           <React.Fragment key={href}>
-            <Link href={href} {...linkProps}>
+            <Link href={href} {...linkProps} rel="noopener noreferrer">
               {label}
             </Link>
             {index < 1 && " e "} {/* Adiciona " e " entre os links */}
