@@ -2,6 +2,8 @@ import { Client } from "@notionhq/client";
 import NodeCache from "node-cache";
 import { NOTION_DATABASE_ID, NOTION_TOKEN } from "./ServerConstants";
 import { QueryDatabaseResponse } from "@notionhq/client/build/src/api-endpoints";
+import { NotionPage } from "../notiontypes";
+import { formatString } from "./formatString";
 
 const notion = new Client({ auth: NOTION_TOKEN });
 const databaseId = NOTION_DATABASE_ID;
@@ -47,3 +49,13 @@ export async function getNotionPosts(): Promise<QueryDatabaseResponse> {
 }
 
 // getNotionPosts();
+
+// Função para extrair slugs dos posts
+export function extractSlugsFromPosts(posts: NotionPage[]): string[] {
+  return posts.map(post => {
+    const pageProperty = post.properties.Page;
+    // Aplica a formatação na string extraída da propriedade 'Page'
+    return pageProperty.title.length > 0 ? formatString(pageProperty.title[0].plain_text).replace(/-+/g, "") : ""; 
+  }).filter(page => page); // Filtra páginas vazias
+}
+
