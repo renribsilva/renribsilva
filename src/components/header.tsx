@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({
     posttitle,
     postsubtitle,
     posttags: posttags.join(", "), 
-    type: "website",  
+    type: "link",  
     author_name: "renribsilva",
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
