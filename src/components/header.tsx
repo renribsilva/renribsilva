@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 interface HeaderProps {
   titlePre?: string;
@@ -21,14 +21,11 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   
   const { asPath } = useRouter(); // Use asPath para obter o caminho da URL
-  const [fullUrl, setFullUrl] = useState("");
 
-  useEffect(() => {
-    const isDev = process.env.NODE_ENV === "development";
-    const baseUrl = isDev ? "http://localhost:3000" : `https://${process.env.VERCEL_URL || "seu-dominio.com"}`;
-    setFullUrl(`${baseUrl}${asPath}`);
-  }, [asPath]); // Dependência no asPath para atualizar a URL completa
-
+  const isDev = process.env.NODE_ENV === "development";
+  const baseUrl = isDev ? "http://localhost:3000" : "https://petricor.xyz";
+  const fullUrl = `${baseUrl}${asPath}`; // Construir a URL completa
+  
   const defaultTitle = titlePre === "Petricor" ? "Petricor" : `${titlePre} | Petricor`;
 
   const metas = {
