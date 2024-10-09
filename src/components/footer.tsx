@@ -11,7 +11,7 @@ const linkfooter = [
 
 const linkProps = {
   target: "_blank",
-  rel: "noopener noreferrer nofollow"
+  rel: "noopener noreferrer"
 };
 
 export default function Footer() {
