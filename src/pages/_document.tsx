@@ -10,6 +10,7 @@ export default function Document() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
+        <meta property="og:image" content="https://petricor.xyz/file.png" />
       </Head>
       <body>
         <Main />
