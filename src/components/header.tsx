@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
     provider_url: "https://petricor.xyz",
-    image: `${process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"}/file.png`,
+    image: `${process.env.VERCEL_URL ? "https://petricor.xyz" : "http://localhost:3000"}/file.png`,
   };
 
   return (
