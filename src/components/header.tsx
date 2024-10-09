@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({
   const { asPath } = useRouter(); // Use asPath para obter o caminho da URL
 
   const isDev = process.env.NODE_ENV === "development";
-  const baseUrl = isDev ? "http://localhost:3000" : "https://petricor.xyz";
+  const baseUrl = isDev ? "http://localhost:3000" : "https://petricor-il5caxhsq-renatos-projects-eebe1dd8.vercel.app";
   const fullUrl = `${baseUrl}${asPath}`; // Construir a URL completa
   const imgUrl = `${baseUrl}/file.png`; 
   
