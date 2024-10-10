@@ -17,7 +17,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     <?xml version="1.0" encoding="utf-8"?>
     <oembed>
       <version>1.0</version>
-      <type>link</type>
+      <type>photo</type>
       <provider_name>Petricor</provider_name>
       <provider_url>https://petricor.xyz</provider_url>
       <title>Petricor - Um Blog de Escrita</title>
@@ -25,7 +25,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       <author_url>https://ursal.zone/@renribsilva</author_url>
       <url>https://petricor.xyz</url>
       <description>Explore artigos e textos envolventes sobre escrita, paixão e reflexão.</description>
-      <thumbnail_url>https://petricor.xyz/thumbnail.jpg</thumbnail_url>
+      <thumbnail_url>https://petricor.xyz/file.png</thumbnail_url>
       <thumbnail_width>600</thumbnail_width>
       <thumbnail_height>400</thumbnail_height>
     </oembed>
