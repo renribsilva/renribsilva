@@ -21,13 +21,13 @@ const Header: React.FC<HeaderProps> = ({
   postsubtitle = "",
   posttags = [],
   postImageUrl = "",
-  videoUrl = "", // URL do vídeo a ser renderizado no Twitter Player
+
 }) => {
   const { asPath } = useRouter();
   const isDev = process.env.NODE_ENV === "development";
   const baseUrl = isDev ? "http://localhost:3000" : "https://petricor.xyz";
   const fullUrl = `${baseUrl}${asPath}`;
-  const imgUrl = postImageUrl || `${baseUrl}/default-image.png`;
+  const imgUrl = postImageUrl || `${baseUrl}/file.png`;
 
   const defaultTitle = titlePre === "Petricor" ? "Petricor" : `${titlePre} | Petricor`;
 
@@ -63,24 +63,13 @@ const Header: React.FC<HeaderProps> = ({
       <meta property="og:type" content={og.type} />
       <meta property="og:image" content={og.image} />
       <meta property="og:site_name" content={og.provider_name} />
-
-      {/* oEmbed fallback */}
-      <link rel="alternate" type="application/xml+oembed" href={`${fullUrl}/api/oembed`} />
       
       {/* Twitter Cards */}
-      <meta name="twitter:card" content={videoUrl ? "player" : "summary_large_image"} />
+      <meta name="twitter:card" content={"summary_large_image"} />
       <meta name="twitter:title" content={og.posttitle} />
       <meta name="twitter:description" content={og.postsubtitle} />
       <meta name="twitter:image" content={og.image} />
 
-      {/* Twitter Player Meta Tags - se houver vídeo */}
-      {videoUrl && (
-        <>
-          <meta name="twitter:player" content={videoUrl} />
-          <meta name="twitter:player:width" content="1280" />
-          <meta name="twitter:player:height" content="720" />
-        </>
-      )}
     </Head>
   );
 };
