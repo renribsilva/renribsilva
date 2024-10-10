@@ -15,7 +15,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const oEmbedResponse = {
       version: "1.0",
-      type: "link", // ou "video", "photo", "rich"
+      type: "photo", // ou "video", "photo", "rich"
       provider_name: "Petricor",
       provider_url: "https://petricor.xyz",
       title: "Petricor - Um Blog de Escrita",
