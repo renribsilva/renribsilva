@@ -65,7 +65,7 @@ const Header: React.FC<HeaderProps> = ({
       <meta property="og:site_name" content={og.provider_name} />
 
       {/* oEmbed fallback */}
-      <link rel="alternate" type="application/json+oembed" href={`${fullUrl}/api/oembed`} />
+      <link rel="alternate" type="application/xml+oembed" href={`${fullUrl}/api/oembed`} />
       
       {/* Twitter Cards */}
       <meta name="twitter:card" content={videoUrl ? "player" : "summary_large_image"} />
