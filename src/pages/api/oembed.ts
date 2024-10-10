@@ -12,25 +12,31 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     return;
   }
 
-  try {
-    const oEmbedResponse = {
-      version: "1.0",
-      type: "photo", // ou "video", "photo", "rich"
-      provider_name: "Petricor",
-      provider_url: "https://petricor.xyz",
-      title: "Petricor - Um Blog de Escrita",
-      author_name: "renribsilva",
-      author_url: "https://ursal.zone/@renribsilva",
-      url: "https://petricor.xyz",
-      description: "Explore artigos e textos envolventes sobre escrita, paixão e reflexão.",
-      thumbnail_url: "https://petricor.xyz/thumbnail.jpg",
-      thumbnail_width: 600,
-      thumbnail_height: 400,
-    };
+  // Gera a resposta XML
+  const oEmbedResponseXML = `
+    <?xml version="1.0" encoding="utf-8"?>
+    <oembed>
+      <version>1.0</version>
+      <type>link</type>
+      <provider_name>Petricor</provider_name>
+      <provider_url>https://petricor.xyz</provider_url>
+      <title>Petricor - Um Blog de Escrita</title>
+      <author_name>renribsilva</author_name>
+      <author_url>https://ursal.zone/@renribsilva</author_url>
+      <url>https://petricor.xyz</url>
+      <description>Explore artigos e textos envolventes sobre escrita, paixão e reflexão.</description>
+      <thumbnail_url>https://petricor.xyz/thumbnail.jpg</thumbnail_url>
+      <thumbnail_width>600</thumbnail_width>
+      <thumbnail_height>400</thumbnail_height>
+    </oembed>
+  `;
 
-    res.status(200).json(oEmbedResponse);
-  } catch (error) {
-    console.error("Erro no oEmbed handler:", error);
-    res.status(500).json({ message: "Erro no servidor ao processar o oEmbed" });
-  }
+  // Remove qualquer espaço em branco antes da declaração XML
+  const trimmedXML = oEmbedResponseXML.trim();
+
+  // Define o cabeçalho Content-Type como application/xml
+  res.setHeader("Content-Type", "application/xml");
+  
+  // Retorna a resposta XML
+  res.status(200).send(trimmedXML);
 }
