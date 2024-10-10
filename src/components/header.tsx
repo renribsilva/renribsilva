@@ -10,7 +10,6 @@ interface HeaderProps {
   postsubtitle?: string;
   posttags?: string[];
   postImageUrl?: string; // Imagem específica do post
-  videoUrl?: string; // URL do vídeo para Twitter Player
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -25,7 +24,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const { asPath } = useRouter();
   const isDev = process.env.NODE_ENV === "development";
-  const baseUrl = isDev ? "http://localhost:3000" : "https://petricor.xyz";
+  const baseUrl = isDev ? "http://localhost:3000" : "https://" + process.env.VERCEL_URL;
   const fullUrl = `${baseUrl}${asPath}`;
   const imgUrl = postImageUrl || `${baseUrl}/file.png`;
 
