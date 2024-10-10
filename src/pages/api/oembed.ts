@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const oEmbedResponse = {
     version: "1.0",
-    type: "link", // Especifica o tipo como "link"
+    type: "photo", // Especifica o tipo como "link"
     provider_name: "Petricor",
     provider_url: "https://petricor.xyz",
     title: "Petricor - Um Blog de Escrita",
