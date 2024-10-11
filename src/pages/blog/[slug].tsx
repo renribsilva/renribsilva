@@ -55,8 +55,10 @@ import Header from "../../components/header";
           posttags={postData.tags}
         />
         <h1 className={styles.blog_slug_title}>
-          {postData.title}
-          {postData.subtitle && postData.subtitle.length > 0 ? `: ${postData.subtitle}` : ""}
+          <div>{postData.title}</div>
+          <div className={styles.blog_slug_subtitle}>
+            {postData.subtitle && postData.subtitle.length > 0 ? `${postData.subtitle}` : ""}
+          </div>
         </h1>
         <div className={styles.blog_slug_date}>
           <span>

@@ -46,8 +46,10 @@ export default function TagPage({ tag, posts }: { tag: string; posts: PostData[]
             <li key={post.id}>
               <Datetime date={post.date} semishort={true} />
               <Link href={`/blog/${post.slug}`}>
-                {post.title}
-                {post.subtitle && post.subtitle.length > 0 ? `: ${post.subtitle}` : ""}
+                <div>{post.title}</div>
+                <div className={styles.tag_tag_index_subtitle}>
+                  {post.subtitle && post.subtitle.length > 0 ? `${post.subtitle}` : ""}
+                </div>
               </Link>
             </li>
           ))}

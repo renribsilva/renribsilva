@@ -51,8 +51,10 @@ export default function Home({ posts }: HomeProps) {
               <Datetime date={post.date} short={false} />
               <div>
                 <Link href={`/blog/${encodeURIComponent(post.slug)}`} >
-                  {post.title}
-                  {post.subtitle && post.subtitle.length > 0 ? `: ${post.subtitle}` : ""}
+                  <div>{post.title}</div>
+                  <div className={styles.recents_li_subtitle}>
+                    {post.subtitle && post.subtitle.length > 0 ? `${post.subtitle}` : ""}
+                  </div>
                 </Link>
               </div>
             </li>
