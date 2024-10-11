@@ -6,7 +6,7 @@
   
   --color-fill-dark: rgb(33, 39, 55); 
   --color-text-base-dark: rgb(243, 238, 234);
-  --color-subtitle-dark: rgb(117, 108, 105);
+  --color-subtitle-dark: rgb(153, 138, 132);
 }
 
 [data-theme="dark"] {
