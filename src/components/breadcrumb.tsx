@@ -2,6 +2,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/components.module.css";
+import Link from "next/link";
 
 const Breadcrumb = () => {
   const router = useRouter();
@@ -11,7 +12,7 @@ const Breadcrumb = () => {
     <section>
       <ul className={styles.breadcrumb}>
         <li>
-          <a href="/">Início</a>
+          <Link href="/">início</Link>
         </li>
         {pathSegments.map((segment, index) => {
           const path = `/${pathSegments.slice(0, index + 1).join("/")}`;
@@ -19,7 +20,7 @@ const Breadcrumb = () => {
             <React.Fragment key={path}>
               <span>&gt;&gt;</span>
               <li>
-                <a href={path}>{segment}</a>
+                <Link href={path}>{segment}</Link>
               </li>
             </React.Fragment>
           );

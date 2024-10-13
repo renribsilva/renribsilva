@@ -5,6 +5,7 @@ import styles from "../../styles/pages.module.css";
 import Datetime from "../../components/datetime";
 import React from "react";
 import Header from "../../components/header";
+import Breadcrumb from "../../components/breadcrumb";
 
 // Função para gerar as rotas dinâmicas
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -74,6 +75,7 @@ const Post = ({ post }: PostProps) => {
         posttitle={post.properties.Page.title[0].plain_text}
         postsubtitle={post.properties.Slug.rich_text[0].plain_text}
       />
+      <Breadcrumb />
       <section className={styles.lexicoslug}>
         <div>
           <h1>{post.properties.Page.title[0].plain_text.replace(/-/g, "·")}</h1>

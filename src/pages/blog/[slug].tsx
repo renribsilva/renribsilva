@@ -11,6 +11,7 @@
   import Link from "next/link";
   import { formatString } from "../../lib/formatString"; // Certifique-se de que o caminho esteja correto
 import Header from "../../components/header";
+import Breadcrumb from "../../components/breadcrumb";
 
   interface PostProps {
     postData: Omit<PostData, "content"> & {
@@ -54,6 +55,7 @@ import Header from "../../components/header";
           postsubtitle={postData.subtitle}
           posttags={postData.tags}
         />
+        <Breadcrumb />
         <h1 className={styles.blog_slug_title}>
           <div>{postData.title}</div>
           <div className={styles.blog_slug_subtitle}>
