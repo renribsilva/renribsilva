@@ -24,9 +24,9 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const { asPath } = useRouter();
   const isDev = process.env.NODE_ENV === "development";
-  const baseUrl = isDev ? "http://localhost:3000" : "https://" + process.env.VERCEL_URL;
+  const baseUrl = isDev ? "http://localhost:3000" : "https://petricor-phi.vercel.app";
   const fullUrl = `${baseUrl}${asPath}`;
-  const imgUrl = postImageUrl || `${baseUrl}/file.png`;
+  const imgUrl = postImageUrl || `${baseUrl}/api/og`;
 
   const defaultTitle = titlePre === "Petricor" ? "Petricor" : `${titlePre} | Petricor`;
 
