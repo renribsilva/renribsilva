@@ -143,3 +143,34 @@
   padding: 8px;
   cursor: pointer;
 }
+
+/**********************************************/
+/*************** MYPAGINATION *****************/
+/**********************************************/
+
+.mypagination {
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 40px;
+}
+
+.mypaginationButton, .mypaginationAnt, .mypaginationProx {
+  margin: 0 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  border: none;
+  font-family: "Raleway";
+  font-size: 14px;
+}
+
+.activeButton {
+  font-weight: bold; /* Destaca apenas o botão da página atual */
+}
+
+@media (max-width: 800px) {
+  .mypagination {
+    display: flex !important;
+  }
+}
