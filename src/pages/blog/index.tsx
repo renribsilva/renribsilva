@@ -1,4 +1,5 @@
-// index.tsx
+// pages/blog/index.tsx
+
 import { getSortedPostsData, getPostData } from "../../lib/getMDXPosts"; 
 import { PostData } from "../../mdxtypes"; 
 import Datetime from "../../components/datetime";
@@ -7,6 +8,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Header from "../../components/header";
 import Mypagination from "../../components/mypagination";
+import Breadcrumb from "../../components/breadcrumb"; // Importando o componente Breadcrumb
 
 interface GroupedPosts {
   [year: string]: PostData[];
@@ -55,6 +57,7 @@ export default function Blog({ groupedPosts }: { groupedPosts: GroupedPosts }) {
         titlePre="Blog" 
         description="Lista de textos dedicados ao aprendizado da escrita entre outros"
       />
+      <Breadcrumb />
       <section className={styles.blog_index}>
         <ul>
           {currentPosts.map((post) => (

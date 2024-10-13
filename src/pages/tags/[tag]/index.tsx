@@ -6,6 +6,7 @@ import React from "react";
 import Link from "next/link";
 import { formatString } from "../../../lib/formatString"; // Certifique-se de que o caminho esteja correto
 import Header from "../../../components/header";
+import Breadcrumb from "../../../components/breadcrumb";
 
 export async function getStaticPaths() {
   const tags = getUniqueTags();
@@ -32,15 +33,15 @@ export async function getStaticProps({ params }: { params: { tag: string } }) {
   };
 }
 
-export default function TagPage({ tag, posts }: { tag: string; posts: PostData[] }) {
+export default function TagPage({ posts }: { tag: string; posts: PostData[] }) {
   return ( 
     <>
       <Header 
         titlePre="Tags" 
         description="Lista com os textos marcados por uma determinada hashtag"
       />
+      <Breadcrumb />
       <section className={styles.tags_tag_index}>
-        <h1># {tag}</h1> {/* A tag agora deve ser a original */}
         <ul>
           {posts.map(post => (
             <li key={post.id}>

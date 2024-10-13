@@ -6,7 +6,7 @@ interface MypaginationProps {
   totalPages: number;
   currentPage: number;
   onPageChange: (page: number) => void;
-  maxButtons?: number; // Adiciona uma opção para limitar a quantidade de botões de página
+  maxButtons?: number;
 }
 
 export default function Mypagination({ 
@@ -16,10 +16,7 @@ export default function Mypagination({
   maxButtons = 1 // Define um valor padrão para maxButtons
 }: MypaginationProps) {
   
-  // Calcula os botões de página a serem exibidos
   const pageNumbers: (number | string)[] = [];
-
-  // Sempre adiciona a primeira página
   pageNumbers.push(1);
 
   // Calcula o intervalo de páginas intermediárias

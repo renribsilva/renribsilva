@@ -32,6 +32,10 @@
   font-weight: 200;
 }
 
+.vejamais a {
+  text-decoration: none;
+}
+
 @media (max-width: 600px) {
   .recents_li {
     display: block;
@@ -137,7 +141,6 @@
 
 .tags_tag_index ul {
   /* background-color: rgb(40, 172, 28); */
-  margin: 0;
   padding: 0;
   margin-left: 10px;
 }

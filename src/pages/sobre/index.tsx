@@ -3,6 +3,7 @@ import styles from "../../styles/pages.module.css";
 import React from "react";
 import PropTypes from "prop-types";
 import Header from "../../components/header";
+import Breadcrumb from "../../components/breadcrumb";
 
 CustomList.propTypes = {
   children: PropTypes.node.isRequired, // Adiciona validação para 'children'
@@ -27,6 +28,7 @@ export default function About() {
         titlePre="Sobre"
         description="Informações sobre a criação deste saite-blog, sua ideia, estrutura, estética e objetivos"
       />
+      <Breadcrumb />
       <div className={styles.sobre_mdx}>
         <Sobre components={overrideComponents}/>
       </div>

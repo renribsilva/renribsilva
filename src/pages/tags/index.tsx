@@ -1,4 +1,3 @@
-// pages/tags/index.tsx
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import { getUniqueTags } from "../../lib/getMDXPosts";
@@ -7,6 +6,7 @@ import Tagbutton from "../../components/tagbutton";
 import { formatString } from "../../lib/formatString"; 
 import styles from "../../styles/pages.module.css";
 import Header from "../../components/header";
+import Breadcrumb from "../../components/breadcrumb";
 
 interface TagPageProps {
   tags: {
@@ -32,6 +32,7 @@ export default function TagsPage({ tags }: TagPageProps) {
         titlePre="Tags"
         description="Lista com todas as hastags usadas nos textos do blog"
       />
+      <Breadcrumb />
       <section className={styles.tags_index}>
         <ul>
           {tags

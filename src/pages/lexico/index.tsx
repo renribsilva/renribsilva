@@ -4,6 +4,7 @@ import { NotionPage } from "../../notiontypes";
 import styles from "../../styles/pages.module.css";
 import React from "react";
 import Header from "../../components/header";
+import Breadcrumb from "../../components/breadcrumb";
 
 // Tipando o retorno da função getStaticProps
 export const getStaticProps = async () => {
@@ -28,6 +29,7 @@ export default function Posts({ posts }: PostsProps) { // Adicionando a tipagem 
         titlePre="Léxico"
         description="Lista de verbetes não ortodoxos de palavras do vocabulário português brasileiro"
       />
+      <Breadcrumb />
       <section className={styles.lexico}>
         <ul>
           {posts.map(post => (
