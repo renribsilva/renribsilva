@@ -15,7 +15,7 @@ interface GroupedPosts {
 }
 
 // Defina o número de posts por página
-const POSTS_PER_PAGE = 5;
+const POSTS_PER_PAGE = 4;
 
 export async function getStaticProps() {
   const postsData = getSortedPostsData();
