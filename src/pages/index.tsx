@@ -38,7 +38,8 @@ export async function getStaticProps() {
 export default function Home({ posts }: HomeProps) {
   return (
     <>
-      <Header/>
+      <head><meta property="twitter:image" content="Twitter link preview image URL" /></head>
+      
       <div>
         {/* Passando os componentes personalizados para o Index */}
         <Index components={overrideComponents} />
