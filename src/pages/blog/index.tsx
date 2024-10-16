@@ -1,5 +1,3 @@
-// pages/blog/index.tsx
-
 import { getSortedPostsData, getPostData } from "../../lib/getMDXPosts"; 
 import { PostData } from "../../mdxtypes"; 
 import Datetime from "../../components/datetime";
@@ -8,7 +6,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Header from "../../components/header";
 import Mypagination from "../../components/mypagination";
-import Breadcrumb from "../../components/breadcrumb"; // Importando o componente Breadcrumb
+import Breadcrumb from "../../components/breadcrumb"; 
 import Seo from "../../components/seo";
 
 interface GroupedPosts {
@@ -34,14 +32,21 @@ export async function getStaticProps() {
     return acc;
   }, {} as GroupedPosts);
 
+  // Defina as informações de SEO aqui
+  const meta = {
+    title: "Blog | Preticor",
+    description: "Aqui estão todos os textos publicados no blog",
+  };
+
   return {
     props: {
       groupedPosts,
+      meta, // Adiciona os dados de SEO às props
     },
   };
 }
 
-export default function Blog({ groupedPosts }: { groupedPosts: GroupedPosts }) {
+export default function Blog({ groupedPosts, meta }: { groupedPosts: GroupedPosts; meta: { title: string; description: string; } }) {
   const allPosts = Object.values(groupedPosts).flat();
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -55,10 +60,10 @@ export default function Blog({ groupedPosts }: { groupedPosts: GroupedPosts }) {
   return (
     <>
       <Seo 
-        title="Blog | Preticor"
-        description="Aqui estão todos os textos publicados no blog" 
+        title={meta.title} // Usa os dados de SEO extraídos
+        description={meta.description} 
       />
-      <Header  titlePre="Blog" />
+      <Header titlePre="Blog" />
       <Breadcrumb />
       <section className={styles.blog_index}>
         <ul>
