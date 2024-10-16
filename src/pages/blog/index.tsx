@@ -9,6 +9,7 @@ import Link from "next/link";
 import Header from "../../components/header";
 import Mypagination from "../../components/mypagination";
 import Breadcrumb from "../../components/breadcrumb"; // Importando o componente Breadcrumb
+import Seo from "../../components/seo";
 
 interface GroupedPosts {
   [year: string]: PostData[];
@@ -53,9 +54,11 @@ export default function Blog({ groupedPosts }: { groupedPosts: GroupedPosts }) {
 
   return (
     <>
-      <Header 
-        titlePre="Blog" 
+      <Seo 
+        title="Blog | Preticor"
+        description="Aqui estão todos os textos publicados no blog" 
       />
+      <Header  titlePre="Blog" />
       <Breadcrumb />
       <section className={styles.blog_index}>
         <ul>

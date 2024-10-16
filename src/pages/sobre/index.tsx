@@ -4,6 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Header from "../../components/header";
 import Breadcrumb from "../../components/breadcrumb";
+import Seo from "../../components/seo";
 
 CustomList.propTypes = {
   children: PropTypes.node.isRequired, // Adiciona validação para 'children'
@@ -24,6 +25,10 @@ const overrideComponents = {
 export default function About() {
   return (
     <>
+      <Seo 
+        title="Sobre | Petricor"
+        description="De onde veio, como foi feito e para onde vai este blog"
+      />
       <Header 
         titlePre="Sobre"
       />

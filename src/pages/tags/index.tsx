@@ -7,6 +7,7 @@ import { formatString } from "../../lib/formatString";
 import styles from "../../styles/pages.module.css";
 import Header from "../../components/header";
 import Breadcrumb from "../../components/breadcrumb";
+import Seo from "../../components/seo";
 
 interface TagPageProps {
   tags: {
@@ -28,6 +29,10 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
 export default function TagsPage({ tags }: TagPageProps) {
   return (
     <>
+      <Seo 
+        title="Tags | Preticor"
+        description="Aqui estão todas as tags marcadas nos textos" 
+      />
       <Header 
         titlePre="Tags"
       />

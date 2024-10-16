@@ -5,6 +5,7 @@ import styles from "../../styles/pages.module.css";
 import React from "react";
 import Header from "../../components/header";
 import Breadcrumb from "../../components/breadcrumb";
+import Seo from "../../components/seo";
 
 // Tipando o retorno da função getStaticProps
 export const getStaticProps = async () => {
@@ -25,9 +26,11 @@ interface PostsProps {
 export default function Posts({ posts }: PostsProps) { // Adicionando a tipagem ao componente
   return (
     <>
-      <Header 
-        titlePre="Léxico"
+      <Seo 
+        title="Léxico | Preticor"
+        description="Aqui estão todas as palavras ressignificadas" 
       />
+      <Header titlePre="Léxico"/>
       <Breadcrumb />
       <section className={styles.lexico}>
         <ul>
