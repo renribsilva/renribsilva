@@ -51,10 +51,6 @@ export default function Post({ postData }: PostProps) {
     <MdxLayout>
       <Header 
         titlePre="Blog"
-        description="Texto dedicado ao aprendizado da escrita"
-        posttitle={postData.title}
-        postsubtitle={postData.subtitle}
-        posttags={postData.tags}
       />
       <Breadcrumb />
       <h1 className={styles.blog_slug_title}>
