@@ -1,30 +1,27 @@
-// pages/blog/index.tsx
-
-import { getSortedPostsData, getPostData } from "../../lib/getMDXPosts"; 
-import { PostData } from "../../mdxtypes"; 
+import { getSortedPostsData, getPostData } from "../../lib/getMDXPosts";
+import { PostData } from "../../mdxtypes";
 import Datetime from "../../components/datetime";
 import styles from "../../styles/pages.module.css";
 import React, { useState } from "react";
 import Link from "next/link";
 import Header from "../../components/header";
 import Mypagination from "../../components/mypagination";
-import Breadcrumb from "../../components/breadcrumb"; // Importando o componente Breadcrumb
+import Breadcrumb from "../../components/breadcrumb";
 
 interface GroupedPosts {
   [year: string]: PostData[];
 }
 
-// Defina o número de posts por página
 const POSTS_PER_PAGE = 4;
 
-// Atualizando para usar getServerSideProps
-export async function getServerSideProps() {
+export async function getStaticProps() {
+  // Obtendo os dados dos posts
   const postsData = getSortedPostsData();
-  
   const posts = await Promise.all(
     postsData.map(async (post) => await getPostData(post.slug))
   );
 
+  // Agrupando os posts por ano
   const groupedPosts: GroupedPosts = posts.reduce((acc, post) => {
     const year = new Date(post.date).getFullYear().toString();
     if (!acc[year]) {
@@ -37,6 +34,8 @@ export async function getServerSideProps() {
   return {
     props: {
       groupedPosts,
+      title: "Blog | Petricor", 
+      description: "Explore os artigos e atualizações mais recentes do nosso blog.", 
     },
   };
 }
@@ -70,14 +69,14 @@ export default function Blog({ groupedPosts }: { groupedPosts: GroupedPosts }) {
             </li>
           ))}
         </ul>
-        
+
         {/* Condiciona a renderização da paginação */}
         {totalPages > 1 && (
           <Mypagination
             totalPages={totalPages}
             currentPage={currentPage}
             onPageChange={setCurrentPage}
-            maxButtons={1} // Adiciona a opção maxButtons
+            maxButtons={1}
           />
         )}
       </section>
