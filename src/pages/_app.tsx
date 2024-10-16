@@ -19,7 +19,6 @@ const SEO = {
     type: "link",
     locale: "pt_BR",
     url: "https://petricor.xyz",
-    site_name: "Petricor",
     images: [
       {
         url: "https://petricor-phi.vercel.app/api/og", // URL da imagem Open Graph

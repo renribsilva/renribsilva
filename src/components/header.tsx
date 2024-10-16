@@ -18,7 +18,6 @@ const Header = ({
   return (
     <Head>
       <title>{metas.title}</title>
-      <meta property="og:title" content="Blog | Petricor"/>
     </Head>
   );
 };
