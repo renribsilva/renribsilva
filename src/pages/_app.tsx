@@ -39,6 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:image" content={image} />
         <meta property="og:url" content={hostURL} />
         <meta property="og:type" content="link" />
+        <meta property="og:site_name" content={title} />
 
         {/*twitter*/}
         <meta name="twitter:card" content="summary_large_image" />
