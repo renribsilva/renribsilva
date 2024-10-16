@@ -49,22 +49,22 @@ export default function Post({ postData }: PostProps) {
   return (
     <MdxLayout>
       <NextSeo
-        // title={postData.title}
-        // description={postData.slug}
-        // openGraph={{
-        //   url: `https://petricor.xyz/blog/${postData.slug}`,
-        //   title: postData.title,
-        //   description: postData.slug,
-        //   images: [
-        //     {
-        //       url: "https://petricor-phi.vercel.app/api/og",
-        //       width: 800,
-        //       height: 600,
-        //       alt: "Imagem com fundo brando e em preto a palavra Petricor",
-        //     },
-        //   ],
-        //   site_name: "Petricor",
-        // }}
+        title={postData.title}
+        description={postData.slug}
+        openGraph={{
+          url: `https://petricor.xyz/blog/${postData.slug}`,
+          title: postData.title,
+          description: postData.slug,
+          images: [
+            {
+              url: "https://petricor-phi.vercel.app/api/og",
+              width: 800,
+              height: 600,
+              alt: "Imagem com fundo brando e em preto a palavra Petricor",
+            },
+          ],
+          site_name: "Petricor",
+        }}
       />
       <Header 
         titlePre="Blog"
