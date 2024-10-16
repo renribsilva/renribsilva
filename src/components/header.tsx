@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <Head>
+    <head>
       <title>{metas.title}</title>
       <meta name="description" content={metas.description} />
       <meta name="keywords" content={metas.keywords || og.posttags} />
@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({
       <meta property="twitter:description" content={og.postsubtitle} />
       <meta property="twitter:image" content={og.image} />
 
-    </Head>
+    </head>
   );
 };
 
