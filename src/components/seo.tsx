@@ -23,6 +23,7 @@ const Seo = ({ title, description }: SeoProps) => {
         title: title,
         description: description,
         siteName: "Petricor", 
+        type: "link", // Adicionando og:type aqui
         images: [
           {
             url: imageUrl, // Usa a imagem fixa
