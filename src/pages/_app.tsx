@@ -10,7 +10,7 @@ import React from "react";
 import "../styles/global.css";
 
 // Defina a URL do host para as imagens padrão
-const hostURL = "https://petricor.xyz";
+const url = "https://petricor.xyz";
 
 export default function App({ Component, pageProps }: AppProps) {
   // Obtém os componentes personalizados para MDX
@@ -23,11 +23,25 @@ export default function App({ Component, pageProps }: AppProps) {
     : "Blog criado com Next.js e Notion dedicado ao aprendizado da escrita.";
   const image = pageProps.image
     ? pageProps.image
-    : `${hostURL}/api/og`;
+    : `${url}/api/og`;
+
+  // Configuração dos metadados estáticos
+  const type = "link";
+  const site_name = "site_name";
 
   return (
     <ThemeProvider>
       <Head>
+
+        {/*fontes e ícones*/}
+         <link 
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" 
+        />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+        />
 
         {/*metas globais*/}
         <meta name="title" content={title} />
@@ -37,9 +51,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
-        <meta property="og:url" content={hostURL} />
-        <meta property="og:type" content="link" />
-        <meta property="og:site_name" content={title} />
+        <meta property="og:url" content={url} />
+        <meta property="og:type" content={type} />
+        <meta property="og:site_name" content={site_name}/>
 
         {/*twitter*/}
         <meta name="twitter:card" content="summary_large_image" />
@@ -48,7 +62,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="twitter:image" content={image} />
 
         {/*canonical*/}
-        <link rel="canonical" href={hostURL} />
+        <link rel="canonical" href={url} />
 
       </Head>
       <LayoutIndex>
