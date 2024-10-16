@@ -8,7 +8,7 @@ const imgUrl = `${baseUrl}/api/og`;
 const og = {
   image: imgUrl,
   title: "Petricor",
-  description: "Blog criado com Next.js e Notion dedicado à escrita",
+  description: "Blog criado com Next.js e Notion dedicado ao aprendizado da escrita",
   keywords: "blog, nextjs, notion, escrita, ruína, paixão",
   url: "https://petricor.xyz"
 };
