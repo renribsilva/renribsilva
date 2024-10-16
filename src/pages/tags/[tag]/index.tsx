@@ -7,7 +7,6 @@ import Link from "next/link";
 import { formatString } from "../../../lib/formatString"; // Certifique-se de que o caminho esteja correto
 import Header from "../../../components/header";
 import Breadcrumb from "../../../components/breadcrumb";
-import Seo from "../../../components/seo";
 
 export async function getStaticPaths() {
   const tags = getUniqueTags();
@@ -34,13 +33,9 @@ export async function getStaticProps({ params }: { params: { tag: string } }) {
   };
 }
 
-export default function TagPage({ tag, posts }: { tag: string; posts: PostData[] }) {
+export default function TagPage({ posts }: { tag: string; posts: PostData[] }) {
   return ( 
     <>
-      <Seo 
-        title={`# ${tag}`} // Corrigido para usar a sintaxe correta de template strings
-        description={`Aqui estão todos os textos marcados com a tag # ${tag}`} // Mantém a interpolação correta
-      />
       <Header 
         titlePre="Tags" 
       />

@@ -13,7 +13,6 @@ import Link from "next/link";
 import { formatString } from "../../lib/formatString"; // Certifique-se de que o caminho esteja correto
 import Header from "../../components/header";
 import Breadcrumb from "../../components/breadcrumb";
-import Seo from "../../components/seo"; // Importa o novo componente Seo
 
 interface PostProps {
   postData: Omit<PostData, "content"> & {
@@ -50,10 +49,6 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 export default function Post({ postData }: PostProps) {
   return (
     <MdxLayout>
-      <Seo 
-        title={postData.title}
-        description={postData.slug} 
-      />
       <Header titlePre="Blog" />
       <Breadcrumb />
       <h1 className={styles.blog_slug_title}>

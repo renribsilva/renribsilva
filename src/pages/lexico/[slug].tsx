@@ -6,7 +6,6 @@ import Datetime from "../../components/datetime";
 import React from "react";
 import Header from "../../components/header";
 import Breadcrumb from "../../components/breadcrumb";
-import Seo from "../../components/seo";
 
 // Função para gerar as rotas dinâmicas
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -68,15 +67,8 @@ interface PostProps {
 }
 
 const Post = ({ post }: PostProps) => {
-
-  const description = post.properties.Slug.rich_text.map((item) => item.plain_text).join(" "); // Junta os textos em uma string
-
   return (
     <>
-      <Seo 
-        title={post.properties.Page.title[0].plain_text.replace(/-/g, "·")}
-        description={description}
-      />
       <Header titlePre="Léxico"/>
       <Breadcrumb />
       <section className={styles.lexicoslug}>
