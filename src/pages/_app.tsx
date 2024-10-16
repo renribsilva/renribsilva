@@ -13,7 +13,7 @@ import "../styles/global.css";
 
 // Configurações de SEO padrão
 const SEO = {
-  title: "Petricor - Blog",
+  title: "Petricor",
   description: "Blog criado com Next.js e Notion dedicado ao aprendizado da escrita",
   canonical: "https://petricor.xyz",
   openGraph: {
