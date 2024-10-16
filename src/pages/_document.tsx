@@ -1,20 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import React from "react";
 
-const isDev = process.env.NODE_ENV === "development";
-const baseUrl = isDev ? "http://localhost:3000" : "https://petricor-phi.vercel.app";
-const imgUrl = `${baseUrl}/api/og`;
-
-const og = {
-  image: imgUrl,
-  title: "Petricor",
-  name: "renribsilva",
-  description: "Blog criado com Next.js e Notion dedicado ao aprendizado da escrita",
-  keywords: "blog, nextjs, notion, escrita, ruína, paixão",
-  url: "https://petricor.xyz",
-  type: "link"
-};
-
 export default function Document() {
   return (
     <Html lang="pt-BR">
@@ -27,17 +13,6 @@ export default function Document() {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
         />
-
-        <meta name="description" content={og.description} />
-        <meta name="keywords" content={og.keywords} />
-
-        <meta property="og:image" content={og.image}/>
-        <meta property="og:title" content={og.title}/>
-        <meta property="og:description" content={og.description}/>
-        <meta property="og:url" content={og.url}/>
-        <meta property="og:type" content={og.type} />
-        <meta property="og:author_name" content={og.name}/>
-
       </Head>
       <body>
         <Main />

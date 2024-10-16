@@ -1,5 +1,3 @@
-// pages/blog/[slug].tsx
-
 import { getAllPostSlugs, getPostData } from "../../lib/getMDXPosts";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
@@ -13,6 +11,7 @@ import Link from "next/link";
 import { formatString } from "../../lib/formatString"; // Certifique-se de que o caminho esteja correto
 import Header from "../../components/header";
 import Breadcrumb from "../../components/breadcrumb";
+import { NextSeo } from "next-seo"; // Importa NextSeo
 
 interface PostProps {
   postData: Omit<PostData, "content"> & {
@@ -49,6 +48,24 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 export default function Post({ postData }: PostProps) {
   return (
     <MdxLayout>
+      <NextSeo
+        title={postData.title}
+        description={postData.slug}
+        openGraph={{
+          url: `https://petricor.xyz/blog/${postData.slug}`,
+          title: postData.title,
+          description: postData.slug,
+          images: [
+            {
+              url: "https://petricor-phi.vercel.app/api/og",
+              width: 800,
+              height: 600,
+              alt: "Imagem com fundo brando e em preto a palavra Petricor",
+            },
+          ],
+          site_name: "Petricor",
+        }}
+      />
       <Header 
         titlePre="Blog"
       />
