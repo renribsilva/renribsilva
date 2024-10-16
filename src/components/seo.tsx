@@ -22,7 +22,7 @@ const Seo = ({ title, description }: SeoProps) => {
         url: `${baseUrl}${router.asPath}`, // Usa router.asPath para obter a URL completa
         title: title,
         description: description,
-        siteName: "Petricor",
+        siteName: "Petricor", 
         images: [
           {
             url: imageUrl, // Usa a imagem fixa
