@@ -14,25 +14,20 @@ import "../styles/global.css";
 // Configurações de SEO padrão
 const SEO = {
   title: "Petricor - Blog",
-  description: "Blog criado com Next.js e Notion dedicado à escrita",
+  description: "Blog criado com Next.js e Notion dedicado ao aprendizado da escrita",
   openGraph: {
-    type: "website",
+    type: "link",
     locale: "pt_BR",
-    url: "https://petricor-phi.vercel.app",
+    url: "https://petricor.xyz",
     site_name: "Petricor",
     images: [
       {
         url: "https://petricor-phi.vercel.app/api/og", // URL da imagem Open Graph
         width: 800,
         height: 600,
-        alt: "Imagem do Petricor",
+        alt: "Imagem com fundo brando e a palavra Petricor em preto",
       },
     ],
-  },
-  twitter: {
-    handle: "@seu_usuario", // Adicione seu handle do Twitter
-    site: "@seu_usuario",
-    cardType: "summary_large_image",
   },
 };
 
@@ -42,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider>
-      <DefaultSeo {...SEO} /> {/* Adiciona SEO padrão */}
+      <DefaultSeo {...SEO} /> 
       <LayoutIndex>
         <MDXProvider components={components}>
           <Component {...pageProps} />
