@@ -32,11 +32,11 @@ export default function Document() {
         <meta name="keywords" content={og.keywords} />
 
         <meta property="og:image" content={og.image}/>
-        <meta property="og:site_name" content={og.title}/>
         <meta property="og:title" content={og.title}/>
         <meta property="og:description" content={og.description}/>
         <meta property="og:url" content={og.url}/>
         <meta property="og:type" content={og.type} />
+        <meta property="og:author_name" content={og.name}/>
 
       </Head>
       <body>
