@@ -12,7 +12,7 @@ interface HeaderProps {
   postImageUrl?: string; // Imagem específica do post
 }
 
-const Header: React.FC<HeaderProps> = ({
+const Header = ({
   titlePre = "Petricor",
   description = "Blog criado com Next.js e Notion dedicado à escrita",
   keywords = "blog, nextjs, notion, escrita, ruína, paixão",
@@ -20,8 +20,7 @@ const Header: React.FC<HeaderProps> = ({
   postsubtitle = "",
   posttags = [],
   postImageUrl = "",
-
-}) => {
+}: HeaderProps) => {
   const { asPath } = useRouter();
   const isDev = process.env.NODE_ENV === "development";
   const baseUrl = isDev ? "http://localhost:3000" : "https://petricor-phi.vercel.app";
@@ -41,7 +40,7 @@ const Header: React.FC<HeaderProps> = ({
     posttitle: posttitle || metas.title,
     postsubtitle: postsubtitle || metas.description,
     posttags: posttags.join(", "),
-    type: "link", 
+    type: "link",
     author_name: "renribsilva",
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
@@ -68,7 +67,6 @@ const Header: React.FC<HeaderProps> = ({
       <meta property="twitter:title" content={og.posttitle} />
       <meta property="twitter:description" content={og.postsubtitle} />
       <meta property="twitter:image" content={og.image} />
-
     </Head>
   );
 };
