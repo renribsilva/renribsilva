@@ -18,7 +18,8 @@ interface GroupedPosts {
 // Defina o número de posts por página
 const POSTS_PER_PAGE = 4;
 
-export async function getStaticProps() {
+// Atualizando para usar getServerSideProps
+export async function getServerSideProps() {
   const postsData = getSortedPostsData();
   
   const posts = await Promise.all(
@@ -58,7 +59,7 @@ export default function Blog({ groupedPosts }: { groupedPosts: GroupedPosts }) {
         title="Blog | Preticor"
         description="Aqui estão todos os textos publicados no blog" 
       />
-      <Header  titlePre="Blog" />
+      <Header titlePre="Blog" />
       <Breadcrumb />
       <section className={styles.blog_index}>
         <ul>
