@@ -41,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({
     posttitle: posttitle || metas.title,
     postsubtitle: postsubtitle || metas.description,
     posttags: posttags.join(", "),
-    type: "link", // Definido como artigo
+    type: "link", 
     author_name: "renribsilva",
     author_url: "https://ursal.zone/@renribsilva",
     provider_name: "Petricor",
@@ -50,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <head>
+    <Head>
       <title>{metas.title}</title>
       <meta name="description" content={metas.description} />
       <meta name="keywords" content={metas.keywords || og.posttags} />
@@ -69,7 +69,7 @@ const Header: React.FC<HeaderProps> = ({
       <meta property="twitter:description" content={og.postsubtitle} />
       <meta property="twitter:image" content={og.image} />
 
-    </head>
+    </Head>
   );
 };
 
