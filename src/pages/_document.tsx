@@ -10,7 +10,8 @@ const og = {
   title: "Petricor",
   description: "Blog criado com Next.js e Notion dedicado ao aprendizado da escrita",
   keywords: "blog, nextjs, notion, escrita, ruína, paixão",
-  url: "https://petricor.xyz"
+  url: "https://petricor.xyz",
+  type: "link"
 };
 
 export default function Document() {
@@ -34,6 +35,7 @@ export default function Document() {
         <meta property="og:title" content={og.title}/>
         <meta property="og:description" content={og.description}/>
         <meta property="og:url" content={og.url}/>
+        <meta property="og:type" content={og.type} />
 
       </Head>
       <body>
