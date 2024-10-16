@@ -7,7 +7,7 @@ import { MDXProvider } from "@mdx-js/react"; // Importa o MDXProvider
 import LayoutIndex from "../layout/layout_index";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/react";
-import { DefaultSeo } from "next-seo"; // Importa o DefaultSeo
+import { NextSeo } from "next-seo"; // Importa o DefaultSeo
 import React from "react";
 import "../styles/global.css";
 
@@ -36,7 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider>
-      <DefaultSeo {...SEO} /> 
+      <NextSeo {...SEO} /> 
       <LayoutIndex>
         <MDXProvider components={components}>
           <Component {...pageProps} />
