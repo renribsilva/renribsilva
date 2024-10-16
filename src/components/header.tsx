@@ -64,10 +64,10 @@ const Header: React.FC<HeaderProps> = ({
       <meta property="og:site_name" content={og.provider_name} />
       
       {/* Twitter Cards */}
-      <meta name="twitter:card" content={"summary_large_image"} />
-      <meta name="twitter:title" content={og.posttitle} />
-      <meta name="twitter:description" content={og.postsubtitle} />
-      <meta name="twitter:image" content={og.image} />
+      <meta property="twitter:card" content="summary_large_image" />
+      <meta property="twitter:title" content="Petricor" />
+      <meta property="twitter:description" content={og.postsubtitle} />
+      <meta property="twitter:image" content={og.image} />
 
     </Head>
   );
