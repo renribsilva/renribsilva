@@ -27,7 +27,6 @@ export default function Posts({ posts }: PostsProps) { // Adicionando a tipagem 
     <>
       <Header 
         titlePre="Léxico"
-        description="Lista de verbetes não ortodoxos de palavras do vocabulário português brasileiro"
       />
       <Breadcrumb />
       <section className={styles.lexico}>

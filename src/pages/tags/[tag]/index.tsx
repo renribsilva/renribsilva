@@ -38,7 +38,6 @@ export default function TagPage({ posts }: { tag: string; posts: PostData[] }) {
     <>
       <Header 
         titlePre="Tags" 
-        description="Lista com os textos marcados por uma determinada hashtag"
       />
       <Breadcrumb />
       <section className={styles.tags_tag_index}>

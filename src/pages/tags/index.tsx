@@ -30,7 +30,6 @@ export default function TagsPage({ tags }: TagPageProps) {
     <>
       <Header 
         titlePre="Tags"
-        description="Lista com todas as hastags usadas nos textos do blog"
       />
       <Breadcrumb />
       <section className={styles.tags_index}>
