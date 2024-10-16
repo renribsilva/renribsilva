@@ -26,6 +26,7 @@ export default function About() {
     <>
       <Header 
         titlePre="Sobre"
+        description="Informações sobre a criação deste saite-blog, sua ideia, estrutura, estética e objetivos"
       />
       <Breadcrumb />
       <div className={styles.sobre_mdx}>

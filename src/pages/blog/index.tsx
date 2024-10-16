@@ -55,6 +55,7 @@ export default function Blog({ groupedPosts }: { groupedPosts: GroupedPosts }) {
     <>
       <Header 
         titlePre="Blog" 
+        description="Lista de textos dedicados ao aprendizado da escrita entre outros"
       />
       <Breadcrumb />
       <section className={styles.blog_index}>

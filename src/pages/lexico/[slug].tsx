@@ -71,6 +71,9 @@ const Post = ({ post }: PostProps) => {
     <>
       <Header 
         titlePre="Léxico"
+        description="Verbete não ortodoxos de palavras do vocabulário português brasileiro"
+        posttitle={post.properties.Page.title[0].plain_text}
+        postsubtitle={post.properties.Slug.rich_text[0].plain_text}
       />
       <Breadcrumb />
       <section className={styles.lexicoslug}>
