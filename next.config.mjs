@@ -11,10 +11,12 @@ const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [
-      [remarkFootnotes, { inlineNotes: true }], // Habilita notas de rodapé inline
-      remarkSmartypants, // Converte -- para meia-risca, etc.
+      [remarkFootnotes, { inlineNotes: true }],
+      [remarkSmartypants], // Certifique-se de que está dentro de um array, como os outros plugins
     ],
   },
 });
 
-export default withMDX(nextConfig);
+export default withMDX({
+  ...nextConfig,
+});
