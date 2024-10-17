@@ -7,7 +7,6 @@ import Index from "../components/mdx/index.mdx";
 import { PostData } from "../mdxtypes";
 import PropTypes from "prop-types";
 import Header from "../components/header";
-import Seo from "../components/seo";
 
 // Componente personalizado para <h1>
 function CustomH1({ children }) {
@@ -39,10 +38,6 @@ export async function getStaticProps() {
 export default function Home({ posts }: HomeProps) {
   return (
     <>
-      <Seo 
-        title="Petrior"
-        description="Blog criado com Next.js e Notion dedicado ao aprendizado da escrita"
-      />
       <Header/>
       <div>
         {/* Passando os componentes personalizados para o Index */}
