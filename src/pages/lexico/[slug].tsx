@@ -32,7 +32,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 // Função para obter os dados do post baseado no slug
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getStaticProps = async (context) => {
   const { slug } = context.params!; // Obtém o slug dos parâmetros
   const database = await getNotionPosts();
   
