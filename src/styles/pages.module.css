@@ -28,14 +28,6 @@
   text-decoration: none;
 }
 
-.recents_h2 {
-  font-weight: 200;
-}
-
-/* .vejamais a {
-  text-decoration: none;
-} */
-
 @media (max-width: 600px) {
   .recents_li {
     display: block;

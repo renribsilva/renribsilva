@@ -100,6 +100,7 @@
   /* background-color: rgb(52, 141, 156); */
   color: var(--subtitle); 
   font-size: large;
+  font-weight: 300;
   max-width: 100px;
   min-width: 100px
 }

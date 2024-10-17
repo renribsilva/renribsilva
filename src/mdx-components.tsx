@@ -14,14 +14,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       </a>
     ),
 
-    // Personalizando <h1> usando styles
-    h1: (props) => <h1 {...props} className={styles.customH} />,
-    // Personalizando <h1> usando styles
-    h2: (props) => <h1 {...props} className={styles.customH} />,
-    // Personalizando <h1> usando styles
-    h3: (props) => <h1 {...props} className={styles.customH} />,
-
-
     // Personalizando <hr> usando styles
     hr: (props) => <hr {...props} className={styles.customHR} />,
 
