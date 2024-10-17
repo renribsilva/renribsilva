@@ -17,12 +17,10 @@ const Breadcrumb = () => {
         {pathSegments.map((segment, index) => {
           const path = `/${pathSegments.slice(0, index + 1).join("/")}`;
           return (
-            <React.Fragment key={path}>
-              <span>&gt;&gt;</span>
-              <li>
-                <Link href={path}>{segment}</Link>
-              </li>
-            </React.Fragment>
+            <li key={path}>
+              <span>&gt;&gt; </span>
+              <Link href={path}>{segment}</Link>
+            </li>
           );
         })}
       </ul>
