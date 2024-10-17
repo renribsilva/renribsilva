@@ -22,7 +22,7 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
     props: {
       tags,
       ogtitle: "Tags | Petricor", 
-      ogdescription: "Veja todas as tags que marcaram os textos do nosso blog.", // Exporta a descrição
+      ogdescription: "Veja todas as tags usadas nos textos do nosso blog.", // Exporta a descrição
     },
   };
 };
