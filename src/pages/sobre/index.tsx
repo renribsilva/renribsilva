@@ -26,7 +26,7 @@ const overrideComponents = {
 export const getStaticProps = async () => {
   // Simulando a recuperação do título e da descrição
   const title = "Sobre | Petricor"; // Substitua conforme necessário
-  const description = "Esta é a descrição da página Sobre."; // Substitua conforme necessário
+  const description = "Saiba quando começou, como foi feito e para onde pode ir o nosso blog."; // Substitua conforme necessário
   
   return {
     props: {

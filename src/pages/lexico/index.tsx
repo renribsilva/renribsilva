@@ -14,7 +14,7 @@ export const getStaticProps = async () => {
     props: {
       posts: database.results, // posts é do tipo NotionPage[]
       title: "Léxico | Petricor", // Exporta o título com #
-      description: "Veja todas as palavras que foram ressignificadas"
+      description: "Conheça todas as palavras que foram ressignificadas neste blog."
     },
   };
 };
