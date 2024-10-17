@@ -7,7 +7,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
     const feed = new RSS({
         title: "Petricor",
         description: "Os textos mais recentes do blog",
-        feed_url: "https://petricor.xyz/api/rss.xml", // URL final para o feed RSS
+        feed_url: "https://petricor.xyz/api/rss", // URL final para o feed RSS
         site_url: "https://petricor.xyz/",
         language: "pt-BR",
         custom_namespaces: {
@@ -16,7 +16,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
     });
 
     // URL da imagem gerada pelo endpoint /api/og
-    const imageUrl = "https://petricor.xyz/api/og"; // Ajuste conforme necessário
+    const imageUrl = "https://petricor.xyz/api/og";
 
     // Obtém os posts e adiciona ao feed
     const allPosts = await getSortedPostsData();
@@ -38,10 +38,9 @@ export default async function handler(_: unknown, res: NextApiResponse) {
                 {
                     "media:content": {
                         _attr: {
-                            url: `${imageUrl}`, // URL da imagem gerada
-                            type: "image/png", // Especifica que a imagem é PNG
-                        },
-                        "#cdata": `${imageUrl}`
+                            url: imageUrl, // URL da imagem gerada
+                            type: "image/png" // Especifica que a imagem é PNG
+                        }
                     }
                 }
             ]
