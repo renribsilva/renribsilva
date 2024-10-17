@@ -30,7 +30,7 @@ export default function Socials () {
         return (
           <li key={link}>
             <Link target="_blank" href={link} aria-label={alt} rel="noopener noreferrer">
-              <FontAwesomeIcon icon={ícone} size="lg" />
+              <FontAwesomeIcon icon={ícone}/>
             </Link>
           </li>
         );

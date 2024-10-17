@@ -58,7 +58,7 @@ export default function LayoutIndex({ children }) {
       <Myhr marginTop="0px"/>
         <main>{children}</main>
       <Myhr />
-      {/* <Socials /> */}
+      <Socials />
       <Footer />
       <div className={styles.layout_rodape}></div>
     </section>
