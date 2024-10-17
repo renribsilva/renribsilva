@@ -48,6 +48,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:type" content={type} />
         <meta property="og:author_name" content={author} />
         <meta property="og:provider_name" content={provider} />
+        <meta property="og:site_name" content="Petricor" />
         <meta property="og:provider_url" content={urlbase} />
 
         {/*twitter*/}
