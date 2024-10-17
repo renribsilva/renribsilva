@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     return { notFound: true };
   }
 
-  console.log(post); // Adicione isso para ver o que está sendo retornado
+  console.log(slug); // Adicione isso para ver o que está sendo retornado
 
   return {
     props: {
