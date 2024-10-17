@@ -4,10 +4,10 @@ import { useTheme } from "next-themes";
 import styles from "../styles/components.module.css";
 
 const menu = [
-  { icon: "sunny", alt: "ícone de um sol que define o tema como claro" },
-  { icon: "dark_mode", alt: "ícone de uma lua que define o tema como escuro" },
-  { icon: "menu", alt: "ícone de barras que expande as opções de navegação" },
-  { icon: "close", alt: "ícone de um 'x' que recolhe as opções de navegação" }
+  { icon: "sunny", alt: "Ativar tema claro" },
+  { icon: "dark_mode", alt: "Ativar tema escuro" },
+  { icon: "menu", alt: "Abrir menu de navegação" },
+  { icon: "close", alt: "Fechar menu de navegação" }
 ];
 
 function Theme() {
@@ -33,7 +33,7 @@ function Theme() {
       style={{ cursor: "pointer" }}
       className={styles.menuthemebutton}
     >
-      <span className="material-symbols-outlined">
+      <span className="material-symbols-outlined" aria-hidden="true">
         {resolvedTheme === "light" ? menu[1].icon : menu[0].icon}
       </span>
     </button>
@@ -48,7 +48,7 @@ function Bars({ isNavbarOpen, toggleNavbar }) {
       aria-label={isNavbarOpen ? menu[3].alt : menu[2].alt}
       className={styles.menubarsbutton}
     >
-      <span className="material-symbols-outlined">
+      <span className="material-symbols-outlined" aria-hidden="true">
         {isNavbarOpen ? menu[3].icon : menu[2].icon}
       </span>
     </button>
