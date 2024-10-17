@@ -175,6 +175,7 @@
 
 .lexico div {
   background-color: var(--subtitle);
+  color: var(--background);
   height: 160px;  
   width: 230px;
   display: flex;
@@ -183,7 +184,6 @@
 }
 
 .lexico a :hover {
-  color: var(--accent);
   font-weight: 600;
 }
 

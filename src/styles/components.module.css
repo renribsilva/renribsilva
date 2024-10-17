@@ -121,6 +121,7 @@
 
 .default_button {
   background-color: var(--subtitle);
+  color: var(--background);
   border: none;
   border-radius: 1rem;
   padding: 8px;
@@ -156,31 +157,6 @@
   .mypagination {
     display: flex !important;
   }
-}
-
-/**********************************************/
-/*************** TITLES *****************/
-/**********************************************/
-
-.titles {
-  /* background-color: aqua; */
-}
-
-.titles h1 {
-  /* background-color: blueviolet; */
-  font-weight: 200;
-  margin: 0;
-  align-items: center;
-}
-
-.titles h2 {
-  /* background-color: rgb(49, 226, 43); */
-  margin: 0;
-  color: var(--subtitle);
-  font-weight: 300;
-  /* font-style: italic; */
-  font-size: 14px;
-  height: 20px;
 }
 
 /********************************************/

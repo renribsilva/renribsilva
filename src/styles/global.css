@@ -1,12 +1,11 @@
-/* styles.module.css */
 :root, html, body {
   --color-fill-light: rgb(255, 255, 255);
   --color-text-base-light: rgb(39, 39, 40);
-  --color-subtitle-litgh: rgb(184, 170, 144);
+  --color-subtitle-light: rgb(128, 110, 96); /* Ajustado para melhorar o contraste */
   
   --color-fill-dark: rgb(33, 39, 55); 
   --color-text-base-dark: rgb(243, 238, 234);
-  --color-subtitle-dark: rgb(153, 138, 132);
+  --color-subtitle-dark: rgb(184, 170, 144); /* Ajustado para melhorar o contraste */
 }
 
 [data-theme="dark"] {
@@ -18,7 +17,7 @@
 [data-theme="light"] {
   --background: var(--color-fill-light);
   --foreground: var(--color-text-base-light);
-  --subtitle: var(--color-subtitle-litgh);
+  --subtitle: var(--color-subtitle-light);
 }
 
 * {
@@ -39,25 +38,22 @@ body {
 }
 
 .footnotes {
-  /* background-color: #f0f0f0; */
   font-size: 0.8em;
 }
 
 .footnotes > ol {
-  /* background-color: aqua; */
   padding: 0;
   margin: 5px;
 }
 
 .footnotes > ol > li {
-  /* background-color: aqua; */
   padding: 0;
   margin: 5px;
   justify-content: left;
 }
 
 .footnotes p {
-  margin-left: 0
+  margin-left: 0;
 }
 
 @media (max-width: 600px) {
@@ -67,10 +63,8 @@ body {
   }
 
   body {
-    /* background-color: black; */
     max-width: 700px;
     width: 100%;
     min-width: 320px;
   }
 }
-
