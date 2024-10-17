@@ -10,14 +10,12 @@ import React from "react";
 import { useRouter } from "next/router";
 import "../styles/global.css";
 
-// Defina a URL do host para as imagens padrão
-const urlbase = "https://petricor.xyz";
-
 export default function App({ Component, pageProps }: AppProps) {
   // Obtém os componentes personalizados para MDX
   const components = useMDXComponents({});
   const router = useRouter();
-  const url = `${urlbase}${router.asPath}`;
+  const base = "https://petricor.xyz";
+  const url = `${base}${router.asPath}`;
 
   // Configuração dos metadados dinâmicos
   const title = pageProps.title ? pageProps.title : "Petricor";
@@ -26,16 +24,18 @@ export default function App({ Component, pageProps }: AppProps) {
     : "Blog criado com Next.js e Notion dedicado ao aprendizado da escrita.";
   const image = pageProps.image
     ? pageProps.image
-    : `${urlbase}/api/og`;
+    : `${base}/api/og`;
 
   // Configuração dos metadados estáticos
   const type = "link";
-  const provider = "Petricor";
+  const site_name = "Petricor";
   const author = "renribsilva";
+  const provider = "Petricor";
 
   return (
-    <ThemeProvider attribute="class">
+    <ThemeProvider>
       <Head>
+
         {/*metas globais*/}
         <meta name="title" content={title} />
         <meta name="description" content={description} />
@@ -46,19 +46,19 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:image" content={image} />
         <meta property="og:url" content={url} />
         <meta property="og:type" content={type} />
+        <meta property="og:site_name" content={site_name} />
         <meta property="og:author_name" content={author} />
         <meta property="og:provider_name" content={provider} />
-        <meta property="og:site_name" content="Petricor" />
-        <meta property="og:provider_url" content={urlbase} />
 
         {/*twitter*/}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} /> 
+        <meta name="twitter:image" content={image} />
 
         {/*canonical*/}
         <link rel="canonical" href={url} />
+
       </Head>
       <LayoutIndex>
         <MDXProvider components={components}>
@@ -70,3 +70,4 @@ export default function App({ Component, pageProps }: AppProps) {
     </ThemeProvider>
   );
 }
+
