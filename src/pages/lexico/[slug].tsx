@@ -55,11 +55,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
     return { notFound: true };
   }
 
+  console.log(post); // Adicione isso para ver o que está sendo retornado
+
   return {
     props: {
       post,
-      title: `${post}`, // Renomeia para post
-      description: `${slug}.`, // Renomeia para description
+      title: "Léxico | Petricor",
+      description: `Às vezes as palavras significam muito mais do que dizem os verbetes de dicionários. Aqui está o que ${slug} às vezes significa para mim.`, // Renomeia para description
     },
   };
 };

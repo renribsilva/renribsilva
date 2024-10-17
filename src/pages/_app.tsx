@@ -27,21 +27,11 @@ export default function App({ Component, pageProps }: AppProps) {
 
   // Configuração dos metadados estáticos
   const type = "link";
-  const site_name = "site_name";
+  const site_name = "Petricor";
 
   return (
     <ThemeProvider>
       <Head>
-
-        {/*fontes e ícones*/}
-         <link 
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" 
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        />
 
         {/*metas globais*/}
         <meta name="title" content={title} />
