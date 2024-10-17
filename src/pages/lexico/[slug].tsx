@@ -73,7 +73,7 @@ interface PostProps {
 const Post = ({ post }: PostProps) => {
   return (
     <>
-      <Header titlePre="Léxico"/>
+      <Header titlePre={post.properties.Page.title[0].plain_text.replace(/-/g, "·")}/>
       <Breadcrumb />
       <section className={styles.lexicoslug}>
         <div>

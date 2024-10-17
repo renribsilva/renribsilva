@@ -4,42 +4,40 @@ import Datetime from "../../../components/datetime";
 import styles from "../../../styles/pages.module.css";
 import React from "react";
 import Link from "next/link";
-import { formatString } from "../../../lib/formatString"; // Certifique-se de que o caminho esteja correto
+import { formatString } from "../../../lib/formatString";
 import Header from "../../../components/header";
 import Breadcrumb from "../../../components/breadcrumb";
 
 export async function getStaticPaths() {
   const tags = getUniqueTags();
   const paths = tags.map(({ tag }) => ({
-    params: { tag: formatString(tag) } // Aplica formatString aqui para as rotas
+    params: { tag: formatString(tag) },
   }));
 
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }: { params: { tag: string } }) {
-  const formattedTag = params.tag; // Tag recebida da URL, que foi formatada
-
-  // Busque o nome original da tag
-  const originalTags = getUniqueTags(); // Acessa as tags originais
-  const originalTag = originalTags.find(t => formatString(t.tag) === formattedTag)?.tag; // Obtém a tag original
-  const posts = getPostsByTag(originalTag); // Usa a tag original para filtrar os posts
+  const formattedTag = params.tag;
+  const originalTags = getUniqueTags();
+  const originalTag = originalTags.find(t => formatString(t.tag) === formattedTag)?.tag;
+  const posts = getPostsByTag(originalTag);
 
   return {
     props: {
-      tag: originalTag || "", // Passa a tag original ou uma string vazia
+      tag: originalTag || "",
       posts,
       ogtitle: `# ${originalTag}`,
-      ogdescription: `Explore os posts relacionados à tag # ${originalTag}.`, // Exporta a descrição com a tag original
+      ogdescription: `Explore os posts relacionados à tag # ${originalTag}.`,
     },
   };
 }
 
-export default function TagPage({ posts }: { tag: string; posts: PostData[] }) {
-  return ( 
+export default function TagPage({ tag, posts }: { tag: string; posts: PostData[] }) {
+  return (
     <>
       <Header 
-        titlePre="Tags" 
+        titlePre={`# ${tag}`} 
       />
       <Breadcrumb />
       <section className={styles.tags_tag_index}>
