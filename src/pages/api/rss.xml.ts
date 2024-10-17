@@ -3,14 +3,20 @@ import RSS from "rss";
 import { getSortedPostsData } from "../../lib/getMDXPosts"; // Certifique-se de que o caminho está correto
 
 export default async function handler(_: unknown, res: NextApiResponse) {
-    // Cria um novo feed RSS
+    // Cria um novo feed RSS com o namespace MRSS
     const feed = new RSS({
         title: "Petricor",
         description: "Os textos mais recentes do blog",
         feed_url: "https://petricor.xyz/api/rss.xml", // URL final para o feed RSS
         site_url: "https://petricor.xyz/",
-        language: "pt-BR"
+        language: "pt-BR",
+        custom_namespaces: {
+            media: "http://search.yahoo.com/mrss/"
+        }
     });
+
+    // URL da imagem gerada pelo endpoint /api/og
+    const imageUrl = "https://petricor.xyz/api/og"; // Ajuste conforme necessário
 
     // Obtém os posts e adiciona ao feed
     const allPosts = await getSortedPostsData();
@@ -28,6 +34,17 @@ export default async function handler(_: unknown, res: NextApiResponse) {
             categories: post.tags || [],
             author: "renribsilva",
             date: post.date,
+            custom_elements: [
+                {
+                    "media:content": {
+                        _attr: {
+                            url: `${imageUrl}`, // URL da imagem gerada
+                            type: "image/png", // Especifica que a imagem é PNG
+                        },
+                        "#cdata": `${imageUrl}`
+                    }
+                }
+            ]
         });
     });
 
