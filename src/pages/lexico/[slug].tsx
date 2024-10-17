@@ -54,43 +54,41 @@ export const getStaticProps: GetStaticProps = async (context) => {
   if (!post) {
     return { notFound: true };
   }
+
   return {
     props: {
-      post, // Retorna o post encontrado
+      title: post, // Renomeia para title
+      description: slug, // Renomeia para description
     },
   };
 };
 
 // Tipando as props do componente Post
 interface PostProps {
-  post: NotionPage; 
+  title: NotionPage; // Renomeado para title
+  description: string; // Renomeado para description
 }
 
-const Post = ({ post }: PostProps) => {
+const Post = ({ title }: PostProps) => {
   return (
     <>
       <Header titlePre="Léxico"/>
       <Breadcrumb />
       <section className={styles.lexicoslug}>
         <div>
-          <h1>{post.properties.Page.title[0].plain_text.replace(/-/g, "·")}</h1>
+          <h1>{title.properties.Page.title[0].plain_text.replace(/-/g, "·")}</h1>
           <div>
             <span>
-              <Datetime date={post.created_time}></Datetime>
+              <Datetime date={title.created_time}></Datetime>
             </span>
           </div>
         </div>
         <p>
-          {post.properties.Slug.rich_text.map((item) => {
-              return (
-                item.plain_text
-              );})
-          }
+          {title.properties.Slug.rich_text.map((item) => item.plain_text).join(" ")} {/* Exibe o slug */}
         </p>
       </section>
     </>
   );
 };
-
 
 export default Post;

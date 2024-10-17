@@ -1,3 +1,8 @@
+export type Cover = 
+  | null 
+  | { type: "external"; external: { url: string; } }
+  | { type: "file"; file: { url: string; expiry_time: string; } };
+
 export type NotionPage = {
   object: "page";
   id: string;
@@ -5,7 +10,7 @@ export type NotionPage = {
   last_edited_time: string;
   created_by: { object: "user"; id: string };
   last_edited_by: { object: "user"; id: string };
-  cover: null | string;
+  cover: Cover; // Atualizado para usar o novo tipo Cover
   icon: null | string;
   parent: { type: "database_id"; database_id: string };
   archived: boolean;

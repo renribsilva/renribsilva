@@ -21,6 +21,8 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
   return {
     props: {
       tags,
+      title: "Tags | Petricor", 
+      description: "Veja todas as tags que foram usadas no blog", // Exporta a descrição
     },
   };
 };

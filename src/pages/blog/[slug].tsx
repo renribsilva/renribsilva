@@ -42,6 +42,8 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
         ...postData,
         content: mdxSource, // Conteúdo serializado
       },
+      title: postData.title, // Exporta o título
+      description: postData.slug, // Exporta a descrição (padrão se não houver)
     },
   };
 }
@@ -49,7 +51,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 export default function Post({ postData }: PostProps) {
   return (
     <MdxLayout>
-      <Header titlePre="Blog" />
+      <Header titlePre={postData.title} />
       <Breadcrumb />
       <h1 className={styles.blog_slug_title}>
         <div>{postData.title}</div>
