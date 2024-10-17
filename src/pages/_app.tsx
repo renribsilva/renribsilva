@@ -43,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:url" content={url} />
         <meta property="og:type" content="link" />
         <meta property="og:site_name" content="Petricor" />
+        <meta property="og:provider_name" content="Petricor" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
