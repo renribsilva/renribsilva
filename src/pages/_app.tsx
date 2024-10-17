@@ -40,8 +40,8 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
       <Head>
-        <meta name="title" content={title} />
-        <meta name="description" content={description} />
+        {/* <meta name="title" content={title} />
+        <meta name="description" content={description} /> */}
 
         {/* Open Graph */}
         <meta property="og:title" content={title} />
