@@ -13,8 +13,10 @@
 
 @media (max-width: 600px) {
   .navmenu {
+    background-color: aqua;
     display: block;
-    min-height: auto;
+    min-height: fit-content;
+    min-width: 320px;
   }
 }
 

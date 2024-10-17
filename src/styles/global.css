@@ -20,10 +20,10 @@
   --subtitle: var(--color-subtitle-light);
 }
 
-* {
+/* * {
   background-color: var(--background);
   color: var(--foreground);
-}
+} */
 
 html {
   display: flex;
