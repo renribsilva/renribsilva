@@ -10,10 +10,6 @@ import React from "react";
 import { useRouter } from "next/router";
 import "../styles/global.css";
 
-// Defina a URL do host para as imagens padrão
-const urlbase = "https://petricor.xyz";
-const site_name = "Petricor"; // Nome do site
-
 export default function App({ Component, pageProps }: AppProps) {
   const components = useMDXComponents({});
   const router = useRouter();
@@ -21,12 +17,9 @@ export default function App({ Component, pageProps }: AppProps) {
   const url = `${base}${router.asPath}`;
 
   // Verificação da rota para definir o título e a descrição
-  const isRoot = router.pathname === "/";
-  const title = isRoot
-    ? "Petricor" // Título para a página raiz
-    : pageProps.title
+  const title = pageProps.title
     ? pageProps.title
-    : site_name; // Título para outras páginas
+    : "Petricor";
 
   const description = pageProps.description 
     ? pageProps.description
@@ -34,22 +27,22 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const image = pageProps.image
     ? pageProps.image
-    : `${urlbase}/api/og`;
+    : `${base}/api/og`;
 
   // Metadados Open Graph e Twitter
   return (
     <ThemeProvider>
       <Head>
-        {/* <meta name="title" content={title} />
-        <meta name="description" content={description} /> */}
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
 
         {/* Open Graph */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
         <meta property="og:url" content={url} />
-        <meta property="og:type" content={isRoot ? "website" : "article"} />
-        <meta property="og:site_name" content={site_name} />
+        <meta property="og:type" content="link" />
+        <meta property="og:site_name" content="Petricor" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
