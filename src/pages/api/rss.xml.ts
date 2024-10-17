@@ -3,12 +3,15 @@ import RSS from "rss";
 import { getSortedPostsData } from "../../lib/getMDXPosts"; // Certifique-se de que o caminho está correto
 
 export default async function handler(_: unknown, res: NextApiResponse) {
+    // URL base do feed
+    const baseUrl = "https://petricor.xyz";
+
     // Cria um novo feed RSS com o namespace MRSS
     const feed = new RSS({
         title: "Petricor",
         description: "Os textos mais recentes do blog",
-        feed_url: "https://petricor.xyz/api/rss", // URL final para o feed RSS
-        site_url: "https://petricor.xyz/",
+        feed_url: `${baseUrl}/api/rss`, // URL final para o feed RSS
+        site_url: baseUrl,
         language: "pt-BR",
         custom_namespaces: {
             media: "http://search.yahoo.com/mrss/"
@@ -16,7 +19,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
     });
 
     // URL da imagem gerada pelo endpoint /api/og
-    const imageUrl = "https://petricor.xyz/api/og";
+    const imageUrl = `${baseUrl}/api/og`;
 
     // Obtém os posts e adiciona ao feed
     const allPosts = await getSortedPostsData();
@@ -30,7 +33,7 @@ export default async function handler(_: unknown, res: NextApiResponse) {
         feed.item({
             title: title,
             description: description,
-            url: `https://petricor.xyz/blog/${post.slug}`, // Caminho para os posts
+            url: `${baseUrl}/blog/${post.slug}`, // Caminho para os posts
             categories: post.tags || [],
             author: "renribsilva",
             date: post.date,
