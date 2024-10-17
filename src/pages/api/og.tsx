@@ -15,20 +15,12 @@ const raleway = fetch(
     return res.arrayBuffer();
   });
 
-// Função para obter a URL a partir da requisição
-function getUrlFromRequest(request) {
-  const url = new URL(request.url);
-  return url.href; // Retorna a URL completa
-}
-
-export default async function handler(request) {
+export default async function handler() {
   const ralewayData = await raleway;
+
   const { title } = {
     title: "Petricor",
   };
-
-  // Obtém a URL da requisição
-  const currentUrl = getUrlFromRequest(request);
 
   return new ImageResponse(
     (
@@ -40,21 +32,18 @@ export default async function handler(request) {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#FFFFFF",
+          backgroundColor: "#FFFFFF", // cor de fundo em hexadecimal
           fontFamily: "Raleway",
         }}
       >
         <h1
           style={{
             fontSize: 200,
-            color: "#272728",
+            color: "#272728", // cor do texto em hexadecimal
           }}
         >
           {title}
         </h1>
-        <p style={{ fontSize: 40, color: "#272728" }}>
-          Visite: <a href={currentUrl} style={{ color: "#272728", textDecoration: "underline" }}>{currentUrl}</a>
-        </p>
       </div>
     ),
     {
