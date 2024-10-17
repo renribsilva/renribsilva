@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import Footer from "../components/footer";
 import Menu from "../components/menu";
 import Navbar from "../components/navbar";
-import Socials from "../components/socials";
 import styles from "../styles/layout.module.css";
 import Myhr from "../components/myhr";
 import PropTypes from "prop-types";
 import React from "react";
+import Socials from "../components/socials";
 
 LayoutIndex.propTypes = {
   children: PropTypes.node.isRequired, // Adiciona validação para 'children'
@@ -58,7 +58,7 @@ export default function LayoutIndex({ children }) {
       <Myhr marginTop="0px"/>
         <main>{children}</main>
       <Myhr />
-      <Socials />
+      {/* <Socials /> */}
       <Footer />
       <div className={styles.layout_rodape}></div>
     </section>

@@ -69,8 +69,7 @@ export default function Blog({ groupedPosts }: { groupedPosts: GroupedPosts }) {
               </Link>
             </li>
           ))}
-        </ul>
-
+        </ul> 
         {/* Condiciona a renderização da paginação */}
         {totalPages > 1 && (
           <Mypagination
