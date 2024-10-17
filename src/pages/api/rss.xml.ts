@@ -21,6 +21,10 @@ export default async function handler(_: unknown, res: NextApiResponse) {
     // URL da imagem gerada pelo endpoint /api/og
     const imageUrl = `${baseUrl}/api/og`;
 
+    // Define as dimensões da imagem
+    const imageWidth = 1200; // Altere para a largura desejada
+    const imageHeight = 630; // Altere para a altura desejada
+
     // Obtém os posts e adiciona ao feed
     const allPosts = await getSortedPostsData();
     allPosts.forEach((post) => {
@@ -42,7 +46,11 @@ export default async function handler(_: unknown, res: NextApiResponse) {
                     "media:content": {
                         _attr: {
                             url: imageUrl, // URL da imagem gerada
-                            type: "image/png" // Especifica que a imagem é PNG
+                            type: "image/png", // Especifica que a imagem é PNG
+                            title: "Petricor", // Título da imagem
+                            alt: "Imagem de fundo branco com a palavra Petricor em preto", // Texto alternativo
+                            width: imageWidth, // Largura da imagem
+                            height: imageHeight // Altura da imagem
                         }
                     }
                 }
