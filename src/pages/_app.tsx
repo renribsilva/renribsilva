@@ -30,7 +30,8 @@ export default function App({ Component, pageProps }: AppProps) {
 
   // Configuração dos metadados estáticos
   const type = "link";
-  const site_name = "Petricor";
+  const provider = "Petricor";
+  const author = "renribsilva";
 
   return (
     <ThemeProvider attribute="class">
@@ -45,7 +46,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:image" content={image} />
         <meta property="og:url" content={url} />
         <meta property="og:type" content={type} />
-        <meta property="og:site_name" content={site_name} />
+        <meta property="og:author_name" content={author} />
+        <meta property="og:provider_name" content={provider} />
+        <meta property="og:provider_url" content={urlbase} />
 
         {/*twitter*/}
         <meta name="twitter:card" content="summary_large_image" />
