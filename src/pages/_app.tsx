@@ -17,12 +17,12 @@ export default function App({ Component, pageProps }: AppProps) {
   const url = `${base}${router.asPath}`;
 
   // Verificação da rota para definir o título e a descrição
-  const title = pageProps.title
-    ? pageProps.title
+  const title = pageProps.ogtitle
+    ? pageProps.ogtitle
     : "Petricor";
 
-  const description = pageProps.description 
-    ? pageProps.description
+  const description = pageProps.ogdescription 
+    ? pageProps.ogdescription
     : "Blog criado com Next.js e Notion dedicado ao aprendizado da escrita.";
 
   const image = pageProps.image

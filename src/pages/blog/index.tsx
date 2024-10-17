@@ -34,8 +34,9 @@ export async function getStaticProps() {
   return {
     props: {
       groupedPosts,
-      title: "Blog | Petricor", 
-      description: "Explore os textos e atualizações mais recentes do nosso blog.", 
+      ogtitle: "Blog | Petricor", 
+      ogdescription: "Explore os textos e atualizações mais recentes do nosso blog.",
+
     },
   };
 }

@@ -42,8 +42,8 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
         ...postData,
         content: mdxSource, // Conteúdo serializado
       },
-      title: postData.title, // Exporta o título
-      description: postData.subtitle, // Exporta a descrição (padrão se não houver)
+      ogtitle: postData.title, // Exporta o título
+      ogdescription: postData.subtitle, // Exporta a descrição (padrão se não houver)
     },
   };
 }

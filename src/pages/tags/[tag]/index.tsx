@@ -29,8 +29,8 @@ export async function getStaticProps({ params }: { params: { tag: string } }) {
     props: {
       tag: originalTag || "", // Passa a tag original ou uma string vazia
       posts,
-      title: `# ${originalTag}`,
-      description: `Explore os posts relacionados à tag # ${originalTag}.`, // Exporta a descrição com a tag original
+      ogtitle: `# ${originalTag}`,
+      ogdescription: `Explore os posts relacionados à tag # ${originalTag}.`, // Exporta a descrição com a tag original
     },
   };
 }

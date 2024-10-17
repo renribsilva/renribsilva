@@ -1,3 +1,4 @@
+// pages/lexico/[slug].tsx
 import { getNotionPosts } from "../../lib/getNotionPosts"; // Importa a função para obter os posts
 import { NotionPage } from "../../notiontypes";
 import { GetStaticPaths, GetStaticProps } from "next";
@@ -32,8 +33,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 // Função para obter os dados do post baseado no slug
-export const getStaticProps: GetStaticProps = async (context) => {
-  const { slug } = context.params!; // Obtém o slug dos parâmetros
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const { slug } = params!; // Obtém o slug dos parâmetros
   const database = await getNotionPosts();
   
   // Verifica se a consulta retornou resultados
@@ -44,9 +45,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
   // Encontre o post correspondente ao slug
   const post = database.results.find((post: NotionPage) => {
     const postSlug = post.properties.Page.title[0].plain_text
-      .replace(/\s+/g, "") // Remove espaços
-      .replace(/-/g, "") // Remove hífens
-      .toLowerCase(); // Converte para minúsculas
+      .replace(/\s+/g, "")
+      .replace(/-/g, "")
+      .toLowerCase();
     return postSlug === slug; // Compare o slug formatado com o slug obtido da URL
   });
 
@@ -55,13 +56,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     return { notFound: true };
   }
 
-  console.log(slug); // Adicione isso para ver o que está sendo retornado
-
   return {
     props: {
       post,
-      title: "Léxico | Petricor",
-      description: `Às vezes as palavras significam muito mais do que dizem os verbetes de dicionários. Aqui está o que ${slug} às vezes significa para mim.`, // Renomeia para description
+      ogtitle: "Léxico | Petricor",
+      ogdescription: `Às vezes as palavras significam muito mais do que dizem os verbetes de dicionários. Aqui está o que '${slug}' às vezes significa para mim.`, // Renomeia para description
     },
   };
 };
@@ -69,7 +68,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
 // Tipando as props do componente Post
 interface PostProps {
   post: NotionPage; // Renomeado para post
-  description: string; // Renomeado para description
 }
 
 const Post = ({ post }: PostProps) => {

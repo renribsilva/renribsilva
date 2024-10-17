@@ -25,13 +25,13 @@ const overrideComponents = {
 // Função para obter título e descrição
 export const getStaticProps = async () => {
   // Simulando a recuperação do título e da descrição
-  const title = "Sobre | Petricor"; // Substitua conforme necessário
-  const description = "Saiba quando começou, como foi feito e para onde pode ir o nosso blog."; // Substitua conforme necessário
+  const ogtitle = "Sobre | Petricor"; // Substitua conforme necessário
+  const ogdescription = "Saiba quando começou, como foi feito e para onde pode ir o nosso blog."; // Substitua conforme necessário
   
   return {
     props: {
-      title, // Exporta o título
-      description, // Exporta a descrição
+      ogtitle, // Exporta o título
+      ogdescription, // Exporta a descrição
     },
   };
 };
