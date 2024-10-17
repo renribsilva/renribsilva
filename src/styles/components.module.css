@@ -67,6 +67,11 @@
   gap: 8px;
 }
 
+.socials :nth-child(3) :last-child{
+  width: 18px;
+  margin-left: 1px;
+}
+
 .socials li a {
   /* background-color: brown; */
   width: 20px;
