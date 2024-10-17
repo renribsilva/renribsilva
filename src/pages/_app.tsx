@@ -10,55 +10,55 @@ import React from "react";
 import { useRouter } from "next/router";
 import "../styles/global.css";
 
+// Defina a URL do host para as imagens padrão
+const urlbase = "https://petricor.xyz";
+const site_name = "Petricor"; // Nome do site
+
 export default function App({ Component, pageProps }: AppProps) {
-  // Obtém os componentes personalizados para MDX
   const components = useMDXComponents({});
   const router = useRouter();
   const base = "https://petricor.xyz";
   const url = `${base}${router.asPath}`;
 
-  // Configuração dos metadados dinâmicos
-  const title = pageProps.title ? pageProps.title : "Petricor";
+  // Verificação da rota para definir o título e a descrição
+  const isRoot = router.pathname === "/";
+  const title = isRoot
+    ? "Petricor" // Título para a página raiz
+    : pageProps.title
+    ? pageProps.title
+    : site_name; // Título para outras páginas
+
   const description = pageProps.description 
     ? pageProps.description
     : "Blog criado com Next.js e Notion dedicado ao aprendizado da escrita.";
+
   const image = pageProps.image
     ? pageProps.image
-    : `${base}/api/og`;
+    : `${urlbase}/api/og`;
 
-  // Configuração dos metadados estáticos
-  const type = "link";
-  const site_name = "Petricor";
-  const author = "renribsilva";
-  const provider = "Petricor";
-
+  // Metadados Open Graph e Twitter
   return (
     <ThemeProvider>
       <Head>
-
-        {/*metas globais*/}
         <meta name="title" content={title} />
         <meta name="description" content={description} />
 
-        {/*og*/}
+        {/* Open Graph */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:image" content={image} />
         <meta property="og:url" content={url} />
-        <meta property="og:type" content={type} />
+        <meta property="og:type" content={isRoot ? "website" : "article"} />
         <meta property="og:site_name" content={site_name} />
-        <meta property="og:author_name" content={author} />
-        <meta property="og:provider_name" content={provider} />
 
-        {/*twitter*/}
+        {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
 
-        {/*canonical*/}
+        {/* Canonical */}
         <link rel="canonical" href={url} />
-
       </Head>
       <LayoutIndex>
         <MDXProvider components={components}>
@@ -70,4 +70,3 @@ export default function App({ Component, pageProps }: AppProps) {
     </ThemeProvider>
   );
 }
-
