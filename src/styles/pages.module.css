@@ -28,6 +28,10 @@
   text-decoration: none;
 }
 
+.vejamais {
+  margin-left: 118px;
+}
+
 @media (max-width: 600px) {
   .recents_li {
     display: block;
