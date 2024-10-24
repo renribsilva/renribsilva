@@ -12,7 +12,7 @@ const withMDX = createMDX({
   options: {
     remarkPlugins: [
       [remarkFootnotes, { inlineNotes: true }],
-      [remarkSmartypants], // Certifique-se de que está dentro de um array, como os outros plugins
+      remarkSmartypants, 
     ],
   },
 });
