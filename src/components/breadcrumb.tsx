@@ -19,7 +19,7 @@ const Breadcrumb = () => {
           return (
             <li key={path}>
               <span>&gt;&gt; </span>
-              <Link href={path}>{segment}</Link>
+              <Link href={path}>{decodeURIComponent(segment)}</Link>
             </li>
           );
         })}
