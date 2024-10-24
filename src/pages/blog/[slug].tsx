@@ -13,6 +13,7 @@ import Link from "next/link";
 import { formatString } from "../../lib/formatString"; // Certifique-se de que o caminho esteja correto
 import Header from "../../components/header";
 import Breadcrumb from "../../components/breadcrumb";
+import remarkSmartypants from "remark-smartypants";
 
 interface PostProps {
   postData: Omit<PostData, "content"> & {
@@ -34,7 +35,11 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
   const postData: PostData = await getPostData(params.slug);
 
   // Serializa o conteúdo MDX para uso com MDXRemote
-  const mdxSource = await serialize(postData.content);
+  const mdxSource = await serialize(postData.content, {
+    mdxOptions: {
+      remarkPlugins: [remarkSmartypants],
+    },
+  });
   
   return {
     props: {
