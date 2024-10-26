@@ -4,7 +4,6 @@ import { useMDXComponents } from "../mdx-components";
 import { MDXProvider } from "@mdx-js/react";
 import LayoutIndex from "../layout/layout_index";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/react";
 import Head from "next/head";
 import React from "react";
 import { useRouter } from "next/router";
@@ -59,7 +58,6 @@ export default function App({ Component, pageProps }: AppProps) {
         <MDXProvider components={components}>
           <Component {...pageProps} />
           <SpeedInsights />
-          <Analytics />
         </MDXProvider>
       </LayoutIndex>
     </ThemeProvider>
