@@ -7,6 +7,7 @@ const navItems: { label: string; page?: string }[] = [
   { label: "blog", page: "/blog" }, 
   { label: "tags ", page: "/tags" },
   { label: "léxico", page: "/lexico" },
+  { label: "projetos", page: "/projetos" },
   { label: "sobre", page: "/sobre" },
 ];
 

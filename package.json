@@ -9,7 +9,6 @@
     "@notionhq/client": "^2.2.15",
     "@types/mdx": "^2.0.13",
     "@vercel/og": "^0.6.3",
-    "@vercel/speed-insights": "^1.0.12",
     "dotenv": "^16.4.5",
     "gray-matter": "^4.0.3",
     "next": "^14.2.9",
