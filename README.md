@@ -71,7 +71,7 @@ exemplo,
 sudo npm run dev
 ```
 
-no terminal. Em seguida, deve-se verificar o local no qual a aplicação foi compilada, a exemplo do código a abaixo,
+no terminal. Em seguida, deve-se verificar o `local` no qual a aplicação foi compilada, a exemplo do código a abaixo,
 
 ```
 ▲ Next.js 14.2.16
