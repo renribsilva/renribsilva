@@ -26,7 +26,7 @@ o qual deve ser executado (por exemplo, chamando `node scripts/createNewPost.mjs
 
 o qual apresentará um _frontmatter_, tal como exemplificado abaixo
 
-* ```
+```
 ---
 id: post2
 slug: titulo-do-novo-post
