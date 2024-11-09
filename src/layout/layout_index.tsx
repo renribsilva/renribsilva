@@ -56,7 +56,7 @@ export default function LayoutIndex({ children }) {
         </div>
       </div>
       <Myhr marginTop="0px"/>
-        <main>{children}</main>
+      <main>{children}</main>
       <Myhr />
       <Socials />
       <Footer />

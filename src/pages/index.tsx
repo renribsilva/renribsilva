@@ -61,9 +61,9 @@ export default function Home({ posts }: HomeProps) {
           ))}
         </ul>
       </div>
-      <div className={styles.vejamais}>
+      {/* <div className={styles.vejamais}>
         <Link href="/blog">Veja mais...</Link>
-      </div>
+      </div> */}
     </>
   );
 }

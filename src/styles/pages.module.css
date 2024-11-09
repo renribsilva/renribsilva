@@ -28,9 +28,9 @@
   text-decoration: none;
 }
 
-.vejamais {
+/* .vejamais {
   margin-left: 119px;
-}
+} */
 
 @media (max-width: 600px) {
   .recents_li {
