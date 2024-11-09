@@ -45,24 +45,28 @@ Nele, pode-se alterar as propriedade `title`, `subtitle`, `slug` (endereço que 
 
 Para integrar este código com o Notion, é preciso
 
-  1. Criar uma [base de dados](https://www.notion.so/pt/help/create-a-database) no Notion com as seguintes variáveis
-    `Page`
-    `Slug` (texto)
-    `Published` (caixa de checagem)
+  1. Criar uma base de dados no Notion conforme exemplificado [aqui] (https://www.notion.so/pt/help/create-a-database) com as seguintes variáveis
+    * `Page`
+    * `Slug` (texto)
+    * `Published` (caixa de checagem)
 
-  2. Gerar um [token](https://notion.com/my-integrations) no Notion e em seguida
-    a. copiar e colar a chave em `NOTION_TOKEN`, no arquivo `.env_ex`
-    b. renomear `.env_ex` para `.env`
-    c. [permitir](https://www.notion.so/pt/help/add-and-manage-connections-with-the-api) que essa chave acesse a base de dados criada no Notion (muito importante!)
+  2. Gerar um token no Notion, neste link [aqui](https://notion.com/my-integrations) e em seguida
+    * copiar e colar a chave em `NOTION_TOKEN`, no arquivo `.env_ex`
+    * renomear `.env_ex` para `.env`
+    * permitir que essa chave acesse a base de dados criada no Notion (muito importante!), de acordo com as recomendações do Notions que podem ser acessadas [aqui](https://www.notion.so/pt/help/add-and-manage-connections-with-the-api)
 
   3. Obter o número indentificador (id) da base de dados criada no Notion
-    1. executando o script `script/getNotionId.ts` (por exemplo, chamando `npx sucrase-node scripts/getNotionId.ts` no terminal)
+    1. executando o script `script/getNotionId.ts` (por exemplo, chamando ```npx sucrase-node scripts/getNotionId.ts``` no terminal)
     4. copiar e colar o output retornado à variável `NOTION_DATABASE_ID` em `.env`, já com esse nome.
 
 ## Rodar a aplicação localmente
 
 Uma vez definidas as variáveis em `.env`, pode-se rodar a aplicação localmente chamando, por 
-exemplo, `sudo npm run dev` no terminal. Em seguida, verificar o local explicitado no terminal
+exemplo, 
+
+```sudo npm run dev```
+
+no terminal. Em seguida, verificar o local explicitado no terminal
 no qual a aplicação foi compilada, a exemplo do código a abaixo, e acessar o http pelo browser.
 
 ```
