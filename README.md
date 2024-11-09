@@ -5,8 +5,14 @@ Petricor é um saite-blog um tanto minimalista feito por um completo amador.
 ## primeiros passos
 
 No ambiente de desenvolvimento integrado, tal como o VSCode, instale as dependências chamando, 
-por exemplo, `sudo npm i` no terminal, o que deverá instalar alguns pacotes essenciais para esta aplicação, tais como `dotenv`, `sucrase`, dentre outros, que são essenciais para rodá-la
-localmente
+por exemplo, 
+
+```
+sudo npm i
+```
+
+no terminal, o que deverá instalar alguns pacotes essenciais para esta aplicação, tais como `dotenv`, `sucrase`, dentre outros, que são essenciais para rodá-la
+localmente.
 
 ## adicionar postagem
 
@@ -20,7 +26,7 @@ o qual deve ser executado (por exemplo, chamando `node scripts/createNewPost.mjs
 
 o qual apresentará um _frontmatter_, tal como exemplificado abaixo
 
-```
+* ```
 ---
 id: post2
 slug: titulo-do-novo-post
