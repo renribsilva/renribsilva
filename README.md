@@ -59,13 +59,13 @@ Para integrar este código com o Notion, é preciso
 
   * obter o número indentificador (id) da base de dados criada no Notion
    
-    1. executando o script `script/getNotionId.ts` (por exemplo, chamando 
-
-    >> 
+    1. executando o script `script/getNotionId.ts`
+    
+    > por exemplo, chamando
     ```
     npx sucrase-node scripts/getNotionId.ts
     ```
-    no terminal)
+    no terminal
 
     2. copiar e colar o output retornado à variável `NOTION_DATABASE_ID` em `.env`, já com esse nome.
 
