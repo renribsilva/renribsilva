@@ -46,14 +46,14 @@ Nele, pode-se alterar as propriedade `title`, `subtitle`, `slug` (endereço que 
 Para integrar este código com o Notion, é preciso
 
   1. Criar uma [base de dados](https://www.notion.so/pt/help/create-a-database) no Notion com as seguintes variáveis
-    1. Page
-    2. Slug (texto)
-    3. Published (caixa de checagem)
+    a. Page
+    b. Slug (texto)
+    c. Published (caixa de checagem)
 
   2. Gerar um [token](https://notion.com/my-integrations) no Notion e em seguida
-    1. copiar e colar a chave em `NOTION_TOKEN`, no arquivo `.env_ex`
-    2. renomear `.env_ex` para `.env`
-    3. [permitir](https://www.notion.so/pt/help/add-and-manage-connections-with-the-api) que essa chave acesse a base de dados criada no Notion (muito importante!)
+    a. copiar e colar a chave em `NOTION_TOKEN`, no arquivo `.env_ex`
+    b. renomear `.env_ex` para `.env`
+    c. [permitir](https://www.notion.so/pt/help/add-and-manage-connections-with-the-api) que essa chave acesse a base de dados criada no Notion (muito importante!)
 
   3. Obter o número indentificador (id) da base de dados criada no Notion
     1. executando o script `script/getNotionId.ts` (por exemplo, chamando `npx sucrase-node scripts/getNotionId.ts` no terminal)
