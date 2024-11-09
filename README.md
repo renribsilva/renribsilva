@@ -46,9 +46,9 @@ Nele, pode-se alterar as propriedade `title`, `subtitle`, `slug` (endereço que 
 Para integrar este código com o Notion, é preciso
 
   1. Criar uma [base de dados](https://www.notion.so/pt/help/create-a-database) no Notion com as seguintes variáveis
-    - Page
-    b. Slug (texto)
-    c. Published (caixa de checagem)
+    `Page`
+    `Slug` (texto)
+    `Published` (caixa de checagem)
 
   2. Gerar um [token](https://notion.com/my-integrations) no Notion e em seguida
     a. copiar e colar a chave em `NOTION_TOKEN`, no arquivo `.env_ex`
