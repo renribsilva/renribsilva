@@ -51,7 +51,7 @@ Para integrar este código com o Notion, é preciso
     2. `Slug` (texto)  
     3. `Published` (caixa de checagem)
 
-  * gerar um token no Notion, neste link [aqui](https://notion.com/my-integrations) e em seguida
+  * gerar um token no Notion, neste link [aqui](https://notion.com/my-integrations), e em seguida
     
     1. copiar e colar a chave em `NOTION_TOKEN`, no arquivo `.env_ex`
     2. renomear `.env_ex` para `.env`
