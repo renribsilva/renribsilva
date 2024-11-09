@@ -45,7 +45,7 @@ Nele, pode-se alterar as propriedade `title`, `subtitle`, `slug` (endereço que 
 
 Para integrar este código com o Notion, é preciso
 
-  * criar uma base de dados no Notion conforme exemplificado [aqui](https://www.notion.so/pt/help/create-a-database) com as seguintes variáveis
+  * criar uma base de dados no Notion, conforme exemplificado [aqui](https://www.notion.so/pt/help/create-a-database), com as seguintes variáveis
 
     1. `Page`  
     2. `Slug` (texto)  
