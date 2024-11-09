@@ -71,7 +71,7 @@ exemplo,
 sudo npm run dev
 ```
 
-no terminal. Em seguida, deve-se verificar o `local` no qual a aplicação foi compilada, a exemplo do código a abaixo,
+no terminal. Em seguida, deve-se verificar o local no qual a aplicação foi compilada, a exemplo do código a abaixo:
 
 ```
 ▲ Next.js 14.2.16
@@ -79,7 +79,7 @@ no terminal. Em seguida, deve-se verificar o `local` no qual a aplicação foi c
   - Environments: .env
 ```
 
-e acessá-lo no seu browser.
+Feito isso, ela já pode ser acessada pelo browser, acessando o endereço mostrado, que no caso acima exemplificado é http://localhost:3000
 
 
 
