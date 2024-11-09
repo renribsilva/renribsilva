@@ -61,7 +61,7 @@ Para integrar este código com o Notion, é preciso
    
     1. executando o script `script/getNotionId.ts`
     
-    > por exemplo, chamando
+    * por exemplo, chamando
     ```
     npx sucrase-node scripts/getNotionId.ts
     ```
