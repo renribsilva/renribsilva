@@ -57,10 +57,9 @@ Para integrar este código com o Notion, é preciso
     2. renomear `.env_ex` para `.env`
     3. permitir que essa chave acesse a base de dados criada no Notion (muito importante!), de acordo com as recomendações do Notions que podem ser acessadas [aqui](https://www.notion.so/pt/help/add-and-manage-connections-with-the-api)
 
-  * obter o número indentificador (id) da base de dados criada no Notion executando o script `script/getNotionId.ts`, chamando, por exemplo, no terminal
-   ```
-   npx sucrase-node scripts/getNotionId.ts` no terminal
-   ```
+  * obter o número indentificador (id) da base de dados criada no Notion
+    1. executando o script `script/getNotionId.ts` (por exemplo, chamando `npx sucrase-node scripts/getNotionId.ts` no terminal)
+  
   * copiar e colar o output retornado à variável `NOTION_DATABASE_ID` em `.env`, já com esse nome.
 
 ## Rodar a aplicação localmente
