@@ -79,7 +79,7 @@ no terminal. Em seguida, deve-se verificar o local no qual a aplicação foi com
   - Environments: .env
 ```
 
-Feito isso, ela já pode ser acessada pelo browser, acessando o endereço mostrado, que no caso acima exemplificado é http://localhost:3000
+Feito isso, ela já pode ser acessada pelo browser, acessando o endereço mostrado.
 
 
 
