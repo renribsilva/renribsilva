@@ -62,7 +62,7 @@ Para integrar este código com o Notion, é preciso
   
   * copiar e colar o output à variável `NOTION_DATABASE_ID` em `.env`, já com esse nome.
 
-## Rodar a aplicação localmente
+## rodar a aplicação localmente
 
 Uma vez definidas as variáveis em `.env`, pode-se rodar a aplicação localmente chamando, por 
 exemplo, 
