@@ -37,7 +37,7 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* Open Graph */}
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
+        {/* <meta property="og:image" content={image} /> */}
         <meta property="og:url" content={url} />
         <meta property="og:type" content="link" />
         <meta property="og:site_name" content="Petricor" />
@@ -52,6 +52,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         {/* Canonical */}
         <link rel="canonical" href={url} />
+
       </Head>
       <LayoutIndex>
         <MDXProvider components={components}>
