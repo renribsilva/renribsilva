@@ -3,7 +3,7 @@
 /*****************************************/
 
 .customHR {
-  background-color: aqua;
+  /* background-color: aqua; */
   border: none;
   border-bottom: 1px solid var(--hr);
   margin-top: 40px;
