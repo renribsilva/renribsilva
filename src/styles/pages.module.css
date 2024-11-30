@@ -13,6 +13,7 @@
 .recents_ul_datetime {
   /* background-color: aqua; */
   min-width: 120px;
+  opacity: 0.6;
 }
 
 .recents_li {
