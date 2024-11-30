@@ -32,14 +32,12 @@
 html {
   display: flex;
   justify-content: center;
-  min-height: 100vh;
-  min-width: 100vw;
 }
 
 body {
   margin: 0;
-  max-width: 700px;
-  min-width: 700px;
+  max-width: 620px;
+  min-width: 620px;
   font-family: "Ubuntu";
   font-weight: 300;
 }

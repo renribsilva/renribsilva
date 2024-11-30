@@ -5,6 +5,7 @@ import styles from "../styles/components.module.css";
 import Link from "next/link";
 
 const Breadcrumb = () => {
+  
   const router = useRouter();
   const pathSegments = router.asPath.split("/").filter(segment => segment);
 

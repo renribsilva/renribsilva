@@ -54,7 +54,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="canonical" href={url} />
 
       </Head>
-      <LayoutIndex>
+      <LayoutIndex >
         <MDXProvider components={components}>
           <Component {...pageProps} />
         </MDXProvider>

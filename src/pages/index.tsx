@@ -8,16 +8,14 @@ import { PostData } from "../mdxtypes";
 import PropTypes from "prop-types";
 import Header from "../components/header";
 
-// Componente personalizado para <h1>
 function CustomH1({ children }) {
   return <h1 style={{ fontSize: "30px", marginTop: "0px"}}>{children}</h1>;
 }
 
 CustomH1.propTypes = {
-  children: PropTypes.node.isRequired, // Validação para children
+  children: PropTypes.node.isRequired, 
 };
 
-// Objeto para sobrescrever os componentes do MDX
 const overrideComponents = {
   h1: CustomH1,
 };
