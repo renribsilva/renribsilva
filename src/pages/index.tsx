@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { getSortedPostsData } from "../lib/getMDXPosts";
 import styles from "../styles/pages.module.css";
@@ -34,6 +34,17 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }: HomeProps) {
+
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <>
       <Header/>
