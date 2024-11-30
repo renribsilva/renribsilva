@@ -57,11 +57,11 @@ export default function Home({ posts }: HomeProps) {
         <ul className={styles.recents_ul}>
           {posts.map((post) => (
             <li key={post.id} className={styles.recents_li}>
-              <div className={styles.recents_ul_datetime}>
-                <Datetime date={post.date} short={false} />
-              </div>
               <div>
                 <Link href={`/blog/${encodeURIComponent(post.slug)}`} >
+                  <div className={styles.recents_ul_datetime}>
+                    <Datetime date={post.date} short={false} />
+                  </div>
                   <div>{post.title}</div>
                   {/* <div className={styles.recents_li_subtitle}>
                     {post.subtitle && post.subtitle.length > 0 ? `${post.subtitle}` : ""}

@@ -40,6 +40,7 @@
 @media (max-width: 600px) {
   .recents_li {
     display: block;
+    padding-top: 5px;
   }
 
   .vejamais {
