@@ -61,6 +61,7 @@
   /* background-color: antiquewhite; */
   list-style-type: none;
   padding: 0px;
+  padding-top: 45px;
   height: 40px;
   display: flex;
   margin: 0;
@@ -146,7 +147,8 @@
   padding: 5px 10px;
   cursor: pointer;
   border: none;
-  font-family: "Raleway";
+  font-family: "Ubuntu";
+  font-weight: 300;
   font-size: 14px;
 }
 

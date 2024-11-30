@@ -3,7 +3,7 @@ import Footer from "../components/footer";
 import Menu from "../components/menu";
 import Navbar from "../components/navbar";
 import styles from "../styles/layout.module.css";
-import Myhr from "../components/myhr";
+// import Myhr from "../components/myhr";
 import PropTypes from "prop-types";
 import React from "react";
 import Socials from "../components/socials";
@@ -55,9 +55,9 @@ export default function LayoutIndex({ children }) {
           {isMobileView ? (isNavbarOpen ? <Navbar /> : null) : <Navbar />}
         </div>
       </div>
-      <Myhr marginTop="0px"/>
-      <main>{children}</main>
-      <Myhr />
+      {/* <Myhr marginTop="0px"/> */}
+      <main className={styles.layout_main}>{children}</main>
+      {/* <Myhr /> */}
       <Socials />
       <Footer />
       <div className={styles.layout_rodape}></div>

@@ -10,7 +10,7 @@ import Header from "../components/header";
 
 // Componente personalizado para <h1>
 function CustomH1({ children }) {
-  return <h1 style={{ fontSize: "35px" }}>{children}</h1>;
+  return <h1 style={{ fontSize: "30px", marginTop: "0px"}}>{children}</h1>;
 }
 
 CustomH1.propTypes = {
@@ -27,7 +27,7 @@ interface HomeProps {
 }
 
 export async function getStaticProps() {
-  const posts = getSortedPostsData().slice(0, 2);
+  const posts = getSortedPostsData().slice(0, 4);
   return {
     props: {
       posts,
@@ -43,18 +43,20 @@ export default function Home({ posts }: HomeProps) {
         {/* Passando os componentes personalizados para o Index */}
         <Index components={overrideComponents} />
       </div>
-      <h2 className={styles.recents_h2}>Recentes</h2>
+      <h2 className={styles.recents_h2}>recentes</h2>
       <div>
         <ul className={styles.recents_ul}>
           {posts.map((post) => (
             <li key={post.id} className={styles.recents_li}>
-              <Datetime date={post.date} short={false} />
+              <div className={styles.recents_ul_datetime}>
+                <Datetime date={post.date} short={false} />
+              </div>
               <div>
                 <Link href={`/blog/${encodeURIComponent(post.slug)}`} >
                   <div>{post.title}</div>
-                  <div className={styles.recents_li_subtitle}>
+                  {/* <div className={styles.recents_li_subtitle}>
                     {post.subtitle && post.subtitle.length > 0 ? `${post.subtitle}` : ""}
-                  </div>
+                  </div> */}
                 </Link>
               </div>
             </li>

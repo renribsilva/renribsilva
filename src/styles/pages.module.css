@@ -10,6 +10,11 @@
   padding: 0;
 }
 
+.recents_ul_datetime {
+  /* background-color: aqua; */
+  min-width: 120px;
+}
+
 .recents_li {
   /* background-color: aqua; */
   display: flex;
@@ -41,6 +46,7 @@
     margin-left: 0px;
   }
 }
+
 /**************************************/
 /**************** BLOG ****************/
 /**************************************/
