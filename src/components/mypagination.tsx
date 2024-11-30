@@ -13,18 +13,16 @@ export default function Mypagination({
   totalPages, 
   currentPage, 
   onPageChange, 
-  maxButtons = 1 // Define um valor padrão para maxButtons
+  maxButtons = 1 
 }: MypaginationProps) {
   
   const pageNumbers: (number | string)[] = [];
   pageNumbers.push(1);
 
-  // Calcula o intervalo de páginas intermediárias
   const half = Math.floor(maxButtons / 2);
   let startPage = Math.max(2, currentPage - half);
   let endPage = Math.min(totalPages - 1, currentPage + half);
 
-  // Ajusta o início e o fim se necessário
   if (endPage - startPage + 1 < maxButtons - 1) {
     if (startPage === 2) {
       endPage = Math.min(startPage + (maxButtons - 2), totalPages - 1);
@@ -33,22 +31,18 @@ export default function Mypagination({
     }
   }
 
-  // Adiciona reticências se necessário
   if (startPage > 2) {
     pageNumbers.push("...");
   }
 
-  // Adiciona as páginas intermediárias
   for (let i = startPage; i <= endPage; i++) {
     pageNumbers.push(i);
   }
 
-  // Adiciona reticências se necessário
   if (endPage < totalPages - 1) {
     pageNumbers.push("...");
   }
 
-  // Sempre adiciona a última página
   if (totalPages > 1) {
     pageNumbers.push(totalPages);
   }

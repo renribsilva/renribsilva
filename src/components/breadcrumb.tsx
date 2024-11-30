@@ -1,4 +1,3 @@
-// components/Breadcrumb.tsx
 import React from "react";
 import { useRouter } from "next/router";
 import styles from "../styles/components.module.css";
