@@ -31,6 +31,9 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider>
       <Head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
         <meta name="title" content={title} />
         <meta name="description" content={description} />
 
