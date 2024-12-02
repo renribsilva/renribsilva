@@ -30,8 +30,10 @@
 }
 
 .recents_li a {
+  /* background-color: aquamarine; */
   display: flex;
   text-decoration: none;
+  max-width: fit-content;
 }
 
 /* .vejamais {
