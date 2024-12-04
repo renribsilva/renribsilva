@@ -8,7 +8,7 @@
   --color-text-base-dark: rgb(243, 238, 234);
   --color-subtitle-dark: rgb(189, 155, 123); /* Ajustado para melhorar o contraste */
   --color-hr-dark: rgb(94, 81, 71); 
-}
+} 
 
 [data-theme="dark"] {
   --background: var(--color-fill-dark);
