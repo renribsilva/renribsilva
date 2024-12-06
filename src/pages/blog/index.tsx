@@ -60,7 +60,7 @@ export default function Blog({ groupedPosts }: { groupedPosts: GroupedPosts }) {
         <ul>
           {currentPosts.map((post) => (
             <li key={post.id}>
-              <Datetime date={post.date} short={true} />
+              <Datetime date={post.date} semishort={true} />
               <Link href={`/blog/${post.slug}`}>
                 <div>{post.title}</div>
                 <div className={styles.blog_index_subtitle}>
