@@ -34,24 +34,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 // Função para obter os dados do post baseado no slug
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const { slug } = params!; // Obtém o slug dos parâmetros
+  const { slug } = params!;
   const database = await getNotionPosts();
-  
-  // Verifica se a consulta retornou resultados
+
   if (!database || !database.results) {
-    return { notFound: true }; // Retorna 404 se não houver resultados
+    return { notFound: true };
   }
 
-  // Encontre o post correspondente ao slug
   const post = database.results.find((post: NotionPage) => {
     const postSlug = post.properties.Page.title[0].plain_text
       .replace(/\s+/g, "")
       .replace(/-/g, "")
       .toLowerCase();
-    return postSlug === slug; // Compare o slug formatado com o slug obtido da URL
+    return postSlug === slug;
   });
 
-  // Se o post não for encontrado, retorna 404
   if (!post) {
     return { notFound: true };
   }
@@ -60,8 +57,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       post,
       ogtitle: "Léxico | Petricor",
-      ogdescription: `Às vezes as palavras significam muito mais do que dizem os verbetes de dicionários. Aqui está o que '${slug}' às vezes significa para mim.`, // Renomeia para description
+      ogdescription: `Às vezes as palavras significam muito mais do que dizem os verbetes de dicionários. Aqui está o que '${slug}' às vezes significa para mim.`,
     },
+    revalidate: 60, // Atualiza a página a cada 60 segundos
   };
 };
 
