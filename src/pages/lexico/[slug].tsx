@@ -30,6 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
+  
   const { slug } = params!;
   const database = await getNotionPosts();
 
@@ -38,6 +39,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   }
 
   const post = database.results.find((post: NotionPage) => {
+
     const postSlug = post.properties.Page.title[0].plain_text
       .replace(/\s+/g, "")
       .replace(/-/g, "")
