@@ -1,38 +1,34 @@
-// pages/lexico/[slug].tsx
-import { getNotionPosts } from "../../lib/getNotionPosts"; // Importa a função para obter os posts
+import { getNotionPosts } from "../../lib/getNotionPosts";
 import { NotionPage } from "../../notiontypes";
 import { GetStaticPaths, GetStaticProps } from "next";
 import styles from "../../styles/pages.module.css";
 import Datetime from "../../components/datetime";
 import React from "react";
 import Header from "../../components/header";
-import Breadcrumb from "../../components/breadcrumb"; 
+import Breadcrumb from "../../components/breadcrumb";
 
-// Função para gerar as rotas dinâmicas
 export const getStaticPaths: GetStaticPaths = async () => {
   const database = await getNotionPosts();
-  
-  // Verifica se a consulta retornou resultados
+
   if (!database || !database.results) {
-    return { paths: [], fallback: false }; // Retorna 404 se não houver resultados
+    return { paths: [], fallback: false };
   }
 
   const paths = database.results.map((post: NotionPage) => ({
-    params: { 
+    params: {
       slug: post.properties.Page.title[0].plain_text
-        .replace(/\s+/g, "") // Remove espaços
-        .replace(/-/g, "") // Remove hífens
-        .toLowerCase() // Converte para minúsculas
+        .replace(/\s+/g, "")
+        .replace(/-/g, "")
+        .toLowerCase(),
     },
   }));
 
   return {
     paths,
-    fallback: false, // Retorna 404 para slugs não encontrados
+    fallback: false,
   };
 };
 
-// Função para obter os dados do post baseado no slug
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { slug } = params!;
   const database = await getNotionPosts();
@@ -59,19 +55,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       ogtitle: "Léxico | Petricor",
       ogdescription: `Às vezes as palavras significam muito mais do que dizem os verbetes de dicionários. Aqui está o que '${slug}' às vezes significa para mim.`,
     },
-    revalidate: 60, // Atualiza a página a cada 60 segundos
+    revalidate: 60,
   };
 };
 
-// Tipando as props do componente Post
 interface PostProps {
-  post: NotionPage; // Renomeado para post
+  post: NotionPage;
 }
 
 const Post = ({ post }: PostProps) => {
   return (
     <>
-      <Header titlePre={post.properties.Page.title[0].plain_text.replace(/-/g, "·")}/>
+      <Header titlePre={post.properties.Page.title[0].plain_text.replace(/-/g, "·")} />
       <Breadcrumb />
       <section className={styles.lexicoslug}>
         <div>
@@ -83,7 +78,7 @@ const Post = ({ post }: PostProps) => {
           </div>
         </div>
         <p>
-          {post.properties.Slug.rich_text.map((item) => item.plain_text).join(" ")} {/* Exibe o slug */}
+          {post.properties.Slug.rich_text.map((item) => item.plain_text).join(" ")}
         </p>
       </section>
     </>
