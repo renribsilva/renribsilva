@@ -6,7 +6,7 @@ import styles from "../../styles/pages.module.css";
 import Datetime from "../../components/datetime";
 import React from "react";
 import Header from "../../components/header";
-import Breadcrumb from "../../components/breadcrumb";
+import Breadcrumb from "../../components/breadcrumb"; 
 
 // Função para gerar as rotas dinâmicas
 export const getStaticPaths: GetStaticPaths = async () => {
