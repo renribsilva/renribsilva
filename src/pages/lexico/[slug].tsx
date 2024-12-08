@@ -60,7 +60,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     revalidate: 60,
   };
 };
-
+ 
 interface PostProps {
   post: NotionPage;
 }
