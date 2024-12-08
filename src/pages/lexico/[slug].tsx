@@ -30,7 +30,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  
+
   const { slug } = params!;
   const database = await getNotionPosts();
 
@@ -57,7 +57,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       ogtitle: "Léxico | Petricor",
       ogdescription: `Às vezes as palavras significam muito mais do que dizem os verbetes de dicionários. Aqui está o que '${slug}' às vezes significa para mim.`,
     },
-    revalidate: 60,
+    revalidate: 3600 * 24,
   };
 };
 
