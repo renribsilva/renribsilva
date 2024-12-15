@@ -19,7 +19,7 @@ const SocialObjects = [
   {
     ícone: faRss, 
     alt: "ícone de rss",
-    link: "https://petricor.xyz/api/rss.xml",
+    link: "https://renribsilva.vercel.app/api/rss.xml",
   },
 ];
 
