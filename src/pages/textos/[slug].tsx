@@ -16,12 +16,12 @@ import Breadcrumb from "../../components/breadcrumb";
 
 interface PostProps {
   postData: Omit<PostData, "content"> & {
-    content: MDXRemoteSerializeResult; // Conteúdo serializado para MDXRemote
+    content: MDXRemoteSerializeResult;
   };
 }
 
 export async function getStaticPaths() {
-  const mdfiles: PostSlug[] = getAllPostSlugs(); // Utilize PostSlug como tipo
+  const mdfiles: PostSlug[] = getAllPostSlugs();
   return {
     paths: mdfiles.map((file) => ({
       params: { slug: file.params.slug },
