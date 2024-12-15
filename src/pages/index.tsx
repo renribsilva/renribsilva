@@ -58,7 +58,7 @@ export default function Home({ posts }: HomeProps) {
           {posts.map((post) => (
             <li key={post.id} className={styles.recents_li}>
               <div>
-                <Link href={`/blog/${encodeURIComponent(post.slug)}`} >
+                <Link href={`/textos/${encodeURIComponent(post.slug)}`} >
                   <div className={styles.recents_ul_datetime}>
                     <Datetime date={post.date} short={false} />
                   </div>
