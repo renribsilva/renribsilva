@@ -25,7 +25,7 @@ interface HomeProps {
 }
 
 export async function getStaticProps() {
-  const posts = getSortedPostsData().slice(0, 4);
+  const posts = getSortedPostsData().slice(0, 3);
   return {
     props: {
       posts,
