@@ -1,6 +1,6 @@
-# Petricor
+# renribsilva
 
-Petricor é um saite-blog um tanto minimalista feito por um completo amador.
+renribsilva é um saite-blog um tanto minimalista feito por um completo amador.
 
 ## primeiros passos
 
