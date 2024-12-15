@@ -6,10 +6,10 @@ interface HeaderProps {
 }
 
 const Header = ({
-  titlePre = "Petricor",
+  titlePre = "renribsilva",
 }: HeaderProps) => {
 
-  const defaultTitle = titlePre === "Petricor" ? "Petricor" : `${titlePre} | Petricor`;
+  const defaultTitle = titlePre === "renribsilva" ? "renribsilva" : `${titlePre} | renribsilva`;
 
   const metas = {
     title: defaultTitle,
