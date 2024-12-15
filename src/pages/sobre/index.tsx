@@ -25,7 +25,7 @@ const overrideComponents = {
 // Função para obter título e descrição
 export const getStaticProps = async () => {
   // Simulando a recuperação do título e da descrição
-  const ogtitle = "Sobre | Petricor"; // Substitua conforme necessário
+  const ogtitle = "sobre | renribsilva"; // Substitua conforme necessário
   const ogdescription = "Saiba quando começou, como foi feito e para onde pode ir o nosso blog."; // Substitua conforme necessário
   
   return {
@@ -40,7 +40,7 @@ export default function About() {
   return (
     <>
       <Header 
-        titlePre="Sobre"
+        titlePre="sobre"
       />
       <Breadcrumb />
       <div className={styles.sobre_mdx}>

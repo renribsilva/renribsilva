@@ -6,7 +6,7 @@ import Header from "../../components/header";
 // Função para obter título e descrição
 export const getStaticProps = async () => {
   // Simulando a recuperação do título e da descrição
-  const ogtitle = "Projetos | Petricor"; // Substitua conforme necessário
+  const ogtitle = "projetos | renribsilva"; // Substitua conforme necessário
   const ogdescription = "Projetos que estão sendo escritos pelo autor do blog"; // Substitua conforme necessário
   
   return {
@@ -20,7 +20,7 @@ export const getStaticProps = async () => {
 export default function Projetos () {
   return (
     <section>
-      <Header titlePre="Projetos" />
+      <Header titlePre="projetos" />
       <Breadcrumb />
       <Conjugador />
     </section>

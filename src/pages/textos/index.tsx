@@ -34,9 +34,8 @@ export async function getStaticProps() {
   return {
     props: {
       groupedPosts,
-      ogtitle: "Textos | Petricor", 
+      ogtitle: "textos | renribsilva", 
       ogdescription: "Explore os textos e atualizações mais recentes.",
-
     },
   };
 }
@@ -54,7 +53,7 @@ export default function Textos({ groupedPosts }: { groupedPosts: GroupedPosts })
 
   return (
     <>
-      <Header titlePre="Textos" />
+      <Header titlePre="textos" />
       <Breadcrumb />
       <section className={styles.blog_index}>
         <ul>

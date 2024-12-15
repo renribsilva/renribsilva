@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       posts: database.results, // posts é do tipo NotionPage[]
-      ogtitle: "Léxico | Petricor", // Exporta o título com #
+      ogtitle: "léxico | renribsilva", // Exporta o título com #
       ogdescription: "Conheça todas as palavras que foram ressignificadas neste blog."
     },
   };
@@ -27,7 +27,7 @@ interface PostsProps {
 export default function Posts({ posts }: PostsProps) { // Adicionando a tipagem ao componente
   return (
     <>
-      <Header titlePre="Léxico"/>
+      <Header titlePre="léxico"/>
       <Breadcrumb />
       <section className={styles.lexico}>
         <ul>

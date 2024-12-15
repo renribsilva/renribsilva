@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
   return {
     props: {
       tags,
-      ogtitle: "Tags | Petricor", 
+      ogtitle: "tags | renribsilva", 
       ogdescription: "Veja todas as tags usadas nos textos do nosso blog.", // Exporta a descrição
     },
   };
@@ -31,7 +31,7 @@ export default function TagsPage({ tags }: TagPageProps) {
   return (
     <>
       <Header 
-        titlePre="Tags"
+        titlePre="tags"
       />
       <Breadcrumb />
       <section className={styles.tags_index}>
