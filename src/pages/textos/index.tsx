@@ -34,14 +34,14 @@ export async function getStaticProps() {
   return {
     props: {
       groupedPosts,
-      ogtitle: "Blog | Petricor", 
-      ogdescription: "Explore os textos e atualizações mais recentes do nosso blog.",
+      ogtitle: "Textos | Petricor", 
+      ogdescription: "Explore os textos e atualizações mais recentes.",
 
     },
   };
 }
 
-export default function Blog({ groupedPosts }: { groupedPosts: GroupedPosts }) {
+export default function Textos({ groupedPosts }: { groupedPosts: GroupedPosts }) {
   const allPosts = Object.values(groupedPosts).flat();
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -54,14 +54,14 @@ export default function Blog({ groupedPosts }: { groupedPosts: GroupedPosts }) {
 
   return (
     <>
-      <Header titlePre="Blog" />
+      <Header titlePre="Textos" />
       <Breadcrumb />
       <section className={styles.blog_index}>
         <ul>
           {currentPosts.map((post) => (
             <li key={post.id}>
               <Datetime date={post.date} semishort={true} />
-              <Link href={`/blog/${post.slug}`}>
+              <Link href={`/textos/${post.slug}`}>
                 <div>{post.title}</div>
                 <div className={styles.blog_index_subtitle}>
                   {post.subtitle && post.subtitle.length > 0 ? `${post.subtitle}` : ""}

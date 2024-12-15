@@ -4,7 +4,7 @@ import React from "react";
 
 const navItems: { label: string; page?: string }[] = [
   { label: "início", page: "/" }, 
-  { label: "blog", page: "/blog" }, 
+  { label: "textos", page: "/textos" }, 
   { label: "tags ", page: "/tags" },
   { label: "léxico", page: "/lexico" },
   { label: "projetos", page: "/projetos" },
