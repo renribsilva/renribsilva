@@ -47,7 +47,6 @@ const YearPage = ({ ano, posts }: YearPageProps) => {
       <Header titlePre={`${ano}`} />
       <Breadcrumb />
       <section className={styles.tags_tag_index}>
-        {/* <h1>Posts de {ano}</h1>  */}
         <ul>
           {posts.map(post => (
             <li key={post.id}>
