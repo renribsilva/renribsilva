@@ -1,12 +1,14 @@
+// pages/tags.tsx
+
 import { GetStaticProps } from "next";
-import Link from "next/link";
-import { getUniqueTags } from "../../lib/getMDXPosts";
 import React from "react";
-import Tagbutton from "../../components/tagbutton";
-import { formatString } from "../../lib/formatString"; 
-import styles from "../../styles/pages.module.css";
-import Header from "../../components/header";
-import Breadcrumb from "../../components/breadcrumb";
+import styles from "../../../styles/pages.module.css";
+import Link from "next/link";
+import { getUniqueTags } from "../../../lib/getMDXPosts";
+import Header from "../../../components/header";
+import Breadcrumb from "../../../components/breadcrumb";
+import { formatString } from "../../../lib/formatString";
+import ArchiveButton from "../../../components/archiveButton";
 
 interface TagPageProps {
   tags: {
@@ -16,6 +18,7 @@ interface TagPageProps {
 }
 
 export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
+  
   const tags = getUniqueTags();
 
   return {
@@ -30,22 +33,20 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
 export default function TagsPage({ tags }: TagPageProps) {
   return (
     <>
-      <Header 
-        titlePre="tags"
-      />
+      <Header titlePre="tags" />
       <Breadcrumb />
+      {/* Seção para os botões de tag */}
       <section className={styles.tags_index}>
-        <ul>
+        <h3>tags</h3>
+        <ul className={styles.archive_index_ul}>
           {tags
             .sort((a, b) => b.frequency - a.frequency) // Ordena por frequência
             .map(({ tag, frequency }) => {
-              const formattedTag = formatString(tag); // Formata o tag
+              const formattedTag = formatString(tag); // Formata a tag
               return (
-                <li key={formattedTag}> {/* Usa a tag formatada como chave */}
-                  <Link href={`/tags/${formattedTag}`}>
-                    <Tagbutton>
-                      # {tag} ({frequency})
-                    </Tagbutton>
+                <li key={formattedTag}>
+                  <Link href={`/arquivo/tag/${formattedTag}`} legacyBehavior>
+                    <ArchiveButton># {tag} ({frequency})</ArchiveButton>
                   </Link>
                 </li>
               );

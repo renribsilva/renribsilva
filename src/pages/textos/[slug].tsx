@@ -8,11 +8,11 @@ import Datetime from "../../components/datetime";
 import type { PostData, PostSlug } from "../../mdxtypes";
 import styles from "../../styles/pages.module.css";
 import React from "react";
-import Tagbutton from "../../components/tagbutton"; 
 import Link from "next/link";
 import { formatString } from "../../lib/formatString"; // Certifique-se de que o caminho esteja correto
 import Header from "../../components/header";
 import Breadcrumb from "../../components/breadcrumb";
+import ArchiveButton from "../../components/archiveButton";
 
 interface PostProps {
   postData: Omit<PostData, "content"> & {
@@ -74,7 +74,7 @@ export default function Post({ postData }: PostProps) {
         <div className={styles.blog_slug_tags2}>
           {postData.tags.map((tag: string, index: number) => (
             <Link href={`/tags/${formatString(tag)}`} key={index}>
-              <Tagbutton># {tag}</Tagbutton>
+              <ArchiveButton># {tag}</ArchiveButton>
             </Link>
           ))}
         </div>

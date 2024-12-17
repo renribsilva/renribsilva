@@ -124,25 +124,32 @@
   gap: 5px
 }
 
-/**************************************/
-/**************** TAGS ****************/
-/**************************************/
+/*****************************************/
+/**************** ARCHIVE ****************/
+/*****************************************/
 
-.tags_index ul {
+
+.archive_index_ul {
   /* background-color: rgb(40, 172, 28); */
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   padding: 0;
   gap: 5px;
-  justify-content: center;
+  /* justify-content: center; */
+}
+
+@media (max-width: 600px) {
+  .archive_index_ul {
+    justify-content: center;
+  }
 }
 
 .tag_tag_index_subtitle {
-  font-style: italic;
-  color: var(--subtitle);
-  font-size: 15px;
-  font-weight: 300;
+  /* font-style: italic; */
+  /* color: var(--subtitle); */
+  /* font-size: 15px; */
+  /* font-weight: 300; */
 }
 
 /********************************************/

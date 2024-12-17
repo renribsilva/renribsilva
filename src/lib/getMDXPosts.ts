@@ -40,9 +40,35 @@ export function getSortedPostsData(): PostData[] {
 //////////////////////////////////////////////////////////////////
 
 export function getPostsByTag(tag: string) {
-  const allPosts = getSortedPostsData();
 
+  const allPosts = getSortedPostsData();
   return allPosts.filter(post => post.tags.includes(tag));
+
+}
+
+/////////////////////////////////////////////////////////////////
+// Função para pegar todos os posts relacionados a um único ano//
+/////////////////////////////////////////////////////////////////
+
+export function getPostsGroupedByYear() {
+
+  const posts = getSortedPostsData();
+  const groupedByYear: Record<string, PostData[]> = {};
+
+  posts.forEach(post => {
+    const year = new Date(post.date).getFullYear().toString();
+    if (!groupedByYear[year]) {
+      groupedByYear[year] = [];
+    }
+    groupedByYear[year].push(post);
+  });
+
+  return groupedByYear;
+}
+
+export function getPostsByYear(ano: string): PostData[] {
+  const posts = getSortedPostsData();  // A função que retorna os posts ordenados
+  return posts.filter(post => new Date(post.date).getFullYear().toString() === ano);
 }
 
 ////////////////////////////////////
