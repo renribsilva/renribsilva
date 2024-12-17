@@ -28,7 +28,7 @@ export async function getStaticProps({ params }: { params: { tag: string } }) {
     props: {
       tag: originalTag || "",
       posts,
-      ogtitle: `# ${originalTag}`,
+      ogtitle: `# ${originalTag} | renribsilva`,
       ogdescription: `Explore os posts relacionados à tag # ${originalTag}.`,
     },
   };

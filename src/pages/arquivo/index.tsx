@@ -13,20 +13,21 @@ interface TagPageProps {
     tag: string;
     frequency: number;
   }[];
-  years: string[]; // Array de anos
+  years: string[];
 }
 
 export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
+  
   const tags = getUniqueTags();
   const groupedByYear = getPostsGroupedByYear();
-  const years = Object.keys(groupedByYear); // Obtém os anos disponíveis
+  const years = Object.keys(groupedByYear);
 
   return {
     props: {
       tags,
       years,
-      ogtitle: "tags | renribsilva", 
-      ogdescription: "Veja todas as tags usadas nos textos do nosso blog.", // Exporta a descrição
+      ogtitle: "archive | renribsilva", 
+      ogdescription: "Todos os textos agrupados por ano e tag.",
     },
   };
 };
@@ -51,7 +52,6 @@ export default function TagsPage({ tags, years }: TagPageProps) {
           ))}
         </ul>
       </section>
-
       {/* Seção para os botões de tag */}
       <section>
         <h3>
@@ -59,9 +59,9 @@ export default function TagsPage({ tags, years }: TagPageProps) {
           </h3>
           <ul className={styles.archive_index_ul}>
           {tags
-            .sort((a, b) => b.frequency - a.frequency) // Ordena por frequência
+            .sort((a, b) => b.frequency - a.frequency)
             .map(({ tag, frequency }) => {
-              const formattedTag = formatString(tag); // Formata a tag
+              const formattedTag = formatString(tag); 
               return (
                 <li key={formattedTag}>
                   <Link href={`/arquivo/tag/${formattedTag}`} >

@@ -16,6 +16,7 @@ interface YearPageProps {
 }
 
 export const getStaticProps: GetStaticProps<YearPageProps> = async ({ params }) => {
+  
   const ano = params!.ano as string;
   const posts = getPostsByYear(ano);  // Busca os posts por ano
 
@@ -23,6 +24,8 @@ export const getStaticProps: GetStaticProps<YearPageProps> = async ({ params }) 
     props: {
       ano,
       posts,
+      ogtitle: `${ano} | renribsilva`, 
+      ogdescription: `Todos os textos publicados em ${ano}`, // Exporta a descrição
     },
   };
 };
@@ -31,7 +34,7 @@ export const getStaticPaths = async () => {
 
   const anos = await getUniqueYears();  
   const paths = anos.map(ano => ({ params: { ano } }));
-
+  console.log(anos);
   return {
     paths,
     fallback: false,
@@ -41,7 +44,7 @@ export const getStaticPaths = async () => {
 const YearPage = ({ ano, posts }: YearPageProps) => {
   return (
     <>
-      <Header titlePre={`Posts de ${ano}`} />
+      <Header titlePre={`${ano}`} />
       <Breadcrumb />
       <section className={styles.tags_tag_index}>
         {/* <h1>Posts de {ano}</h1>  */}

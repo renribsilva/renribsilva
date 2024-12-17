@@ -25,7 +25,7 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
     props: {
       tags,
       ogtitle: "tags | renribsilva", 
-      ogdescription: "Veja todas as tags usadas nos textos do nosso blog.", // Exporta a descrição
+      ogdescription: "Veja os textos agrupados por tags.", // Exporta a descrição
     },
   };
 };
@@ -40,9 +40,9 @@ export default function TagsPage({ tags }: TagPageProps) {
         <h3>tags</h3>
         <ul className={styles.archive_index_ul}>
           {tags
-            .sort((a, b) => b.frequency - a.frequency) // Ordena por frequência
+            .sort((a, b) => b.frequency - a.frequency)
             .map(({ tag, frequency }) => {
-              const formattedTag = formatString(tag); // Formata a tag
+              const formattedTag = formatString(tag); 
               return (
                 <li key={formattedTag}>
                   <Link href={`/arquivo/tag/${formattedTag}`}>

@@ -21,8 +21,8 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
   return {
     props: {
       years,
-      ogtitle: "tags | renribsilva", 
-      ogdescription: "Veja todas as tags usadas nos textos do nosso blog.", // Exporta a descrição
+      ogtitle: "anos | renribsilva", 
+      ogdescription: "Veja os textos agrupados por ano.", // Exporta a descrição
     },
   };
 };
@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
 export default function TagsPage({ years }: TagPageProps) {
   return (
     <>
-      <Header titlePre="tags" />
+      <Header titlePre="anos" />
       <Breadcrumb />      
       {/* Seção para os botões de ano */}
       <section>
