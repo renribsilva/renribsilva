@@ -1,50 +1,18 @@
-// pages/tags.tsx
+import { GetServerSideProps } from "next";
 
-import { GetStaticProps } from "next";
-import React from "react";
-import Link from "next/link";
-import { getPostsGroupedByYear } from "../../../lib/getMDXPosts";
-import Header from "../../../components/header";
-import Breadcrumb from "../../../components/breadcrumb";
-import ArchiveButton from "../../../components/archiveButton";
-import styles from "../../../styles/pages.module.css";
+// Componente de redirecionamento (não vai renderizar nada)
+const RedirectIndex = () => {
+  return null;
+};
 
-interface TagPageProps {
-  years: string[];
-}
-
-export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
-  
-  const groupedByYear = getPostsGroupedByYear();
-  const years = Object.keys(groupedByYear);
-
+// Função getServerSideProps que redireciona para /arquivo
+export const getServerSideProps: GetServerSideProps = async () => {
   return {
-    props: {
-      years,
-      ogtitle: "anos | renribsilva", 
-      ogdescription: "Veja os textos agrupados por ano.", // Exporta a descrição
+    redirect: {
+      destination: "/arquivo", // Redireciona para /arquivo
+      permanent: false, // Redirecionamento temporário
     },
   };
 };
 
-export default function TagsPage({ years }: TagPageProps) {
-  return (
-    <>
-      <Header titlePre="anos" />
-      <Breadcrumb />      
-      {/* Seção para os botões de ano */}
-      <section>
-        <h2>anos</h2>
-        <ul className={styles.archive_index_ul}>
-          {years.map((year) => (
-            <li key={year}>
-              <Link href={`/arquivo/ano/${year}`} legacyBehavior>
-                <ArchiveButton>{year}</ArchiveButton>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </>
-  );
-}
+export default RedirectIndex;
