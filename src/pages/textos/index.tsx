@@ -2,17 +2,17 @@ import { getSortedPostsData, getPostData } from "../../lib/getMDXPosts";
 import { PostData } from "../../mdxtypes";
 import Datetime from "../../components/datetime";
 import styles from "../../styles/pages.module.css";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import Header from "../../components/header";
-import Mypagination from "../../components/mypagination";
+// import Mypagination from "../../components/mypagination";
 import Breadcrumb from "../../components/breadcrumb";
 
 interface GroupedPosts {
   [year: string]: PostData[];
 }
 
-const POSTS_PER_PAGE = 4;
+// const POSTS_PER_PAGE = 4;
 
 export async function getStaticProps() {
   // Obtendo os dados dos posts
@@ -41,15 +41,16 @@ export async function getStaticProps() {
 }
 
 export default function Textos({ groupedPosts }: { groupedPosts: GroupedPosts }) {
+
   const allPosts = Object.values(groupedPosts).flat();
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
 
   // Calcule o número total de páginas
-  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+  // const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
 
   // Determine os posts da página atual
-  const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
-  const currentPosts = allPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
+  // const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
+  // const currentPosts = allPosts.slice(startIndex, startIndex + POSTS_PER_PAGE);
 
   return (
     <>
@@ -57,7 +58,7 @@ export default function Textos({ groupedPosts }: { groupedPosts: GroupedPosts })
       <Breadcrumb />
       <section className={styles.blog_index}>
         <ul>
-          {currentPosts.map((post) => (
+          {allPosts.map((post) => (
             <li key={post.id}>
               <Datetime date={post.date} semishort={true} />
               <Link href={`/textos/${post.slug}`}>
@@ -70,14 +71,14 @@ export default function Textos({ groupedPosts }: { groupedPosts: GroupedPosts })
           ))}
         </ul> 
         {/* Condiciona a renderização da paginação */}
-        {totalPages > 1 && (
+        {/* {totalPages > 1 && (
           <Mypagination
             totalPages={totalPages}
             currentPage={currentPage}
             onPageChange={setCurrentPage}
             maxButtons={1}
           />
-        )}
+        )} */}
       </section>
     </>
   );
