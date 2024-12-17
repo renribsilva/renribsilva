@@ -56,6 +56,7 @@ export default function Textos({ groupedPosts }: { groupedPosts: GroupedPosts })
     <>
       <Header titlePre="textos" />
       <Breadcrumb />
+      {/* <h2>todos os textos</h2> */}
       <section className={styles.blog_index}>
         <ul>
           {allPosts.map((post) => (

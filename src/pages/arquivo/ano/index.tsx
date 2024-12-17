@@ -34,7 +34,7 @@ export default function TagsPage({ years }: TagPageProps) {
       <Breadcrumb />      
       {/* Seção para os botões de ano */}
       <section>
-        <h3>anos</h3>
+        <h2>anos</h2>
         <ul className={styles.archive_index_ul}>
           {years.map((year) => (
             <li key={year}>

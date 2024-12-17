@@ -37,7 +37,7 @@ export default function TagsPage({ tags }: TagPageProps) {
       <Breadcrumb />
       {/* Seção para os botões de tag */}
       <section>
-        <h3>tags</h3>
+        <h2>textos agrupados em tags</h2>
         <ul className={styles.archive_index_ul}>
           {tags
             .sort((a, b) => b.frequency - a.frequency)

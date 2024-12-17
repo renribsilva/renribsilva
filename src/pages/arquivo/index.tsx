@@ -39,9 +39,9 @@ export default function TagsPage({ tags, years }: TagPageProps) {
       <Breadcrumb />      
       {/* Seção para os botões de ano */}
       <section>
-        <h3>
+        <h2>
           <a href="/arquivo/ano">por ano</a>
-        </h3>
+        </h2>
         <ul className={styles.archive_index_ul}>
           {years.map((year) => (
             <li key={year}>
@@ -54,22 +54,22 @@ export default function TagsPage({ tags, years }: TagPageProps) {
       </section>
       {/* Seção para os botões de tag */}
       <section>
-        <h3>
+        <h2>
           <a href="/arquivo/tag">por tag</a>
-          </h3>
-          <ul className={styles.archive_index_ul}>
-          {tags
-            .sort((a, b) => b.frequency - a.frequency)
-            .map(({ tag, frequency }) => {
-              const formattedTag = formatString(tag); 
-              return (
-                <li key={formattedTag}>
-                  <Link href={`/arquivo/tag/${formattedTag}`} >
-                    <ArchiveButton># {tag} ({frequency})</ArchiveButton>
-                  </Link>
-                </li>
-              );
-            })}
+        </h2>
+        <ul className={styles.archive_index_ul}>
+        {tags
+          .sort((a, b) => b.frequency - a.frequency)
+          .map(({ tag, frequency }) => {
+            const formattedTag = formatString(tag); 
+            return (
+              <li key={formattedTag}>
+                <Link href={`/arquivo/tag/${formattedTag}`} >
+                  <ArchiveButton># {tag} ({frequency})</ArchiveButton>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </section>
     </>
