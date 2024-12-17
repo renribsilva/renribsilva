@@ -18,6 +18,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }: { params: { tag: string } }) {
+
   const formattedTag = params.tag;
   const originalTags = getUniqueTags();
   const originalTag = originalTags.find(t => formatString(t.tag) === formattedTag)?.tag;
@@ -46,10 +47,7 @@ export default function TagPage({ tag, posts }: { tag: string; posts: PostData[]
             <li key={post.id}>
               <Datetime date={post.date} semishort={true} />
               <Link href={`/textos/${post.slug}`} legacyBehavior>
-                <div>{post.title}</div>
-                {/* <div className={styles.tag_tag_index_subtitle}>
-                  {post.subtitle && post.subtitle.length > 0 ? `${post.subtitle}` : ""}
-                </div> */}
+                <a>{post.title}</a>
               </Link>
             </li>
           ))}

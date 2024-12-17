@@ -145,13 +145,6 @@
   }
 }
 
-.tag_tag_index_subtitle {
-  /* font-style: italic; */
-  /* color: var(--subtitle); */
-  /* font-size: 15px; */
-  /* font-weight: 300; */
-}
-
 /********************************************/
 /**************** AARQUIVO/[TAG][ANO] ****************/
 /********************************************/
@@ -170,6 +163,7 @@
 
 .tags_tag_index a {
   text-decoration: none;
+  cursor: pointer;
 }
 
 /****************************************/

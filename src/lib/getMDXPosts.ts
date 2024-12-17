@@ -71,6 +71,12 @@ export function getPostsByYear(ano: string): PostData[] {
   return posts.filter(post => new Date(post.date).getFullYear().toString() === ano);
 }
 
+export function getUniqueYears(): string[] {
+  const posts = getSortedPostsData(); // Essa função deve retornar todos os posts com a data
+  const years = posts.map(post => new Date(post.date).getFullYear().toString()); // Pegando apenas o ano
+  return Array.from(new Set(years)); // Remover duplicatas
+}
+
 ////////////////////////////////////
 //Função para pegar todos os slugs//
 ////////////////////////////////////

@@ -36,7 +36,7 @@ export default function TagsPage({ tags }: TagPageProps) {
       <Header titlePre="tags" />
       <Breadcrumb />
       {/* Seção para os botões de tag */}
-      <section className={styles.tags_index}>
+      <section>
         <h3>tags</h3>
         <ul className={styles.archive_index_ul}>
           {tags
@@ -45,7 +45,7 @@ export default function TagsPage({ tags }: TagPageProps) {
               const formattedTag = formatString(tag); // Formata a tag
               return (
                 <li key={formattedTag}>
-                  <Link href={`/arquivo/tag/${formattedTag}`} legacyBehavior>
+                  <Link href={`/arquivo/tag/${formattedTag}`}>
                     <ArchiveButton># {tag} ({frequency})</ArchiveButton>
                   </Link>
                 </li>

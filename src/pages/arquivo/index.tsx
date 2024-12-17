@@ -53,7 +53,7 @@ export default function TagsPage({ tags, years }: TagPageProps) {
       </section>
 
       {/* Seção para os botões de tag */}
-      <section className={styles.archive_index}>
+      <section>
         <h3>
           <a href="/arquivo/tag">por tag</a>
           </h3>

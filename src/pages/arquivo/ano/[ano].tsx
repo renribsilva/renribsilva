@@ -2,7 +2,7 @@
 
 import { GetStaticProps } from "next";
 import Link from "next/link";
-import { getPostsByYear } from "../../../lib/getMDXPosts";
+import { getPostsByYear, getUniqueYears } from "../../../lib/getMDXPosts";
 import { PostData } from "../../../mdxtypes";
 import Header from "../../../components/header";
 import Breadcrumb from "../../../components/breadcrumb";
@@ -28,7 +28,8 @@ export const getStaticProps: GetStaticProps<YearPageProps> = async ({ params }) 
 };
 
 export const getStaticPaths = async () => {
-  const anos = ["2023", "2024"]; // Exemplo, você vai preencher isso dinamicamente com seus anos
+
+  const anos = await getUniqueYears();  
   const paths = anos.map(ano => ({ params: { ano } }));
 
   return {

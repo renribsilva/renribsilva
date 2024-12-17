@@ -33,7 +33,7 @@ export default function TagsPage({ years }: TagPageProps) {
       <Header titlePre="tags" />
       <Breadcrumb />      
       {/* Seção para os botões de ano */}
-      <section className={styles.tags_index}>
+      <section>
         <h3>anos</h3>
         <ul className={styles.archive_index_ul}>
           {years.map((year) => (
@@ -45,25 +45,6 @@ export default function TagsPage({ years }: TagPageProps) {
           ))}
         </ul>
       </section>
-
-      {/* Seção para os botões de tag */}
-      {/* <section className={styles.tags_index}>
-        <h3>Tags</h3>
-        <ul>
-          {tags
-            .sort((a, b) => b.frequency - a.frequency) // Ordena por frequência
-            .map(({ tag, frequency }) => {
-              const formattedTag = formatString(tag); // Formata a tag
-              return (
-                <li key={formattedTag}>
-                  <Link href={`/arquivo/tag/${formattedTag}`} legacyBehavior>
-                    <ArchiveButton># {tag} ({frequency})</ArchiveButton>
-                  </Link>
-                </li>
-              );
-            })}
-        </ul>
-      </section> */}
     </>
   );
 }
