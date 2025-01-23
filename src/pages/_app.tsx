@@ -13,8 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   const base = "https://petricor.xyz";
   const url = `${base}${router.asPath}`;
-
-  // Verificação da rota para definir o título e a descrição
+  
   const title = pageProps.ogtitle
     ? pageProps.ogtitle
     : "Petricor";

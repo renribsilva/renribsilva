@@ -9,7 +9,7 @@ import type { PostData, PostSlug } from "../../mdxtypes";
 import styles from "../../styles/pages.module.css";
 import React from "react";
 import Link from "next/link";
-import { formatString } from "../../lib/formatString"; // Certifique-se de que o caminho esteja correto
+import { formatString } from "../../lib/formatString"; 
 import Header from "../../components/header";
 import Breadcrumb from "../../components/breadcrumb";
 import ArchiveButton from "../../components/archiveButton";
@@ -26,24 +26,23 @@ export async function getStaticPaths() {
     paths: mdfiles.map((file) => ({
       params: { slug: file.params.slug },
     })),
-    fallback: false, // Se `false`, qualquer rota não encontrada retorna 404
+    fallback: false, 
   };
 }
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {
   const postData: PostData = await getPostData(params.slug);
-
-  // Serializa o conteúdo MDX para uso com MDXRemote
+  
   const mdxSource = await serialize(postData.content);
   
   return {
     props: {
       postData: {
         ...postData,
-        content: mdxSource, // Conteúdo serializado
+        content: mdxSource,
       },
-      ogtitle: postData.title, // Exporta o título
-      ogdescription: postData.subtitle, // Exporta a descrição (padrão se não houver)
+      ogtitle: postData.title, 
+      ogdescription: postData.subtitle, 
     },
   };
 }
