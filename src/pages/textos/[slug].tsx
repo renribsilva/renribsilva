@@ -73,7 +73,7 @@ export default function Post({ postData }: PostProps) {
         </div>
         <div className={styles.blog_slug_tags2}>
           {postData.tags.map((tag: string, index: number) => (
-            <Link href={`/tags/${formatString(tag)}`} key={index}>
+            <Link href={`/arquivo/tag/${formatString(tag)}`} key={index}>
               <ArchiveButton># {tag}</ArchiveButton>
             </Link>
           ))}
