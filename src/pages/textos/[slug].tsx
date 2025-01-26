@@ -33,13 +33,13 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }: { params: { slug: string } }) {
 
   const postData: PostData = await getPostData(params.slug);
-  const mdxSource = await serialize(postData.content);
+  const mdxContent = await serialize(postData.content);
   
   return {
     props: {
       postData: {
         ...postData,
-        content: mdxSource,
+        content: mdxContent,
       },
       ogtitle: postData.title, 
       ogdescription: postData.subtitle, 
