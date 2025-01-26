@@ -1,5 +1,5 @@
 import { getAllPostSlugs, getPostData } from "../../lib/getMDXPosts";
-import { MDXRemote } from "next-mdx-remote";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import MdxLayout from "../../layout/layout_mdx";
 import Datetime from "../../components/datetime";
@@ -13,7 +13,9 @@ import Breadcrumb from "../../components/breadcrumb";
 import ArchiveButton from "../../components/archiveButton";
 
 interface PostProps {
-  postData: PostData;
+  postData: Omit<PostData, "content"> & {
+    content: MDXRemoteSerializeResult;
+  };
 }
 
 export async function getStaticPaths() {
@@ -22,24 +24,23 @@ export async function getStaticPaths() {
     paths: mdfiles.map((file) => ({
       params: { slug: file.params.slug },
     })),
-    fallback: false,
+    fallback: false, 
   };
 }
 
 export async function getStaticProps({ params }: { params: { slug: string } }) {
+
   const postData: PostData = await getPostData(params.slug);
-
-  // Serializa o conteúdo para o formato adequado para MDXRemote
-  const mdxContent = await serialize(postData.content);
-
+  const mdxSource = await serialize(postData.content);
+  
   return {
     props: {
       postData: {
         ...postData,
-        content: mdxContent, // Agora postData.content é o resultado serializado
+        content: mdxSource,
       },
-      ogtitle: postData.title,
-      ogdescription: postData.subtitle,
+      ogtitle: postData.title, 
+      ogdescription: postData.subtitle, 
     },
   };
 }
@@ -60,12 +61,9 @@ export default function Post({ postData }: PostProps) {
           <Datetime date={postData.date} />
         </span>
       </div>
-
-      {/* Passando o conteúdo serializado para o MDXRemote */}
       <div>
-        <MDXRemote {...postData.content} />  {/* Certifique-se de passar o objeto serializado aqui */}
+        <MDXRemote {...postData.content} />
       </div>
-
       <section className={styles.blog_slug_tags}>
         <div className={styles.blog_slug_tags1}>
           {postData.tags.length > 0 && <span>Tags:</span>}
