@@ -22,6 +22,8 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
   const groupedByYear = getPostsGroupedByYear();
   const years = Object.keys(groupedByYear);
 
+  years.sort((a, b) => parseInt(b) - parseInt(a));
+
   return {
     props: {
       tags,
