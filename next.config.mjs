@@ -1,6 +1,5 @@
 import createMDX from "@next/mdx";
-import remarkFootnotes from "remark-footnotes";
-import remarkSmartypants from "remark-smartypants";
+import remarkGfm from "remark-gfm";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -17,8 +16,7 @@ const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [
-      [remarkFootnotes, { inlineNotes: true }],
-      remarkSmartypants, 
+      [remarkGfm]
     ],
   },
 });
