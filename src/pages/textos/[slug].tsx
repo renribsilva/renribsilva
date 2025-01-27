@@ -1,5 +1,3 @@
-// pages/posts/[slug].tsx
-
 import { getAllPostSlugs, getPostData } from "../../lib/getMDXPosts";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import MdxLayout from "../../layout/layout_mdx";
