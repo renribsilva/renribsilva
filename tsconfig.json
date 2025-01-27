@@ -21,7 +21,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/lib/ServerConstants.ts", "src/lib/getDBData.mjs", "src/lib/getCollection.mjs", "scripts/getNotionId.mjs", "scripts/getNotionId.mjs", "src/lib/getNotionPosts.mjs", "scripts/getNotionId.mjs", "scripts/getNotionId.mjs", "scripts/getNotionId.mjs", "scripts/getNotionId.mjs", "scripts/getNotionId.mjs"  ],
+  ],
   "exclude": [
     "node_modules"
   ]
