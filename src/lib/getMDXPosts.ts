@@ -154,17 +154,7 @@ export async function getPostData(slug: string): Promise<PostData> {
     throw new Error("Post com slug ${slug} não encontrado");
   }
 
-  // Retorna os dados do post e o conteúdo MDX
-  const content: PostData = {
-    id: post.id,
-    title: post.title,
-    subtitle: post.subtitle,
-    date: post.date,
-    slug: post.slug,
-    draft: post.draft,
-    tags: post.tags,
-    content: post.content, // Passa o conteúdo bruto (MDX) para ser serializado posteriormente
-  };
+  const content = post;
 
   // console.log(content);
   return content;
