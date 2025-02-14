@@ -6,7 +6,6 @@ const currentYear = new Date().getFullYear();
 
 const linkfooter = [
   { label: "nextjs", href: "https://nextjs.org/" },
-  // { label: "notion", href: "https://www.notion.so/" },
 ];
 
 const linkProps = {
@@ -20,12 +19,11 @@ export default function Footer() {
       <div>© {currentYear} MIT</div>
       <div>
         criado com:{" "}
-        {linkfooter.slice(0, 2).map(({ label, href }, index) => (
+        {linkfooter.slice(0, 2).map(({ label, href }) => (
           <React.Fragment key={href}>
             <Link href={href} {...linkProps} rel="noopener noreferrer">
               {label}
             </Link>
-            {index < 1 && " e "} {/* Adiciona " e " entre os links */}
           </React.Fragment>
         ))}
       </div>
