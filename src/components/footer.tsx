@@ -6,7 +6,7 @@ const currentYear = new Date().getFullYear();
 
 const linkfooter = [
   { label: "nextjs", href: "https://nextjs.org/" },
-  { label: "notion", href: "https://www.notion.so/" },
+  // { label: "notion", href: "https://www.notion.so/" },
 ];
 
 const linkProps = {
