@@ -6,7 +6,7 @@
   
   --color-fill-dark: rgb(33, 37, 43); 
   --color-text-base-dark: rgb(243, 238, 234);
-  --color-subtitle-dark: rgb(189, 155, 123); /* Ajustado para melhorar o contraste */
+  --color-subtitle-dark: rgba(185, 171, 160, 0.7); /* Ajustado para melhorar o contraste */
   --color-hr-dark: rgb(94, 81, 71); 
 } 
 
