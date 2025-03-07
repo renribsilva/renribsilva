@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps<TagPageProps> = async () => {
 export default function TagsPage({ tags, years }: TagPageProps) {
   return (
     <>
-      <Header titlePre="tags" />
+      <Header titlePre="arquivo" />
       <Breadcrumb />      
       {/* Seção para os botões de ano */}
       <section>
