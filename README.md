@@ -4,27 +4,26 @@ renribsilva é um saite-blog um tanto minimalista feito por um completo amador.
 
 ## primeiros passos
 
-No ambiente de desenvolvimento integrado, tal como o VSCode, instale as dependências chamando, 
-por exemplo, 
+No ambiente de desenvolvimento integrado, tal como o VSCode, instale as dependências chamando
 
 ```
 sudo npm i
 ```
 
-no terminal, o que deverá instalar alguns pacotes essenciais para esta aplicação, tais como `dotenv`, `sucrase`, dentre outros, que são essenciais para rodá-la
-localmente.
+Isso deverá instalar alguns pacotes essenciais à aplicação, tais como `dotenv`, `sucrase`, dentre outros
 
 ## adicionar postagem
 
-Para adicionar novos arquivos markdown em `src/content/`, foi criado o script
+Para adicionar novos arquivos markdown em `src/content/`, execute o script 
+`script/createNewPost.mjs` no terminal
 
-* `script/createNewPost.mjs`
+* `node scripts/createNewPost.mjs` 
 
-o qual deve ser executado (por exemplo, chamando `node scripts/createNewPost.mjs` no terminal). Como consequência disso, será criado o arquivo
+Como resultado disso, será criado o arquivo
 
 * `src/content/post[number].mdx`
 
-o qual apresentará um _frontmatter_, tal como exemplificado abaixo
+que apresentará um _frontmatter_, tal como exemplificado abaixo
 
 ```
 ---
@@ -39,28 +38,7 @@ tags: []
 Escreva o texto aqui
 ```
 
-Nele, pode-se alterar as propriedade `title`, `subtitle`, `slug` (endereço que aparece no navegor) e `tags`. Quando o texto estiver pronto, basta definir `false` para a propriedade `draft` e pluft. Texto publicado!
-
-## integrar com o Notion
-
-Para integrar este código com o Notion, é preciso
-
-  * criar uma base de dados no Notion conforme exemplificado [aqui](https://www.notion.so/pt/help/create-a-database) com as seguintes variáveis
-
-    1. `Page`  
-    2. `Slug` (texto)  
-    3. `Published` (caixa de checagem)
-
-  * gerar um token no Notion, neste link [aqui](https://notion.com/my-integrations) e em seguida
-    
-    1. copiar e colar a chave em `NOTION_TOKEN`, no arquivo `.env_ex`
-    2. renomear `.env_ex` para `.env`
-    3. permitir que essa chave acesse a base de dados criada no Notion (muito importante!), de acordo com as recomendações do Notions que podem ser acessadas [aqui](https://www.notion.so/pt/help/add-and-manage-connections-with-the-api)
-
-  * obter o número indentificador (id) da base de dados criada no Notion
-    1. executando o script `script/getNotionId.ts` (por exemplo, chamando `npx sucrase-node scripts/getNotionId.ts` no terminal)
-  
-  * copiar e colar o output à variável `NOTION_DATABASE_ID` em `.env`, já com esse nome.
+No _frontmatter_, pode-se alterar as propriedade `title`, `subtitle`, `slug` (endereço que aparece no navegor) e `tags`. Quando o texto estiver pronto, basta definir `false` para a propriedade `draft` e pluft. Texto publicado!
 
 ## rodar a aplicação localmente
 
