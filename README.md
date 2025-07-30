@@ -41,14 +41,13 @@ No _frontmatter_, pode-se alterar as propriedade `title`, `subtitle`, `slug` (en
 
 ## rodar a aplicação localmente
 
-Uma vez definidas as variáveis em `.env`, pode-se rodar a aplicação localmente chamando, por 
-exemplo, 
+Pode-se rodar a aplicação localmente chamando no terminal, por exemplo, 
 
 ```
 sudo npm run dev
 ```
 
-no terminal. Em seguida, deve-se verificar o local no qual a aplicação foi compilada, a exemplo do código a abaixo:
+Em seguida, pode-se verificar o local no qual a aplicação foi compilada, a exemplo do código a abaixo:
 
 ```
 ▲ Next.js 14.2.16
@@ -56,8 +55,4 @@ no terminal. Em seguida, deve-se verificar o local no qual a aplicação foi com
   - Environments: .env
 ```
 
-Feito isso, ela já pode ser acessada pelo browser, acessando o endereço mostrado.
-
-
-
-    
+Feito isso, pode-se acesar a aplicação pelo endereço mostrado.
