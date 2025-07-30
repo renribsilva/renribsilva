@@ -17,12 +17,11 @@ Isso deverá instalar alguns pacotes essenciais à aplicação, tais como `doten
 Para adicionar novos arquivos markdown em `src/content/`, execute o script 
 `script/createNewPost.mjs` no terminal
 
-* `node scripts/createNewPost.mjs` 
+```
+node scripts/createNewPost.mjs
+``` 
 
-Como resultado disso, será criado o arquivo
-
-* `src/content/post[number].mdx`
-
+Como resultado disso, será criado o arquivo `src/content/post[number].mdx`
 que apresentará um _frontmatter_, tal como exemplificado abaixo
 
 ```
