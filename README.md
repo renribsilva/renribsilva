@@ -4,7 +4,15 @@ renribsilva é um saite-blog um tanto minimalista feito por um completo amador.
 
 ## primeiros passos
 
-No ambiente de desenvolvimento integrado, tal como o VSCode, instale as dependências chamando
+Para começar o desenvolvimento do projeto, siga os seguintes passos:
+
+1. Clone o repositório:
+
+```
+git clone https://github.com/renribsilva/renribsilva
+```
+
+2. Instale as dependências:
 
 ```
 sudo npm i
