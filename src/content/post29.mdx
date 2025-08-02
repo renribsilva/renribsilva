@@ -15,20 +15,20 @@ poesia <- função(ideia, linguagem) {
     pare("Faça qualquer coisa que o inspire")
   }
   
-  verso <- vazio
   forma <- vazio
+  verso <- vazio
 
   para (i em 1:representações(ideia)) {
-    verso[i] <- combinar(linguagem[palavras])
+    forma[i] <- combinar(linguagem[palavras])
   }
 
-  se (verso > 0) {
-    forma <- verso
+  se (!é.vazio(forma)) {
+    verso <- forma
   } se não {
     pare("Deixe a ideia repousar e volte a ela mais tarde")
   }
 
-  retornar forma
+  retornar verso
 
 }
 
