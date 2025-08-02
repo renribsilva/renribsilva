@@ -68,18 +68,16 @@
   gap: 8px;
 }
 
-.socials :nth-child(3) :last-child{
-  width: 18.5px;
-  margin-left: 1px;
-}
-
-.socials li a {
-  /* background-color: brown; */
+.socials li {
+  /* background-color: brown;  */
+  display: flex;
   width: 20px;
   height: 20px;
-  display: flex;
-  align-items: center;
-  border-radius: 25%;
+}
+
+.socials li a svg {
+  width: 20px;
+  height: 20px;
 }
 
 /****************************************/
