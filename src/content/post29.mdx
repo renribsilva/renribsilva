@@ -9,9 +9,14 @@ tags: [poesia]
 ---
 
 ```
-poesia <- função(ideia, linguagem) {
+biblioteca(cultura)
+biblioteca(representações)
 
-  se (!ideia) {
+poesia <- função(ideia) {
+
+  linguagem <- cultura[linguagem]
+
+  se (é.nulo(x)) {
     pare("Faça qualquer coisa que te inspire")
   }
   
@@ -32,5 +37,5 @@ poesia <- função(ideia, linguagem) {
 
 }
 
-diagramar(poesia)
+diagramar(poesia(ideia))
 ```
