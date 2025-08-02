@@ -9,12 +9,26 @@ tags: [poesia]
 ---
 
 poesia <- função(ideia, linguagem) {
-  mensagem <- linguagem[palavras]
-  forma <- vazio
-  se (ideia > 0) {
-    forma <- mensagem
+
+  se (!(ideia)) {
+    pare("Faça qualquer coisa que o inspire")
   }
+  
+  verso <- vazio
+  forma <- vazio
+
+  for (i em 1:comprimento(ideia)) {
+    verso[i] <- combinar(linguagem[palavras])
+  }
+
+  se (verso > 0) {
+    forma <- verso
+  } se não {
+    pare("Deixe a ideia repousar e volte a ela mais tarde")
+  }
+
   retornar forma
+
 }
 
 imprimir(poesia)
