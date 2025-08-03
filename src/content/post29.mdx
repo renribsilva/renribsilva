@@ -14,7 +14,7 @@ biblioteca(cultura)
 poesia <- função(ideia) {
 
   linguagem <- cultura[linguagem]
-  representações <- cultura[representações]
+  representações <- cultura::representações(ideias)
 
   se (é.nulo(ideia)) {
     pare("Faça qualquer coisa que te inspire")
@@ -23,7 +23,7 @@ poesia <- função(ideia) {
   forma <- como.texto()
   verso <- nulo
 
-  para (i em 1:representações(ideia)) {
+  para (i em 1:representações) {
     forma[i] <- combinar(linguagem[palavras])
   }
 
