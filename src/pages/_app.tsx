@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   const description = pageProps.ogdescription 
     ? pageProps.ogdescription
-    : "Blog criado com Next.js e Notion dedicado ao aprendizado da escrita.";
+    : "Blog criado com Nextjs dedicado ao aprendizado da escrita.";
 
   const image = pageProps.image
     ? pageProps.image
