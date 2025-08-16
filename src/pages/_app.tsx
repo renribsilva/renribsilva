@@ -11,12 +11,12 @@ import "../styles/global.css";
 export default function App({ Component, pageProps }: AppProps) {
   const components = useMDXComponents({});
   const router = useRouter();
-  const base = "https://petricor.xyz";
+  const base = "https://renribsilva.vercel.app";
   const url = `${base}${router.asPath}`;
   
   const title = pageProps.ogtitle
     ? pageProps.ogtitle
-    : "Petricor";
+    : "renribsilva";
 
   const description = pageProps.ogdescription 
     ? pageProps.ogdescription
@@ -44,7 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="link" />
         <meta property="og:site_name" content="by renribsilva" />
         <meta property="og:author_name" content="renribsilva" />
-        <meta property="og:provider_name" content="Petricor" />
+        <meta property="og:provider_name" content="renribsilva" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />

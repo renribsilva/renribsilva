@@ -19,7 +19,7 @@ export default async function handler() {
   const ralewayData = await raleway;
 
   const { title } = {
-    title: "Petricor",
+    title: "renribsilva",
   };
 
   return new ImageResponse(
