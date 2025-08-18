@@ -4,11 +4,11 @@ import { getSortedPostsData } from "../../lib/getMDXPosts"; // Certifique-se de 
 
 export default async function handler(_: unknown, res: NextApiResponse) {
     // URL base do feed
-    const baseUrl = "https://petricor.xyz";
+    const baseUrl = "https://renribsilva.vercel.app";
 
     // Cria um novo feed RSS com o namespace MRSS
     const feed = new RSS({
-        title: "Petricor",
+        title: "renribsilva",
         description: "Os textos mais recentes do blog",
         feed_url: `${baseUrl}/api/rss`, // URL final para o feed RSS
         site_url: baseUrl,
@@ -47,8 +47,8 @@ export default async function handler(_: unknown, res: NextApiResponse) {
                         _attr: {
                             url: imageUrl, // URL da imagem gerada
                             type: "image/png", // Especifica que a imagem é PNG
-                            title: "Petricor", // Título da imagem
-                            alt: "Imagem de fundo branco com a palavra Petricor em preto", // Texto alternativo
+                            title: "renribsilva", // Título da imagem
+                            alt: "Imagem de fundo branco com a palavra renribsilva em preto", // Texto alternativo
                             width: imageWidth, // Largura da imagem
                             height: imageHeight // Altura da imagem
                         }

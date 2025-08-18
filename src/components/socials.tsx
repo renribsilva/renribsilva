@@ -14,7 +14,7 @@ const SocialObjects = [
   {
     ícone: faGithub, 
     alt: "ícone do github",
-    link: "https://github.com/renribsilva/petricor",
+    link: "https://github.com/renribsilva/renribsilva",
   },
   {
     ícone: faRss, 
