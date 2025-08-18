@@ -51,7 +51,7 @@ const YearPage = ({ ano, posts }: YearPageProps) => {
           {posts.map(post => (
             <li key={post.id}>
               <Datetime date={post.date} semishort={true} />
-              <Link href={`/textos/${post.slug}`} >
+              <Link href={`/textos/${post.slug}`}>
                 <a>{post.title}</a>
               </Link>
             </li>
