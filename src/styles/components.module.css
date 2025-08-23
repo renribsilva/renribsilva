@@ -181,8 +181,15 @@
   gap: 5px;
   font-size: 15px;
   /* font-weight: 200; */
-  height: 20px;
+}
+
+.breadcrumb li {
+  /* background-color: aqua; */
+  display: flex;
+  height: fit-content;
   margin-bottom: 20px;
+  justify-content: center;
+  gap: 5px;
 }
 
 .breadcrumb a {

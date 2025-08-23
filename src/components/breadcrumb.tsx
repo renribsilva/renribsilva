@@ -18,7 +18,7 @@ const Breadcrumb = () => {
           const path = `/${pathSegments.slice(0, index + 1).join("/")}`;
           return (
             <li key={path}>
-              <span>&gt;&gt; </span>
+              <span>&gt;&gt;  </span>
               <Link href={path}>{decodeURIComponent(segment)}</Link>
             </li>
           );
