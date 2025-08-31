@@ -1,8 +1,8 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import type { PostData, PostSlug, PostId } from "../mdxtypes"; // Importando os tipos
-import { execSync } from "child_process";
+import type { PostData, PostSlug, PostId } from "../mdxtypes";
+import { Octokit } from "@octokit/rest";
 
 // Diretório dos posts
 const postsDirectory = path.join(process.cwd(), "/src/content");
@@ -149,18 +149,22 @@ export function getUniqueTags() {
 
 export async function getPostData(slug: string): Promise<PostData> {
 
+  const octokit = new Octokit({
+    auth: process.env.GITHUB_TOKEN, // Coloque o seu token de acesso aqui ou configure nas variáveis de ambiente
+  });
+
   const posts = getSortedPostsData();
   const post = posts.find((post) => post.slug === slug);
-  const fullPath = path.join(postsDirectory, `${post.id}.mdx`);
-  const lastUpdated = new Date (execSync(`git log --follow --date=iso -- "${fullPath}"`)
-    .toString()
-    .trim()
-    .match(/Date:\s+(.*)/)[1])
-    .toISOString();
+  const fullPath = `src/content/${post.id}.mdx`;
 
-  if (!post) {
-    throw new Error("Post com slug ${slug} não encontrado");
-  }
+  const { data: commits } = await octokit.rest.repos.listCommits({
+    owner: "renribsilva",
+    repo: "renribsilva",
+    path: fullPath, // Caminho do arquivo no repositório
+    per_page: 1, // Pegue o primeiro commit (mais recente)
+  });
 
+  const lastUpdated = (new Date(commits[0].commit.author.date)).toISOString();
+  // console.log(lastUpdated);
   return { ...post, content: post.content, lastUpdate: lastUpdated };
 }
