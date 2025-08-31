@@ -61,7 +61,7 @@ export default function Post({ postData }: PostProps) {
           <Datetime date={postData.date} icon="created" />
         </span>
         <span>
-          <Datetime date={postData.date} icon="updated" />
+          <Datetime date={postData.lastUpdated} icon="updated" />
         </span>
       </div>
       <div>
