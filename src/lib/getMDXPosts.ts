@@ -17,11 +17,13 @@ export function getSortedPostsData(): PostData[] {
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents); 
+    const lastUpdated = fs.statSync(fullPath).mtime.toISOString();
 
     return {
       id,
       ...matterResult.data,
-      content: matterResult.content, // O conteúdo será processado em outra função
+      content: matterResult.content, 
+      lastUpdated: lastUpdated,
     } as PostData; 
   });
 

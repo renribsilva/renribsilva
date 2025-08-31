@@ -8,6 +8,7 @@ export type PostData = {
   draft: boolean;
   tags: string[];
   content: string; // Conteúdo bruto (MDX)
+  lastUpdated: string;
 }
 
 export type PostSlug = {

@@ -9,6 +9,7 @@ interface DatetimeProps {
   date: string;
   short?: boolean;
   semishort?: boolean; 
+  icon?: string;
 }
 
 // "DD Mês AAAA"
@@ -36,19 +37,33 @@ const formatSemiShortDate = (date: Date) => {
   return `${day}/${month}/${year}`; // Formato "DD/MM/AA"
 };
 
-const FormattedDatetime = ({ date, short, semishort }: DatetimeProps) => {
+const FormattedDatetime = ({ date, short, semishort, icon }: DatetimeProps) => {
   const parsedDate = new Date(date);
   const formattedShortDate = formatShortDate(parsedDate);
   const formattedFullDate = formatFullDate(parsedDate);
   const formattedSemiShortDate = formatSemiShortDate(parsedDate); 
+  const created = ["calendar_month", "data de publicação"];
+  const updated = ["published_with_changes", "data da última atualização"];
 
   return (
-    <time dateTime={parsedDate.toISOString()} className={styles.datetime}>
-      {semishort ? formattedSemiShortDate : short ? formattedShortDate : formattedFullDate}
-    </time>
+    <div className={styles.datetime}>
+      {icon === "created" && (
+        <span className="material-symbols-outlined" aria-label={created[1]}>
+          {created[0]}
+        </span>
+      )}
+      {icon === "updated" && (
+        <span className="material-symbols-outlined" aria-label={updated[1]}>
+          {updated[0]}
+        </span>
+      )}
+      <time dateTime={parsedDate.toISOString()}>
+        {semishort ? formattedSemiShortDate : short ? formattedShortDate : formattedFullDate}
+      </time>
+    </div>
   );
 };
 
-export default function Datetime({ date, short, semishort }: DatetimeProps) {
-  return <FormattedDatetime date={date} short={short} semishort={semishort} />;
+export default function Datetime({ date, short, semishort, icon }: DatetimeProps) {
+  return <FormattedDatetime date={date} short={short} semishort={semishort} icon={icon}/>;
 }

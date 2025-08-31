@@ -97,11 +97,24 @@
 
 .datetime {
   /* background-color: rgb(52, 141, 156); */
+  max-width: fit-content;
+  min-width: 100px;
+  display: flex;
+  gap: 5px;
+}
+
+.datetime span {
   color: var(--subtitle); 
   font-size: large;
   font-weight: 300;
-  max-width: 100px;
-  min-width: 100px
+  display: flex;
+  align-items: center;
+}
+
+.datetime time {
+  color: var(--subtitle); 
+  display: flex;
+  align-items: center;
 }
 
 /**************************************/

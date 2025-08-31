@@ -104,6 +104,8 @@
 .blog_slug_date {
   margin-top: 5px;
   height: 50px;
+  display: flex;
+  gap: 20px
 }
 
 .blog_slug_tags {

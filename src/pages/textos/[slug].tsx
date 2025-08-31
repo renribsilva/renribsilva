@@ -58,7 +58,10 @@ export default function Post({ postData }: PostProps) {
       </h1>
       <div className={styles.blog_slug_date}>
         <span>
-          <Datetime date={postData.date} />
+          <Datetime date={postData.date} icon="created" />
+        </span>
+        <span>
+          <Datetime date={postData.date} icon="updated" />
         </span>
       </div>
       <div>
