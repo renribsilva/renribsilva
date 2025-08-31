@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import type { PostData, PostSlug, PostId } from "../mdxtypes"; // Importando os tipos
+import { execSync } from "child_process";
 
 // Diretório dos posts
 const postsDirectory = path.join(process.cwd(), "/src/content");
@@ -17,7 +18,7 @@ export function getSortedPostsData(): PostData[] {
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents); 
-    const lastUpdated = fs.statSync(fullPath).mtime.toISOString();
+    const lastUpdated = execSync(`git log -1 --format=%cd -- "${fullPath}"`).toString().trim();
 
     return {
       id,
