@@ -8,6 +8,7 @@
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^14.2.20",
     "@notionhq/client": "^2.2.15",
+    "@octokit/rest": "^22.0.0",
     "@types/mdx": "^2.0.13",
     "@vercel/og": "^0.6.3",
     "dotenv": "^16.4.5",
