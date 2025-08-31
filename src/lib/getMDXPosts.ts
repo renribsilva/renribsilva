@@ -162,7 +162,7 @@ export async function getPostData(slug: string): Promise<PostData> {
     throw new Error("Post com slug ${slug} não encontrado");
   }
 
-  console.log();
+  console.log(lastUpdated);
 
   return { ...post, content: post.content, lastUpdate: lastUpdated };
 }
