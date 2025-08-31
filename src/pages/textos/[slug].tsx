@@ -47,6 +47,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 }
 
 export default function Post({ postData }: PostProps) {
+  console.log(postData.lastUpdate);
   return (
     <MdxLayout>
       <Header titlePre={postData.title} />
