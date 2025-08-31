@@ -18,13 +18,11 @@ export function getSortedPostsData(): PostData[] {
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents); 
-    const lastUpdated = execSync(`git log --follow --format=%cd -- "${fullPath}"`).toString().trim();
 
     return {
       id,
       ...matterResult.data,
-      content: matterResult.content, 
-      lastUpdated: lastUpdated,
+      content: matterResult.content, // O conteúdo será processado em outra função
     } as PostData; 
   });
 
@@ -150,15 +148,21 @@ export function getUniqueTags() {
 ////////////////////////////////////////////////////
 
 export async function getPostData(slug: string): Promise<PostData> {
+
   const posts = getSortedPostsData();
   const post = posts.find((post) => post.slug === slug);
+  const fullPath = path.join(postsDirectory, `${post.id}.mdx`);
+  const lastUpdated = new Date (execSync(`git log --follow --date=iso -- "${fullPath}"`)
+    .toString()
+    .trim()
+    .match(/Date:\s+(.*)/)[1])
+    .toISOString();
 
   if (!post) {
     throw new Error("Post com slug ${slug} não encontrado");
   }
 
-  const content = post;
+  console.log();
 
-  // console.log(content);
-  return content;
+  return { ...post, content: post.content, lastUpdate: lastUpdated };
 }

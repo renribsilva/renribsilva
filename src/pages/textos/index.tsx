@@ -1,4 +1,4 @@
-import { getSortedPostsData, getPostData } from "../../lib/getMDXPosts";
+import { getSortedPostsData } from "../../lib/getMDXPosts";
 import { PostData } from "../../mdxtypes";
 import Datetime from "../../components/datetime";
 import styles from "../../styles/pages.module.css";
@@ -15,11 +15,10 @@ interface GroupedPosts {
 export async function getStaticProps() {
 
   const postsData = getSortedPostsData();
-  const posts = await Promise.all(
-    postsData.map(async (post) => await getPostData(post.slug))
-  );
 
-  const groupedPosts: GroupedPosts = posts.reduce((acc, post) => {
+  console.log(postsData);
+
+  const groupedPosts: GroupedPosts = postsData.reduce((acc, post) => {
     const year = new Date(post.date).getFullYear().toString();
     if (!acc[year]) {
       acc[year] = [];

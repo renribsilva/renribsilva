@@ -32,6 +32,7 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
   const postData: PostData = await getPostData(params.slug);
   const mdxSource = await serialize(postData.content);
+  // console.log(postData);
   
   return {
     props: {
@@ -61,7 +62,7 @@ export default function Post({ postData }: PostProps) {
           <Datetime date={postData.date} icon="created" />
         </span>
         <span>
-          <Datetime date={postData.lastUpdated} icon="updated" />
+          <Datetime date={postData.lastUpdate} icon="updated" />
         </span>
       </div>
       <div>
