@@ -18,7 +18,7 @@ export function getSortedPostsData(): PostData[] {
     const fullPath = path.join(postsDirectory, fileName);
     const fileContents = fs.readFileSync(fullPath, "utf8");
     const matterResult = matter(fileContents); 
-    const lastUpdated = execSync(`git log -1 --format=%cd -- "${fullPath}"`).toString().trim();
+    const lastUpdated = execSync(`git log --follow --format=%cd -- "${fullPath}"`).toString().trim();
 
     return {
       id,
