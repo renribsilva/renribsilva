@@ -16,8 +16,6 @@ export async function getStaticProps() {
 
   const postsData = getSortedPostsData();
 
-  console.log(postsData);
-
   const groupedPosts: GroupedPosts = postsData.reduce((acc, post) => {
     const year = new Date(post.date).getFullYear().toString();
     if (!acc[year]) {

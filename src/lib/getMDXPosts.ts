@@ -160,11 +160,11 @@ export async function getPostData(slug: string): Promise<PostData> {
   const { data: commits } = await octokit.rest.repos.listCommits({
     owner: "renribsilva",
     repo: "renribsilva",
-    path: fullPath, // Caminho do arquivo no repositório
-    per_page: 1, // Pegue o primeiro commit (mais recente)
+    path: fullPath,
+    per_page: 1,
   });
 
   const lastUpdated = (new Date(commits[0].commit.author.date)).toISOString();
-  // console.log(lastUpdated);
+  console.log(lastUpdated);
   return { ...post, content: post.content, lastUpdate: lastUpdated };
 }
