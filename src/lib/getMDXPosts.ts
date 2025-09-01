@@ -4,7 +4,6 @@ import matter from "gray-matter";
 import type { PostData, PostSlug, PostId } from "../mdxtypes";
 import { Octokit } from "@octokit/rest";
 
-// Diretório dos posts
 const postsDirectory = path.join(process.cwd(), "/src/content");
 
 //////////////////////////////////////////////////////////
@@ -22,7 +21,7 @@ export function getSortedPostsData(): PostData[] {
     return {
       id,
       ...matterResult.data,
-      content: matterResult.content, // O conteúdo será processado em outra função
+      content: matterResult.content,
     } as PostData; 
   });
 
@@ -73,7 +72,7 @@ export function getPostsByYear(ano: string): PostData[] {
 }
 
 export function getUniqueYears(): string[] {
-  const posts = getSortedPostsData(); // Essa função deve retornar todos os posts com a data
+  const posts = getSortedPostsData(); 
   const years = posts.map(post => new Date(post.date).getFullYear().toString()); // Pegando apenas o ano
   return Array.from(new Set(years)); // Remover duplicatas
 }
@@ -165,6 +164,39 @@ export async function getPostData(slug: string): Promise<PostData> {
   });
 
   const lastUpdated = (new Date(commits[0].commit.author.date)).toISOString();
-  console.log(lastUpdated);
-  return { ...post, content: post.content, lastUpdate: lastUpdated };
+
+  // async function getTotalCommitsForFile({ owner, repo, path }) {
+  //   let page = 1;
+  //   let totalCommits = 0;
+
+  //   while (true) {
+  //     const { data } = await octokit.rest.repos.listCommits({
+  //       owner,
+  //       repo,
+  //       path,
+  //       per_page: 100,
+  //       page,
+  //     });
+
+  //     totalCommits += data.length;
+
+  //     if (data.length < 100) {break;};
+  //     page++;
+  //   }
+
+  //   return totalCommits;
+  // }
+
+  // const totalCommits = await getTotalCommitsForFile({
+  //   owner: "renribsilva",
+  //   repo: "renribsilva",
+  //   path: fullPath,
+  // });
+
+  return {
+    ...post,
+    content: post.content,
+    lastUpdate: lastUpdated,
+    // totalCommits: totalCommits - 1,
+  };
 }

@@ -9,6 +9,7 @@ export type PostData = {
   tags: string[];
   content: string; // Conteúdo bruto (MDX)
   lastUpdate?: string | null;
+  totalCommits?: string | number | null
 }
 
 export type PostSlug = {
