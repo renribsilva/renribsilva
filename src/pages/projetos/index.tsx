@@ -1,5 +1,6 @@
 import React from "react";
 import Conjugador from "../../components/mdx/conjugador.mdx";
+import Glossario from "../../components/mdx/glossário.mdx";
 import Breadcrumb from "../../components/breadcrumb";
 import Header from "../../components/header";
 
@@ -23,6 +24,7 @@ export default function Projetos () {
       <Header titlePre="projetos" />
       <Breadcrumb />
       <Conjugador />
+      <Glossario />
     </section>
   );
 }
