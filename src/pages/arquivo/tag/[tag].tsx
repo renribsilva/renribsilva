@@ -47,7 +47,7 @@ export default function TagPage({ tag, posts }: { tag: string; posts: PostData[]
             <li key={post.id}>
               <Datetime date={post.date} semishort={true} />
               <Link href={`/textos/${post.slug}`}>
-                {post.title.replace("·", "")}
+                {post.title.replace("/·/g", "")}
               </Link>
             </li>
           ))}
