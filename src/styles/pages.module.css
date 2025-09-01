@@ -60,7 +60,7 @@
 .blog_index ul {
   /* background-color: blueviolet; */
   padding: 0;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 .blog_index li {
@@ -153,14 +153,14 @@
   }
 }
 
-/********************************************/
-/**************** AARQUIVO/[TAG][ANO] ****************/
-/********************************************/
+/****************************************************/
+/**************** ARQUIVO/[TAG][ANO] ****************/
+/****************************************************/
 
 .tags_tag_index ul {
   /* background-color: rgb(40, 172, 28); */
   padding: 0;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 .tags_tag_index li {
