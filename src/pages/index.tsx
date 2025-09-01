@@ -62,7 +62,7 @@ export default function Home({ posts }: HomeProps) {
                   <div className={styles.recents_ul_datetime}>
                     <Datetime date={post.date} short={false} />
                   </div>
-                  <div>{post.title}</div>
+                  <div>{post.title.replace(/·/g, "")}</div>
                   {/* <div className={styles.recents_li_subtitle}>
                     {post.subtitle && post.subtitle.length > 0 ? `${post.subtitle}` : ""}
                   </div> */}
