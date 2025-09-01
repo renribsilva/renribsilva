@@ -50,7 +50,7 @@ export default function Textos({ groupedPosts }: { groupedPosts: GroupedPosts })
             <li key={post.id}>
               <Datetime date={post.date} semishort={true} />
               <Link href={`/textos/${post.slug}`}>
-                <div>{post.title}</div>
+                <div>{post.title.replace("·", "")}</div>
                 <div className={styles.blog_index_subtitle}>
                   {post.subtitle && post.subtitle.length > 0 ? `${post.subtitle}` : ""}
                 </div>
