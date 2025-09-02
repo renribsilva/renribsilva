@@ -34,7 +34,6 @@ export const getStaticPaths = async () => {
 
   const anos = await getUniqueYears();  
   const paths = anos.map(ano => ({ params: { ano } }));
-  console.log(anos);
   return {
     paths,
     fallback: false,
