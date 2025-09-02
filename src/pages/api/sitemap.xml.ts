@@ -5,10 +5,10 @@ import { getSortedPostsData } from "../../lib/getMDXPosts"; // Certifique-se de 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
     // Cria um novo feed RSS
     const feed = new RSS({
-        title: "Petricor",
+        title: "renribsilva",
         description: "Os textos mais recentes do blog",
-        feed_url: "https://petricor.xyz/api/rss.xml", // URL final para o feed RSS
-        site_url: "https://petricor.xyz/",
+        feed_url: "https://renribsilva.vercel.app/api/rss.xml", // URL final para o feed RSS
+        site_url: "https://renribsilva.vercel.app/",
         language: "pt-BR"
     });
 
@@ -24,12 +24,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         feed.item({
             title: title,
             description: description,
-            url: `https://petricor.xyz/blog/${post.slug}`, // Caminho para os posts
+            url: `https://renribsilva.vercel.app/blog/${post.slug}`, // Caminho para os posts
             categories: post.tags || [],
             author: "renribsilva",
             date: post.date,
             // Adiciona a imagem diretamente ao item
-            enclosure: { url: "https://petricor.xyz/file.png", type: "image/png" }, // URL da imagem no seu diretório público
+            enclosure: { url: "https://renribsilva.vercel.app/file.png", type: "image/png" }, // URL da imagem no seu diretório público
         });
     });
 
