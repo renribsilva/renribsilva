@@ -4,8 +4,8 @@
   --color-subtitle-light: rgb(128, 110, 96); /* Ajustado para melhorar o contraste */
   --color-hr-light: rgb(209, 198, 180); 
   
-  --color-fill-dark: rgb(35, 37, 39); 
-  --color-text-base-dark: rgb(243, 238, 234);
+  --color-fill-dark: rgb(26, 26, 27); 
+  --color-text-base-dark: rgb(255, 255, 255);
   --color-subtitle-dark: rgba(189, 155, 123, 0.9); /* Ajustado para melhorar o contraste */
   --color-hr-dark: rgb(94, 81, 71); 
 } 
