@@ -18,7 +18,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div>© {currentYear} MIT</div>
       <div>
-        criado por um humano com:{" "}
+        criado com:{" "}
         {linkfooter.slice(0, 2).map(({ label, href }) => (
           <React.Fragment key={href}>
             <Link href={href} {...linkProps} rel="noopener noreferrer">
