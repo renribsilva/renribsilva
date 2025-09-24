@@ -3,16 +3,23 @@ import Footer from "../components/footer";
 import Menu from "../components/menu";
 import Navbar from "../components/navbar";
 import styles from "../styles/layout.module.css";
-// import Myhr from "../components/myhr";
 import PropTypes from "prop-types";
 import React from "react";
 import Socials from "../components/socials";
+import { Ubuntu } from "next/font/google";
 
 LayoutIndex.propTypes = {
-  children: PropTypes.node.isRequired, // Adiciona validação para 'children'
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string,
 };
 
+const ubuntu = Ubuntu({
+  subsets: ["latin"],
+  weight: "300"
+});
+
 export default function LayoutIndex({ children }) {
+
   const [isNavbarOpen, setIsNavbarOpen] = useState(false); 
   const [isMobileView, setIsMobileView] = useState(false); 
   const [mounted, setMounted] = useState(false); 
@@ -44,7 +51,7 @@ export default function LayoutIndex({ children }) {
   }
 
   return (
-    <section>
+    <section className={ubuntu.className}>
       <div className={styles.navmenu}>
         <div>
           <Menu toggleNavbar={toggleNavbar} />

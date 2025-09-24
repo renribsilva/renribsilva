@@ -38,8 +38,8 @@ body {
   margin: 0;
   max-width: 620px;
   min-width: 620px;
-  font-family: "Ubuntu";
-  font-weight: 300;
+  /* font-family: "Ubuntu";
+  font-weight: 300; */
 }
 
 .footnotes {
