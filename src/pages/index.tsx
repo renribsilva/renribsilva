@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { getSortedPostsData } from "../lib/getMDXPosts";
 import styles from "../styles/pages.module.css";
