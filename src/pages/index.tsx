@@ -35,16 +35,6 @@ export async function getStaticProps() {
 
 export default function Home({ posts }: HomeProps) {
 
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
   return (
     <>
       <Header/>
