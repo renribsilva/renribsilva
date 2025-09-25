@@ -105,12 +105,9 @@
   gap: 5px;
 }
 
-.datetime span {
-  color: var(--subtitle); 
-  font-size: large;
-  font-weight: 300;
-  display: flex;
-  align-items: center;
+.calendar_icon, .updated_icon {
+  /* background-color: aqua; */
+  fill: var(--subtitle);
 }
 
 .datetime time {

@@ -1,5 +1,7 @@
 import React from "react";
 import styles from "../styles/components.module.css";
+import Calendar from "./svgs/calendar";
+import Updated from "./svgs/updated";
 
 const LOCALE = {
   langTag: "pt-BR",
@@ -42,21 +44,17 @@ const FormattedDatetime = ({ date, short, semishort, icon }: DatetimeProps) => {
   const formattedShortDate = formatShortDate(parsedDate);
   const formattedFullDate = formatFullDate(parsedDate);
   const formattedSemiShortDate = formatSemiShortDate(parsedDate); 
-  const created = ["calendar_month", "data de publicação"];
-  const updated = ["published_with_changes", "data da última atualização"];
 
   return (
     <div className={styles.datetime}>
-      {icon === "created" && (
-        <span className="material-symbols-outlined" aria-label={created[1]}>
-          {created[0]}
-        </span>
-      )}
-      {icon === "updated" && (
-        <span className="material-symbols-outlined" aria-label={updated[1]}>
-          {updated[0]}
-        </span>
-      )}
+      <span>
+        {icon === "created" && (
+          <Calendar className={styles.calendar_icon} alt="data de publicação"/>
+        )}
+        {icon === "updated" && (
+          <Updated className={styles.updated_icon} alt="data da última atualização"/>
+        )}
+      </span>
       <time dateTime={parsedDate.toISOString()}>
         {semishort ? formattedSemiShortDate : short ? formattedShortDate : formattedFullDate}
       </time>
