@@ -1,40 +1,43 @@
 import styles from "../styles/components.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMastodon, faGithub } from "@fortawesome/free-brands-svg-icons";
 import Link from "next/link";
 import React from "react";
-import { faRss } from "@fortawesome/free-solid-svg-icons";
+import Mastodon from "./svgs/mastodon";
+import Github from "./svgs/github";
+import Rss from "./svgs/rss";
 
 const SocialObjects = [
   {
-    ícone: faMastodon, 
+    icon: Mastodon, 
     alt: "ícone do mastodon",
     link: "https://ursal.zone/@renribsilva",
   },
   {
-    ícone: faGithub, 
+    icon: Github, 
     alt: "ícone do github",
     link: "https://github.com/renribsilva/renribsilva",
   },
   {
-    ícone: faRss, 
+    icon: Rss, 
     alt: "ícone de rss",
     link: "https://renribsilva.vercel.app/api/rss.xml",
   },
 ];
 
-export default function Socials () {
+export default function Socials() {
   return (
     <ul className={styles.socials}>
-      {SocialObjects.map(({ ícone, link, alt }) => {
-        return (
-          <li key={link}>
-            <Link target="_blank" href={link} aria-label={alt} rel="noopener noreferrer">
-              <FontAwesomeIcon icon={ícone}/>
-            </Link>
-          </li>
-        );
-      })}
+      {SocialObjects.map(({ icon: Icon, link, alt }) => (
+        <li key={link}>
+          <Link
+            target="_blank"
+            href={link}
+            aria-label={alt}
+            rel="noopener noreferrer"
+          >
+            <Icon />
+          </Link>
+        </li>
+      ))}
     </ul>
   );
 }
