@@ -22,12 +22,15 @@ export default function LayoutIndex({ children }) {
 
   const [isNavbarOpen, setIsNavbarOpen] = useState(false); 
   const [isMobileView, setIsMobileView] = useState(false); 
-  const [mounted, setMounted] = useState(false); 
+  const [mounted, setMounted] = useState(false);
 
-  
+  const toggleNavbar = () => {
+    setIsNavbarOpen(prev => !prev);
+  };
+
   useEffect(() => {
     const handleResize = () => {
-      setIsMobileView(window.innerWidth <= 600); // Define 600px como o ponto de corte para mobile
+      setIsMobileView(window.innerWidth <= 600);
     };
 
     handleResize();
@@ -37,10 +40,6 @@ export default function LayoutIndex({ children }) {
       window.removeEventListener("resize", handleResize); 
     };
   }, []);
-
-  const toggleNavbar = () => {
-    setIsNavbarOpen(prev => !prev);
-  };
 
   useEffect(() => {
     setMounted(true);
@@ -53,12 +52,8 @@ export default function LayoutIndex({ children }) {
   return (
     <section className={ubuntu.className}>
       <div className={styles.navmenu}>
-        <div>
-          <Menu toggleNavbar={toggleNavbar} />
-        </div>
-        <div>
-          {isMobileView ? (isNavbarOpen ? <Navbar /> : null) : <Navbar />}
-        </div>
+        <Menu toggleNavbar={toggleNavbar} />
+        {isMobileView ? (isNavbarOpen ? <Navbar /> : null) : <Navbar />}
       </div>
       {/* <Myhr marginTop="0px"/> */}
       <main className={styles.layout_main}>{children}</main>

@@ -10,14 +10,14 @@
   --color-hr-dark: rgb(94, 81, 71); 
 }   
 
-[data-theme="dark"] {
+.dark {
   --background: var(--color-fill-dark);
   --foreground: var(--color-text-base-dark);
   --subtitle: var(--color-subtitle-dark);
   --hr: var(--color-hr-dark)
 }
 
-[data-theme="light"] {
+.light {
   --background: var(--color-fill-light);
   --foreground: var(--color-text-base-light);
   --subtitle: var(--color-subtitle-light);

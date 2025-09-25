@@ -2,12 +2,16 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types"; 
 import { useTheme } from "next-themes";
 import styles from "../styles/components.module.css";
+import Close from "./svgs/close";
+import MyBars from "./svgs/bars";
+import Dark from "./svgs/dark";
+import Light from "./svgs/light";
 
 const menu = [
-  { icon: "sunny", alt: "Ativar tema claro" },
-  { icon: "dark_mode", alt: "Ativar tema escuro" },
-  { icon: "menu", alt: "Abrir menu de navegação" },
-  { icon: "close", alt: "Fechar menu de navegação" }
+  { alt: "Ativar tema claro" },
+  { alt: "Ativar tema escuro" },
+  { alt: "Abrir menu de navegação" },
+  { alt: "Fechar menu de navegação" }
 ];
 
 function Theme() {
@@ -15,10 +19,10 @@ function Theme() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  const toggleTheme = () => {
+   const toggleTheme = () => {
     setTheme(resolvedTheme === "light" ? "dark" : "light");
   };
-
+  
   useEffect(() => {
     setMounted(true);
   }, []);
@@ -34,9 +38,11 @@ function Theme() {
       style={{ cursor: "pointer" }}
       className={styles.menuthemebutton}
     >
-      <span className="material-symbols-outlined" aria-hidden="true">
-        {resolvedTheme === "light" ? menu[1].icon : menu[0].icon}
-      </span>
+      {resolvedTheme === "light" ? (
+        <Dark/>
+      ) : (
+        <Light/>
+      )}
     </button>
   );
 }
@@ -49,16 +55,20 @@ function Bars({ isNavbarOpen, toggleNavbar }) {
       aria-label={isNavbarOpen ? menu[3].alt : menu[2].alt}
       className={styles.menubarsbutton}
     >
-      <span className="material-symbols-outlined" aria-hidden="true">
-        {isNavbarOpen ? menu[3].icon : menu[2].icon}
-      </span>
+      {isNavbarOpen ? (
+        <Close/>
+      ) : (
+        <MyBars/>
+      )}
     </button>
   );
 }
 
 export default function Menu({ toggleNavbar }) {
+
   const [isShort, setIsShort] = useState(false);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   const handleToggleNavbar = () => {
     setIsNavbarOpen(!isNavbarOpen);
@@ -67,7 +77,7 @@ export default function Menu({ toggleNavbar }) {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsShort(window.innerWidth < 600);
+      setIsShort(window.innerWidth <= 600);
     };
 
     handleResize();
@@ -75,6 +85,14 @@ export default function Menu({ toggleNavbar }) {
 
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+  
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <section className={styles.menu}>
