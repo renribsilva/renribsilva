@@ -113,7 +113,6 @@
 .datetime time {
   color: var(--subtitle); 
   display: flex;
-  /* align-items: center; */
 }
 
 /**************************************/
