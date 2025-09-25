@@ -28,12 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   // Metadados Open Graph e Twitter
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem={true}
-      disableTransitionOnChange
-    >
+    <ThemeProvider defaultTheme="light" enableSystem={true}>
       <Head>
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
