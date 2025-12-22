@@ -1,5 +1,5 @@
 {
-  //configurações do code runner
+  //configurações do code runner (exige a extensão code runner)
   "code-runner.runInTerminal": true,
   "code-runner.executorMap": {
     "javascript": "clear && node",
