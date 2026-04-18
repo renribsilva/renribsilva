@@ -3,6 +3,7 @@ import { getSortedPostsData } from '../../../../lib/getMDXPosts';
 import Datetime from '../../../../components/tsx/datetime';
 import styles from './slug.module.css';
 import ArchiveButton from '../../../../components/tsx/archive_button';
+import TextNavLink from '../../../../components/tsx/text_nav_link';
 import Link from 'next/link';
 import { formatString } from '../../../../lib/formatString';
 
@@ -55,14 +56,18 @@ export default async function PostPage({ params }: PageProps) {
           )}
           <div className={styles.post_navigation}>
             {prevPost && (
-              <Link href={`/textos/${prevPost.slug}`} className={`${styles.prev_text_link} ${styles.prev_text_button}`} aria-label={`Texto anterior: ${prevPost.title}`}>
-                <span aria-hidden="true" className={styles.prev_text_icon}>←</span>
-              </Link>
+              <TextNavLink
+                href={`/textos/${prevPost.slug}`}
+                ariaLabel={`Texto anterior: ${prevPost.title}`}
+                direction="prev"
+              />
             )}
             {nextPost && (
-              <Link href={`/textos/${nextPost.slug}`} className={`${styles.next_text_link} ${styles.next_text_button}`} aria-label={`Próximo texto: ${nextPost.title}`}>
-                <span aria-hidden="true" className={styles.next_text_icon}>→</span>
-              </Link>
+              <TextNavLink
+                href={`/textos/${nextPost.slug}`}
+                ariaLabel={`Próximo texto: ${nextPost.title}`}
+                direction="next"
+              />
             )}
           </div>
         </footer>

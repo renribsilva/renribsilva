@@ -1,7 +1,6 @@
 import { getSortedPostsData } from "../../../../../lib/getMDXPosts";
 import PostList from "../../../../../components/tsx/post_list";
-import ArchiveButton from "../../../../../components/tsx/archive_button";
-import Link from "next/link";
+import TextNavLink from "../../../../../components/tsx/text_nav_link";
 import { Post } from "../../../../../types";
 import styles from "../../arquivo.module.css"
 
@@ -21,9 +20,7 @@ export default async function AnoPage({ params }: { params: { year: string } }) 
         )}
       </div>
       <div>
-        <ArchiveButton className={styles.back_to_archive}>
-          <Link href="/arquivo">←</Link>
-        </ArchiveButton>
+        <TextNavLink href="/arquivo" ariaLabel="Voltar ao arquivo" direction="prev" />
       </div>
     </section>
   );

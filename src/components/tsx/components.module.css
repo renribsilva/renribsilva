@@ -291,3 +291,42 @@
 .navItem:hover::after {
   width: 100%;
 }
+
+/**********************************************/
+/*************** TXT NAV LINK *****************/
+/**********************************************/
+
+.text_nav_link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: var(--link);
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+.next_nav_link:hover,
+.prev_nav_link:hover {
+  background-color: rgba(var(--link-rgb, 128, 128, 128), 0.9);
+}
+
+.text_nav_icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.next_nav_link:hover .text_nav_icon {
+  transform: translateX(2px);
+}
+
+.prev_nav_link:hover .text_nav_icon {
+  transform: translateX(-2px);
+}
