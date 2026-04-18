@@ -54,14 +54,51 @@
 }
 
 .appsidebar_navbar {
+  /* background-color: tomato; */
   list-style: none;
-  gap: 10px;
+  gap: 5px;
   display: flex;
   flex-direction: column;
 }
 
+.appsidebar_navbar li{
+  /* background-color: aquamarine; */
+  height: 30px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+}
+
 .appsidebar_navbar a {
   text-decoration: none;
+}
+
+.appsidebar_navitem {
+  position: relative;
+}
+
+.appsidebar_navitem a {
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.appsidebar_navitem::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--foreground);
+  transition: width 0.3s ease;
+} 
+
+.appsidebar_navitem:hover::after {
+  width: 100%;
+}
+
+.appsidebar_navitem.active::after {
+  width: 100%;
 }
 
 /**********************************************************/
@@ -130,11 +167,12 @@
   min-width: 80px;
 }
 
-/*********************+++++*****************/
+/*******************************************/
 /*************** POST LIST *****************/
-/**************************+++++************/
+/*******************************************/
 
 .post_list {
+  /* background-color: aquamarine; */
   list-style: none;
   display: flex;
   flex-direction: column;
@@ -149,6 +187,7 @@
 .post_item {
   /* background-color: aquamarine; */
   display: flex;
+  gap: 20px;
   flex-direction: row-reverse;
   justify-content: space-between;
 }
@@ -166,3 +205,33 @@
 /****************************************/
 /*************** NAVBAR *****************/
 /****************************************/
+
+.navbar {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* adjust as needed */
+}
+
+.navItem {
+  position: relative;
+}
+
+.navItem a {
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.navItem::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--foreground);
+  transition: width 0.3s ease;
+}
+
+.navItem:hover::after {
+  width: 100%;
+}

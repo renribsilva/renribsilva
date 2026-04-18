@@ -4,6 +4,7 @@ import React from "react"
 import styles from "./components.module.css"
 import { useSidebar } from "../../context/sidebar_context";
 import Link from "next/link"
+import { usePathname } from 'next/navigation';
 import Footer from "./footer";
 
 type NavItem = {
@@ -22,6 +23,7 @@ const navItems: NavItem[] = [
 const AppSidebar: React.FC = () => {
 
   const { isMobileOpen, isMobile, toggleMobileSidebar} = useSidebar();
+  const pathname = usePathname();
   
   const sidebarClass = isMobile && isMobileOpen 
     ? `${styles.appsidebar_container} ${styles.appsidebar_mobile_open}` 
@@ -37,16 +39,19 @@ const AppSidebar: React.FC = () => {
     navItems: NavItem[]
   ) => (
     <ul className={styles.appsidebar_navbar}>
-      {navItems.map((subItem) => (
-        <li key={subItem.name} >
-          <Link
-            href={subItem.path}
-            onClick={handleItemClick}
-          >
-            {subItem.name}
-          </Link>
-        </li>
-      ))}
+      {navItems.map((subItem) => {
+        const isActive = subItem.path === '/' ? pathname === '/' : pathname.startsWith(subItem.path);
+        return (
+          <li key={subItem.name} className={`${styles.appsidebar_navitem} ${isActive ? styles.active : ''}`}>
+            <Link
+              href={subItem.path}
+              onClick={handleItemClick}
+            >
+              {subItem.name}
+            </Link>
+          </li>
+        );
+      })}
     </ul>
   )
 
