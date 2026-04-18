@@ -110,7 +110,7 @@
 .theme_switch_container {
   /* background-color: aquamarine; */
   height: calc(100% - 3px);
-  padding: 3px 0px;
+  padding: 3.5px 0px;
 }
 
 .theme_switch {

@@ -17,8 +17,8 @@
 }
 
 .home_left{
-  flex: 1;
   /* background-color: blueviolet; */
+  flex: 1;
   height: calc(100svh - 50px);
   min-width: 200px;
   z-index: 100;
