@@ -18,10 +18,10 @@ const AppHeader: React.FC = () => {
           <MenuButton  />
         )}
       </div>
-      <div className={styles.appheader_links}>
+      {/* <div className={styles.appheader_links}>
         <Theme />
         <GithubLink />
-      </div>
+      </div> */}
     </section>
   );
 };
