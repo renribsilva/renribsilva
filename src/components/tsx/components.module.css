@@ -114,7 +114,7 @@
 }
 
 .theme_switch {
-  width: 30px;
+  width: 32px;
   height: 60px;
   border-radius: 2rem; 
   border: 1px solid var(--foreground);
