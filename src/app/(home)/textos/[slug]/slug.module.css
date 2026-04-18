@@ -54,7 +54,7 @@
   height: 35px;
   border-radius: 50%;
   background-color: var(--link);
-  color: var(--background);
+  color: var(--foreground);
   text-decoration: none;
 }
 
@@ -66,12 +66,20 @@
 .next_text_icon,
 .prev_text_icon {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
   transition: transform 0.2s ease;
 }
 
-.next_text_link:hover .next_text_icon,
-.prev_text_link:hover .prev_text_icon {
+.next_text_link:hover .next_text_icon {
   transform: translateX(2px);
+}
+
+.prev_text_link:hover .prev_text_icon {
+  transform: translateX(-2px);
 }
 
 .post_navigation {

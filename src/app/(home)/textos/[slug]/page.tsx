@@ -55,18 +55,14 @@ export default async function PostPage({ params }: PageProps) {
           )}
           <div className={styles.post_navigation}>
             {prevPost && (
-              <ArchiveButton className={styles.prev_text_button}>
-                <Link href={`/textos/${prevPost.slug}`} className={styles.prev_text_link} aria-label={`Texto anterior: ${prevPost.title}`}>
-                  <span aria-hidden="true" className={styles.prev_text_icon}>←</span>
-                </Link>
-              </ArchiveButton>
+              <Link href={`/textos/${prevPost.slug}`} className={`${styles.prev_text_link} ${styles.prev_text_button}`} aria-label={`Texto anterior: ${prevPost.title}`}>
+                <span aria-hidden="true" className={styles.prev_text_icon}>←</span>
+              </Link>
             )}
             {nextPost && (
-              <ArchiveButton className={styles.next_text_button}>
-                <Link href={`/textos/${nextPost.slug}`} className={styles.next_text_link} aria-label={`Próximo texto: ${nextPost.title}`}>
-                  <span aria-hidden="true" className={styles.next_text_icon}>→</span>
-                </Link>
-              </ArchiveButton>
+              <Link href={`/textos/${nextPost.slug}`} className={`${styles.next_text_link} ${styles.next_text_button}`} aria-label={`Próximo texto: ${nextPost.title}`}>
+                <span aria-hidden="true" className={styles.next_text_icon}>→</span>
+              </Link>
             )}
           </div>
         </footer>
