@@ -21,7 +21,7 @@
   .appsidebar_container {
   background-color: var(--background);
   /* border-right: 1px solid var(--background); */
-  width: 200px;
+  width: 210px;
   height: 100%;
   padding: 20px;
   box-sizing: border-box;
@@ -109,8 +109,8 @@
 
 .theme_switch_container {
   /* background-color: aquamarine; */
-  height: calc(100% - 3px);
-  padding: 3.5px 0px;
+  height: calc(100%);
+  padding-top: 1px;
 }
 
 .theme_switch {
@@ -118,7 +118,7 @@
   height: 60px;
   border-radius: 2rem; 
   border: 1px solid var(--foreground);
-  background-color: var(--background);
+  background-color: var(--background);  
   /* display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -129,6 +129,14 @@
   opacity: 1;
   visibility: visible;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+  /* background-color: var(--foreground);
+  color: var(--background); */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .theme_switch_icon_inactive {
