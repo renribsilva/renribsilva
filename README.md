@@ -1,0 +1,66 @@
+# renribsilva
+
+renribsilva é um saite-blog um tanto minimalista feito por um completo amador.
+
+## primeiros passos
+
+Para começar o desenvolvimento do projeto, siga os seguintes passos:
+
+1. Clone o repositório:
+
+```
+git clone https://github.com/renribsilva/renribsilva
+```
+
+2. Instale as dependências:
+
+```
+sudo npm i
+```
+
+Isso deverá instalar alguns pacotes essenciais à aplicação, tais como `dotenv`, `sucrase`, dentre outros
+
+## adicionar postagem
+
+Para adicionar novos arquivos markdown em `src/content/`, execute o script 
+`script/createNewPost.mjs` no terminal
+
+```
+node scripts/createNewPost.mjs
+``` 
+
+Como resultado disso, será criado o arquivo `src/content/post[number].mdx`
+que apresentará um _frontmatter_, tal como exemplificado abaixo
+
+```
+---
+id: post2
+slug: titulo-do-novo-post
+title: Título do Novo Post
+subtitle: Subtítulo do Novo Post
+date: '2024-09-28T20:31:32.787Z'
+draft: true
+tags: []
+---
+Escreva o texto aqui
+```
+
+No _frontmatter_, pode-se alterar as propriedade `title`, `subtitle`, `slug` (endereço que aparece no navegor) e `tags`. Quando o texto estiver pronto, basta definir `false` para a propriedade `draft` e pluft. Texto publicado!
+
+## rodar a aplicação localmente
+
+Pode-se rodar a aplicação localmente chamando no terminal, por exemplo, 
+
+```
+sudo npm run dev
+```
+
+Em seguida, pode-se verificar o local no qual a aplicação foi compilada, a exemplo do código a abaixo:
+
+```
+▲ Next.js 14.2.16
+  - Local:        http://localhost:3000
+  - Environments: .env
+```
+
+Feito isso, pode-se acesar a aplicação pelo endereço mostrado.

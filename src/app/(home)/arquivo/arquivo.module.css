@@ -1,0 +1,8 @@
+.year_list, .tag_list {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  flex-wrap: wrap;
+}

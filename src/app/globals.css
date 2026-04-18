@@ -1,0 +1,36 @@
+:root {
+  /* --- TEMA LIGHT --- */
+  --color-fill-light: hsl(0, 0%, 95%);        
+  --color-text-base-light: hsl(240, 2%, 10%);
+  --color-text-link-light:  hsl(0, 1%, 69%);
+
+  /* --- TEMA DARK --- */
+  --color-fill-dark: hsl(240, 17%, 29%);            
+  --color-text-base-dark: hsl(0, 0%, 89%);  
+  --color-text-link-dark: hsl(0, 0%, 48%);
+}
+
+.dark {
+  --background: var(--color-fill-dark);
+  --foreground: var(--color-text-base-dark);
+  --link: var(--color-text-link-dark)
+}
+
+.light {
+  --background: var(--color-fill-light);
+  --foreground: var(--color-text-base-light);
+  --link: var(--color-text-link-light)
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: var(--background);
+}
+
+a, a:visited {
+  color: inherit;
+}

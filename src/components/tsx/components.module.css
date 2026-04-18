@@ -1,0 +1,168 @@
+  /****************************************************/
+  /**********************HEADER************************/
+  /****************************************************/
+
+  .appheader_container {
+    background-color:var(--background);
+    display: flex;
+    justify-content: right;
+    height: 50px;
+    padding-inline: 15px;
+    align-items: center;
+    @media (max-width: 700px) {
+      justify-content: space-between;
+    }
+  }
+
+  .appheader_links {
+    display: flex;
+    gap: 1px;
+  }
+
+  /*****************************************************/
+  /**********************SIDEBAR************************/
+  /*****************************************************/
+
+  .appsidebar_container {
+  background-color: var(--background);
+  /* border-right: 1px solid var(--background); */
+  width: 200px;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  @media (max-width: 700px) {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    height: calc(100svh - 50px);
+    transform: translateX(-100%); 
+    visibility: hidden;  
+    pointer-events: none;
+    z-index: 1000;
+  }
+}
+
+.appsidebar_mobile_open {
+  transform: translateX(0) !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  opacity: 1 !important;
+}
+
+.appsidebar_navbar {
+  list-style: none;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.appsidebar_navbar a {
+  text-decoration: none;
+}
+
+/**********************************************************/
+/**********************THEME TOGGLE************************/
+/**********************************************************/
+
+.theme_button {
+  background-color: var(--background); 
+  border: none;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+
+}/**********************************************************/
+/**********************MENU BUTTON************************/
+/**********************************************************/
+
+.menu_button {
+  background-color: var(--background);
+  border: none;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+}
+
+/*********************************************************/
+/**********************GITHUB LINK************************/
+/*********************************************************/
+
+.github_link {
+  background-color: var(--background);
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/****************************************************/
+/**********************FOOTER************************/
+/****************************************************/
+
+.footer {
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.link_source {
+  font-size: 13px;
+  text-decoration: none;
+}
+
+/***********************************************/
+/*************** ARCHIVEBUTTON *****************/
+/***********************************************/
+
+.default_button {
+  background-color: var(--link);
+  /* color: var(--background); */
+  border: none;
+  border-radius: 1rem;
+  padding: 8px;
+  cursor: pointer;
+  min-width: 80px;
+}
+
+/*********************+++++*****************/
+/*************** POST LIST *****************/
+/**************************+++++************/
+
+.post_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  /* font-size: 15px; */
+}
+
+.post_list a {
+  text-decoration: none;
+}
+
+.post_item {
+  /* background-color: aquamarine; */
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.post_title {
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+.post_subtitle {
+  color: var(--link);
+}
+
+/****************************************/
+/*************** NAVBAR *****************/
+/****************************************/

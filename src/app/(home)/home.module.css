@@ -1,0 +1,73 @@
+/****************************************************/
+/**********************LAYOUT************************/
+/****************************************************/
+
+.home_up {
+  /* background-color: aqua; */
+  height: 50px;
+  z-index: 999;
+  position: relative;
+}
+
+.home_down {
+  /* background-color: bisque; */
+  min-height: calc(100svh - 50px);
+  display: flex;
+  gap: 10px;
+}
+
+.home_left{
+  flex: 1;
+  /* background-color: blueviolet; */
+  height: calc(100svh - 50px);
+  min-width: 200px;
+  z-index: 100;
+  padding-left: clamp(0px, calc((100vw - 700px) * 0.4), 150px);
+  @media (max-width: 700px) {
+    display: none; 
+  }
+}
+
+.home_right{
+  /* background-color: rgb(23, 145, 23); */
+  flex: 5;
+  height: calc(100svh - 50px);
+  overflow-y: auto;
+  padding: 20px;
+  padding-right: clamp(20px, calc((100vw - 700px) * 0.4), 350px);
+  box-sizing: border-box;
+  @media (max-width: 700) {
+    padding: 20px;
+    /* padding-right: 20px; */
+  };
+}
+
+/* Backdrop - O fundo que escurece */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 50;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* Quando o backdrop estiver ativo */
+.backdrop_active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/**************************************************/
+/**********************PAGE************************/
+/**************************************************/
+
+.recentes, .recentes_list {
+  /* background-color: aquamarine; */
+  padding-top: 20px;
+} 
+
