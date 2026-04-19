@@ -165,19 +165,6 @@
   cursor: pointer;
 }
 
-/*********************************************************/
-/**********************GITHUB LINK************************/
-/*********************************************************/
-
-.github_link {
-  background-color: var(--background);
-  height: 30px;
-  width: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 /****************************************************/
 /**********************FOOTER************************/
 /****************************************************/
@@ -191,49 +178,23 @@
   gap: 1px;
 }
 
-.link_source {
-  text-decoration: none;
-}
-
 /***********************************************/
 /*************** ARCHIVEBUTTON *****************/
 /***********************************************/
 
 .default_button {
-  background-color: var(--link);
-  /* color: var(--background); */
-  border: none;
-  border-radius: 1rem;
+  background-color: var(--background);
+  border: 1px solid var(--foreground);
+  border-radius: 2rem;
   padding: 8px;
   cursor: pointer;
   min-width: 80px;
-}
-
-.back_to_archive {
-  width: 35px;
   height: 35px;
-  min-width: 35px;
-  padding: 0;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--link);
+  font-family: "Courier Prime", monospace;
 }
 
-.back_to_archive_link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  color: var(--foreground);
-  text-decoration: none;
-}
-
-.back_to_archive_link span {
-  font-size: 1rem;
-  line-height: 1;
+.default_button:hover {
+  opacity: 0.8;
 }
 
 /*******************************************/
@@ -271,40 +232,6 @@
   color: var(--link);
 }
 
-/****************************************/
-/*************** NAVBAR *****************/
-/****************************************/
-
-.navbar {
-  list-style: none;
-  display: flex;
-  gap: 20px; /* adjust as needed */
-}
-
-.navItem {
-  position: relative;
-}
-
-.navItem a {
-  text-decoration: none;
-  color: var(--foreground);
-}
-
-.navItem::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: var(--foreground);
-  transition: width 0.3s ease;
-}
-
-.navItem:hover::after {
-  width: 100%;
-}
-
 /**********************************************/
 /*************** TXT NAV LINK *****************/
 /**********************************************/
@@ -316,14 +243,10 @@
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: var(--link);
+  background-color: var(--background);
+  border: 1px solid var(--foreground);
   color: var(--foreground);
   text-decoration: none;
-}
-
-.next_nav_link:hover,
-.prev_nav_link:hover {
-  background-color: rgba(var(--link-rgb, 128, 128, 128), 0.9);
 }
 
 .text_nav_icon {
@@ -338,8 +261,10 @@
 
 .next_nav_link:hover .text_nav_icon {
   transform: translateX(2px);
+  opacity: 0.8;
 }
 
 .prev_nav_link:hover .text_nav_icon {
   transform: translateX(-2px);
+  opacity: 0.8;
 }
