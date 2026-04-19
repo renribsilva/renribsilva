@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div>
-        <div>GPLv3 © {currentYear}</div>
+        <div>MIT © {currentYear}</div>
         <div>Less, but better.</div>
         <div>
           <span>by </span>
