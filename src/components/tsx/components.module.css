@@ -65,7 +65,11 @@
 }
 
 .appsidebar_navbar a {
+  /* background-color: violet; */
   text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .appsidebar_navitem {
