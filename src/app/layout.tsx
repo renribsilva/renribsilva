@@ -1,8 +1,8 @@
-import { ThemeProvider } from "../components/tsx/theme_provider";
 import { Courier_Prime } from "next/font/google"
 import "./globals.css"
-import { SidebarProvider } from "../context/sidebar_context";
 import type { Viewport } from 'next'; // Adicione Viewport aqui
+import { ThemeProvider } from "../context/theme_provider";
+import { SidebarProvider } from "../context/sidebar_provider";
 
 export const viewport: Viewport = {
   width: 'device-width',

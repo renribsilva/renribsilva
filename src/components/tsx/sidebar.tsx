@@ -2,10 +2,10 @@
 
 import React from "react"
 import styles from "./components.module.css"
-import { useSidebar } from "../../context/sidebar_context";
 import Link from "next/link"
 import { usePathname } from 'next/navigation';
 import Footer from "./footer";
+import { useSidebar } from "../../context/sidebar_provider";
 
 type NavItem = {
   name: string;

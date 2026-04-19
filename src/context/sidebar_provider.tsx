@@ -4,14 +4,8 @@ import React, { createContext, useContext, useState, useEffect } from "react";
 
 type SidebarContextType = {
   isMobile: boolean;
-  isExpanded: boolean;
   isMobileOpen: boolean;
-  activeItem: string | null;
-  openSubmenu: string | null;
-  toggleSidebar: () => void;
   toggleMobileSidebar: () => void;
-  setActiveItem: (item: string | null) => void;
-  toggleSubmenu: (item: string) => void;
 };
 
 const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
@@ -27,12 +21,9 @@ export const useSidebar = () => {
 export const SidebarProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [isExpanded, setIsExpanded] = useState(true);
+
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  // const [isHovered, setIsHovered] = useState(false);
-  const [activeItem, setActiveItem] = useState<string | null>(null);
-  const [openSubmenu, setOpenSubmenu] = useState<string | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,30 +37,16 @@ export const SidebarProvider: React.FC<{ children: React.ReactNode }> = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const toggleSidebar = () => {
-    setIsExpanded((prev) => !prev);
-  };
-
   const toggleMobileSidebar = () => {
     setIsMobileOpen((prev) => !prev);
   };
-
-  const toggleSubmenu = (item: string) => {
-    setOpenSubmenu((prev) => (prev === item ? null : item));
-  };
-
+  
   return (
     <SidebarContext.Provider
       value={{
         isMobile,
-        isExpanded: isMobile ? false : isExpanded,
         isMobileOpen,
-        activeItem,
-        openSubmenu,
-        toggleSidebar,
-        toggleMobileSidebar,
-        setActiveItem,
-        toggleSubmenu,
+        toggleMobileSidebar
       }}
     >
       {children}

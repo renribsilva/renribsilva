@@ -2,10 +2,8 @@
 
 import React from "react";
 import styles from "./components.module.css";
-import Theme from "./theme_toggle";
-import GithubLink from "./github_link";
-import { useSidebar } from "../../context/sidebar_context";
 import MenuButton from "./menu_button";
+import { useSidebar } from "../../context/sidebar_provider";
 
 const AppHeader: React.FC = () => {
 
@@ -18,10 +16,6 @@ const AppHeader: React.FC = () => {
           <MenuButton  />
         )}
       </div>
-      {/* <div className={styles.appheader_links}>
-        <Theme />
-        <GithubLink />
-      </div> */}
     </section>
   );
 };

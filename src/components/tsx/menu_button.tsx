@@ -1,6 +1,6 @@
 'use client'
 
-import { useSidebar } from "../../context/sidebar_context";
+import { useSidebar } from "../../context/sidebar_provider";
 import Menu from "../svg/menu";
 import styles from "./components.module.css";
 

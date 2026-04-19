@@ -16,7 +16,8 @@ export function getSortedPostsData() {
     return {
       ...data,
     };
-  });
+  })
+  .filter((post) => post.draft !== true);
 
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
   
