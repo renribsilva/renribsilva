@@ -101,59 +101,6 @@
 }
 
 /**********************************************************/
-/**********************THEME TOGGLE************************/
-/**********************************************************/
-
-.theme_button {
-  background-color: var(--background); 
-  border: none;
-  cursor: pointer;
-  padding: 0;
-}
-
-.theme_switch_container {
-  /* background-color: aquamarine; */
-  height: calc(100%);
-  padding-top: 1px;
-}
-
-.theme_switch {
-  width: 32px;
-  height: 60px;
-  border-radius: 2rem; 
-  border: 1px solid var(--foreground);
-  background-color: var(--background);  
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center; */
-}
-
-.theme_switch_icon_active {
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  /* background-color: var(--foreground);
-  color: var(--background); */
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.theme_switch_icon_inactive {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.theme_switch:hover {
-  opacity: 0.8;
-}
-
-/**********************************************************/
 /**********************MENU BUTTON************************/
 /**********************************************************/
 
@@ -176,6 +123,15 @@
   align-items: center;
   justify-content: space-between;
   gap: 1px;
+}
+
+.dark_button, .light_button {
+  background-color: var(--background);
+  border: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size : 11.5px;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 /***********************************************/
