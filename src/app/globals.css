@@ -5,7 +5,7 @@
   --color-text-link-light:  hsl(0, 1%, 69%);
 
   /* --- TEMA DARK --- */
-  --color-fill-dark: hsl(240, 17%, 29%);            
+  --color-fill-dark: hsl(240, 17%, 20%);            
   --color-text-base-dark: hsl(0, 0%, 89%);  
   --color-text-link-dark: hsl(0, 0%, 48%);
 }
