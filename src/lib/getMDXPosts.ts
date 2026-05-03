@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { Post } from '../types';
 
-export function getSortedPostsData() {
+export function getSortedPostsData(): Post[] {
   const postsDirectory = path.join(process.cwd(), 'src/content');
   const fileNames = fs.readdirSync(postsDirectory);
 
@@ -12,13 +13,13 @@ export function getSortedPostsData() {
       const fullPath = path.join(postsDirectory, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data } = matter(fileContents);
-      
-    return {
-      ...data,
-    };
-  })
-  .filter((post) => post.draft !== true);
+
+      return {
+        ...data as Post,
+      };
+    })
+    .filter((post) => post.draft !== true);
 
   return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1));
-  
+
 }

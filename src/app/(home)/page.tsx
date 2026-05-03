@@ -1,17 +1,16 @@
 import Index from "../../components/mdx/index.mdx"
 import { getSortedPostsData } from "../../lib/getMDXPosts";
 import PostList from "../../components/tsx/post_list";
-import { Post } from "../../types";
 import styles from "./home.module.css"
 
 export default function Home() {
 
-  const posts = getSortedPostsData().slice(0, 3) as Post[];
+  const posts = getSortedPostsData().slice(0, 3);
 
   return (
     <section>
       <div>
-        <Index/>
+        <Index />
       </div>
       <div className={styles.recentes}>
         <h1>recentes</h1>

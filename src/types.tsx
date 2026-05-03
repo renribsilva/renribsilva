@@ -7,3 +7,8 @@ export type Post = {
   draft: boolean;
   tags: string[]
 }
+
+export type TagUnique = {
+  tag: string;
+  frequency: number;
+}

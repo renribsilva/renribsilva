@@ -7,11 +7,12 @@ import TextNavLink from '../../../../components/tsx/text_nav_link';
 import Link from 'next/link';
 import { formatString } from '../../../../lib/formatString';
 
-interface PageProps {
-  params: Promise<{ slug: string }>;
-}
+export default async function PostPage({
+  params
+}: {
+  params: Promise<{ slug: string }>
+}) {
 
-export default async function PostPage({ params }: PageProps) {
   const { slug } = await params;
   const allPosts = getSortedPostsData();
   const postIndex = allPosts.findIndex((p) => p.slug === slug);
@@ -25,7 +26,7 @@ export default async function PostPage({ params }: PageProps) {
 
   try {
     const { default: Post } = await import(`../../../../content/${post.id}.mdx`);
-    
+
     return (
       <article>
         <header className={styles.post_header}>
@@ -34,16 +35,16 @@ export default async function PostPage({ params }: PageProps) {
             <hr />
             <h2 className={styles.post_title}>[{post.title}]</h2>
           </div>
-          {post.subtitle && 
+          {post.subtitle &&
             <p className={styles.post_subtitle}>{post.subtitle}</p>
-          } 
+          }
         </header>
         <Post />
         <footer className={styles.post_footer}>
           {post.tags && post.tags.length > 0 && (
             <div className={styles.post_tags}>
               {post.tags.map((tag) => {
-                const formattedTag = formatString(tag); 
+                const formattedTag = formatString(tag);
                 return (
                   <li key={formattedTag}>
                     <Link href={`/arquivo/tag/${formattedTag}`} >
@@ -51,7 +52,7 @@ export default async function PostPage({ params }: PageProps) {
                     </Link>
                   </li>
                 );
-                })}
+              })}
             </div>
           )}
           <div className={styles.post_navigation}>

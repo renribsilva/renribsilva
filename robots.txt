@@ -1,5 +1,2 @@
 User-Agent: *
 Allow: /
-Allow: /api/*
-
-Sitemap: https://renribsilva.vercel.app/api/sitemap.xml
