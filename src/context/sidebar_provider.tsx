@@ -1,12 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from "react";
-
-type SidebarContextType = {
-  isMobile: boolean;
-  isMobileOpen: boolean;
-  toggleMobileSidebar: () => void;
-};
+import { SidebarContextType } from "../types";
 
 const SidebarContext = createContext<SidebarContextType | undefined>(undefined);
 
@@ -40,7 +35,7 @@ export const SidebarProvider: React.FC<{ children: React.ReactNode }> = ({
   const toggleMobileSidebar = () => {
     setIsMobileOpen((prev) => !prev);
   };
-  
+
   return (
     <SidebarContext.Provider
       value={{
