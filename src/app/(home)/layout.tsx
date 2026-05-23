@@ -12,11 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <section>
       <div className={styles.home_up}>
-        <AppHeader/>
+        <AppHeader />
       </div>
       <div className={styles.home_down}>
         {isMobile && (
-          <div 
+          <div
             className={`${styles.backdrop} ${isMobileOpen ? styles.backdrop_active : ""}`}
             onClick={toggleMobileSidebar}
           />
