@@ -9,13 +9,15 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
   const [mounted, setMounted] = useState(false);
 
+  useEffect(() => {
+    // eslint-disable-next-line
+    setMounted(true);
+  }, []);
+
   const toggleTheme = () => {
     setTheme(resolvedTheme === "light" ? "dark" : "light");
   };
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   if (!mounted) {
     return (
@@ -63,7 +65,7 @@ export default function Footer() {
                 dark
               </button>
             </span>
-          ):(
+          ) : (
             <span>
               <button
                 onClick={toggleTheme}
