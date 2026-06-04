@@ -44,7 +44,11 @@ const FormattedDatetime = ({ date, short, semishort }: DatetimeProps) => {
   return (
     <div className={styles.datetime}>
       <time dateTime={parsedDate.toISOString()}>
-        {semishort ? formattedSemiShortDate : short ? formattedShortDate : formattedFullDate}
+        {semishort
+          ? formattedSemiShortDate
+          : short
+            ? formattedShortDate
+            : formattedFullDate}
       </time>
     </div>
   );

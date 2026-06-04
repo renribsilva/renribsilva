@@ -1,17 +1,18 @@
 import { getSortedPostsData } from "../../../../../lib/getMDXPosts";
 import PostList from "../../../../../components/tsx/post_list";
 import TextNavLink from "../../../../../components/tsx/text_nav_link";
-import styles from "../../arquivo.module.css"
+import styles from "../../arquivo.module.css";
 
 export default async function AnoPage({
-  params
+  params,
 }: {
   params: Promise<{ year: string }>;
 }) {
-
   const { year } = await params;
   const allPosts = getSortedPostsData();
-  const filteredPosts = allPosts.filter((post) => post.date.slice(0, 4) === year);
+  const filteredPosts = allPosts.filter(
+    (post) => post.date.slice(0, 4) === year,
+  );
 
   return (
     <section className={styles.arquivo_button_container}>
@@ -23,7 +24,11 @@ export default async function AnoPage({
         )}
       </div>
       <div>
-        <TextNavLink href="/arquivo" ariaLabel="Voltar ao arquivo" direction="prev" />
+        <TextNavLink
+          href="/arquivo"
+          ariaLabel="Voltar ao arquivo"
+          direction="prev"
+        />
       </div>
     </section>
   );

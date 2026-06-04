@@ -16,7 +16,6 @@ export const useSidebar = () => {
 export const SidebarProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -41,7 +40,7 @@ export const SidebarProvider: React.FC<{ children: React.ReactNode }> = ({
       value={{
         isMobile,
         isMobileOpen,
-        toggleMobileSidebar
+        toggleMobileSidebar,
       }}
     >
       {children}

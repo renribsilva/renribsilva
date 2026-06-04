@@ -5,18 +5,16 @@ export type Post = {
   subtitle: string;
   date: string;
   draft: boolean;
-  tags: string[]
-}
+  tags: string[];
+};
 
 export type TagUnique = {
   tag: string;
   frequency: number;
-}
+};
 
 export type SidebarContextType = {
   isMobile: boolean;
   isMobileOpen: boolean;
   toggleMobileSidebar: () => void;
 };
-
-

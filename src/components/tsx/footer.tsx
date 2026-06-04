@@ -1,10 +1,9 @@
 import { useTheme } from "next-themes";
-import styles from "./components.module.css"
+import styles from "./components.module.css";
 import LinkExterno from "./link_externo";
 import { useEffect, useState } from "react";
 
 export default function Footer() {
-
   const { resolvedTheme, setTheme } = useTheme();
   const currentYear = new Date().getFullYear();
   const [mounted, setMounted] = useState(false);
@@ -17,7 +16,6 @@ export default function Footer() {
   const toggleTheme = () => {
     setTheme(resolvedTheme === "light" ? "dark" : "light");
   };
-
 
   if (!mounted) {
     return (
@@ -38,7 +36,7 @@ export default function Footer() {
           </div>
         </div>
       </footer>
-    )
+    );
   }
 
   return (
@@ -59,7 +57,11 @@ export default function Footer() {
             <span>
               <button
                 onClick={toggleTheme}
-                aria-label={resolvedTheme === "light" ? "Ativar tema escuro" : "Tema claro ativado"}
+                aria-label={
+                  resolvedTheme === "light"
+                    ? "Ativar tema escuro"
+                    : "Tema claro ativado"
+                }
                 className={styles.dark_button}
               >
                 dark
@@ -69,7 +71,11 @@ export default function Footer() {
             <span>
               <button
                 onClick={toggleTheme}
-                aria-label={resolvedTheme === "light" ? "Ativar tema escuro" : "Tema claro ativado"}
+                aria-label={
+                  resolvedTheme === "light"
+                    ? "Ativar tema escuro"
+                    : "Tema claro ativado"
+                }
                 className={styles.light_button}
               >
                 light

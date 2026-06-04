@@ -1,13 +1,13 @@
-import { Courier_Prime } from "next/font/google"
-import "./globals.css"
-import type { Viewport } from 'next'; // Adicione Viewport aqui
+import { Courier_Prime } from "next/font/google";
+import "./globals.css";
+import type { Viewport } from "next"; // Adicione Viewport aqui
 import { ThemeProvider } from "../context/theme_provider";
 import { SidebarProvider } from "../context/sidebar_provider";
 
 export const viewport: Viewport = {
-  width: 'device-width',
+  width: "device-width",
   initialScale: 1,
-}
+};
 
 const courier = Courier_Prime({
   subsets: ["latin"],
@@ -17,7 +17,7 @@ const courier = Courier_Prime({
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <>
@@ -30,12 +30,10 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <SidebarProvider>
-              {children}
-            </SidebarProvider>
+            <SidebarProvider>{children}</SidebarProvider>
           </ThemeProvider>
         </body>
       </html>
     </>
-  )
+  );
 }

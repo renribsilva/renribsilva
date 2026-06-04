@@ -1,18 +1,17 @@
-import { notFound } from 'next/navigation';
-import { getSortedPostsData } from '../../../../lib/getMDXPosts';
-import Datetime from '../../../../components/tsx/datetime';
-import styles from './slug.module.css';
-import ArchiveButton from '../../../../components/tsx/archive_button';
-import TextNavLink from '../../../../components/tsx/text_nav_link';
-import Link from 'next/link';
-import { formatString } from '../../../../lib/formatString';
+import { notFound } from "next/navigation";
+import { getSortedPostsData } from "../../../../lib/getMDXPosts";
+import Datetime from "../../../../components/tsx/datetime";
+import styles from "./slug.module.css";
+import ArchiveButton from "../../../../components/tsx/archive_button";
+import TextNavLink from "../../../../components/tsx/text_nav_link";
+import Link from "next/link";
+import { formatString } from "../../../../lib/formatString";
 
 export default async function PostPage({
-  params
+  params,
 }: {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }) {
-
   const { slug } = await params;
   const allPosts = getSortedPostsData();
   const postIndex = allPosts.findIndex((p) => p.slug === slug);
@@ -34,9 +33,9 @@ export default async function PostPage({
           <hr />
           <h2 className={styles.post_title}>[{post.title}]</h2>
         </div>
-        {post.subtitle &&
+        {post.subtitle && (
           <p className={styles.post_subtitle}>{post.subtitle}</p>
-        }
+        )}
       </header>
       <Post />
       <footer className={styles.post_footer}>
@@ -46,7 +45,7 @@ export default async function PostPage({
               const formattedTag = formatString(tag);
               return (
                 <li key={formattedTag}>
-                  <Link href={`/arquivo/tag/${formattedTag}`} >
+                  <Link href={`/arquivo/tag/${formattedTag}`}>
                     <ArchiveButton># {tag}</ArchiveButton>
                   </Link>
                 </li>

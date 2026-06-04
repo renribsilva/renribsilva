@@ -2,7 +2,7 @@ import { getSortedPostsData } from "../../../../../lib/getMDXPosts";
 import PostList from "../../../../../components/tsx/post_list";
 import TextNavLink from "../../../../../components/tsx/text_nav_link";
 import { formatString } from "../../../../../lib/formatString";
-import styles from "../../arquivo.module.css"
+import styles from "../../arquivo.module.css";
 
 export default async function TagPage({
   params,
@@ -12,7 +12,7 @@ export default async function TagPage({
   const { tag } = await params;
   const allPosts = getSortedPostsData();
   const filteredPosts = allPosts.filter((post) =>
-    post.tags.some(t => formatString(t) === tag)
+    post.tags.some((t) => formatString(t) === tag),
   );
 
   return (
@@ -25,7 +25,11 @@ export default async function TagPage({
         )}
       </div>
       <div>
-        <TextNavLink href="/arquivo" ariaLabel="Voltar ao arquivo" direction="prev" />
+        <TextNavLink
+          href="/arquivo"
+          ariaLabel="Voltar ao arquivo"
+          direction="prev"
+        />
       </div>
     </section>
   );

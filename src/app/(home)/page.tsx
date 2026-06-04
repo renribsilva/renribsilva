@@ -1,10 +1,9 @@
-import Index from "../../components/mdx/index.mdx"
+import Index from "../../components/mdx/index.mdx";
 import { getSortedPostsData } from "../../lib/getMDXPosts";
 import PostList from "../../components/tsx/post_list";
-import styles from './home.module.css'
+import styles from "./home.module.css";
 
 export default function Home() {
-
   const posts = getSortedPostsData().slice(0, 3);
 
   return (

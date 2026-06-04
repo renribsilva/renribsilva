@@ -8,10 +8,12 @@ export function getUniqueTags(): TagUnique[] {
   allTags.forEach((tag) => {
     tagFrequency[tag] = (tagFrequency[tag] || 0) + 1;
   });
-  const uniqueTagsWithFrequency: TagUnique[] = Object.entries(tagFrequency).map(([tag, frequency]) => ({
-    tag,
-    frequency,
-  }));
+  const uniqueTagsWithFrequency: TagUnique[] = Object.entries(tagFrequency).map(
+    ([tag, frequency]) => ({
+      tag,
+      frequency,
+    }),
+  );
   // console.log(uniqueTagsWithFrequency)
   return uniqueTagsWithFrequency;
 }

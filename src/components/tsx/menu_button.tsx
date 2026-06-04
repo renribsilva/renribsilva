@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import { useSidebar } from "../../context/sidebar_provider";
 import Menu from "../svg/menu";
@@ -8,11 +8,9 @@ export default function MenuButton() {
   const { toggleMobileSidebar } = useSidebar();
 
   return (
-    <button 
-      className={styles.menu_button} 
-      onClick={toggleMobileSidebar}
-    >
+    <button className={styles.menu_button} onClick={toggleMobileSidebar}>
       <Menu />
     </button>
   );
 }
+

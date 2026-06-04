@@ -7,9 +7,16 @@ interface TagButtonProps {
   className?: string;
 }
 
-export default function ArchiveButton({ children, onClick, className }: TagButtonProps): React.JSX.Element {
+export default function ArchiveButton({
+  children,
+  onClick,
+  className,
+}: TagButtonProps): React.JSX.Element {
   return (
-    <button className={`${styles.default_button} ${className ?? ''}`} onClick={onClick}>
+    <button
+      className={`${styles.default_button} ${className ?? ""}`}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

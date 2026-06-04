@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import Link from "next/link";
 import styles from "./components.module.css";
@@ -11,12 +11,21 @@ interface TextNavLinkProps {
   direction: Direction;
 }
 
-export default function TextNavLink({ href, ariaLabel, direction }: TextNavLinkProps) {
+export default function TextNavLink({
+  href,
+  ariaLabel,
+  direction,
+}: TextNavLinkProps) {
   const icon = direction === "next" ? "→" : "←";
-  const linkClass = direction === "next" ? styles.next_nav_link : styles.prev_nav_link;
+  const linkClass =
+    direction === "next" ? styles.next_nav_link : styles.prev_nav_link;
 
   return (
-    <Link href={href} className={`${styles.text_nav_link} ${linkClass}`} aria-label={ariaLabel}>
+    <Link
+      href={href}
+      className={`${styles.text_nav_link} ${linkClass}`}
+      aria-label={ariaLabel}
+    >
       <span aria-hidden="true" className={styles.text_nav_icon}>
         {icon}
       </span>
